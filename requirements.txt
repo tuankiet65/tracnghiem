@@ -1,0 +1,13 @@
+bcrypt==3.1.2
+cffi==1.9.1
+click==6.7
+Flask==0.12
+Flask-WTF==0.14.2
+itsdangerous==0.24
+Jinja2==2.9.4
+MarkupSafe==0.23
+peewee==2.8.5
+pycparser==2.17
+six==1.10.0
+Werkzeug==0.11.15
+WTForms==2.1
