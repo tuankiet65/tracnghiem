@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+        <title>{% block header %} {% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="/static/libraries/materialize/dist/css/materialize.min.css">
+        <!-- TODO: Replace with local -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/static/libraries/sweetalert2/dist/sweetalert2.min.css">
+        {% block css %} {% endblock %}
+    </head>
+    <body>
+        <header class="navbar-fixed">
+            <nav class="light-blue lighten-1" role="navigation">
+                <div class="navbar-wrapper">
+                    <a href="/" class="brand-logo">Admin interface</a>
+                    <a href="#" data-activates="mobile-nav" class="button-collapse">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li class="active"><a href="/">Index</a></li>
+                        <li><a href="announcement">Announcements</a></li>
+                        <li><a href="school">School</a></li>
+                        <li><a href="contest">Contests</a></li>
+                        <li><a href="user">Users</a></li>
+                        <li><a href="stat">Statistics</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-nav">
+                        <li class="active"><a href="/">Index</a></li>
+                        <li><a href="announcement">Announcements</a></li>
+                        <li><a href="school">School</a></li>
+                        <li><a href="contest">Contests</a></li>
+                        <li><a href="user">Users</a></li>
+                        <li><a href="stat">Statistics</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            {% block main %} {% endblock %}
+        </main>
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                > mfw have to design this shit
+                </div>
+            </div>
+        </footer>
+        <script src="/static/libraries/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/libraries/materialize/dist/js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="/static/libraries/handlebars/handlebars.min.js"></script>
+
+        <!-- Why Internet Explorer even exists? -->
+        <script src="/static/libraries/es6-promise/es6-promise.auto.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/libraries/sweetalert2/dist/sweetalert2.min.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="/static/js/data_list.js" type="text/javascript" charset="utf-8"></script>
+        {% block js %} {% endblock %}
+    </body>
+</html>

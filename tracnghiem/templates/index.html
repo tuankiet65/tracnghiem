@@ -1,68 +1,30 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
-        <title>6 bai hoc ly luan chinh tri???????</title>
-        <link rel="stylesheet" type="text/css" href="static/libraries/materialize/dist/css/materialize.min.css">
-        <style>
-            .announcement-time {
-                text-align: right;
-                display: block;
-            }
-
-        </style>
-    </head>
-    <body>
-        <header class="navbar-fixed">
-            <nav class="light-blue lighten-1" role="navigation">
-                <div class="navbar-wrapper container">
-                    <a href="/" class="brand-logo">6 bai hoc ly luan chinh tri???????</a>
-                    <a href="#" data-activates="mobile-nav" class="button-collapse">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                    <ul class="right hide-on-med-and-down">
-                        <li class="active"><a href="/">Trang chủ</a></li>
-                        <li><a href="participate">Tham gia thi</a></li>
-                        <li><a href="yourself">Kết quả thi của bạn</a></li>
-                    </ul>
-                    <ul class="side-nav" id="mobile-nav">
-                        <li class="active"><a href="/">Trang chủ</a></li>
-                        <li><a href="participate">Tham gia thi</a></li>
-                        <li><a href="yourself">Kết quả thi của bạn</a></li>
-                    </ul>
+{% extends "template.html" %}
+{% block title %} 6 bai hoc ly luan chinh tri?????????? {% endblock %}
+{% block css %}
+    <style>
+        .announcement-time {
+            text-align: right;
+            display: block;
+        }
+    </style>
+{% endblock %}
+{% block main %}
+    <div class="row">
+        <div class="col s9">
+            <h4>Thong bao</h4>
+            {%for announcement in announcements%}
+                <div class="card-panel blue-grey lighten-5">
+                    <div class="black-text">
+                        <h5>{{announcement.title}}</h5>
+                        <p>{{announcement.content}}</p>
+                        <small class="announcement-time">Thong bao duoc dang vao luc {{announcement.time}}</small>
+                    </div>
                 </div>
-            </nav>
-        </header>
-        <main class="container">
-            <div class="row">
-                <div class="col s9">
-                    <h4>Thong bao</h4>
-                    {%for announcement in announcements%}
-                        <div class="card-panel blue-grey lighten-5">
-                            <div class="black-text">
-                                <h5>{{announcement.title}}</h5>
-                                <p>{{announcement.content}}</p>
-                                <small class="announcement-time">Thong bao duoc dang vao luc {{announcement.time}}</small>
-                            </div>
-                        </div>
-                    {%endfor%}
-                </div>
-                <div class="col s3">
-                    <h4>Thong ke</h4>
-                    <p>So luong thi sinh tham du thi:</p>
-                </div>
-            </div>
-        </main>
-        <footer class="page-footer">
-            <div class="footer-copyright">
-                <div class="container">
-                > mfw have to design this shit
-                </div>
-            </div>
-          </div>
-        </footer>
-        <script src="static/libraries/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="static/libraries/materialize/dist/js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
-    </body>
-</html>
+            {%endfor%}
+        </div>
+        <div class="col s3">
+            <h4>Thong ke</h4>
+            <p>So luong thi sinh tham du thi:</p>
+        </div>
+    </div>
+{% endblock %}
