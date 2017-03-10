@@ -32,3 +32,11 @@ def load_user_info():
         g.user = None
     if g.user is None and request.path != url_for("admin.login_page"):
         return redirect(url_for("admin.login_page"))
+
+@admin.route("/logout")
+def logout():
+    try:
+        del session['token']
+    except KeyError:
+        pass
+    return redirect(url_for("admin.index"))
