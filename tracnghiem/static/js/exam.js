@@ -12,7 +12,7 @@ function Question(question_count, question, answer_a, answer_b, answer_c, answer
 
     this.template = Handlebars.compile(' \
         <div class="question" data-question="{{question_count}}"> \
-            <h4>Question {{question_count}}: {{question}}</h4> \
+            <span class="question-statement">Question {{question_count}}: {{question}}</span> \
             <div class="question-choices"> \
                 <p> \
                     <input type="radio" name="{{element_name}}" id="{{element_name}}_1" class="with-gap" value="1"> \
@@ -82,9 +82,9 @@ function Question(question_count, question, answer_a, answer_b, answer_c, answer
 }
 
 function Exam(exam, contest, questions){
-    this.exam = $.parseJSON(exam);
-    this.contest = $.parseJSON(contest);
-    this.questions = $.parseJSON(questions);
+    this.exam = exam;
+    this.contest = contest;
+    this.questions = questions;
     this.question_container = $("#exam_container");
     this.question_answered = new Set();
     this.answers_modified = false;

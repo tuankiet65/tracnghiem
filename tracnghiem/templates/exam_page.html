@@ -38,6 +38,11 @@
         #sync-inprogress, #sync-done {
             display: none;
         }
+
+        .question-statement {
+            font-size: 25px;
+            font-weight: bold;
+        }
     </style>
 {% endblock %}
 {% block main %}
@@ -65,7 +70,7 @@
                     sync
                 </i>
                 <i class="material-icons tooltipped" data-position="top" data-tooltip="Your progress was saved" id="sync-done">
-                    cloud done
+                    cloud_done
                 </i>
             </span>
             <div class="right">
@@ -95,8 +100,8 @@
 {% block js %}
     <script>
         $('.modal').modal();
-        questions = '{{questions|tojson}}';
-        exam = '{{exam|tojson}}';
+        questions = {{questions|tojson|safe}};
+        exam = {{exam|tojson|safe}};
     </script>
     <script src="/static/libraries/handlebars/handlebars.min.js"></script>
     <script src="/static/libraries/moment/min/moment.min.js"></script>
