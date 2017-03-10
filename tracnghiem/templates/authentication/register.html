@@ -1,0 +1,91 @@
+{% macro render_register_form(schools) %}
+    <form onsubmit="return register_form.validate_form(true);" action="{{ url_for('authentication.register') }}" method="post">
+        <div class="input-field">
+            <input type="text" id="reg_username" name="username">
+            <label for="reg_username">{{ _("Username") }}</label>
+        </div>
+        <div class="input-field">
+            <input type="password" id="reg_password" name="password">
+            <label for="reg_password">{{ _("Password") }}</label>
+        </div>
+        <div class="input-field">
+            <input type="password" id="reg_password_repeat" name="password_repeat">
+            <label for="reg_password_repeat">{{ _("Password (repeat)") }}</label>
+        </div>
+        <div class="input-field">
+            <input type="text" id="reg_name" name="name">
+            <label for="reg_name">{{ _("Your name") }}</label>
+        </div>
+        <div class="input-field">
+            <select id="reg_school" name="school">
+                <option value="0" disabled selected>{{ _("Choose your school") }}</option>
+                {% for school in schools %}
+                    <option value="{{ school[0] }}">{{ school[1] }}</option>
+                {% endfor %}
+            </select>
+            <label for="reg_school">{{ _("Your school") }}</label>
+        </div>
+        <div class="input-field">
+            <input type="text" id="reg_klass" name="klass">
+            <label for="reg_klass">{{ _("Your class") }}</label>
+        </div>
+        <div class="g-recaptcha" data-sitekey="{{ config['RECAPTCHA_PUBLIC_KEY'] }}"></div>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <div style="text-align: right">
+            <button type="submit" class="waves-effect waves-light btn">Dang ki</button>
+        </div>
+    </form>
+{% endmacro %}
+
+{% macro render_register_form_js() %}
+    <script src="/static/libraries/zxcvbn/dist/zxcvbn.js"></script>
+    <script src="/static/js/form_validation.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+        $('#reg_school').material_select();
+
+        function SamePassword(value){
+            pwd = $("#reg_password").val();
+            pwd_repeat = $("#reg_password_repeat").val();
+
+            return (pwd == pwd_repeat) && (FormValidation.StrongPassword(pwd));
+        }
+
+        $("#reg_dob").change(function(event){
+            event.stopPropagation();
+        });
+
+        register_form = Form();
+        register_form.add_field("username", $("#reg_username"), [FormValidation.NotEmpty], "Dien ten dang nhap vao day");
+        register_form.add_field("password", $("#reg_password"), [FormValidation.StrongPassword], "Mat khau qua yeu");
+        register_form.add_field("password_repeat", $("#reg_password_repeat"), [SamePassword], "Mat khau nhap lai khong khop hoac mat khau qua yeu");
+        register_form.add_field("name", $("#reg_name"), [FormValidation.NotEmpty], "Dien ho va ten vao day");
+        register_form.add_field("school", $("#reg_school"), [FormValidation.NotEmpty], "Chon truong o day");
+        register_form.add_field("klass", $("#reg_klass"), [FormValidation.NotEmpty], "Dien lop hoc cua ban");
+    </script>
+{% endmacro %}
+
+{% set page_name = "authentication" %}
+{% extends "template.html" %}
+{% block css %}
+<style>
+    .register-form {
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock %}
+{% block main %}
+<h1>{{ _("Register") }}</h1>
+{% if account_exists is defined %}
+    <h5 class="red-text">{{ _("An account with the same username exists, please choose another username") }}</h5>
+{% endif %}
+{% if registration_failed %}
+    <h5 class="red-text">{{ _("You haven't filled in some fields, maybe you haven't checked the captcha?") }}</h5>
+{% endif %}
+<div class="register-form">
+    {{ render_register_form(schools) }}
+</div>
+{% endblock %}
+{% block js %}
+    {{ render_register_form_js() }}
+{% endblock %}

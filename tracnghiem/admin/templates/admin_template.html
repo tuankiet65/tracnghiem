@@ -1,3 +1,20 @@
+{% set headers = [
+    ("index", _("Index"), "/admin/"),
+    ("announcement", _("Announcements"), "/admin/announcement"),
+    ("school", _("Schools"), "/admin/school"),
+    ("contest", _("Contests"), "/admin/contest"),
+    ("questionset", _("Question sets"), "/admin/questionset"),
+    ("contestant", _("Contestants"), "/admin/contestant"),
+    ("admin", _("Admins"), "/admin/admin"),
+    ("statistic", _("Statistics"), "/admin/statistic"),
+] %}
+
+{% macro render_navbar_content() %}
+    {% for header in headers %}
+        <li class="{% if page_name == header[0] %} active {% endif %}"><a href="{{ header[2] }}">{{ header[1] }}</a></li>
+    {% endfor %}
+{% endmacro %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,39 +22,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
         <title>{% block header %} {% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="/static/libraries/materialize/dist/css/materialize.min.css">
-        <!-- TODO: Replace with local -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="/static/libraries/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/static/libraries/sweetalert2/dist/sweetalert2.min.css">
+        <style>
+            .container {
+                width: 90%;
+            }
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+            main {
+                flex: 1 0 auto;
+            }
+        </style>
         {% block css %} {% endblock %}
     </head>
     <body>
         <header class="navbar-fixed">
             <nav class="light-blue lighten-1" role="navigation">
-                <div class="navbar-wrapper">
-                    <a href="/" class="brand-logo">Admin interface</a>
+                <div class="navbar-wrapper container">
+                    <a href="/admin/" class="brand-logo">Admin interface</a>
                     <a href="#" data-activates="mobile-nav" class="button-collapse">
-                        <i class="fa fa-bars"></i>
+                        <i class="fa fa-bars">menu</i>
                     </a>
                     <ul class="right hide-on-med-and-down">
-                        <li class="active"><a href="/">Index</a></li>
-                        <li><a href="announcement">Announcements</a></li>
-                        <li><a href="school">School</a></li>
-                        <li><a href="contest">Contests</a></li>
-                        <li><a href="user">Users</a></li>
-                        <li><a href="stat">Statistics</a></li>
+                        {{ render_navbar_content() }}
                     </ul>
                     <ul class="side-nav" id="mobile-nav">
-                        <li class="active"><a href="/">Index</a></li>
-                        <li><a href="announcement">Announcements</a></li>
-                        <li><a href="school">School</a></li>
-                        <li><a href="contest">Contests</a></li>
-                        <li><a href="user">Users</a></li>
-                        <li><a href="stat">Statistics</a></li>
+                        {{ render_navbar_content() }}
                     </ul>
                 </div>
             </nav>
         </header>
-        <main>
+        <main class="container">
             {% block main %} {% endblock %}
         </main>
         <footer class="page-footer">
@@ -56,7 +75,25 @@
         <script src="/static/libraries/es6-promise/es6-promise.auto.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/libraries/sweetalert2/dist/sweetalert2.min.js" type="text/javascript" charset="utf-8"></script>
 
+        <script src="/static/libraries/raven-js/dist/raven.min.js"></script>
+        <script type="text/javascript">
+            // CSRF stuff
+            var csrf_token = "{{ csrf_token() }}";
+
+            $.ajaxSetup({
+                beforeSend: function(xhr, settings) {
+                    if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+                        xhr.setRequestHeader("X-CSRFToken", csrf_token);
+                    }
+                }
+            });
+
+            // initialize Sentry
+            Raven.config('{{ config['SENTRY_FRONTEND_DSN'] }}').install();
+        </script>
+
         <script src="/static/js/data_list.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/js/form_validation.js"></script>
         {% block js %} {% endblock %}
     </body>
 </html>

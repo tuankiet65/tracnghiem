@@ -1,5 +1,6 @@
+{% set page_name = "index" %}
 {% extends "template.html" %}
-{% block title %} 6 bai hoc ly luan chinh tri?????????? {% endblock %}
+{% block title %} {{ _("Online quiz Index") }} {% endblock %}
 {% block css %}
     <style>
         .announcement-time {
@@ -10,21 +11,23 @@
 {% endblock %}
 {% block main %}
     <div class="row">
-        <div class="col s9">
-            <h4>Thong bao</h4>
+        <div class="col m8 s12">
+            <h4>{{ _("Announcements") }}</h4>
             {%for announcement in announcements%}
                 <div class="card-panel blue-grey lighten-5">
                     <div class="black-text">
                         <h5>{{announcement.title}}</h5>
                         <p>{{announcement.content}}</p>
-                        <small class="announcement-time">Thong bao duoc dang vao luc {{announcement.time}}</small>
+                        <small class="announcement-time">{{ _("Announcement published at %(time)s", time = announcement.time) }}</small>
                     </div>
                 </div>
             {%endfor%}
         </div>
-        <div class="col s3">
-            <h4>Thong ke</h4>
-            <p>So luong thi sinh tham du thi:</p>
+        <div class="col m4 s12">
+            <h4>{{ _("Statistics") }}</h4>
+            <p>{{ _("Account count: %(account_count)s", account_count = stats['account_count']) }}</p>
+            <p>{{ _("Exam count: %(exam_count)s", exam_count = stats['exam_count']) }}</p>
+            <p>{{ _("Contest count: %(contest_count)s", contest_count = stats['contest_count']) }}</p>
         </div>
     </div>
 {% endblock %}

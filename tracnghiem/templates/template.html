@@ -1,29 +1,64 @@
+{% set headers_not_logged_in = [
+    ("index", _("Index"), "/"),
+    ("participate", _("Participate"), "/participate"),
+    ("authentication", _("Sign in or register"), "/auth")
+] %}
+
+{% set headers_logged_in = [
+    ("index", _("Index"), "/"),
+    ("participate", _("Participate"), "/participate"),
+    ("yourself", _("Yourself"), "/yourself"),
+    ("logout", _("Sign out"), "/auth/logout")
+] %}
+
+{% macro render_navbar_content() %}
+    {% if g.user is none %}
+        {% for header in headers_not_logged_in %}
+            <li class="{% if page_name == header[0] %} active {% endif %}"><a href="{{ header[2] }}">{{ header[1] }}</a></li>
+        {% endfor %}
+    {% else %}
+        {% for header in headers_logged_in %}
+            <li class="{% if page_name == header[0] %} active {% endif %}"><a href="{{ header[2] }}">{{ header[1] }}</a></li>
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
-        <title>{% block header %} {% endblock %}</title>
+        <title>{% block title %} {% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="/static/libraries/materialize/dist/css/materialize.min.css">
+        <link href="/static/libraries/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
+        <style>
+            .container {
+                width: 80%;
+            }
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+            main {
+                flex: 1 0 auto;
+            }
+        </style>
         {% block css %} {% endblock %}
     </head>
     <body>
         <header class="navbar-fixed">
             <nav class="light-blue lighten-1" role="navigation">
                 <div class="navbar-wrapper container">
-                    <a href="/" class="brand-logo">6 bai hoc ly luan chinh tri???????</a>
+                    <a href="/" class="brand-logo">{{ _("Online quiz") }}</a>
                     <a href="#" data-activates="mobile-nav" class="button-collapse">
-                        <i class="fa fa-bars"></i>
+                        <i class="material-icons">menu</i>
                     </a>
                     <ul class="right hide-on-med-and-down">
-                        <li class="active"><a href="/">Trang chủ</a></li>
-                        <li><a href="participate">Tham gia thi</a></li>
-                        <li><a href="yourself">Kết quả thi của bạn</a></li>
+                        {{ render_navbar_content() }}
                     </ul>
                     <ul class="side-nav" id="mobile-nav">
-                        <li class="active"><a href="/">Trang chủ</a></li>
-                        <li><a href="participate">Tham gia thi</a></li>
-                        <li><a href="yourself">Kết quả thi của bạn</a></li>
+                        {{ render_navbar_content() }}
                     </ul>
                 </div>
             </nav>
@@ -31,15 +66,48 @@
         <main class="container">
             {% block main %} {% endblock %}
         </main>
+        {% block optional_sticky_footer %} {% endblock %}
         <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12 white-text">
+                        <h5>{{ _("Online quiz Footer") }}</h5>
+                    </div>
+                    <div class="col l4 offset-l2 s12 white-text">
+                        <h5>{{ _("Links") }}</h5>
+                        <ul>
+                            <li>Repository</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="footer-copyright">
                 <div class="container">
-                > mfw have to design this shit
+                    {{ _('Running <a href="https://github.com/tuankiet65/tracnghiem">tuankiet65/tracnghiem</a> revision <a href="https://github.com/tuankiet65/tracnghiem/tree/%(rev)s">%(rev)s</a>', rev = config["GIT_REVISION"]) }}
                 </div>
             </div>
         </footer>
         <script src="/static/libraries/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/libraries/materialize/dist/js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/libraries/raven-js/dist/raven.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            // CSRF stuff
+            var csrf_token = "{{ csrf_token() }}";
+
+            $.ajaxSetup({
+                beforeSend: function(xhr, settings) {
+                    if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+                        xhr.setRequestHeader("X-CSRFToken", csrf_token);
+                    }
+                }
+            });
+
+            // initialize Sentry
+            Raven.config('{{ config['SENTRY_FRONTEND_DSN'] }}').install();
+
+            $(".button-collapse").sideNav();
+        </script>
         {% block js %} {% endblock %}
     </body>
 </html>
+

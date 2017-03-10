@@ -1,0 +1,73 @@
+{% set page_name = "question" %}
+{% extends "admin_template.html" %}
+{% block title %} {{ _("Question for contest %(contest_name)s", contest_name = contest.title) }} {% endblock %}
+{% block css %}
+<style>
+        #question-add-div {
+            overflow: auto;
+        }
+
+        .input-field {
+            margin-top: 0;
+        }
+
+        .label-input-text {
+            display: inline !important;
+        }
+
+        .label-input-text input {
+            width: 90%;
+        }
+</style>
+{% endblock %}
+{% block main %}
+<div class="row">
+    <div class="col s7">
+        <h3>Question for question set {{ qset.name }}</h3>
+        <div id="question-container">
+        </div>
+    </div>
+    <div class="col s5">
+        <h3>add</h3>
+        <div class="card-panel blue-grey lighten-5" id="question-add-div">
+            <form onsubmit="return add_question();" id="question-add-form">
+                <div class="input-field">
+                    <label for="question" >question</label>
+                    <textarea id="question" class="materialize-textarea"></textarea>
+                </div>
+                <div class="input-field">
+                    <input type="radio" name="correct_answer" value="1" id="answer_a_radio" class="with-gap">
+                    <label for="answer_a_radio" class="label-input-text">
+                        <input type="text" name="answer_a" id="answer_a" placeholder="Cau tra loi thu nhat">
+                    </label>
+                </div>
+                <div class="input-field">
+                    <input type="radio" name="correct_answer" value="2" id="answer_b_radio" class="with-gap">
+                    <label for="answer_b_radio" class="label-input-text">
+                        <input type="text" name="answer_b" id="answer_b" placeholder="Cau tra loi thu hai">
+                    </label>
+                </div>
+                <div class="input-field">
+                    <input type="radio" name="correct_answer" value="3" id="answer_c_radio" class="with-gap">
+                    <label for="answer_c_radio" class="label-input-text">
+                        <input type="text" name="answer_c" id="answer_c" placeholder="Cau tra loi thu ba">
+                    </label>
+                </div>
+                <div class="input-field">
+                    <input type="radio" name="correct_answer" value="4" id="answer_d_radio" class="with-gap">
+                    <label for="answer_d_radio" class="label-input-text">
+                        <input type="text" name="answer_d" id="answer_d" placeholder="Cau tra loi thu bon">
+                    </label>
+                </div>
+                <button type="submit" class="right waves-effect waves-light btn" id="submit-button">Them</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+    qset_id = {{ qset.id }};
+</script>
+<script src="/static/js/admin/question.js"></script>
+{% endblock %}

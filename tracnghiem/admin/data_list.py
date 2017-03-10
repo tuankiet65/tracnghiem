@@ -1,6 +1,7 @@
 from flask import Flask, json, request, render_template
 from json.decoder import JSONDecodeError
 
+
 class DataList:
     name = None
 
@@ -17,20 +18,22 @@ class DataList:
     def main_page(self):
         return render_template(self.template)
 
-    def __init__(self, name):
+    def __init__(self, name, url = None):
         self.name = name
+        if url is None:
+            url = self.name
         self.main = {
-            "url": "/{}".format(name),
+            "url": "/{}".format(url),
             "name": "{}_main".format(name),
             "endpoint": self.main_page
         }
         self.get = {
-            "url": "/ajax/{}/get".format(name),
+            "url": "/ajax/{}/get".format(url),
             "name": "{}_get".format(name),
             "endpoint": None
         }
         self.add = {
-            "url": "/ajax/{}/add".format(name),
+            "url": "/ajax/{}/add".format(url),
             "name": "{}_add".format(name),
             "endpoint": None
         }
@@ -39,6 +42,10 @@ class DataList:
             "name": "{}_remove".format(name),
             "endpoint": None
         }
+
+    def main_func(self, func):
+        self.main['endpoint'] = func
+        return func
 
     # function signature:
     # def func(value) -> id of newly created id | None on error
@@ -56,7 +63,7 @@ class DataList:
                 return json.jsonify({
                     "status": "invalid json data"
                 }), 400
-            id = func(value)
+            id = func(value, *args, **kwargs)
             if id is not None:
                 return json.jsonify({
                     "status": "ok",
@@ -97,7 +104,7 @@ class DataList:
                 return json.jsonify({
                     "status": "error, no id received"
                 }), 404
-            result = func(id)
+            result = func(id, *args, **kwargs)
             if result:
                 return json.jsonify({
                     "status": "ok"
@@ -111,8 +118,15 @@ class DataList:
         return tmp
 
     def add_url_rule(self, f: Flask):
-        f.add_url_rule(self.main['url'], endpoint = self.main['name'], view_func = self.main['endpoint'],
-                       methods = ["GET"])
-        f.add_url_rule(self.add['url'], endpoint = self.add['name'], view_func = self.add['endpoint'], methods=["POST"])
-        f.add_url_rule(self.get['url'], endpoint = self.get['name'], view_func = self.get['endpoint'], methods=["GET"])
-        f.add_url_rule(self.remove['url'], endpoint = self.remove['name'], view_func = self.remove['endpoint'], methods=["POST"])
+        if self.template is not None:
+            f.add_url_rule(self.main['url'], endpoint = self.main['name'], view_func = self.main['endpoint'],
+                           methods = ["GET"])
+        if self.add['endpoint'] is not None:
+            f.add_url_rule(self.add['url'], endpoint = self.add['name'], view_func = self.add['endpoint'],
+                           methods = ["POST"])
+        if self.get['endpoint'] is not None:
+            f.add_url_rule(self.get['url'], endpoint = self.get['name'], view_func = self.get['endpoint'],
+                           methods = ["GET"])
+        if self.remove['endpoint'] is not None:
+            f.add_url_rule(self.remove['url'], endpoint = self.remove['name'], view_func = self.remove['endpoint'],
+                           methods = ["POST"])

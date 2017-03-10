@@ -1,0 +1,109 @@
+{% set page_name = "participate" %}
+{% extends "template.html" %}
+{% block title %} {{ _("Exam") }} {% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="/static/libraries/sweetalert2/dist/sweetalert2.min.css">
+    <style>
+        .announcement-time {
+            text-align: right;
+            display: block;
+        }
+
+        .question-choices label {
+            color: #000000 !important;
+            font-size: 1.2rem !important;
+        }
+
+        .sticky-footer {
+            width: 100%;
+            height: 64px;
+            position: fixed;
+            bottom: 0px;
+        }
+
+        .sticky-footer .container {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .sticky-footer .footer-text {
+            font-size: 30px;
+            color: #ffffff !important;
+        }
+
+        body {
+            margin-bottom: 64px !important;
+        }
+
+        #sync-inprogress, #sync-done {
+            display: none;
+        }
+    </style>
+{% endblock %}
+{% block main %}
+    <h1>Exam</h1>
+    <div id="exam_container">
+    </div>
+{% endblock %}
+{% block optional_sticky_footer %}
+    <div class="sticky-footer red lighten-1">
+        <div class="container">
+            <span class="footer-text">
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="Remaining time">
+                    timer
+                </i>
+                <span id="countdown-minute"></span>:<span id="countdown-second"></span>
+
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="Answered questions">
+                    check
+                </i>
+                <span id="questions-answered"></span>
+                /
+                <span id="total-questions"></span>
+
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="Saving your progress" id="sync-inprogress">
+                    sync
+                </i>
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="Your progress was saved" id="sync-done">
+                    cloud done
+                </i>
+            </span>
+            <div class="right">
+                <button class="waves-effect waves-light btn" id="close-exam-button">Nop bai</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-submitting" class="modal">
+        <div class="modal-content center-align">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <h4>Closing exam</h4>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script>
+        $('.modal').modal();
+        questions = '{{questions|tojson}}';
+        exam = '{{exam|tojson}}';
+    </script>
+    <script src="/static/libraries/handlebars/handlebars.min.js"></script>
+    <script src="/static/libraries/moment/min/moment.min.js"></script>
+    <!-- Why Internet Explorer even exists? -->
+    <script src="/static/libraries/es6-promise/es6-promise.auto.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/libraries/sweetalert2/dist/sweetalert2.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="/static/js/countdown.js"></script>
+    <script src="/static/js/exam.js"></script>
+{% endblock %}

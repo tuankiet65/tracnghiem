@@ -23,6 +23,18 @@ from .school import SchoolList
 
 SchoolList.add_url_rule(admin)
 
+from .contest import ContestList
+
+ContestList.add_url_rule(admin)
+
+from .questions import QuestionList
+
+QuestionList.add_url_rule(admin)
+
+from .question_set import QuestionSetList
+
+QuestionSetList.add_url_rule(admin)
+
 @admin.before_request
 def load_user_info():
     try:

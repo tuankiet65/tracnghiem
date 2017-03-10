@@ -1,16 +1,18 @@
-function DataList(name, container, render_data_func, prepend){
+function DataList(url, name, container, render_data_func, prepend){
     this.html_content_render = render_data_func;
     this.container = $(container);
     this.name = name;
+    this.url = url;
     this.prepend = prepend;
 
-    this.ajax_get = "ajax/" + this.name + "/get";
-    this.ajax_add = "ajax/" + this.name + "/add";
-    this.ajax_remove = "ajax/" + this.name + "/remove";
+    this.ajax_get = "/admin/ajax/" + this.url + "/get";
+    this.ajax_add = "/admin/ajax/" + this.url + "/add";
+    this.ajax_remove = "/admin/ajax/" + this.url + "/remove";
 
     this.wrapper = Handlebars.compile("<div class='"+ this.name + "-entry-wrapper' data-id='{{{id}}}'> {{{html}}} </div>");
 
     this.render = function(id, value){
+        value["_id"] = id;
         content_html = this.html_content_render(value);
         complete_html = this.wrapper({
             id: id,
@@ -25,6 +27,7 @@ function DataList(name, container, render_data_func, prepend){
         edit_button = element.find("."+this.name+"-button-edit");
 
         remove_button = element.find("."+this.name+"-button-remove");
+        console.log(remove_button);
         edit_button.click(this.edit);
         remove_button.click(this.remove);
     }

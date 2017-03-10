@@ -1,7 +1,11 @@
+{% set page_name = "school" %}
 {% extends "admin_template.html" %}
-{% block title %} School {% endblock %}
+{% block title %} {{ _("Schools") }} {% endblock %}
 {% block css %}
     <style>
+        #school-add-form {
+            overflow: auto;
+        }
     </style>
 {% endblock %}
 {% block main %}
@@ -16,10 +20,11 @@
                 <label for="name">Name</label>
                 <input type="text" id="name">
             </div>
-            <button type="submit" class="right waves-effect waves-light btn">Them</button>
+            <button type="submit" class="right waves-effect waves-light btn" id="submit-button">Them</button>
         </form>
     </div>
 {% endblock %}
 {% block js %}
+    <script src="/static/js/form_validation.js"></script>
     <script src="/static/js/admin/school.js"></script>
 {% endblock %}

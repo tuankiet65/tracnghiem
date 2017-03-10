@@ -1,22 +1,20 @@
 html_template = Handlebars.compile(
     '<div class="card-panel blue-grey lighten-5">'+
         '<div class="action-buttons right">' +
-            '<button class="announcement-button-edit waves-effect waves-teal btn-flat"><i class="material-icons">edit</i></button>' +
+            '<a class="announcement-button-edit waves-effect waves-teal btn-flat" href="/admin/questionset/{{id}}"><i class="material-icons">edit</i></a>' +
             '<button class="announcement-button-remove waves-effect waves-teal btn-flat"><i class="material-icons">delete</i></button>' +
         '</div>' +
         '<div class="black-text">'+
-            '<h5>{{title}}</h5>' +
-            '<p>{{content}}</p>' +
-            '<small class="announcement-time">Thong bao duoc dang vao luc {{time}}</small>'+
+            '<h5>{{name}}</h5>' +
         '</div>' +
     '</div>');
 
-container = $("#announcement-container")
-AnnouncementList = DataList("announcement", "announcement", container, html_template, true);
+container = $("#questionset-container")
+QuestionSetList = DataList("questionset", "questionset", container, html_template, true);
 
-AnnouncementList.load();
+QuestionSetList.load();
 
-function add_announcement(){
+function add_questionset(){
     form.disable_button();
 
     input_data = form.get_form_data();
@@ -28,7 +26,7 @@ function add_announcement(){
 
     input_data.time = parseInt((new Date().getTime())/1000);
 
-    AnnouncementList.add(input_data, function(){
+    QuestionSetList.add(input_data, function(){
         form.clear_form();
         form.enable_button();
     });
@@ -37,11 +35,6 @@ function add_announcement(){
     return false;
 }
 
-function remove_announcement(){
-
-}
-
 form = Form();
 form.set_button($("#submit-button"));
-form.add_field("title", $("#title"), [FormValidation.NotEmpty], "Xin hay nhap tieu de");
-form.add_field("content", $("#content"), [FormValidation.NotEmpty], "Xin hay nhap noi dung");
+form.add_field("name", $("#name"), [FormValidation.NotEmpty], "Xin hay nhap tieu de");

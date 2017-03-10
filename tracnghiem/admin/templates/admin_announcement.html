@@ -1,5 +1,6 @@
+{% set page_name = "announcement" %}
 {% extends "admin_template.html" %}
-{% block title %} Announcements {% endblock %}
+{% block title %} {{ _("Announcements") }} {% endblock %}
 {% block css %}
     <style>
         #announcement-add-div {
@@ -20,14 +21,14 @@
             <div class="card-panel blue-grey lighten-5" id="announcement-add-div">
                 <form onsubmit="add_announcement(); return false;" id="announcement-add-form">
                     <div class="input-field">
+                        <input type="text" id="title" class="validate">
                         <label for="title">Title</label>
-                        <input type="text" id="title">
                     </div>
                     <div class="input-field">
-                        <label for="Content">Content</label>
                         <textarea class="materialize-textarea" type="content" id="content"></textarea>
+                        <label for="Content">Content</label>
                     </div>
-                    <button type="submit" class="right waves-effect waves-light btn">Them</button>
+                    <button type="submit" class="right waves-effect waves-light btn" id="submit-button">Them</button>
                 </form>
             </div>
         </div>

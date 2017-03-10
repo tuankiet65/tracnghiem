@@ -9,18 +9,28 @@ html_template = Handlebars.compile(
         '</div>' +
     '</div>');
 
-SchoolList = DataList("school", $("#school-container"), html_template);
+SchoolList = DataList("school", "school", $("#school-container"), html_template);
 
 SchoolList.load();
 
 function add_school(){
-    data = {
-        name: $("#name").val()
+    form.disable_button();
+
+    data = form.get_form_data();
+
+    if (!data){
+        form.enable_button();
+        return false;
     }
 
     SchoolList.add(data, function(){
-        $("#school-add-form")[0].reset();
+        form.clear_form();
+        form.enable_button();
     });
 
     return false;
 }
+
+form = Form();
+form.set_button($("#submit-button"));
+form.add_field("name", $("#name"), [FormValidation.NotEmpty], "Xin hay nhap ten truong");

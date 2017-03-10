@@ -1,0 +1,72 @@
+{% set page_name = "contest" %}
+{% extends "admin_template.html" %}
+{% block title %} {{ _("Contest") }} {% endblock %}
+{% block css %}
+    <style>
+        #contest-add-div {
+            overflow: auto;
+        }
+    </style>
+{% endblock %}
+{% block main %}
+    <div class="row">
+        <div class="col s7">
+            <h1>contests</h1>
+            <div id="contest-container">
+
+            </div>
+        </div>
+        <div class="col s5">
+            <h1>add</h1>
+            <div class="card-panel blue-grey lighten-5" id="contest-add-div">
+                <form onsubmit="add_contest(); return false;" id="contest-add-form">
+                    <div class="input-field">
+                        <input type="text" id="title">
+                        <label for="title">Title</label>
+                    </div>
+                    <div class="row">
+                        <div class="col m6">
+                            <div class="input-field">
+                                <input type="date" class="datepicker" id="begin-date">
+                                <label for="begin-date">Begin date</label>
+                            </div>
+                        </div>
+                        <div class="col m6">
+                            <div class="input-field">
+                                <input type="date" class="datepicker" id="end-date">
+                                <label for="end-date">End date</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m6">
+                            <div class="input-field">
+                                <input type="number" id="duration" placeholder="(in minutes)">
+                                <label for="duration">Duration</label>
+                            </div>
+                        </div>
+                        <div class="col m6">
+                            <div class="input-field">
+                                <input type="number" id="question-count">
+                                <label for="question-count">Question count</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="question-set">
+                        <label for="question-set">Question sets</label>
+                    </div>
+                    <button type="submit" class="right waves-effect waves-light btn" id="submit-button">Them</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script src="/static/js/admin/contest.js"></script>
+    <script>
+         $(document).ready(function() {
+             $('select').material_select();
+         });
+    </script>
+{% endblock %}

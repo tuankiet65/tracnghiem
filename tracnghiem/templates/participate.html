@@ -1,0 +1,63 @@
+{% set page_name = "participate" %}
+{% extends "template.html" %}
+
+{% block main %}
+<h3>Participate</h3>
+<div id="participate-container">
+    <ul class="collapsible" data-collapsible="expandable">
+        {% for contest in contests %}
+            <li>
+                <div class="collapsible-header active">{{ _("Contest: %(contest_title)s", contest_title = contest.title) }}</div>
+                <div class="collapsible-body">
+                    <p>{{ _("Duration: %(duration)d minutes", duration = contest.duration) }}</p>
+                    <p>{{ _("Number of questions: %(questions)d questions", questions = contest.question_count) }}</p>
+                    <p>{{ _("Your last performance: ") }}</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td data-field="id">{{ _("Attempt") }}</td>
+                                <td data-field="begin-time">{{ _("Start time") }}</td>
+                                <td data-field="elapsed-time">{{ _("End time") }}</td>
+                                <td data-field="elapsed-time">{{ _("Status") }}</td>
+                                <td data-field="score">{{ _("Score") }}</td>
+                                <td data-field="verdict">{{ _("Pass/fail") }}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for exam in exams[contest.id] %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ exam.begin_date }}</td>
+                                <td>{{ exam.end_date }}</td>
+                                <td>
+                                    {% if exam.finished %}
+                                        {{ _("Finished") }}
+                                    {% else %}
+                                        {{ _("Ongoing") }}
+                                        <a class="waves-effect waves-light btn" href="/exam/{{exam.secret_key}}">{{ _("Continue") }}</a>
+                                    {% endif %}
+                                </td>
+                                {% if exam.finished %}
+                                    <td>{{ exam.score }} / {{ contest.question_count }}</td>
+                                    <td>
+                                        {% if ((exam.score / contest.question_count) * 100) >= contest.minimum_percentage %}
+                                            {{ _("Pass") }}
+                                        {% else %}
+                                            {{ _("Fail") }}
+                                        {% endif %}
+                                    </td>
+                                {% else %}
+                                    <td></td>
+                                    <td></td>
+                                {% endif %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <a class="waves-effect waves-light btn" href="{{ url_for('exam.create', contest_id=contest.id) }}">{{ _("Participate in this contest") }}</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
