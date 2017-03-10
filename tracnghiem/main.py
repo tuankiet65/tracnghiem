@@ -41,6 +41,10 @@ def index():
     stats = generate_stats()
     return render_template("index.html", announcements = announcements, stats = stats)
 
+@app.route("/rules")
+def rules():
+    return render_template("rules.html")
+
 
 if app.config["DEBUG"]:
     @app.route("/create_tables")

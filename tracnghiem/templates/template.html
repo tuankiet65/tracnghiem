@@ -1,11 +1,13 @@
 {% set headers_not_logged_in = [
     ("index", _("Index"), "/"),
+    ("rules", _("Rules"), "/rules"),
     ("participate", _("Participate"), "/participate"),
     ("authentication", _("Sign in or register"), "/auth")
 ] %}
 
 {% set headers_logged_in = [
     ("index", _("Index"), "/"),
+    ("rules", _("Rules"), "/rules"),
     ("participate", _("Participate"), "/participate"),
     ("yourself", _("Yourself"), "/yourself"),
     ("logout", _("Sign out"), "/auth/logout")
@@ -28,7 +30,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
-        <title>{% block title %} {% endblock %}</title>
+        <title>{{ _("Online quiz") }} | {% block title %}{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="/static/libraries/materialize/dist/css/materialize.min.css">
         <link href="/static/libraries/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
         <style>

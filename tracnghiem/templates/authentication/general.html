@@ -2,13 +2,7 @@
 {% extends "template.html" %}
 {% from "authentication/register.html" import render_register_form, render_register_form_js %}
 {% from "authentication/login.html" import render_login_form %}
-{% block css %}
-<style>
-    .btn-facebook {
-        background-color: #4267B2 !important;
-    }
-</style>
-{% endblock %}
+{% block title %}{{ _("Authentication") }}{% endblock %}
 {% block main %}
 <h1>{{ _("Authentication") }}</h1>
 {% if login_required %}

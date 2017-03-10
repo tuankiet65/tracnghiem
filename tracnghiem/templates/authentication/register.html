@@ -32,7 +32,7 @@
         <div class="g-recaptcha" data-sitekey="{{ config['RECAPTCHA_PUBLIC_KEY'] }}"></div>
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
         <div style="text-align: right">
-            <button type="submit" class="waves-effect waves-light btn">Dang ki</button>
+            <button type="submit" class="waves-effect waves-light btn">{{ _("Register") }}</button>
         </div>
     </form>
 {% endmacro %}
@@ -56,17 +56,18 @@
         });
 
         register_form = Form();
-        register_form.add_field("username", $("#reg_username"), [FormValidation.NotEmpty], "Dien ten dang nhap vao day");
-        register_form.add_field("password", $("#reg_password"), [FormValidation.StrongPassword], "Mat khau qua yeu");
-        register_form.add_field("password_repeat", $("#reg_password_repeat"), [SamePassword], "Mat khau nhap lai khong khop hoac mat khau qua yeu");
-        register_form.add_field("name", $("#reg_name"), [FormValidation.NotEmpty], "Dien ho va ten vao day");
-        register_form.add_field("school", $("#reg_school"), [FormValidation.NotEmpty], "Chon truong o day");
-        register_form.add_field("klass", $("#reg_klass"), [FormValidation.NotEmpty], "Dien lop hoc cua ban");
+        register_form.add_field("username", $("#reg_username"), [FormValidation.NotEmpty], "{{ _("Please fill in your username") }}");
+        register_form.add_field("password", $("#reg_password"), [FormValidation.StrongPassword], "{{ _("Your password is too weak ") }}");
+        register_form.add_field("password_repeat", $("#reg_password_repeat"), [SamePassword], "{{ _("Password either is not the same or too weak") }}");
+        register_form.add_field("name", $("#reg_name"), [FormValidation.NotEmpty], "{{ _("Please fill in your name") }}");
+        register_form.add_field("school", $("#reg_school"), [FormValidation.NotEmpty], "{{ _("Please choose your school") }}");
+        register_form.add_field("klass", $("#reg_klass"), [FormValidation.NotEmpty], "{{ _("Please fill in your class") }}");
     </script>
 {% endmacro %}
 
 {% set page_name = "authentication" %}
 {% extends "template.html" %}
+{% block title %}{{ _("Register") }}{% endblock %}
 {% block css %}
 <style>
     .register-form {
@@ -79,7 +80,7 @@
 {% if account_exists is defined %}
     <h5 class="red-text">{{ _("An account with the same username exists, please choose another username") }}</h5>
 {% endif %}
-{% if registration_failed %}
+{% if registration_failed is defined %}
     <h5 class="red-text">{{ _("You haven't filled in some fields, maybe you haven't checked the captcha?") }}</h5>
 {% endif %}
 <div class="register-form">
