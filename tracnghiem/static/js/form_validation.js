@@ -1,7 +1,7 @@
 var FormValidation = {
     StrongPassword: function(value){
         result = zxcvbn(value);
-        return (result.score >= 3)
+        return (result.score >= 1)
     },
 
     NotEmpty: function(value){
