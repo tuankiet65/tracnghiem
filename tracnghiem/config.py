@@ -30,4 +30,4 @@ class ProductionConfig(Config):
     IS_PRODUCTION = True
 
     DEBUG = False
-    SERVER_NAME = "thitructuyen.tuankiet65.moe"
+    SERVER_NAME = "thi.tuankiet65.moe"
