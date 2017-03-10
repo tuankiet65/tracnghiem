@@ -1,3 +1,5 @@
 /tracnghiem/static/libraries/
 !/tracnghiem/static/libraries/bower.json
 !/tracnghiem/static/libraries/.bowerrc
+/.installed
+/.cloc_exclude
