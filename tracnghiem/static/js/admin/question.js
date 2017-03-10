@@ -1,3 +1,15 @@
+// Thanks to this answer on StackOverflow http://stackoverflow.com/a/16315366 (this gave me inspiration)
+// also this tutorial http://jaskokoyn.com/2013/08/08/custom-helpers-handlebars-js-tutorial/
+Handlebars.registerHelper('boldIfCorrectAnswer', function (answer, answer_count, correct_answer) {
+    escaped_answer = Handlebars.escapeExpression(answer);
+    if (answer_count == correct_answer){
+        result = '<li class="collection-item teal lighten-3"><strong>' + escaped_answer + '</strong></li>';
+    } else {
+        result = '<li class="collection-item">' + escaped_answer + '</li>';
+    }
+    return new Handlebars.SafeString(result);
+});
+
 html_template = Handlebars.compile(
     '<div class="card-panel blue-grey lighten-5">'+
         '<div class="action-buttons right">' +
@@ -5,12 +17,13 @@ html_template = Handlebars.compile(
             '<button class="question-button-remove waves-effect waves-teal btn-flat"><i class="material-icons">delete</i></button>' +
         '</div>' +
         '<div class="black-text">'+
-            '<h5>{{question}}</h5>' +
-            '<p>{{answer_a}}</p>' +
-            '<p>{{answer_b}}</p>' +
-            '<p>{{answer_c}}</p>' +
-            '<p>{{answer_d}}</p>' +
-            '<p>{{correct_answer}}</p>' +
+            '<span class="question-statement">{{question}}</span>' +
+            '<ul class="collection">' +
+                '{{boldIfCorrectAnswer answer_a 1 correct_answer}}' +
+                '{{boldIfCorrectAnswer answer_b 2 correct_answer}}' +
+                '{{boldIfCorrectAnswer answer_c 3 correct_answer}}' +
+                '{{boldIfCorrectAnswer answer_d 4 correct_answer}}' +
+            '</ul>' +
         '</div>' +
     '</div>');
 
