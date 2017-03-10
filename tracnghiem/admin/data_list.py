@@ -38,7 +38,7 @@ class DataList:
             "endpoint": None
         }
         self.remove = {
-            "url": "/ajax/{}/remove".format(name),
+            "url": "/ajax/{}/remove".format(url),
             "name": "{}_remove".format(name),
             "endpoint": None
         }
