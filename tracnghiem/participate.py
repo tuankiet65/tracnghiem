@@ -8,7 +8,7 @@ def get_contests():
     return Contest.select()
 
 def get_exams(contest):
-    return Exam.select().where(Exam.contest == contest)
+    return Exam.select().where((Exam.contest == contest) & (Exam.contestant == g.user))
 
 @participate.route("/", methods = ["GET"], endpoint = "index")
 @need_to_login()
