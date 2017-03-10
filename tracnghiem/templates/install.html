@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+        <title>Tracnghiem installer</title>
+        <link href="/static/libraries/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/static/libraries/materialize/dist/css/materialize.min.css">
+        <style>
+            #login-panel {
+                max-width: 600px;
+                margin: 0 auto;
+                margin-top: 10%;
+            }
+            #login-form {
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="container">
+            <div class="card-panel" id="login-panel">
+                <h3>Installer</h3>
+                <p>Enter admin username and password below</p>
+                <div class="divider"></div>
+                <form action="{{ url_for('install.index') }}" method="post" id="login-form">
+                    <div class="input-field">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input type="text" id="username" name="username">
+                        <label for="username">{{ _("Username") }}</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">vpn_key</i>
+                        <input type="password" id="password" name="password">
+                        <label for="password">{{ _("Password") }}</label>
+                    </div>
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                    <div class="row">
+                        <div class="col s4 offset-s8">
+                            <button type="submit" class="waves-effect waves-light btn">{{ _("Install") }}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <script src="/static/libraries/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/libraries/materialize/dist/js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>
