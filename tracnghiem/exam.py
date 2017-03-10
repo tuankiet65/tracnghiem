@@ -110,6 +110,9 @@ def exam_page(secret_key):
         # TODO replace with a proper 404 page
         return fjson.jsonify(error = "no exam found"), 404
 
+    if exam.contestant != g.user:
+        return fjson.jsonify(error = "this is not your exam"), 403
+
     if exam.finished:
         return redirect(url_for("participate.index"))
 
