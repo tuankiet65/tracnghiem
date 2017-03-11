@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-11 08:51+0700\n"
+"POT-Creation-Date: 2017-03-11 10:34+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -232,19 +232,19 @@ msgstr ""
 msgid "Sign out"
 msgstr ""
 
-#: templates/template.html:33 templates/template.html:55
+#: templates/template.html:33 templates/template.html:58
 msgid "Online quiz"
 msgstr ""
 
-#: templates/template.html:76
+#: templates/template.html:80
 msgid "Online quiz Footer"
 msgstr ""
 
-#: templates/template.html:79
+#: templates/template.html:83
 msgid "Links"
 msgstr ""
 
-#: templates/template.html:88
+#: templates/template.html:92
 #, python-format
 msgid ""
 "Running <a "
