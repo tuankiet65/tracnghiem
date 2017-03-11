@@ -167,7 +167,7 @@ def save_answers():
             exam.score = mark_exam(exam)
             exam.finished = True
 
-            exam.finish_date = get_current_time()
+            exam.finish_date = min(get_current_time(), get_local_datetime(exam.finish_date))
             exam.elapsed_time = (exam.finish_date - get_local_datetime(exam.begin_date)).total_seconds()
 
             exam.save()
