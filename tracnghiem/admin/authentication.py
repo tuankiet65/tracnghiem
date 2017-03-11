@@ -33,7 +33,7 @@ def do_login(username: str, password: str) -> bool:
         return False
     if not user.password.check_password(password):
         return False
-    session['token'] = create_login_token(user)
+    session['admin_token'] = create_login_token(user)
     return True
 
 

@@ -27,7 +27,7 @@ QuestionSetList.add_url_rule(admin)
 @admin.before_request
 def load_user_info():
     try:
-        g.user = get_user_from_token(session['token'])
+        g.user = get_user_from_token(session['admin_token'])
     except KeyError:
         g.user = None
     if g.user is None and request.path != url_for("admin.login_page"):
@@ -36,7 +36,7 @@ def load_user_info():
 @admin.route("/logout")
 def logout():
     try:
-        del session['token']
+        del session['admin_token']
     except KeyError:
         pass
     return redirect(url_for("admin.index"))
