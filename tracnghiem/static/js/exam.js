@@ -1,4 +1,5 @@
 function Question(question_count, question, answer_a, answer_b, answer_c, answer_d, change_callback, id){
+    this.question_i18n = i18n.translate("Question").fetch();
     this.question = question;
     this.answer_a = answer_a;
     this.answer_b = answer_b;
@@ -12,7 +13,7 @@ function Question(question_count, question, answer_a, answer_b, answer_c, answer
 
     this.template = Handlebars.compile(' \
         <div class="question" data-question="{{question_count}}"> \
-            <span class="question-statement">Question {{question_count}}: {{question}}</span> \
+            <span class="question-statement">{{question_i18n}} {{question_count}}: {{question}}</span> \
             <div class="question-choices"> \
                 <p> \
                     <input type="radio" name="{{element_name}}" id="{{element_name}}_1" class="with-gap" value="1"> \
@@ -50,7 +51,8 @@ function Question(question_count, question, answer_a, answer_b, answer_c, answer
             answer_c: this.answer_c,
             answer_d: this.answer_d,
             question_count: this.question_count,
-            element_name: this.element_name
+            element_name: this.element_name,
+            question_i18n: this.question_i18n
         }
         render_data = this.template(data);
         $(container).append(render_data);
@@ -166,9 +168,13 @@ function Exam(exam, contest, questions){
         }, function(data){
             $("#modal-submitting").modal("close");
             score = data.score;
+            finish_text = i18n.translate("You have finished your exam with score of %(score)d/%(questions_count)d").fetch({
+                               score: score,
+                               questions_count: this.questions.length
+                           });
             swal({
-                titleText: "Congratulations",
-                text: "You have finished your exam with score of " + score.toString() + "/" + this.questions.length,
+                titleText: i18n.translate("Congratulation").fetch(),
+                text: finish_text,
                 type: "success",
             }).then(function(){
                 window.location.replace("/participate");
@@ -201,14 +207,14 @@ exam = new Exam(exam, "{}", questions);
 
 $("#close-exam-button").click(function(){
     if (exam.question_answered.size < exam.questions.length){
-        warning_text = "Do you want to close the exam? You still have time and you have ";
-        warning_text += (exam.questions.length - exam.question_answered.size).toString();
-        warning_text += " questions unanswered";
+        warning_text = i18n.translate("Do you want to close the exam? You still have time and you have %(question)d questions unanswered").fetch({
+                            question: exam.questions.length - exam.question_answered.size
+                        })
     } else {
-        warning_text = "Do you want to close the exam? You still have time";
+        warning_text = i18n.translate("Do you want to close the exam? You still have time").fetch();
     }
     swal({
-        titleText: "Warning",
+        titleText: i18n.translate("Warning").fetch(),
         text: warning_text,
         type: "warning",
         showCloseButton: true,

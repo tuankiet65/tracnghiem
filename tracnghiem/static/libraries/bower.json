@@ -24,6 +24,7 @@
     "sweetalert2": "^6.3.3",
     "zxcvbn": "^4.4.1",
     "material-design-icons": "^3.0.1",
-    "raven-js": "^3.10.0"
+    "raven-js": "^3.10.0",
+    "jed": "^1.1.1"
   }
 }
