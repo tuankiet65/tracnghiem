@@ -55,7 +55,7 @@
             <div class="navbar-fixed">
                 <nav class="light-blue lighten-1" role="navigation">
                     <div class="nav-wrapper container">
-                        <a href="#!" class="brand-logo">{{ _("Online quiz") }}</a>
+                        <a href="/" class="brand-logo">{{ _("Online quiz") }}</a>
                         <a href="#" data-activates="mobile-nav" class="button-collapse">
                             <i class="material-icons">menu</i>
                         </a>
@@ -93,10 +93,15 @@
                 </div>
             </div>
         </footer>
-        <script src="/static/libraries/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="/static/libraries/materialize/dist/js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
 
         <script src="/static/libraries/raven-js/dist/raven.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            // initialize Sentry, try to initialize it really early
+            Raven.config('{{ config['SENTRY_FRONTEND_DSN'] }}').install();
+        </script>
+
+        <script src="/static/libraries/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/libraries/materialize/dist/js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
 
         <script src="/static/libraries/jed/jed.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/translations/vi.js" type="text/javascript" charset="utf-8"></script>
@@ -115,9 +120,6 @@
                     }
                 }
             });
-
-            // initialize Sentry
-            Raven.config('{{ config['SENTRY_FRONTEND_DSN'] }}').install();
 
             $(".button-collapse").sideNav();
         </script>
