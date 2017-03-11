@@ -1,6 +1,7 @@
 import random
 import string
 import datetime
+from . import app
 
 
 def generate_random_string(length: int = 50) -> string:
@@ -9,8 +10,8 @@ def generate_random_string(length: int = 50) -> string:
     return ''.join(rand.choice(letters) for _ in range(50))
 
 
-def get_current_utc() -> datetime.datetime:
-    return datetime.datetime.now(datetime.timezone.utc)
+def get_current_time() -> datetime.datetime:
+    return datetime.datetime.now(app.config['TIMEZONE'])
 
 def datetime_from_utc_timestamp(timestamp: int) -> datetime.datetime:
     dt = datetime.datetime.fromtimestamp(timestamp, datetime.timezone.utc)
@@ -19,3 +20,6 @@ def datetime_from_utc_timestamp(timestamp: int) -> datetime.datetime:
 def generate_random_int() -> int:
     rand = random.SystemRandom()
     return rand.randint(0, (1 << 31))
+
+def get_local_datetime(dt: datetime.datetime):
+    return dt.replace(tzinfo = app.config['TIMEZONE'])

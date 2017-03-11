@@ -1,10 +1,10 @@
 from .common import generate_random_string
 import os
 import subprocess
+import dateutil.tz
 
 class Config:
     WTF_CSRF_ENABLED = True
-    SECRET_KEY = generate_random_string()
 
     RECAPTCHA_PUBLIC_KEY = "6LfWFRQUAAAAAEgmWWE8_AcZyt0tlJ4ns1v_GabY"
     RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_PRIVATE_KEY")
@@ -19,8 +19,11 @@ class Config:
     DB_PASSWORD = os.environ.get("MYSQL_DB_PASSWORD")
     DB_DATABASE = os.environ.get("MYSQL_DB_DATABASE")
 
+    TIMEZONE = dateutil.tz.gettz("Asia/Ho_Chi_Minh")
+
 class DevelopmentConfig(Config):
     IS_PRODUCTION = False
+    SECRET_KEY = "lol"
 
     DEBUG = True
     SERVER_NAME = "dev.env:5000"
@@ -28,6 +31,7 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     IS_PRODUCTION = True
+    SECRET_KEY = generate_random_string()
 
     DEBUG = False
     SERVER_NAME = "thi.quandoansontra.com"

@@ -1,33 +1,44 @@
+{% macro second_to_formatted(sec) %}
+    {{ sec // 60}} {{ _("minutes") }} {{ sec % 60 }} {{ _("seconds") }}
+{% endmacro %}
 {% set page_name = "participate" %}
 {% extends "template.html" %}
 {% block title %}{{ _("Participate") }}{%endblock%}
+{% block css %}
+    <style>
+        .btn-fullwidth {
+            width: 100%;
+        }
+    </style>
+{% endblock %}
 {% block main %}
 <h3>{{ _("Participate") }}</h3>
 <div id="participate-container">
     <ul class="collapsible" data-collapsible="expandable">
         {% for contest in contests %}
             <li>
-                <div class="collapsible-header active">{{ _("Contest: %(contest_title)s", contest_title = contest.title) }}</div>
+                <div class="collapsible-header active">{{ _("Contest: <strong>%(contest_title)s</strong>", contest_title = contest.title) }}</div>
                 <div class="collapsible-body">
-                    <p>{{ _("Duration: %(duration)d minutes", duration = contest.duration) }}</p>
-                    <p>{{ _("Number of questions: %(questions)d questions", questions = contest.question_count) }}</p>
+                    <p>{{ _("Duration: <strong>%(duration)d minutes</strong>", duration = contest.duration) }}</p>
+                    <p>{{ _("Number of questions: <strong>%(questions)d questions</strong>", questions = contest.question_count) }}</p>
                     <p>{{ _("Your last performance: ") }}</p>
-                    <table>
+                    <table class="bordered striped responsive-table">
                         <thead>
                             <tr>
-                                <td data-field="id">{{ _("Attempt") }}</td>
-                                <td data-field="begin-time">{{ _("Start time") }}</td>
-                                <td data-field="elapsed-time">{{ _("End time") }}</td>
-                                <td data-field="elapsed-time">{{ _("Status") }}</td>
-                                <td data-field="score">{{ _("Score") }}</td>
+                                <td data-field="id"><strong>{{ _("Attempt") }}</strong></td>
+                                <td data-field="begin-time"><strong>{{ _("Start time") }}</strong></td>
+                                <td data-field="elapsed-time"><strong>{{ _("End time") }}</strong></td>
+                                <td data-field="elapsed-time"><strong>{{ _("Status") }}</strong></td>
+                                <td data-field="elapsed-time"><strong>{{ _("Elapsed time") }}</strong></td>
+                                <td data-field="score"><strong>{{ _("Score") }}</strong></td>
                             </tr>
                         </thead>
                         <tbody>
                             {% for exam in exams[contest.id] %}
                             <tr>
                                 <td>{{ loop.index }}</td>
-                                <td>{{ exam.begin_date }}</td>
-                                <td>{{ exam.end_date }}</td>
+                                <td>{{ exam.begin_date.strftime('%m/%m/%Y %H:%M:%S') }}</td>
+                                <td>{{ exam.finish_date.strftime('%m/%m/%Y %H:%M:%S') }}</td>
                                 <td>
                                     {% if exam.finished %}
                                         {{ _("Finished") }}
@@ -36,6 +47,7 @@
                                         <a class="waves-effect waves-light btn" href="/exam/{{exam.secret_key}}">{{ _("Continue") }}</a>
                                     {% endif %}
                                 </td>
+                                <td>{{ second_to_formatted(exam.elapsed_time) }}</td>
                                 {% if exam.finished %}
                                     <td>{{ exam.score }} / {{ contest.question_count }}</td>
                                 {% else %}
@@ -45,7 +57,7 @@
                             {% endfor %}
                         </tbody>
                     </table>
-                    <a class="waves-effect waves-light btn" href="{{ url_for('exam.create', contest_id=contest.id) }}">{{ _("Participate in this contest") }}</a>
+                    <a class="waves-effect waves-light btn-large btn-fullwidth" href="{{ url_for('exam.create', contest_id=contest.id) }}">{{ _("Participate in this contest") }}</a>
                 </div>
             </li>
         {% endfor %}

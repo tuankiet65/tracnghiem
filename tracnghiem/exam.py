@@ -9,6 +9,8 @@ from wtforms import StringField, BooleanField, validators
 
 from .database import Exam, Question, Contest
 from .authentication import need_to_login
+from .common import get_local_datetime, get_current_time
+
 
 def get_exam(exam_id):
     try:
@@ -21,9 +23,13 @@ def get_exam(exam_id):
 def generate_exam_questions(contest: Contest):
     result = []
     random.seed()
+
     for question_set in fjson.loads(contest.question_set):
         candidates = list(Question.select().where(Question.set == question_set['question_set']))
         result.extend([q.id for q in random.sample(candidates, k = question_set['count'])])
+
+    random.shuffle(result)
+
     return result
 
 
@@ -101,6 +107,17 @@ def create_exam_route():
     return redirect("/exam/" + exam.secret_key)
 
 
+def exam_to_dict(exam: Exam):
+    # special function because model_to_dict doesn't know how to handle time
+    return {
+        "secret_key": exam.secret_key,
+        "begin_date": get_local_datetime(exam.begin_date).isoformat(),
+        "finish_date"  : get_local_datetime(exam.finish_date).isoformat(),
+        "finished"  : exam.finished,
+        "answers"   : exam.answers
+    }
+
+
 @exam.route("/<secret_key>", methods = ["GET"])
 @need_to_login()
 def exam_page(secret_key):
@@ -124,14 +141,7 @@ def exam_page(secret_key):
                                                       exclude = [Question.correct_answer,
                                                                  Question.set]) for q in questions
                                         ],
-                           exam = model_to_dict(exam,
-                                                recurse = False,
-                                                exclude = [Exam.contestant,
-                                                           Exam.questions,
-                                                           Exam.id,
-                                                           Exam.session_lock]
-                                                )
-                           )
+                           exam = exam_to_dict(exam))
 
 
 @exam.route("/save_answers", methods = ["POST"])
@@ -156,9 +166,10 @@ def save_answers():
         if form.close_exam.data:
             exam.score = mark_exam(exam)
             exam.finished = True
-            # TODO
-            # exam.finished_date = get_current_utc()
-            # exam.elapsed = (exam.finished_date - exam.begin_date).total_seconds()
+
+            exam.finish_date = get_current_time()
+            exam.elapsed_time = (exam.finish_date - get_local_datetime(exam.begin_date)).total_seconds()
+
             exam.save()
 
         return fjson.jsonify(result = "ok", score = exam.score)
