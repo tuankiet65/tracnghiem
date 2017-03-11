@@ -31,6 +31,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
         <title>{{ _("Online quiz") }} | {% block title %}{% endblock %}</title>
+
+        <link rel="icon" type="image/png" href="/static/logo/logo_16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="/static/logo/logo_32.png" sizes="32x32" />
+
         <link rel="stylesheet" type="text/css" href="/static/libraries/materialize/dist/css/materialize.min.css">
         <link href="/static/libraries/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
         <style>
@@ -55,7 +59,11 @@
             <div class="navbar-fixed">
                 <nav class="light-blue lighten-1" role="navigation">
                     <div class="nav-wrapper container">
-                        <a href="/" class="brand-logo">{{ _("Online quiz") }}</a>
+                        <img src="/static/logo/logo_60.png" />
+                        <a href="/" class="brand-logo">
+
+                            {{ _("Online quiz") }}
+                        </a>
                         <a href="#" data-activates="mobile-nav" class="button-collapse">
                             <i class="material-icons">menu</i>
                         </a>
