@@ -54,27 +54,27 @@
     <div class="sticky-footer red lighten-1">
         <div class="container">
             <span class="footer-text">
-                <i class="material-icons tooltipped" data-position="top" data-tooltip="Remaining time">
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _("Remaining time") }}">
                     timer
                 </i>
                 <span id="countdown-minute"></span>:<span id="countdown-second"></span>
 
-                <i class="material-icons tooltipped" data-position="top" data-tooltip="Answered questions">
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _("Answered questions") }}">
                     check
                 </i>
                 <span id="questions-answered"></span>
                 /
                 <span id="total-questions"></span>
 
-                <i class="material-icons tooltipped" data-position="top" data-tooltip="Saving your progress" id="sync-inprogress">
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _("Saving your progress") }}" id="sync-inprogress">
                     sync
                 </i>
-                <i class="material-icons tooltipped" data-position="top" data-tooltip="Your progress was saved" id="sync-done">
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _("Your progress was saved") }}" id="sync-done">
                     cloud_done
                 </i>
             </span>
             <div class="right">
-                <button class="waves-effect waves-light btn" id="close-exam-button">Nop bai</button>
+                <button class="waves-effect waves-light btn" id="close-exam-button">{{ _("End exam") }}</button>
             </div>
         </div>
     </div>
