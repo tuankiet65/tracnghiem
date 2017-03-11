@@ -38,20 +38,17 @@
                             <tr>
                                 <td>{{ loop.index }}</td>
                                 <td>{{ exam.begin_date.strftime('%m/%m/%Y %H:%M:%S') }}</td>
-                                <td>{{ exam.finish_date.strftime('%m/%m/%Y %H:%M:%S') }}</td>
-                                <td>
-                                    {% if exam.finished %}
-                                        {{ _("Finished") }}
-                                    {% else %}
-                                        {{ _("Ongoing") }}
-                                        <a class="waves-effect waves-light btn" href="/exam/{{exam.secret_key}}">{{ _("Continue") }}</a>
-                                    {% endif %}
-                                </td>
-                                <td>{{ second_to_formatted(exam.elapsed_time) }}</td>
                                 {% if exam.finished %}
+                                    <td>{{ exam.finish_date.strftime('%m/%m/%Y %H:%M:%S') }}</td>
+                                    <td>{{ _("Finished") }}</td>
+                                    <td>{{ second_to_formatted(exam.elapsed_time) }}</td>
                                     <td>{{ exam.score }} / {{ contest.question_count }}</td>
                                 {% else %}
                                     <td></td>
+                                    <td colspan="3">
+                                        {{ _("Ongoing") }}
+                                        <a class="waves-effect waves-light btn" href="/exam/{{exam.secret_key}}">{{ _("Continue") }}</a>
+                                    </td>
                                 {% endif %}
                             </tr>
                             {% endfor %}
