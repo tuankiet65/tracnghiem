@@ -1,8 +1,8 @@
 {% set page_name = "participate" %}
 {% extends "template.html" %}
-{% block title %}Participate{%endblock%}
+{% block title %}{{ _("Participate") }}{%endblock%}
 {% block main %}
-<h3>Participate</h3>
+<h3>{{ _("Participate") }}</h3>
 <div id="participate-container">
     <ul class="collapsible" data-collapsible="expandable">
         {% for contest in contests %}
