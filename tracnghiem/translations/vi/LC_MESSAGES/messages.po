@@ -7,16 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-11 10:34+0700\n"
-"PO-Revision-Date: 2017-03-11 10:07+0700\n"
+"POT-Creation-Date: 2017-03-12 01:35+0700\n"
+"PO-Revision-Date: 2017-03-12 01:38+0700\n"
 "Last-Translator: \n"
 "Language: vi\n"
 "Language-Team: vi <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: admin/templates/admin_announcement.html:3
 #: admin/templates/admin_template.html:3 templates/index.html:15
@@ -77,8 +78,7 @@ msgstr "Câu hỏi"
 #, python-format
 msgid "You have finished your exam with score of %(score)d/%(questions_count)d"
 msgstr ""
-"Bạn đã hoàn thành bài thi của mình với số điểm "
-"%(score)d/%(questions_count)d"
+"Bạn đã hoàn thành bài thi của mình với số điểm %(score)d/%(questions_count)d"
 
 #: static/js/exam.js:176
 msgid "Congratulation"
@@ -87,16 +87,16 @@ msgstr "Chúc mừng"
 #: static/js/exam.js:210
 #, python-format
 msgid ""
-"Do you want to close the exam? You still have time and you have "
-"%(question)d questions unanswered"
+"Do you want to close the exam? You still have time and you have %(question)d "
+"questions unanswered"
 msgstr ""
-"Bạn có muốn kết thúc bài thi này không?\n"
+"Bạn có muốn nộp bài hay không?\n"
 "Bạn vẫn còn thời gian làm bài và còn %(question)d câu hỏi chưa trả lời."
 
 #: static/js/exam.js:214
 msgid "Do you want to close the exam? You still have time"
 msgstr ""
-"Bạn có muốn kết thúc bài thi này không?\n"
+"Bạn có muốn nộp bài hay không?\n"
 "Bạn vẫn còn thời gian làm bài."
 
 #: static/js/exam.js:217
@@ -125,11 +125,11 @@ msgstr "Bài làm của bạn đã được lưu"
 
 #: templates/exam_page.html:77
 msgid "End exam"
-msgstr "Kết thúc bài làm"
+msgstr "Nộp bài"
 
 #: templates/exam_page.html:96
 msgid "Closing exam"
-msgstr "Đang đóng bài thi"
+msgstr "Đang nộp bài"
 
 #: templates/index.html:21
 #, python-format
@@ -163,65 +163,77 @@ msgstr "Mật khẩu"
 msgid "Install"
 msgstr "Cài đặt"
 
-#: templates/participate.html:3 templates/participate.html:5
+#: templates/participate.html:2
+msgid "minutes"
+msgstr "phút"
+
+#: templates/participate.html:2
+msgid "seconds"
+msgstr "giây"
+
+#: templates/participate.html:6 templates/participate.html:15
 #: templates/template.html:4 templates/template.html:11
 msgid "Participate"
 msgstr "Tham gia thi"
 
-#: templates/participate.html:10
+#: templates/participate.html:20
 #, python-format
-msgid "Contest: %(contest_title)s"
-msgstr "Cuộc thi: %(contest_title)s"
+msgid "Contest: <strong>%(contest_title)s</strong>"
+msgstr "Cuộc thi: <strong>%(contest_title)s</strong>"
 
-#: templates/participate.html:12
+#: templates/participate.html:22
 #, python-format
-msgid "Duration: %(duration)d minutes"
-msgstr "Thời gian làm bài: %(duration)d phút"
+msgid "Duration: <strong>%(duration)d minutes</strong>"
+msgstr "Thời gian thi: <strong>%(duration)d phút</strong>"
 
-#: templates/participate.html:13
+#: templates/participate.html:23
 #, python-format
-msgid "Number of questions: %(questions)d questions"
-msgstr "Số lượng câu hỏi:  %(questions)d câu hỏi"
+msgid "Number of questions: <strong>%(questions)d questions</strong>"
+msgstr "Số câu hỏi: <strong>%(questions)d câu hỏi</strong>"
 
-#: templates/participate.html:14
+#: templates/participate.html:24
 msgid "Your last performance: "
 msgstr "Thành tích của bạn:"
 
-#: templates/participate.html:18
+#: templates/participate.html:28
 msgid "Attempt"
 msgstr "Lần thi"
 
-#: templates/participate.html:19
+#: templates/participate.html:29
 msgid "Start time"
 msgstr "Thời gian bắt đầu"
 
-#: templates/participate.html:20
+#: templates/participate.html:30
 msgid "End time"
 msgstr "Thời gian kết thúc"
 
-#: templates/participate.html:21
+#: templates/participate.html:31
 msgid "Status"
 msgstr "Trạng thái"
 
-#: templates/participate.html:22
+#: templates/participate.html:32
+msgid "Elapsed time"
+msgstr "Thời gian làm bài"
+
+#: templates/participate.html:33
 msgid "Score"
 msgstr "Điểm"
 
-#: templates/participate.html:33
+#: templates/participate.html:43
 msgid "Finished"
-msgstr "Đã hoàn thành"
+msgstr "Đã nộp bài"
 
-#: templates/participate.html:35
+#: templates/participate.html:49
 msgid "Ongoing"
-msgstr "Còn thời gian"
+msgstr "Chưa nộp bài"
 
-#: templates/participate.html:36
+#: templates/participate.html:50
 msgid "Continue"
-msgstr "Tiếp tục bài làm này"
+msgstr "Tiếp tục làm bài"
 
-#: templates/participate.html:48
+#: templates/participate.html:57
 msgid "Participate in this contest"
-msgstr "Tham gia vào cuộc thi này"
+msgstr "Tham gia cuộc thi này"
 
 #: templates/rules.html:3 templates/template.html:3 templates/template.html:10
 msgid "Rules"
@@ -239,30 +251,28 @@ msgstr "Bản thân"
 msgid "Sign out"
 msgstr "Đăng xuất"
 
-#: templates/template.html:33 templates/template.html:58
+#: templates/template.html:33 templates/template.html:81
 msgid "Online quiz"
 msgstr "Thi trực tuyến"
 
-#: templates/template.html:80
+#: templates/template.html:106
 msgid "Online quiz Footer"
 msgstr "Thi tìm hiểu 6 Bài học LLCT dành cho Đoàn viên"
 
-#: templates/template.html:83
+#: templates/template.html:110
 msgid "Links"
 msgstr "Các đường dẫn"
 
-#: templates/template.html:92
+#: templates/template.html:120
 #, python-format
 msgid ""
-"Running <a "
-"href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a>"
-" revision <a "
-"href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a>"
+"Running <a href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/"
+"tracnghiem</a> revision <a href=\"https://github.com/tuankiet65/tracnghiem/"
+"tree/%(rev)s\">%(rev)s</a>"
 msgstr ""
-"Đang chạy <a "
-"href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a>,"
-" phiên bản <a "
-"href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a>"
+"Trang web đang sử dụng <a href=\"https://github.com/tuankiet65/tracnghiem"
+"\">tuankiet65/tracnghiem</a>, phiên bản <a href=\"https://github.com/"
+"tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a>"
 
 #: templates/authentication/general.html:5
 #: templates/authentication/general.html:7
@@ -274,8 +284,7 @@ msgid "You need to login to proceed"
 msgstr "Bạn cần phải đăng nhập để tiếp tục"
 
 #: templates/authentication/general.html:13
-#: templates/authentication/login.html:15
-#: templates/authentication/login.html:22
+#: templates/authentication/login.html:15 templates/authentication/login.html:22
 #: templates/authentication/login.html:31
 msgid "Login"
 msgstr "Đăng nhập"
@@ -346,12 +355,19 @@ msgstr "Xin hãy điền lớp của bạn"
 #: templates/authentication/register.html:81
 msgid "An account with the same username exists, please choose another username"
 msgstr ""
-"Có một tài khoản khác cùng tên đăng nhập với bạn, hãy chọn tên đăng nhập "
-"khác."
+"Có một tài khoản khác cùng tên đăng nhập với bạn, hãy chọn tên đăng nhập khác."
 
 #: templates/authentication/register.html:84
 msgid "You haven't filled in some fields, maybe you haven't checked the captcha?"
 msgstr ""
-"Bạn chưa điền hết tất cả các trường, có lẽ bạn chưa đánh dấu xác nhận ở "
-"dưới cùng?"
+"Bạn chưa điền hết tất cả các trường, có lẽ bạn chưa đánh dấu xác nhận ở dưới "
+"cùng?"
 
+#~ msgid "Contest: %(contest_title)s"
+#~ msgstr "Cuộc thi: %(contest_title)s"
+
+#~ msgid "Duration: %(duration)d minutes"
+#~ msgstr "Thời gian làm bài: %(duration)d phút"
+
+#~ msgid "Number of questions: %(questions)d questions"
+#~ msgstr "Số lượng câu hỏi:  %(questions)d câu hỏi"

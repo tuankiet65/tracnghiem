@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-11 10:34+0700\n"
+"POT-Creation-Date: 2017-03-12 01:35+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -156,63 +156,75 @@ msgstr ""
 msgid "Install"
 msgstr ""
 
-#: templates/participate.html:3 templates/participate.html:5
+#: templates/participate.html:2
+msgid "minutes"
+msgstr ""
+
+#: templates/participate.html:2
+msgid "seconds"
+msgstr ""
+
+#: templates/participate.html:6 templates/participate.html:15
 #: templates/template.html:4 templates/template.html:11
 msgid "Participate"
 msgstr ""
 
-#: templates/participate.html:10
-#, python-format
-msgid "Contest: %(contest_title)s"
-msgstr ""
-
-#: templates/participate.html:12
-#, python-format
-msgid "Duration: %(duration)d minutes"
-msgstr ""
-
-#: templates/participate.html:13
-#, python-format
-msgid "Number of questions: %(questions)d questions"
-msgstr ""
-
-#: templates/participate.html:14
-msgid "Your last performance: "
-msgstr ""
-
-#: templates/participate.html:18
-msgid "Attempt"
-msgstr ""
-
-#: templates/participate.html:19
-msgid "Start time"
-msgstr ""
-
 #: templates/participate.html:20
-msgid "End time"
-msgstr ""
-
-#: templates/participate.html:21
-msgid "Status"
+#, python-format
+msgid "Contest: <strong>%(contest_title)s</strong>"
 msgstr ""
 
 #: templates/participate.html:22
-msgid "Score"
+#, python-format
+msgid "Duration: <strong>%(duration)d minutes</strong>"
+msgstr ""
+
+#: templates/participate.html:23
+#, python-format
+msgid "Number of questions: <strong>%(questions)d questions</strong>"
+msgstr ""
+
+#: templates/participate.html:24
+msgid "Your last performance: "
+msgstr ""
+
+#: templates/participate.html:28
+msgid "Attempt"
+msgstr ""
+
+#: templates/participate.html:29
+msgid "Start time"
+msgstr ""
+
+#: templates/participate.html:30
+msgid "End time"
+msgstr ""
+
+#: templates/participate.html:31
+msgid "Status"
+msgstr ""
+
+#: templates/participate.html:32
+msgid "Elapsed time"
 msgstr ""
 
 #: templates/participate.html:33
+msgid "Score"
+msgstr ""
+
+#: templates/participate.html:43
 msgid "Finished"
 msgstr ""
 
-#: templates/participate.html:35
+#: templates/participate.html:49
 msgid "Ongoing"
 msgstr ""
 
-#: templates/participate.html:36
+#: templates/participate.html:50
 msgid "Continue"
 msgstr ""
 
-#: templates/participate.html:48
+#: templates/participate.html:57
 msgid "Participate in this contest"
 msgstr ""
 
@@ -232,19 +244,19 @@ msgstr ""
 msgid "Sign out"
 msgstr ""
 
-#: templates/template.html:33 templates/template.html:58
+#: templates/template.html:33 templates/template.html:81
 msgid "Online quiz"
 msgstr ""
 
-#: templates/template.html:80
+#: templates/template.html:106
 msgid "Online quiz Footer"
 msgstr ""
 
-#: templates/template.html:83
+#: templates/template.html:110
 msgid "Links"
 msgstr ""
 
-#: templates/template.html:92
+#: templates/template.html:120
 #, python-format
 msgid ""
 "Running <a "
