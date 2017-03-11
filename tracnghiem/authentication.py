@@ -26,6 +26,8 @@ def need_to_login():
 
 
 def load_session_token():
+    if request.path == url_for("install.index"):
+        return
     try:
         session_token = SessionToken.get(id = session['token'])
         user = session_token.account
