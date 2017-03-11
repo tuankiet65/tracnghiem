@@ -51,6 +51,20 @@
             main {
                 flex: 1 0 auto;
             }
+
+            .brand-title .subtitle {
+                font-size: 13px;
+                position: absolute;
+                top: -17px;
+                left: 65px;
+                display: inline;
+            }
+
+            .brand-title .title {
+                display: inline;
+                position: absolute;
+                bottom: 8px;
+            }
         </style>
         {% block css %} {% endblock %}
     </head>
@@ -59,11 +73,15 @@
             <div class="navbar-fixed">
                 <nav class="light-blue lighten-1" role="navigation">
                     <div class="nav-wrapper container">
-                        <img src="/static/logo/logo_60.png" />
-                        <a href="/" class="brand-logo">
-
-                            {{ _("Online quiz") }}
-                        </a>
+                        <div class="brand-logo">
+                            <img src="/static/logo/logo_60.png" />
+                            <span class="brand-title">
+                                <small class="subtitle">Đoàn TNCS HCM Quận Sơn Trà</small>
+                                <a href="/" class="title">
+                                    {{ _("Online quiz") }}
+                                </a>
+                            </span>
+                        </div>
                         <a href="#" data-activates="mobile-nav" class="button-collapse">
                             <i class="material-icons">menu</i>
                         </a>
@@ -86,18 +104,20 @@
                 <div class="row">
                     <div class="col l6 s12 white-text">
                         <h5>{{ _("Online quiz Footer") }}</h5>
+                        Thực hiện chương trình công tác Đoàn và phong trào thanh thiếu nhi quận Sơn Trà năm 2017, Ban Thương vụ Quận Đoàn triển khai việc học và kiểm tra kiến thức 6 bài học lý luận chính trị dành cho đoàn viên trên mạng Internet năm 2017.
                     </div>
                     <div class="col l4 offset-l2 s12 white-text">
                         <h5>{{ _("Links") }}</h5>
                         <ul>
                             <li><a href="http://www.thanhdoandanang.org.vn/">Thành đoàn Đà Nẵng</a></li>
+                            <li><a href="http://thpt-lequydon-danang.edu.vn/">Trường THPT Chuyên Lê Quý Đôn</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    © Ho Tuan Kiet. {{ _('Running <a href="https://github.com/tuankiet65/tracnghiem">tuankiet65/tracnghiem</a> revision <a href="https://github.com/tuankiet65/tracnghiem/tree/%(rev)s">%(rev)s</a>', rev = config["GIT_REVISION"]) }}
+                    © 2017 Hồ Tuấn Kiệt. {{ _('Running <a href="https://github.com/tuankiet65/tracnghiem">tuankiet65/tracnghiem</a> revision <a href="https://github.com/tuankiet65/tracnghiem/tree/%(rev)s">%(rev)s</a>', rev = config["GIT_REVISION"]) }}
                 </div>
             </div>
         </footer>
