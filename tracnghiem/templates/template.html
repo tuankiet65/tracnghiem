@@ -37,11 +37,13 @@
             .container {
                 width: 80%;
             }
+
             body {
                 display: flex;
                 min-height: 100vh;
                 flex-direction: column;
             }
+
             main {
                 flex: 1 0 auto;
             }
@@ -49,21 +51,23 @@
         {% block css %} {% endblock %}
     </head>
     <body>
-        <header class="navbar-fixed">
-            <nav class="light-blue lighten-1" role="navigation">
-                <div class="navbar-wrapper container">
-                    <a href="/" class="brand-logo">{{ _("Online quiz") }}</a>
-                    <a href="#" data-activates="mobile-nav" class="button-collapse">
-                        <i class="material-icons">menu</i>
-                    </a>
-                    <ul class="right hide-on-med-and-down">
-                        {{ render_navbar_content() }}
-                    </ul>
-                    <ul class="side-nav" id="mobile-nav">
-                        {{ render_navbar_content() }}
-                    </ul>
-                </div>
-            </nav>
+        <header>
+            <div class="navbar-fixed">
+                <nav class="light-blue lighten-1" role="navigation">
+                    <div class="nav-wrapper container">
+                        <a href="#!" class="brand-logo">{{ _("Online quiz") }}</a>
+                        <a href="#" data-activates="mobile-nav" class="button-collapse">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        <ul class="right hide-on-med-and-down">
+                            {{ render_navbar_content() }}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <ul class="side-nav" id="mobile-nav">
+                {{ render_navbar_content() }}
+            </ul>
         </header>
         <main class="container">
             {% block main %} {% endblock %}
@@ -78,14 +82,14 @@
                     <div class="col l4 offset-l2 s12 white-text">
                         <h5>{{ _("Links") }}</h5>
                         <ul>
-                            <li>Repository</li>
+                            <li><a href="http://www.thanhdoandanang.org.vn/">Thành đoàn Đà Nẵng</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    {{ _('Running <a href="https://github.com/tuankiet65/tracnghiem">tuankiet65/tracnghiem</a> revision <a href="https://github.com/tuankiet65/tracnghiem/tree/%(rev)s">%(rev)s</a>', rev = config["GIT_REVISION"]) }}
+                    © Ho Tuan Kiet. {{ _('Running <a href="https://github.com/tuankiet65/tracnghiem">tuankiet65/tracnghiem</a> revision <a href="https://github.com/tuankiet65/tracnghiem/tree/%(rev)s">%(rev)s</a>', rev = config["GIT_REVISION"]) }}
                 </div>
             </div>
         </footer>
