@@ -1,7 +1,7 @@
 html_template = Handlebars.compile(
     '<div class="card-panel blue-grey lighten-5">'+
         '<div class="action-buttons right">' +
-            '<a class="questionset-button-edit waves-effect waves-teal btn-flat" href="/admin/questionset/{{id}}"><i class="material-icons">edit</i></a>' +
+            '<a class="questionset-button-edit waves-effect waves-teal btn-flat" href="/admin/questionset/{{_id}}"><i class="material-icons">edit</i></a>' +
             '<button class="questionset-button-remove waves-effect waves-teal btn-flat"><i class="material-icons">delete</i></button>' +
         '</div>' +
         '<div class="black-text">'+
