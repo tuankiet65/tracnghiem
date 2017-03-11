@@ -1,0 +1,342 @@
+# Translations template for PROJECT.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-03-11 08:51+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: admin/templates/admin_announcement.html:3
+#: admin/templates/admin_template.html:3 templates/index.html:15
+msgid "Announcements"
+msgstr ""
+
+#: admin/templates/admin_contest.html:3
+msgid "Contest"
+msgstr ""
+
+#: admin/templates/admin_question.html:3 admin/templates/admin_question.html:30
+#, python-format
+msgid "Questions in set %(qset_name)s"
+msgstr ""
+
+#: admin/templates/admin_question_set.html:3
+msgid "Question Set"
+msgstr ""
+
+#: admin/templates/admin_school.html:3 admin/templates/admin_template.html:4
+msgid "Schools"
+msgstr ""
+
+#: admin/templates/admin_template.html:2 templates/index.html:3
+#: templates/template.html:2 templates/template.html:9
+msgid "Index"
+msgstr ""
+
+#: admin/templates/admin_template.html:5
+msgid "Contests"
+msgstr ""
+
+#: admin/templates/admin_template.html:6
+msgid "Question sets"
+msgstr ""
+
+#: admin/templates/admin_template.html:7
+msgid "Contestants"
+msgstr ""
+
+#: admin/templates/admin_template.html:8
+msgid "Admins"
+msgstr ""
+
+#: admin/templates/admin_template.html:9 templates/index.html:27
+msgid "Statistics"
+msgstr ""
+
+#: admin/templates/admin_template.html:10
+msgid "Logout"
+msgstr ""
+
+#: static/js/exam.js:2
+msgid "Question"
+msgstr ""
+
+#: static/js/exam.js:171
+#, python-format
+msgid "You have finished your exam with score of %(score)d/%(questions_count)d"
+msgstr ""
+
+#: static/js/exam.js:176
+msgid "Congratulation"
+msgstr ""
+
+#: static/js/exam.js:210
+#, python-format
+msgid ""
+"Do you want to close the exam? You still have time and you have "
+"%(question)d questions unanswered"
+msgstr ""
+
+#: static/js/exam.js:214
+msgid "Do you want to close the exam? You still have time"
+msgstr ""
+
+#: static/js/exam.js:217
+msgid "Warning"
+msgstr ""
+
+#: templates/exam_page.html:3 templates/exam_page.html:49
+msgid "Exam"
+msgstr ""
+
+#: templates/exam_page.html:57
+msgid "Remaining time"
+msgstr ""
+
+#: templates/exam_page.html:62
+msgid "Answered questions"
+msgstr ""
+
+#: templates/exam_page.html:69
+msgid "Saving your progress"
+msgstr ""
+
+#: templates/exam_page.html:72
+msgid "Your progress was saved"
+msgstr ""
+
+#: templates/exam_page.html:77
+msgid "End exam"
+msgstr ""
+
+#: templates/exam_page.html:96
+msgid "Closing exam"
+msgstr ""
+
+#: templates/index.html:21
+#, python-format
+msgid "Announcement published at %(time)s"
+msgstr ""
+
+#: templates/index.html:28
+#, python-format
+msgid "Account count: %(account_count)s"
+msgstr ""
+
+#: templates/index.html:29
+#, python-format
+msgid "Exam count: %(exam_count)s"
+msgstr ""
+
+#: templates/index.html:30
+#, python-format
+msgid "Contest count: %(contest_count)s"
+msgstr ""
+
+#: templates/authentication/register.html:5 templates/install.html:30
+msgid "Username"
+msgstr ""
+
+#: templates/authentication/register.html:9 templates/install.html:35
+msgid "Password"
+msgstr ""
+
+#: templates/install.html:40
+msgid "Install"
+msgstr ""
+
+#: templates/participate.html:3 templates/participate.html:5
+#: templates/template.html:4 templates/template.html:11
+msgid "Participate"
+msgstr ""
+
+#: templates/participate.html:10
+#, python-format
+msgid "Contest: %(contest_title)s"
+msgstr ""
+
+#: templates/participate.html:12
+#, python-format
+msgid "Duration: %(duration)d minutes"
+msgstr ""
+
+#: templates/participate.html:13
+#, python-format
+msgid "Number of questions: %(questions)d questions"
+msgstr ""
+
+#: templates/participate.html:14
+msgid "Your last performance: "
+msgstr ""
+
+#: templates/participate.html:18
+msgid "Attempt"
+msgstr ""
+
+#: templates/participate.html:19
+msgid "Start time"
+msgstr ""
+
+#: templates/participate.html:20
+msgid "End time"
+msgstr ""
+
+#: templates/participate.html:21
+msgid "Status"
+msgstr ""
+
+#: templates/participate.html:22
+msgid "Score"
+msgstr ""
+
+#: templates/participate.html:33
+msgid "Finished"
+msgstr ""
+
+#: templates/participate.html:35
+msgid "Ongoing"
+msgstr ""
+
+#: templates/participate.html:36
+msgid "Continue"
+msgstr ""
+
+#: templates/participate.html:48
+msgid "Participate in this contest"
+msgstr ""
+
+#: templates/rules.html:3 templates/template.html:3 templates/template.html:10
+msgid "Rules"
+msgstr ""
+
+#: templates/template.html:5
+msgid "Sign in or register"
+msgstr ""
+
+#: templates/template.html:12
+msgid "Yourself"
+msgstr ""
+
+#: templates/template.html:13
+msgid "Sign out"
+msgstr ""
+
+#: templates/template.html:33 templates/template.html:55
+msgid "Online quiz"
+msgstr ""
+
+#: templates/template.html:76
+msgid "Online quiz Footer"
+msgstr ""
+
+#: templates/template.html:79
+msgid "Links"
+msgstr ""
+
+#: templates/template.html:88
+#, python-format
+msgid ""
+"Running <a "
+"href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a>"
+" revision <a "
+"href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a>"
+msgstr ""
+
+#: templates/authentication/general.html:5
+#: templates/authentication/general.html:7
+msgid "Authentication"
+msgstr ""
+
+#: templates/authentication/general.html:9
+msgid "You need to login to proceed"
+msgstr ""
+
+#: templates/authentication/general.html:13
+#: templates/authentication/login.html:15
+#: templates/authentication/login.html:22
+#: templates/authentication/login.html:31
+msgid "Login"
+msgstr ""
+
+#: templates/authentication/general.html:17
+#: templates/authentication/register.html:35
+#: templates/authentication/register.html:70
+#: templates/authentication/register.html:79
+msgid "Register"
+msgstr ""
+
+#: templates/authentication/login.html:6
+msgid "Your username"
+msgstr ""
+
+#: templates/authentication/login.html:11
+msgid "Your password"
+msgstr ""
+
+#: templates/authentication/login.html:33
+msgid "Incorrect login information, please try again"
+msgstr ""
+
+#: templates/authentication/register.html:13
+msgid "Password (repeat)"
+msgstr ""
+
+#: templates/authentication/register.html:17
+msgid "Your name"
+msgstr ""
+
+#: templates/authentication/register.html:21
+msgid "Choose your school"
+msgstr ""
+
+#: templates/authentication/register.html:26
+msgid "Your school"
+msgstr ""
+
+#: templates/authentication/register.html:30
+msgid "Your class"
+msgstr ""
+
+#: templates/authentication/register.html:59
+msgid "Please fill in your username"
+msgstr ""
+
+#: templates/authentication/register.html:60
+msgid "Your password is too weak "
+msgstr ""
+
+#: templates/authentication/register.html:61
+msgid "Password either is not the same or too weak"
+msgstr ""
+
+#: templates/authentication/register.html:62
+msgid "Please fill in your name"
+msgstr ""
+
+#: templates/authentication/register.html:63
+msgid "Please choose your school"
+msgstr ""
+
+#: templates/authentication/register.html:64
+msgid "Please fill in your class"
+msgstr ""
+
+#: templates/authentication/register.html:81
+msgid "An account with the same username exists, please choose another username"
+msgstr ""
+
+#: templates/authentication/register.html:84
+msgid "You haven't filled in some fields, maybe you haven't checked the captcha?"
+msgstr ""
+

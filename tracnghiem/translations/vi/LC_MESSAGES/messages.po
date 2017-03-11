@@ -1,0 +1,352 @@
+# Vietnamese translations for PROJECT.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-03-11 08:51+0700\n"
+"PO-Revision-Date: 2017-03-11 08:53+0700\n"
+"Last-Translator: \n"
+"Language: vi\n"
+"Language-Team: vi <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#: admin/templates/admin_announcement.html:3
+#: admin/templates/admin_template.html:3 templates/index.html:15
+msgid "Announcements"
+msgstr "Thông báo"
+
+#: admin/templates/admin_contest.html:3
+msgid "Contest"
+msgstr "Cuộc thi"
+
+#: admin/templates/admin_question.html:3 admin/templates/admin_question.html:30
+#, python-format
+msgid "Questions in set %(qset_name)s"
+msgstr "Câu hỏi trong bộ câu hỏi %(qset_name)s"
+
+#: admin/templates/admin_question_set.html:3
+msgid "Question Set"
+msgstr "Bộ câu hỏi"
+
+#: admin/templates/admin_school.html:3 admin/templates/admin_template.html:4
+msgid "Schools"
+msgstr "Trường"
+
+#: admin/templates/admin_template.html:2 templates/index.html:3
+#: templates/template.html:2 templates/template.html:9
+msgid "Index"
+msgstr "Trang chủ"
+
+#: admin/templates/admin_template.html:5
+msgid "Contests"
+msgstr "Cuộc thi"
+
+#: admin/templates/admin_template.html:6
+msgid "Question sets"
+msgstr "Bộ câu hỏi"
+
+#: admin/templates/admin_template.html:7
+msgid "Contestants"
+msgstr "Thí sinh"
+
+#: admin/templates/admin_template.html:8
+msgid "Admins"
+msgstr "Admin"
+
+#: admin/templates/admin_template.html:9 templates/index.html:27
+msgid "Statistics"
+msgstr "Thống kê"
+
+#: admin/templates/admin_template.html:10
+msgid "Logout"
+msgstr "Đăng xuất"
+
+#: static/js/exam.js:2
+msgid "Question"
+msgstr "Câu hỏi"
+
+#: static/js/exam.js:171
+#, python-format
+msgid "You have finished your exam with score of %(score)d/%(questions_count)d"
+msgstr ""
+"Bạn đã hoàn thành bài thi của mình với số điểm %(score)d/%(questions_count)d"
+
+#: static/js/exam.js:176
+msgid "Congratulation"
+msgstr "Chúc mừng"
+
+#: static/js/exam.js:210
+#, python-format
+msgid ""
+"Do you want to close the exam? You still have time and you have %(question)d "
+"questions unanswered"
+msgstr ""
+"Bạn có muốn kết thúc bài thi này không?\n"
+"Bạn vẫn còn thời gian làm bài và còn %(question)d câu hỏi chưa trả lời."
+
+#: static/js/exam.js:214
+msgid "Do you want to close the exam? You still have time"
+msgstr ""
+"Bạn có muốn kết thúc bài thi này không?\n"
+"Bạn vẫn còn thời gian làm bài."
+
+#: static/js/exam.js:217
+msgid "Warning"
+msgstr "Cảnh báo"
+
+#: templates/exam_page.html:3 templates/exam_page.html:49
+msgid "Exam"
+msgstr "Bài thi"
+
+#: templates/exam_page.html:57
+msgid "Remaining time"
+msgstr "Thời gian làm bài còn lại"
+
+#: templates/exam_page.html:62
+msgid "Answered questions"
+msgstr "Số câu hỏi đã trả lời"
+
+#: templates/exam_page.html:69
+msgid "Saving your progress"
+msgstr "Đang lưu bài làm của bạn"
+
+#: templates/exam_page.html:72
+msgid "Your progress was saved"
+msgstr "Bài làm của bạn đã được lưu"
+
+#: templates/exam_page.html:77
+msgid "End exam"
+msgstr "Kết thúc bài làm"
+
+#: templates/exam_page.html:96
+msgid "Closing exam"
+msgstr "Đang đóng bài thi"
+
+#: templates/index.html:21
+#, python-format
+msgid "Announcement published at %(time)s"
+msgstr "Thông báo này được đăng vào %(time)s"
+
+#: templates/index.html:28
+#, python-format
+msgid "Account count: %(account_count)s"
+msgstr "Số lượng tài khoản đã đăng kí: %(account_count)s"
+
+#: templates/index.html:29
+#, python-format
+msgid "Exam count: %(exam_count)s"
+msgstr "Số lượng bài thi đã thực hiện: %(exam_count)s"
+
+#: templates/index.html:30
+#, python-format
+msgid "Contest count: %(contest_count)s"
+msgstr "Số cuộc thi: %(contest_count)s"
+
+#: templates/authentication/register.html:5 templates/install.html:30
+msgid "Username"
+msgstr "Tên đăng nhập"
+
+#: templates/authentication/register.html:9 templates/install.html:35
+msgid "Password"
+msgstr "Mật khẩu"
+
+#: templates/install.html:40
+msgid "Install"
+msgstr "Cài đặt"
+
+#: templates/participate.html:3 templates/participate.html:5
+#: templates/template.html:4 templates/template.html:11
+msgid "Participate"
+msgstr "Tham gia thi"
+
+#: templates/participate.html:10
+#, python-format
+msgid "Contest: %(contest_title)s"
+msgstr "Cuộc thi: %(contest_title)s"
+
+#: templates/participate.html:12
+#, python-format
+msgid "Duration: %(duration)d minutes"
+msgstr "Thời gian làm bài: %(duration)d phút"
+
+#: templates/participate.html:13
+#, python-format
+msgid "Number of questions: %(questions)d questions"
+msgstr "Số lượng câu hỏi:  %(questions)d câu hỏi"
+
+#: templates/participate.html:14
+msgid "Your last performance: "
+msgstr "Thành tích của bạn:"
+
+#: templates/participate.html:18
+msgid "Attempt"
+msgstr "Lần thi"
+
+#: templates/participate.html:19
+msgid "Start time"
+msgstr "Thời gian bắt đầu"
+
+#: templates/participate.html:20
+msgid "End time"
+msgstr "Thời gian kết thúc"
+
+#: templates/participate.html:21
+msgid "Status"
+msgstr "Trạng thái"
+
+#: templates/participate.html:22
+msgid "Score"
+msgstr "Điểm"
+
+#: templates/participate.html:33
+msgid "Finished"
+msgstr "Đã hoàn thành"
+
+#: templates/participate.html:35
+msgid "Ongoing"
+msgstr "Còn thời gian"
+
+#: templates/participate.html:36
+msgid "Continue"
+msgstr "Tiếp tục bài làm này"
+
+#: templates/participate.html:48
+msgid "Participate in this contest"
+msgstr "Tham gia vào cuộc thi này"
+
+#: templates/rules.html:3 templates/template.html:3 templates/template.html:10
+msgid "Rules"
+msgstr "Luật lệ"
+
+#: templates/template.html:5
+msgid "Sign in or register"
+msgstr "Đăng nhập hoặc đăng kí"
+
+#: templates/template.html:12
+msgid "Yourself"
+msgstr "Bản thân"
+
+#: templates/template.html:13
+msgid "Sign out"
+msgstr "Đăng nhập"
+
+#: templates/template.html:33 templates/template.html:55
+msgid "Online quiz"
+msgstr "Thi trực tuyến"
+
+#: templates/template.html:76
+msgid "Online quiz Footer"
+msgstr "Thi tìm hiểu 6 Bài học LLCT dành cho Đoàn viên"
+
+#: templates/template.html:79
+msgid "Links"
+msgstr "Các đường dẫn"
+
+#: templates/template.html:88
+#, python-format
+msgid ""
+"Running <a href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/"
+"tracnghiem</a> revision <a href=\"https://github.com/tuankiet65/tracnghiem/"
+"tree/%(rev)s\">%(rev)s</a>"
+msgstr ""
+"Đang chạy <a href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/"
+"tracnghiem</a>, phiên bản <a href=\"https://github.com/tuankiet65/tracnghiem/"
+"tree/%(rev)s\">%(rev)s</a>"
+
+#: templates/authentication/general.html:5
+#: templates/authentication/general.html:7
+msgid "Authentication"
+msgstr "Xác thực"
+
+#: templates/authentication/general.html:9
+msgid "You need to login to proceed"
+msgstr "Bạn cần phải đăng nhập để tiếp tục"
+
+#: templates/authentication/general.html:13
+#: templates/authentication/login.html:15 templates/authentication/login.html:22
+#: templates/authentication/login.html:31
+msgid "Login"
+msgstr "Đăng nhập"
+
+#: templates/authentication/general.html:17
+#: templates/authentication/register.html:35
+#: templates/authentication/register.html:70
+#: templates/authentication/register.html:79
+msgid "Register"
+msgstr "Đăng kí"
+
+#: templates/authentication/login.html:6
+msgid "Your username"
+msgstr "Tên đăng nhập"
+
+#: templates/authentication/login.html:11
+msgid "Your password"
+msgstr "Mật khẩu"
+
+#: templates/authentication/login.html:33
+msgid "Incorrect login information, please try again"
+msgstr "Thông tin đăng nhập không chính xác, hãy thử lại"
+
+#: templates/authentication/register.html:13
+msgid "Password (repeat)"
+msgstr "Nhập lại mật khẩu mới"
+
+#: templates/authentication/register.html:17
+msgid "Your name"
+msgstr "Tên thật của bạn"
+
+#: templates/authentication/register.html:21
+msgid "Choose your school"
+msgstr "Hãy chọn trường của bạn"
+
+#: templates/authentication/register.html:26
+msgid "Your school"
+msgstr "Trường của bạn"
+
+#: templates/authentication/register.html:30
+msgid "Your class"
+msgstr "Lớp của bạn"
+
+#: templates/authentication/register.html:59
+msgid "Please fill in your username"
+msgstr "Xin hãy nhập tên đăng nhập"
+
+#: templates/authentication/register.html:60
+msgid "Your password is too weak "
+msgstr "Mật khẩu của bạn quá yếu"
+
+#: templates/authentication/register.html:61
+msgid "Password either is not the same or too weak"
+msgstr "Mật khẩu hoặc không khớp với ở trên hoặc quá yếu"
+
+#: templates/authentication/register.html:62
+msgid "Please fill in your name"
+msgstr "Xin hãy điền tên của bạn"
+
+#: templates/authentication/register.html:63
+msgid "Please choose your school"
+msgstr "Xin hãy chọn trường của bạn"
+
+#: templates/authentication/register.html:64
+msgid "Please fill in your class"
+msgstr "Xin hãy điền lớp của bạn"
+
+#: templates/authentication/register.html:81
+msgid "An account with the same username exists, please choose another username"
+msgstr ""
+"Có một tài khoản khác cùng tên đăng nhập với bạn, hãy chọn tên đăng nhập khác."
+
+#: templates/authentication/register.html:84
+msgid "You haven't filled in some fields, maybe you haven't checked the captcha?"
+msgstr ""
+"Bạn chưa điền hết tất cả các trường, có lẽ bạn chưa đánh dấu xác nhận ở dưới "
+"cùng?"
