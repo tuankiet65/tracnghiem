@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-12 01:35+0700\n"
-"PO-Revision-Date: 2017-03-12 01:38+0700\n"
+"POT-Creation-Date: 2017-03-12 12:18+0700\n"
+"PO-Revision-Date: 2017-03-12 12:20+0700\n"
 "Last-Translator: \n"
 "Language: vi\n"
 "Language-Team: vi <LL@li.org>\n"
@@ -171,69 +171,82 @@ msgstr "phút"
 msgid "seconds"
 msgstr "giây"
 
-#: templates/participate.html:6 templates/participate.html:15
+#: templates/participate.html:6 templates/participate.html:20
 #: templates/template.html:4 templates/template.html:11
 msgid "Participate"
 msgstr "Tham gia thi"
 
-#: templates/participate.html:20
+#: templates/participate.html:25
 #, python-format
 msgid "Contest: <strong>%(contest_title)s</strong>"
 msgstr "Cuộc thi: <strong>%(contest_title)s</strong>"
 
-#: templates/participate.html:22
+#: templates/participate.html:28
+#, python-format
+msgid ""
+"This contest starts from <strong>%(begin_date)s</strong> to <strong>"
+"%(end_date)s</strong>"
+msgstr ""
+"Cuộc thi này bắt đầu từ ngày <strong>%(begin_date)s</strong> tới hết ngày "
+"<strong>%(end_date)s</strong>"
+
+#: templates/participate.html:32
 #, python-format
 msgid "Duration: <strong>%(duration)d minutes</strong>"
 msgstr "Thời gian thi: <strong>%(duration)d phút</strong>"
 
-#: templates/participate.html:23
+#: templates/participate.html:33
 #, python-format
 msgid "Number of questions: <strong>%(questions)d questions</strong>"
 msgstr "Số câu hỏi: <strong>%(questions)d câu hỏi</strong>"
 
-#: templates/participate.html:24
+#: templates/participate.html:34
 msgid "Your last performance: "
 msgstr "Thành tích của bạn:"
 
-#: templates/participate.html:28
+#: templates/participate.html:38
 msgid "Attempt"
 msgstr "Lần thi"
 
-#: templates/participate.html:29
+#: templates/participate.html:39
 msgid "Start time"
 msgstr "Thời gian bắt đầu"
 
-#: templates/participate.html:30
+#: templates/participate.html:40
 msgid "End time"
 msgstr "Thời gian kết thúc"
 
-#: templates/participate.html:31
+#: templates/participate.html:41
 msgid "Status"
 msgstr "Trạng thái"
 
-#: templates/participate.html:32
+#: templates/participate.html:42
 msgid "Elapsed time"
 msgstr "Thời gian làm bài"
 
-#: templates/participate.html:33
+#: templates/participate.html:43
 msgid "Score"
 msgstr "Điểm"
 
-#: templates/participate.html:43
+#: templates/participate.html:53
 msgid "Finished"
 msgstr "Đã nộp bài"
 
-#: templates/participate.html:49
+#: templates/participate.html:59
 msgid "Ongoing"
 msgstr "Chưa nộp bài"
 
-#: templates/participate.html:50
+#: templates/participate.html:60
 msgid "Continue"
 msgstr "Tiếp tục làm bài"
 
-#: templates/participate.html:57
+#: templates/participate.html:68 templates/participate.html:73
 msgid "Participate in this contest"
 msgstr "Tham gia cuộc thi này"
+
+#: templates/participate.html:72
+msgid "This contest has either ended or hasn't started"
+msgstr "Cuộc thi hoặc chưa bắt đầu hoặc đã kết thúc"
 
 #: templates/rules.html:3 templates/template.html:3 templates/template.html:10
 msgid "Rules"
