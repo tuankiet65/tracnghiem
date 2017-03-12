@@ -44,6 +44,16 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% if (exams[contest.id]|length) == 0 %}
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endif %}
                             {% for exam in exams[contest.id] %}
                             <tr>
                                 <td>{{ loop.index }}</td>

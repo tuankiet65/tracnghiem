@@ -1,6 +1,6 @@
 from flask import Blueprint, g, render_template
 
-from .database import Contest, Exam, Account
+from .database import Contest, Exam
 from .authentication import need_to_login
 from .exam import in_contest_date
 
@@ -21,11 +21,14 @@ def get_exams(contest):
     return Exam.select().where((Exam.contest == contest) & (Exam.contestant == g.user))
 
 
+def get_contest_exam_map(contests):
+    contest_exam_map = {}
+    for contest in contests:
+        contest_exam_map[contest.id] = get_exams(contest)
+    return contest_exam_map
+
 @participate.route("/", methods = ["GET"], endpoint = "index")
 @need_to_login()
 def render_participate_page():
     contests = get_contests()
-    contest_exam_map = {}
-    for contest in contests:
-        contest_exam_map[contest.id] = get_exams(contest)
-    return render_template("participate.html", contests = contests, exams = contest_exam_map)
+    return render_template("participate.html", contests = contests, exams = get_contest_exam_map(contests))
