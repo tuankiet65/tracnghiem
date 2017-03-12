@@ -10,6 +10,7 @@ from .participate import participate
 from .exam import exam
 from .stats import generate_stats
 from .install import install
+from .yourself import yourself
 from . import app
 
 app.register_blueprint(admin)
@@ -17,6 +18,7 @@ app.register_blueprint(authentication)
 app.register_blueprint(participate)
 app.register_blueprint(exam)
 app.register_blueprint(install)
+app.register_blueprint(yourself)
 csrf = CSRFProtect(app)
 babel = Babel(app)
 

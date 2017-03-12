@@ -1,0 +1,138 @@
+{% macro second_to_formatted(sec) %}
+    {{ sec // 60}} {{ _("minutes") }} {{ sec % 60 }} {{ _("seconds") }}
+{% endmacro %}
+{% set page_name = "yourself" %}
+{% extends "template.html" %}
+{% block title %}{{ _("Yourself") }}{%endblock%}
+{% block css %}
+<style>
+</style>
+{% endblock %}
+{% block main %}
+<h3>{{ _("My profile") }}</h3>
+<div class="row">
+    <div class="col s12">
+        <ul class="tabs">
+            <li class="tab col s4"><a href="#info-tab">{{ _("Your profile") }}</a></li>
+            <li class="tab col s4"><a href="#edit-tab">{{ _("Edit your profile") }}</a></li>
+            <li class="tab col s4"><a href="#password-change-tab">{{ _("Change your password") }}</a></li>
+        </ul>
+    </div>
+    <div id="info-tab" class="col s12">
+        <h4>{{ _("Your profile") }}</h4>
+        <table>
+            <tbody>
+                <tr>
+                    <td><strong>{{ _("Username") }}</strong></td>
+                    <td>{{ g.user.username }}</td>
+                </tr>
+                <tr>
+                    <td><strong>{{ _("Name") }}</strong></td>
+                    <td>{{ g.user.name }}</td>
+                </tr>
+                <tr>
+                    <td><strong>{{ _("School") }}</strong></td>
+                    <td>{{ g.user.school.name }}</td>
+                </tr>
+                <tr>
+                    <td><strong>{{ _("Class") }}</strong></td>
+                    <td>{{ g.user.klass }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>{{ _("Your past results") }}</h4>
+        {% for contest in contests %}
+            <h5>{{ _("Contest: <strong>%(contest_title)s</strong>", contest_title = contest.title) }}</h5>
+            <table class="bordered striped responsive-table">
+                <thead>
+                    <tr>
+                        <td><strong>{{ _("Attempt") }}</strong></td>
+                        <td><strong>{{ _("Start time") }}</strong></td>
+                        <td><strong>{{ _("End time") }}</strong></td>
+                        <td><strong>{{ _("Status") }}</strong></td>
+                        <td><strong>{{ _("Elapsed time") }}</strong></td>
+                        <td><strong>{{ _("Score") }}</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if (exams[contest.id]|length) == 0 %}
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    {% endif %}
+                    {% for exam in exams[contest.id] %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ exam.begin_date.strftime('%d/%m/%Y %H:%M:%S') }}</td>
+                        {% if exam.finished %}
+                            <td>{{ exam.finish_date.strftime('%d/%m/%Y %H:%M:%S') }}</td>
+                            <td>{{ _("Finished") }}</td>
+                            <td>{{ second_to_formatted(exam.elapsed_time) }}</td>
+                            <td>{{ exam.score }} / {{ contest.question_count }}</td>
+                        {% else %}
+                            <td></td>
+                            <td colspan="3">
+                                {{ _("Ongoing") }}
+                                <a class="waves-effect waves-light btn" href="/exam/{{exam.secret_key}}">{{ _("Continue") }}</a>
+                            </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+    </div>
+    <div id="edit-tab" class="col s12">
+        <form onsubmit="return edit_profile();">
+            <div class="input-field">
+                <input type="text" id="edit_name" name="name" value="{{ g.user.name }}">
+                <label for="edit_name">{{ _("Your name") }}</label>
+            </div>
+            <div class="input-field">
+                <select id="edit_school" name="school">
+                    {% for school in schools %}
+                        <option value="{{ school[0] }}" {% if school[0] == g.user.school.id %} selected {% endif %}>{{ school[1] }}</option>
+                    {% endfor %}
+                </select>
+                <label for="edit_school">{{ _("Your school") }}</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="edit_klass" name="klass" value="{{ g.user.klass }}">
+                <label for="edit_klass">{{ _("Your class") }}</label>
+            </div>
+            <div style="text-align: right">
+                <button type="submit" class="waves-effect waves-light btn" id="edit-profile-button">{{ _("Edit profile") }}</button>
+            </div>
+        </form>
+    </div>
+    <div id="password-change-tab" class="col s12">
+        <form onsubmit="return change_password();">
+            <div class="input-field">
+                <input type="password" id="old_password" name="password">
+                <label for="old_password">{{ _("Old password") }}</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="new_password" name="password">
+                <label for="new_password">{{ _("New password") }}</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="new_password_repeat" name="password">
+                <label for="new_password_repeat">{{ _("New password (repeat)") }}</label>
+            </div>
+            <div style="text-align: right">
+                <button type="submit" class="waves-effect waves-light btn" id="password-change-button">{{ _("Change password") }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+    <script src="/static/libraries/zxcvbn/dist/zxcvbn.js"></script>
+    <script src="/static/js/form_validation.js"></script>
+    <script src="/static/js/yourself.js"></script>
+{% endblock %}
