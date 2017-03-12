@@ -13,13 +13,18 @@ def generate_random_string(length: int = 50) -> string:
 def get_current_time() -> datetime.datetime:
     return datetime.datetime.now(app.config['TIMEZONE'])
 
+
 def datetime_from_utc_timestamp(timestamp: int) -> datetime.datetime:
     dt = datetime.datetime.fromtimestamp(timestamp, datetime.timezone.utc)
     return dt
+
 
 def generate_random_int() -> int:
     rand = random.SystemRandom()
     return rand.randint(0, (1 << 31))
 
-def get_local_datetime(dt: datetime.datetime):
+
+def to_local_timezone(dt):
+    if type(dt) is datetime.date:
+        dt = datetime.datetime(dt.year, dt.month, dt.day)
     return dt.replace(tzinfo = app.config['TIMEZONE'])

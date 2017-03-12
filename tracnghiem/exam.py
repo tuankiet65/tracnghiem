@@ -3,21 +3,13 @@ import json
 from flask import g, Blueprint, request, render_template, redirect, url_for
 from flask import json as fjson
 from playhouse.shortcuts import model_to_dict
-from datetime import timedelta
+import datetime
 from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, validators
 
 from .database import Exam, Question, Contest
 from .authentication import need_to_login
-from .common import get_local_datetime, get_current_time
-
-
-def get_exam(exam_id):
-    try:
-        exam = Exam.get(id = exam_id)
-    except Exam.DoesNotExist:
-        return None
-    return exam
+from .common import to_local_timezone, get_current_time
 
 
 def generate_exam_questions(contest: Contest):
@@ -76,6 +68,14 @@ def check_valid_answer(exam: Exam, answers):
     return True
 
 
+def in_contest_date(contest):
+    begin_date = contest.begin_date
+    end_date = contest.end_date
+    current_date = datetime.date.today()
+
+    return (current_date >= begin_date) and (current_date <= end_date)
+
+
 ####################
 # Flask endpoints
 ####################
@@ -86,23 +86,31 @@ exam = Blueprint("exam", __name__, url_prefix = "/exam")
 @exam.route("/create", methods = ["GET"], endpoint = "create")
 @need_to_login()
 def create_exam_route():
+    # check if contest_id is specified
     try:
         contest = request.args['contest_id']
     except KeyError:
         return fjson.jsonify(error = "no contest id specified"), 400
+
+    # check if contest exists
     try:
         contest = Contest.get(id = contest)
     except Contest.DoesNotExist:
         return fjson.jsonify(error = "no contest found"), 404
 
+    # check if the contest has started/hasn't ended
+    if not in_contest_date(contest):
+        return fjson.jsonify(error = "contest either hasn't started yet or has ended"), 403
+
     questions = generate_exam_questions(contest)
+
     exam = Exam.create(contestant = g.user,
                        session_lock = g.session_token,
                        contest = contest,
                        questions = json.dumps(questions))
 
     exam.answers = json.dumps([0 for _ in range(len(questions))])
-    exam.finish_date = exam.begin_date + timedelta(minutes = contest.duration)
+    exam.finish_date = exam.begin_date + datetime.timedelta(minutes = contest.duration)
     exam.save()
     return redirect("/exam/" + exam.secret_key)
 
@@ -110,11 +118,11 @@ def create_exam_route():
 def exam_to_dict(exam: Exam):
     # special function because model_to_dict doesn't know how to handle time
     return {
-        "secret_key": exam.secret_key,
-        "begin_date": get_local_datetime(exam.begin_date).isoformat(),
-        "finish_date"  : get_local_datetime(exam.finish_date).isoformat(),
-        "finished"  : exam.finished,
-        "answers"   : exam.answers
+        "secret_key" : exam.secret_key,
+        "begin_date" : to_local_timezone(exam.begin_date).isoformat(),
+        "finish_date": to_local_timezone(exam.finish_date).isoformat(),
+        "finished"   : exam.finished,
+        "answers"    : exam.answers
     }
 
 
@@ -154,12 +162,19 @@ def save_answers():
 
     form = ExamSaveAnswersForm()
     if form.validate_on_submit():
-        exam = Exam.get(secret_key = form.exam_id.data)
-        if exam is None:
+        try:
+            exam = Exam.get(secret_key = form.exam_id.data)
+        except Exam.DoesNotExist:
             return fjson.jsonify(error = "exam id not found"), 404
 
+        if exam.contestant != g.user:
+            return fjson.jsonify(error = "you aren't the contestant of this exam"), 403
+
+        if exam.finished:
+            return fjson.jsonify(error = "exam has already finished"), 403
+
         if not check_valid_answer(exam, form.answer.data):
-            return fjson.jsonify(error = "invalid data"), 400
+            return fjson.jsonify(error = "invalid answer"), 400
 
         exam.answers = form.answer.data
         exam.save()
@@ -167,8 +182,8 @@ def save_answers():
             exam.score = mark_exam(exam)
             exam.finished = True
 
-            exam.finish_date = min(get_current_time(), get_local_datetime(exam.finish_date))
-            exam.elapsed_time = (exam.finish_date - get_local_datetime(exam.begin_date)).total_seconds()
+            exam.finish_date = min(get_current_time(), to_local_timezone(exam.finish_date))
+            exam.elapsed_time = (exam.finish_date - to_local_timezone(exam.begin_date)).total_seconds()
 
             exam.save()
 

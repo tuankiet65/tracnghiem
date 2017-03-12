@@ -8,6 +8,11 @@
     <style>
         .btn-fullwidth {
             width: 100%;
+            margin-top: 10px;
+        }
+
+        .enable-pointer-events {
+            pointer-events: initial !important;
         }
     </style>
 {% endblock %}
@@ -19,6 +24,11 @@
             <li>
                 <div class="collapsible-header active">{{ _("Contest: <strong>%(contest_title)s</strong>", contest_title = contest.title) }}</div>
                 <div class="collapsible-body">
+                    <p>
+                        {{ _("This contest starts from <strong>%(begin_date)s</strong> to <strong>%(end_date)s</strong>"
+                          , begin_date = contest.begin_date.strftime("%d/%m/%Y")
+                          , end_date = contest.end_date.strftime("%d/%m/%Y")) }}
+                    </p>
                     <p>{{ _("Duration: <strong>%(duration)d minutes</strong>", duration = contest.duration) }}</p>
                     <p>{{ _("Number of questions: <strong>%(questions)d questions</strong>", questions = contest.question_count) }}</p>
                     <p>{{ _("Your last performance: ") }}</p>
@@ -37,9 +47,9 @@
                             {% for exam in exams[contest.id] %}
                             <tr>
                                 <td>{{ loop.index }}</td>
-                                <td>{{ exam.begin_date.strftime('%m/%m/%Y %H:%M:%S') }}</td>
+                                <td>{{ exam.begin_date.strftime('%d/%m/%Y %H:%M:%S') }}</td>
                                 {% if exam.finished %}
-                                    <td>{{ exam.finish_date.strftime('%m/%m/%Y %H:%M:%S') }}</td>
+                                    <td>{{ exam.finish_date.strftime('%d/%m/%Y %H:%M:%S') }}</td>
                                     <td>{{ _("Finished") }}</td>
                                     <td>{{ second_to_formatted(exam.elapsed_time) }}</td>
                                     <td>{{ exam.score }} / {{ contest.question_count }}</td>
@@ -54,7 +64,15 @@
                             {% endfor %}
                         </tbody>
                     </table>
-                    <a class="waves-effect waves-light btn-large btn-fullwidth" href="{{ url_for('exam.create', contest_id=contest.id) }}">{{ _("Participate in this contest") }}</a>
+                    {% if in_contest_date(contest) %}
+                        <a class="waves-effect waves-light btn-large btn-fullwidth" href="{{ url_for('exam.create', contest_id=contest.id) }}">{{ _("Participate in this contest") }}</a>
+                    {% else %}
+                        <button class="waves-effect waves-light btn-large btn-fullwidth tooltipped disabled enable-pointer-events"
+                                data-position="bottom"
+                                data-tooltip="{{ _('This contest has either ended or hasn\'t started') }}">
+                            {{ _("Participate in this contest") }}
+                        </button>
+                    {% endif %}
                 </div>
             </li>
         {% endfor %}
