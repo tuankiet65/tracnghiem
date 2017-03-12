@@ -53,13 +53,40 @@ var i18n_vi_data = {
             "Chúc mừng"
          ],
          "Do you want to close the exam? You still have time and you have %(question)d questions unanswered": [
-            "Bạn có muốn kết thúc bài thi này không?\nBạn vẫn còn thời gian làm bài và còn %(question)d câu hỏi chưa trả lời."
+            "Bạn có muốn nộp bài hay không?\nBạn vẫn còn thời gian làm bài và còn %(question)d câu hỏi chưa trả lời."
          ],
          "Do you want to close the exam? You still have time": [
-            "Bạn có muốn kết thúc bài thi này không?\nBạn vẫn còn thời gian làm bài."
+            "Bạn có muốn nộp bài hay không?\nBạn vẫn còn thời gian làm bài."
          ],
          "Warning": [
             "Cảnh báo"
+         ],
+         "Please enter your old password": [
+            "Xin hãy nhập mật khẩu cũ của bạn"
+         ],
+         "Your password is too weak ": [
+            "Mật khẩu của bạn quá yếu"
+         ],
+         "Password either is not the same or too weak": [
+            "Mật khẩu hoặc không khớp với ở trên hoặc quá yếu"
+         ],
+         "Incorrect old password": [
+            "Mật khẩu cũ không khớp"
+         ],
+         "Password changed successfully. You'll be logged out...": [
+            "Bạn đã đổi mật khẩu thành công. Bạn sẽ tự động đăng xuất trong giây lát."
+         ],
+         "Please fill in your name": [
+            "Xin hãy điền tên của bạn"
+         ],
+         "Please choose your school": [
+            "Xin hãy chọn trường của bạn"
+         ],
+         "Please fill in your class": [
+            "Xin hãy điền lớp của bạn"
+         ],
+         "Profile edited successfully": [
+            "Thay đổi thông tin thành công"
          ],
          "Exam": [
             "Bài thi"
@@ -77,10 +104,10 @@ var i18n_vi_data = {
             "Bài làm của bạn đã được lưu"
          ],
          "End exam": [
-            "Kết thúc bài làm"
+            "Nộp bài"
          ],
          "Closing exam": [
-            "Đang đóng bài thi"
+            "Đang nộp bài"
          ],
          "Announcement published at %(time)s": [
             "Thông báo này được đăng vào %(time)s"
@@ -103,17 +130,26 @@ var i18n_vi_data = {
          "Install": [
             "Cài đặt"
          ],
+         "minutes": [
+            "phút"
+         ],
+         "seconds": [
+            "giây"
+         ],
          "Participate": [
             "Tham gia thi"
          ],
-         "Contest: %(contest_title)s": [
-            "Cuộc thi: %(contest_title)s"
+         "Contest: <strong>%(contest_title)s</strong>": [
+            "Cuộc thi: <strong>%(contest_title)s</strong>"
          ],
-         "Duration: %(duration)d minutes": [
-            "Thời gian làm bài: %(duration)d phút"
+         "This contest starts from <strong>%(begin_date)s</strong> to <strong>%(end_date)s</strong>": [
+            "Cuộc thi này bắt đầu từ ngày <strong>%(begin_date)s</strong> tới hết ngày <strong>%(end_date)s</strong>"
          ],
-         "Number of questions: %(questions)d questions": [
-            "Số lượng câu hỏi:  %(questions)d câu hỏi"
+         "Duration: <strong>%(duration)d minutes</strong>": [
+            "Thời gian thi: <strong>%(duration)d phút</strong>"
+         ],
+         "Number of questions: <strong>%(questions)d questions</strong>": [
+            "Số câu hỏi: <strong>%(questions)d câu hỏi</strong>"
          ],
          "Your last performance: ": [
             "Thành tích của bạn:"
@@ -130,32 +166,38 @@ var i18n_vi_data = {
          "Status": [
             "Trạng thái"
          ],
+         "Elapsed time": [
+            "Thời gian làm bài"
+         ],
          "Score": [
             "Điểm"
          ],
          "Finished": [
-            "Đã hoàn thành"
+            "Đã nộp bài"
          ],
          "Ongoing": [
-            "Còn thời gian"
+            "Chưa nộp bài"
          ],
          "Continue": [
-            "Tiếp tục bài làm này"
+            "Tiếp tục làm bài"
          ],
          "Participate in this contest": [
-            "Tham gia vào cuộc thi này"
+            "Tham gia cuộc thi này"
+         ],
+         "This contest has either ended or hasn't started": [
+            "Cuộc thi hoặc chưa bắt đầu hoặc đã kết thúc"
          ],
          "Rules": [
-            "Luật lệ"
+            "Thể lệ"
          ],
          "Sign in or register": [
             "Đăng nhập hoặc đăng kí"
          ],
-         "Yourself": [
-            "Bản thân"
+         "My profile": [
+            "Thông tin bản thân"
          ],
          "Sign out": [
-            "Đăng nhập"
+            "Đăng xuất"
          ],
          "Online quiz": [
             "Thi trực tuyến"
@@ -166,8 +208,56 @@ var i18n_vi_data = {
          "Links": [
             "Các đường dẫn"
          ],
-         "Running <a href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a> revision <a href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a>": [
-            "Đang chạy <a href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a>, phiên bản <a href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a>"
+         "Running <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></strong> revision <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></strong>": [
+            "Trang web sử dụng <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></strong>, phiên bản <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></strong>"
+         ],
+         "Yourself": [
+            "Bản thân"
+         ],
+         "Your profile": [
+            "Thông tin về bạn"
+         ],
+         "Edit your profile": [
+            "Sửa thông tin bản thân"
+         ],
+         "Change your password": [
+            "Thay đổi mật khẩu"
+         ],
+         "Name": [
+            "Họ và tên"
+         ],
+         "School": [
+            "Trường"
+         ],
+         "Class": [
+            "Lớp"
+         ],
+         "Your past results": [
+            "Các kết quả thi của bạn"
+         ],
+         "Your name": [
+            "Tên thật của bạn"
+         ],
+         "Your school": [
+            "Trường của bạn"
+         ],
+         "Your class": [
+            "Lớp của bạn"
+         ],
+         "Edit profile": [
+            "Sửa thông tin"
+         ],
+         "Old password": [
+            "Mật khẩu cũ"
+         ],
+         "New password": [
+            "Mật khẩu mới"
+         ],
+         "New password (repeat)": [
+            "Mật khẩu mới (lặp lại)"
+         ],
+         "Change password": [
+            "Đổi mật khẩu"
          ],
          "Authentication": [
             "Xác thực"
@@ -193,35 +283,11 @@ var i18n_vi_data = {
          "Password (repeat)": [
             "Nhập lại mật khẩu mới"
          ],
-         "Your name": [
-            "Tên thật của bạn"
-         ],
          "Choose your school": [
             "Hãy chọn trường của bạn"
          ],
-         "Your school": [
-            "Trường của bạn"
-         ],
-         "Your class": [
-            "Lớp của bạn"
-         ],
          "Please fill in your username": [
             "Xin hãy nhập tên đăng nhập"
-         ],
-         "Your password is too weak ": [
-            "Mật khẩu của bạn quá yếu"
-         ],
-         "Password either is not the same or too weak": [
-            "Mật khẩu hoặc không khớp với ở trên hoặc quá yếu"
-         ],
-         "Please fill in your name": [
-            "Xin hãy điền tên của bạn"
-         ],
-         "Please choose your school": [
-            "Xin hãy chọn trường của bạn"
-         ],
-         "Please fill in your class": [
-            "Xin hãy điền lớp của bạn"
          ],
          "An account with the same username exists, please choose another username": [
             "Có một tài khoản khác cùng tên đăng nhập với bạn, hãy chọn tên đăng nhập khác."
