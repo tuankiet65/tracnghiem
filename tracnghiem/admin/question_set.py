@@ -23,7 +23,7 @@ class QuestionSetAddForm(Form):
 
 @QuestionSetList.add_func
 def add_func(value):
-    form = QuestionSetAddForm(data = value)
+    form = QuestionSetAddForm(formdata = value)
     if form.validate():
         entry = QuestionSet.create(name = form.name.data)
         return entry.id

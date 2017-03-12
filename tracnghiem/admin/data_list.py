@@ -1,6 +1,6 @@
 from flask import Flask, json, request, render_template
 from json.decoder import JSONDecodeError
-
+from werkzeug.datastructures import ImmutableMultiDict
 
 class DataList:
     name = None
@@ -59,6 +59,7 @@ class DataList:
                 }), 400
             try:
                 value = json.loads(value)
+                value = ImmutableMultiDict(value)
             except JSONDecodeError:
                 return json.jsonify({
                     "status": "invalid json data"

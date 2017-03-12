@@ -38,7 +38,7 @@ class QuestionAddForm(Form):
 
 @QuestionList.add_func
 def add_func(value, qset_id):
-    form = QuestionAddForm(data = value)
+    form = QuestionAddForm(formdata = value)
     try:
         qset = QuestionSet.get(id = qset_id)
     except QuestionSet.DoesNotExist:

@@ -37,7 +37,7 @@ class ContestAddForm(Form):
 
 @ContestList.add_func
 def add(value):
-    form = ContestAddForm(data = value)
+    form = ContestAddForm(formdata = value)
     if form.validate():
         print(form.begin_date.data)
         entry = Contest.create(title = form.title.data,
