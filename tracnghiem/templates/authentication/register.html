@@ -51,10 +51,6 @@
             return (pwd == pwd_repeat) && (FormValidation.StrongPassword(pwd));
         }
 
-        $("#reg_dob").change(function(event){
-            event.stopPropagation();
-        });
-
         register_form = Form();
         register_form.add_field("username", $("#reg_username"), [FormValidation.NotEmpty], "{{ _("Please fill in your username") }}");
         register_form.add_field("password", $("#reg_password"), [FormValidation.StrongPassword], "{{ _("Your password is too weak ") }}");
