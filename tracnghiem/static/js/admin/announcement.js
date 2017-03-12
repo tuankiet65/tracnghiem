@@ -41,7 +41,7 @@ function remove_announcement(){
 
 }
 
-form = Form();
+form = new Form();
 form.set_button($("#submit-button"));
 form.add_field("title", $("#title"), [FormValidation.NotEmpty], "Xin hay nhap tieu de");
 form.add_field("content", $("#content"), [FormValidation.NotEmpty], "Xin hay nhap noi dung");

@@ -35,6 +35,6 @@ function add_questionset(){
     return false;
 }
 
-form = Form();
+form = new Form();
 form.set_button($("#submit-button"));
 form.add_field("name", $("#name"), [FormValidation.NotEmpty], "Xin hay nhap tieu de");

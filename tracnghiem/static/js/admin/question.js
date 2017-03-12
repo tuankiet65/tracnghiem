@@ -53,7 +53,7 @@ function add_question(){
     return false;
 }
 
-form = Form();
+form = new Form();
 form.set_button($("#submit-button"));
 form.add_field("question", $("#question"), [FormValidation.NotEmpty], "Xin nhap cau hoi");
 form.add_field("answer_a", $("#answer_a"), [FormValidation.NotEmpty], "Xin nhap cau tra loi");

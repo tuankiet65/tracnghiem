@@ -26,11 +26,11 @@ var FormValidation = {
     }
 }
 
-var Form = function(){
-    fields = {};
-    submit_button = null;
+function Form(){
+    this.fields = {};
+    this.submit_button = null;
 
-    add_field = function(field_name, element, validations, warning){
+    this.add_field = function(field_name, element, validations, warning){
         if (!($.isArray(validations))){
             throw "[Form] 'validations' must be an array (even if it only includes one validation)";
         }
@@ -61,7 +61,7 @@ var Form = function(){
     }
 
     // Because validate_field conflicts with a function in Materialize.css
-    _validate_field = function(field, toggle_html_error, focus){
+    this._validate_field = function(field, toggle_html_error, focus){
         element = field.element;
         value = element.val();
         console.log(element);
@@ -92,7 +92,7 @@ var Form = function(){
         return true;
     }
 
-    validate_form = function(){
+    this.validate_form = function(){
         console.log("called");
         console.log(this.fields);
         for (field_name in this.fields){
@@ -107,7 +107,7 @@ var Form = function(){
         return true;
     };
 
-    get_form_data = function(){
+    this.get_form_data = function(){
         data = null;
         if (this.validate_form()){
             data = {};
@@ -118,21 +118,21 @@ var Form = function(){
         return data;
     }
 
-    clear_form = function(){
+    this.clear_form = function(){
         for (field_name in this.fields){
             this.fields[field_name].element.val("").removeClass("invalid valid");
         }
     }.bind(this);
 
-    set_button = function(elem){
+    this.set_button = function(elem){
         this.submit_button = elem;
     }
 
-    disable_button = function(){
+    this.disable_button = function(){
         this.submit_button.prop("disabled", true);
     }
 
-    enable_button = function(){
+    this.enable_button = function(){
         this.submit_button.prop("disabled", false);
     }
 

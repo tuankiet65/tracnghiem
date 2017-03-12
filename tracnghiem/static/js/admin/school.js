@@ -31,6 +31,6 @@ function add_school(){
     return false;
 }
 
-form = Form();
+form = new Form();
 form.set_button($("#submit-button"));
 form.add_field("name", $("#name"), [FormValidation.NotEmpty], "Xin hay nhap ten truong");

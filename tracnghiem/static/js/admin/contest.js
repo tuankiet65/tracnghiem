@@ -40,7 +40,7 @@ function add_contest(){
     return false;
 }
 
-form = Form();
+form = new Form();
 form.set_button($("#submit-button"));
 form.add_field("title", $("#title"), [FormValidation.NotEmpty], "Hay nhap ten cuoc thi");
 form.add_field("begin_date", $("#begin-date"), [FormValidation.NotEmpty], "Hay nhap ngay bat dau cuoc thi");
