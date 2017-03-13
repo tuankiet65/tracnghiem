@@ -43,6 +43,30 @@
             font-size: 25px;
             font-weight: bold;
         }
+
+        #close-exam-button {
+            float: right;
+        }
+
+        @media only screen and (max-width : 600px){
+            #close-exam-button {
+                display: block;
+                width: 100%;
+                float: none !important;
+            }
+
+            .sticky-footer {
+                height: 100px !important;
+            }
+
+            body {
+                margin-bottom: 100px !important;
+            }
+
+            #footer-container {
+                text-align: center;
+            }
+        }
     </style>
 {% endblock %}
 {% block main %}
@@ -52,30 +76,28 @@
 {% endblock %}
 {% block optional_sticky_footer %}
     <div class="sticky-footer red lighten-1">
-        <div class="container">
+        <div class="container" id="footer-container">
             <span class="footer-text">
-                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _("Remaining time") }}">
+                <i class="material-icons tooltipped" data-delay="50" data-position="top" data-tooltip="{{ _('Remaining time') }}">
                     timer
                 </i>
                 <span id="countdown-minute"></span>:<span id="countdown-second"></span>
 
-                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _("Answered questions") }}">
+                <i class="material-icons tooltipped" data-delay="50" data-position="top" data-tooltip="{{ _('Answered questions') }}">
                     check
                 </i>
                 <span id="questions-answered"></span>
                 /
                 <span id="total-questions"></span>
 
-                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _("Saving your progress") }}" id="sync-inprogress">
+                <i class="material-icons tooltipped" data-delay="50" data-position="top" data-tooltip="{{ _('Saving your progress') }}" id="sync-inprogress">
                     sync
                 </i>
-                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _("Your progress was saved") }}" id="sync-done">
+                <i class="material-icons tooltipped" data-delay="50" data-position="top" data-tooltip="{{ _('Your progress was saved') }}" id="sync-done">
                     cloud_done
                 </i>
             </span>
-            <div class="right">
-                <button class="waves-effect waves-light btn" id="close-exam-button">{{ _("End exam") }}</button>
-            </div>
+            <button class="waves-effect waves-light btn" id="close-exam-button">{{ _("End exam") }}</button>
         </div>
     </div>
     <div id="modal-submitting" class="modal">
