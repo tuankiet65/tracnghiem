@@ -94,12 +94,14 @@
                 <label for="edit_name">{{ _("Your name") }}</label>
             </div>
             <div class="input-field">
-                <select id="edit_school" name="school">
+                <select id="edit_school" name="school" {{ ('class="browser-default"'|safe) if g.workaround['ios_select'] }}>
                     {% for school in schools %}
                         <option value="{{ school[0] }}" {% if school[0] == g.user.school.id %} selected {% endif %}>{{ school[1] }}</option>
                     {% endfor %}
                 </select>
-                <label for="edit_school">{{ _("Your school") }}</label>
+                {% if not g.workaround['ios_select'] %}
+                    <label for="edit_school">{{ _("Your school") }}</label>
+                {% endif %}
             </div>
             <div class="input-field">
                 <input type="text" id="edit_klass" name="klass" value="{{ g.user.klass }}">
@@ -132,6 +134,11 @@
 </div>
 {% endblock %}
 {% block js %}
+    {% if not g.workaround['ios_select'] %}
+        <script>
+            $("#edit_school").material_select();
+        </script>
+    {% endif %}
     <script src="/static/libraries/zxcvbn/dist/zxcvbn.js"></script>
     <script src="/static/js/form_validation.js"></script>
     <script src="/static/js/yourself.js"></script>

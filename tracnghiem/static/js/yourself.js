@@ -1,5 +1,3 @@
-$('#edit_school').material_select();
-
 var ChangePasswordForm = new Form();
 function SamePassword(value){
     pwd = $("#new_password").val();
