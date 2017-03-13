@@ -17,13 +17,15 @@
             <label for="reg_name">{{ _("Your name") }}</label>
         </div>
         <div class="input-field">
-            <select id="reg_school" name="school">
+            <select id="reg_school" name="school" {{ ('class="browser-default"'|safe) if g.workaround['ios_select'] }}>
                 <option value="0" disabled selected>{{ _("Choose your school") }}</option>
                 {% for school in schools %}
                     <option value="{{ school[0] }}">{{ school[1] }}</option>
                 {% endfor %}
             </select>
-            <label for="reg_school">{{ _("Your school") }}</label>
+            {% if not g.workaround['ios_select'] %}
+                <label for="reg_school">{{ _("Your school") }}</label>
+            {% endif %}
         </div>
         <div class="input-field">
             <input type="text" id="reg_klass" name="klass">
@@ -43,8 +45,9 @@
     <script src="/static/js/form_validation.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script>
-        $('#reg_school').material_select();
-
+        {% if not g.workaround['ios_select'] %}
+            $('#reg_school').material_select();
+        {% endif %}
         function SamePassword(value){
             pwd = $("#reg_password").val();
             pwd_repeat = $("#reg_password_repeat").val();

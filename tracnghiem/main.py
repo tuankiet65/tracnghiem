@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request, g
 from raven.contrib.flask import Sentry
 from flask_wtf.csrf import CSRFProtect
 from flask_babel import Babel
@@ -33,6 +33,14 @@ def get_locale():
 
 
 app.before_request(load_session_token)
+@app.before_request
+def determine_workaround():
+    g.workaround = {}
+    user_agent = request.user_agent
+    if user_agent.platform in ("ipad", "iphone"):
+        g.workaround['ios_select'] = True
+    else:
+        g.workaround['ios_select'] = False
 
 
 @app.route("/")
