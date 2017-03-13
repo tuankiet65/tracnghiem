@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-13 08:45+0700\n"
-"PO-Revision-Date: 2017-03-13 08:47+0700\n"
+"POT-Creation-Date: 2017-03-13 10:24+0700\n"
+"PO-Revision-Date: 2017-03-13 10:25+0700\n"
 "Last-Translator: \n"
 "Language: vi\n"
 "Language-Team: vi <LL@li.org>\n"
@@ -167,20 +167,19 @@ msgstr "Đang nộp bài"
 msgid "Announcement published at %(time)s"
 msgstr "Thông báo này được đăng vào %(time)s"
 
-#: templates/index.html:28
-#, python-format
-msgid "Account count: %(account_count)s"
-msgstr "Số lượng tài khoản đã đăng kí: %(account_count)s"
+#: templates/index.html:33
+msgid "Account count: "
+msgstr "Số tài khoản đã đăng kí:"
 
-#: templates/index.html:29
-#, python-format
-msgid "Exam count: %(exam_count)s"
-msgstr "Số lượng bài thi đã thực hiện: %(exam_count)s"
+#: templates/index.html:34
+msgid "Exam count: "
+msgstr "Số bài thi đã làm:"
 
-#: templates/index.html:30
-#, python-format
-msgid "Contest count: %(contest_count)s"
-msgstr "Số cuộc thi: %(contest_count)s"
+#: templates/index.html:35 templates/participate.html:6
+#: templates/participate.html:15 templates/template.html:4
+#: templates/template.html:11
+msgid "Participate"
+msgstr "Tham gia thi"
 
 #: templates/authentication/register.html:5 templates/install.html:30
 #: templates/yourself.html:26
@@ -202,11 +201,6 @@ msgstr "phút"
 #: templates/participate.html:2 templates/yourself.html:2
 msgid "seconds"
 msgstr "giây"
-
-#: templates/participate.html:6 templates/participate.html:15
-#: templates/template.html:4 templates/template.html:11
-msgid "Participate"
-msgstr "Tham gia thi"
 
 #: templates/participate.html:20 templates/yourself.html:45
 #, python-format
@@ -447,3 +441,12 @@ msgstr "Bạn chưa điền hết tất cả các trường, có lẽ bạn chư
 
 #~ msgid ""
 #~ msgstr ""
+
+#~ msgid "Account count: %(account_count)s"
+#~ msgstr "Số lượng tài khoản đã đăng kí: %(account_count)s"
+
+#~ msgid "Exam count: %(exam_count)s"
+#~ msgstr "Số lượng bài thi đã thực hiện: %(exam_count)s"
+
+#~ msgid "Contest count: %(contest_count)s"
+#~ msgstr "Số cuộc thi: %(contest_count)s"

@@ -5,7 +5,7 @@ from flask_babel import Babel
 
 from .database import Announcement
 from .admin import admin
-from .authentication import load_session_token, authentication
+from .authentication import load_session_token, authentication, get_schools
 from .participate import participate
 from .exam import exam
 from .stats import generate_stats
@@ -41,7 +41,8 @@ def index():
                      .select()
                      .order_by(-Announcement.time))
     stats = generate_stats()
-    return render_template("index.html", announcements = announcements, stats = stats)
+    schools = get_schools()
+    return render_template("index.html", announcements = announcements, stats = stats, schools = schools)
 
 
 @app.route("/rules")

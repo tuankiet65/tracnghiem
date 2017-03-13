@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-13 08:45+0700\n"
+"POT-Creation-Date: 2017-03-13 10:24+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -165,19 +165,18 @@ msgstr ""
 msgid "Announcement published at %(time)s"
 msgstr ""
 
-#: templates/index.html:28
-#, python-format
-msgid "Account count: %(account_count)s"
+#: templates/index.html:33
+msgid "Account count: "
 msgstr ""
 
-#: templates/index.html:29
-#, python-format
-msgid "Exam count: %(exam_count)s"
+#: templates/index.html:34
+msgid "Exam count: "
 msgstr ""
 
-#: templates/index.html:30
-#, python-format
-msgid "Contest count: %(contest_count)s"
+#: templates/index.html:35 templates/participate.html:6
+#: templates/participate.html:15 templates/template.html:4
+#: templates/template.html:11
+msgid "Participate"
 msgstr ""
 
 #: templates/authentication/register.html:5 templates/install.html:30
@@ -199,11 +198,6 @@ msgstr ""
 
 #: templates/participate.html:2 templates/yourself.html:2
 msgid "seconds"
-msgstr ""
-
-#: templates/participate.html:6 templates/participate.html:15
-#: templates/template.html:4 templates/template.html:11
-msgid "Participate"
 msgstr ""
 
 #: templates/participate.html:20 templates/yourself.html:45

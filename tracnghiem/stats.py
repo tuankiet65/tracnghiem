@@ -1,12 +1,12 @@
-from .database import Account, Exam, Contest
+from .database import Account, Exam, Contest, School
 
 def generate_stats():
-    account_count = Account.select().count()
-    exam_count = Exam.select().count()
-    contest_count = Contest.select().count()
+    result = {}
+    schools = School.select()
 
-    return {
-        "account_count": account_count,
-        "exam_count": exam_count,
-        "contest_count": contest_count
-    }
+    for school in schools:
+        result[school.id] = {}
+        result[school.id]['account_count'] = Account.select().join(School).where(Account.school == school).count()
+        result[school.id]['exam_count'] = Exam.select().join(Account).where(Account.school == school).count()
+
+    return result
