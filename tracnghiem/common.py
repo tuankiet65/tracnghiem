@@ -14,8 +14,8 @@ def get_current_time() -> datetime.datetime:
     return datetime.datetime.now(app.config['TIMEZONE'])
 
 
-def datetime_from_utc_timestamp(timestamp: int) -> datetime.datetime:
-    dt = datetime.datetime.fromtimestamp(timestamp, datetime.timezone.utc)
+def local_datetime_from_timestamp(timestamp: int) -> datetime.datetime:
+    dt = datetime.datetime.fromtimestamp(timestamp, app.config['TIMEZONE'])
     return dt
 
 
