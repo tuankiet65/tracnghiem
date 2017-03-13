@@ -83,12 +83,35 @@ function Question(question_count, question, answer_a, answer_b, answer_c, answer
     return this;
 }
 
+function CustomSet(size){
+    this.size = size + 1;
+    this.set = new Array(this.size);
+
+    for (i = 0; i < this.size; i++){
+        this.set[i] = false;
+    }
+
+    this.add = function(n){
+        this.set[n] = true;
+    }.bind(this);
+
+    this.count = function(){
+        var count = 0;
+        for (i = 0; i < this.size; i++){
+            if (this.set[i]){
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
 function Exam(exam, contest, questions){
     this.exam = exam;
     this.contest = contest;
     this.questions = questions;
     this.question_container = $("#exam_container");
-    this.question_answered = new Set();
+    this.question_answered = new CustomSet(this.questions.length);
     this.answers_modified = false;
 
     $("#total-questions").text(this.questions.length);
@@ -96,7 +119,7 @@ function Exam(exam, contest, questions){
 
     this.question_checked_callback = function(question_count){
         this.question_answered.add(question_count);
-        $("#questions-answered").text(this.question_answered.size);
+        $("#questions-answered").text(this.question_answered.count());
         this.answers_modified = true;
     }.bind(this);
 
