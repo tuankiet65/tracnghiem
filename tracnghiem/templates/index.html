@@ -28,6 +28,7 @@
             <p>{{ _("Account count: %(account_count)s", account_count = stats['account_count']) }}</p>
             <p>{{ _("Exam count: %(exam_count)s", exam_count = stats['exam_count']) }}</p>
             <p>{{ _("Contest count: %(contest_count)s", contest_count = stats['contest_count']) }}</p>
+            <a href="{{ url_for('participate.index') }}" class="waves-light waves-effect btn-large btn-fullwidth">{{ _("Participate") }}</a>
         </div>
     </div>
 {% endblock %}
