@@ -1,5 +1,3 @@
-$('#stat-choose-school').material_select();
-
 statistics = JSON.parse(statistics);
 
 function change_stats(val){
