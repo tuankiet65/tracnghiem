@@ -1,4 +1,4 @@
-{% macro render_login_form() %}
+{% macro render_login_form(include_register) %}
     <form action="{{ url_for('authentication.login') }}" method="post">
         <div class="input-field">
             <i class="material-icons prefix">account_circle</i>
@@ -11,9 +11,10 @@
             <label for="login_password">{{ _("Your password") }}</label>
         </div>
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-        <div style="text-align: right">
-            <button type="submit" class="waves-effect waves-light btn">{{ _("Login") }}</button>
-        </div>
+        <button type="submit" class="waves-effect waves-light btn btn-fullwidth">{{ _("Login") }}</button>
+        {% if include_register %}
+            <a href="{{ url_for('authentication.register') }}" class="red lighten-1 waves-effect waves-light btn btn-fullwidth">{{ _("Don't have an account? Register") }}</a>
+        {% endif %}
     </form>
 {% endmacro %}
 
@@ -33,6 +34,6 @@
     <h5 class="red-text">{{ _("Incorrect login information, please try again") }}</h5>
 {% endif %}
 <div class="login-form">
-    {{ render_login_form() }}
+    {{ render_login_form(True) }}
 </div>
 {% endblock %}

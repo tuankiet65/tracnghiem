@@ -1,4 +1,4 @@
-{% macro render_register_form(schools) %}
+{% macro render_register_form(schools, include_login) %}
     <form onsubmit="return register_form.validate_form(true);" action="{{ url_for('authentication.register') }}" method="post">
         <div class="input-field">
             <input type="text" id="reg_username" name="username">
@@ -31,9 +31,10 @@
         </div>
         <div class="g-recaptcha" data-sitekey="{{ config['RECAPTCHA_PUBLIC_KEY'] }}"></div>
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-        <div style="text-align: right">
-            <button type="submit" class="waves-effect waves-light btn">{{ _("Register") }}</button>
-        </div>
+        <button type="submit" class="waves-effect waves-light btn btn-fullwidth">{{ _("Register") }}</button>
+        {% if include_login %}
+            <a href="{{ url_for('authentication.login') }}" class="red lighten-1 waves-effect waves-light btn btn-fullwidth">{{ _("Log in to your existing account") }}</a>
+        {% endif %}
     </form>
 {% endmacro %}
 
@@ -80,7 +81,7 @@
     <h5 class="red-text">{{ _("You haven't filled in some fields, maybe you haven't checked the captcha?") }}</h5>
 {% endif %}
 <div class="register-form">
-    {{ render_register_form(schools) }}
+    {{ render_register_form(schools, true) }}
 </div>
 {% endblock %}
 {% block js %}

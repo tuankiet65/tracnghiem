@@ -11,11 +11,11 @@
 <div class="row">
     <div class="col l6 m12 s12">
         <h3>{{ _("Login") }}</h3>
-        {{ render_login_form() }}
+        {{ render_login_form(false) }}
     </div>
     <div class="col l6 m12 s12">
         <h3>{{ _("Register") }}</h3>
-        {{ render_register_form(schools) }}
+        {{ render_register_form(schools, false) }}
     </div>
 </div>
 {% endblock %}
