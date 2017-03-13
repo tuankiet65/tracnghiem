@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-13 15:24+0700\n"
+"POT-Creation-Date: 2017-03-13 16:18+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,31 +132,31 @@ msgstr ""
 msgid "Profile edited successfully"
 msgstr ""
 
-#: templates/exam_page.html:3 templates/exam_page.html:49
+#: templates/exam_page.html:3 templates/exam_page.html:73
 msgid "Exam"
 msgstr ""
 
-#: templates/exam_page.html:57
+#: templates/exam_page.html:81
 msgid "Remaining time"
 msgstr ""
 
-#: templates/exam_page.html:62
+#: templates/exam_page.html:86
 msgid "Answered questions"
 msgstr ""
 
-#: templates/exam_page.html:69
+#: templates/exam_page.html:93
 msgid "Saving your progress"
 msgstr ""
 
-#: templates/exam_page.html:72
+#: templates/exam_page.html:96
 msgid "Your progress was saved"
 msgstr ""
 
-#: templates/exam_page.html:77
+#: templates/exam_page.html:100
 msgid "End exam"
 msgstr ""
 
-#: templates/exam_page.html:96
+#: templates/exam_page.html:118
 msgid "Closing exam"
 msgstr ""
 
@@ -166,11 +166,11 @@ msgid "Announcement published at %(time)s"
 msgstr ""
 
 #: templates/index.html:33
-msgid "Account count: "
+msgid "Account count:"
 msgstr ""
 
 #: templates/index.html:34
-msgid "Exam count: "
+msgid "Exam count:"
 msgstr ""
 
 #: templates/index.html:35 templates/participate.html:6

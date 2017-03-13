@@ -30,8 +30,8 @@
                     <option value="{{ school[0] }}">{{ school[1] }}</option>
                 {% endfor %}
             </select>
-            <p>{{ _("Account count: ") }}<strong><span id="stats-account-count"></span></strong></p>
-            <p>{{ _("Exam count: ") }}<strong><span id="stats-exam-count"></span></strong></p>
+            <p>{{ _("Account count:") }} <strong><span id="stats-account-count"></span></strong></p>
+            <p>{{ _("Exam count:") }} <strong><span id="stats-exam-count"></span></strong></p>
             <a href="{{ url_for('participate.index') }}" class="waves-light waves-effect btn-large btn-fullwidth">{{ _("Participate") }}</a>
         </div>
     </div>
