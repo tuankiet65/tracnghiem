@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-03-13 16:18+0700\n"
-"PO-Revision-Date: 2017-03-13 20:18+0700\n"
+"PO-Revision-Date: 2017-03-14 10:39+0700\n"
 "Last-Translator: \n"
 "Language: vi\n"
 "Language-Team: vi <LL@li.org>\n"
@@ -292,7 +292,7 @@ msgstr "Thi 6 bài học LLCT"
 
 #: templates/template.html:110
 msgid "Online quiz Footer"
-msgstr "Thi tìm hiểu 6 Bài học LLCT dành cho Đoàn viên"
+msgstr "Thi tìm hiểu 6 Bài học lý luận chính trị dành cho Đoàn viên"
 
 #: templates/template.html:114
 msgid "Links"
