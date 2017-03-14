@@ -39,7 +39,6 @@ class ContestAddForm(Form):
 def add(value):
     form = ContestAddForm(formdata = value)
     if form.validate():
-        print(form.begin_date.data)
         entry = Contest.create(title = form.title.data,
                                begin_date = form.begin_date.data,
                                end_date = form.end_date.data,
@@ -48,5 +47,4 @@ def add(value):
                                question_set = form.question_set.data)
         return entry.id
     else:
-        print(form.errors)
         return None

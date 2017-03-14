@@ -54,10 +54,8 @@ def check_valid_answer(exam: Exam, answers):
     except json.JSONDecodeError:
         return False
     if not isinstance(answers, list):
-        print("fail at check if list")
         return False
     if len(answers) != len(json.loads(exam.questions)):
-        print("fail at check if length equal")
         return False
     for answer in answers:
         if not isinstance(answer, int):
@@ -71,8 +69,6 @@ def in_contest_date(contest):
     begin_date = d_to_local_dt(contest.begin_date, min_time = True)
     end_date = d_to_local_dt(contest.end_date, min_time = False)
     current_date = get_current_local_dt()
-
-    print(begin_date, end_date)
 
     return (current_date >= begin_date) and (current_date <= end_date)
 
