@@ -6,6 +6,11 @@
         .announcement-time {
             text-align: right;
             display: block;
+            font-size: 13px;
+        }
+
+        .announcement-content {
+            font-size: 17px;
         }
     </style>
 {% endblock %}
@@ -16,9 +21,9 @@
             {%for announcement in announcements%}
                 <div class="card-panel blue-grey lighten-5">
                     <div class="black-text">
-                        <h5>{{announcement.title}}</h5>
-                        <p>{{announcement.content}}</p>
-                        <small class="announcement-time">{{ _("Announcement published at %(time)s", time = announcement.time) }}</small>
+                        <h4>{{announcement.title}}</h4>
+                        <p class="announcement-content">{{announcement.content}}</p>
+                        <span class="announcement-time">{{ _("Announcement published at %(time)s", time = announcement.time) }}</span>
                     </div>
                 </div>
             {%endfor%}
