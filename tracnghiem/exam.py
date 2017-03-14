@@ -77,7 +77,7 @@ def close_exam(exam: Exam):
     exam.finished = True
 
     exam.finish_date = min(get_current_local_dt(), dt_to_local_dt(exam.finish_date))
-    exam.elapsed_time = (exam.finish_date - dt_to_local_dt(exam.begin_date)).total_seconds()
+    exam.elapsed_time = (dt_to_local_dt(exam.finish_date) - dt_to_local_dt(exam.begin_date)).total_seconds()
 
     exam.save()
 
@@ -115,7 +115,7 @@ def create_exam_route():
                        questions = json.dumps(questions))
 
     exam.answers = json.dumps([0 for _ in range(len(questions))])
-    exam.finish_date = exam.begin_date + get_minutes_delta(contest.duration)
+    exam.finish_date = dt_to_local_dt(exam.begin_date) + get_minutes_delta(contest.duration)
     exam.save()
     return redirect("/exam/" + exam.secret_key)
 
