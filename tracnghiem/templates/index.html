@@ -21,7 +21,7 @@
             {%for announcement in announcements%}
                 <div class="card-panel blue-grey lighten-5">
                     <div class="black-text">
-                        <h4>{{announcement.title}}</h4>
+                        <h5>{{announcement.title}}</h5>
                         <p class="announcement-content">{{announcement.content}}</p>
                         <span class="announcement-time">{{ _("Announcement published at %(time)s", time = announcement.time) }}</span>
                     </div>
