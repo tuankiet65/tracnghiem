@@ -229,9 +229,9 @@ function Exam(exam, contest, questions){
 exam = new Exam(exam, "{}", questions);
 
 $("#close-exam-button").click(function(){
-    if (exam.question_answered.size < exam.questions.length){
+    if (exam.question_answered.count() < exam.questions.length){
         warning_text = i18n.translate("Do you want to close the exam? You still have time and you have %(question)d questions unanswered").fetch({
-                            question: exam.questions.length - exam.question_answered.size
+                            question: exam.questions.length - exam.question_answered.count()
                         })
     } else {
         warning_text = i18n.translate("Do you want to close the exam? You still have time").fetch();
