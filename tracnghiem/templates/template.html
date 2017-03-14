@@ -63,6 +63,7 @@
                 position: absolute;
                 left: 70px;
                 bottom: 12px;
+                font-size: 2rem;
             }
 
             .btn-fullwidth {
@@ -76,6 +77,10 @@
 
             nav {
                 height: 64px !important;
+            }
+
+            .weight-500 {
+                font-weight: 500;
             }
         </style>
         {% block css %} {% endblock %}
@@ -115,7 +120,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col l7 s12 white-text">
-                        <h5>{{ _("Online quiz Footer") }}</h5>
+                        <h5 class="weight-500">{{ _("Online quiz Footer") }}</h5>
                         Thực hiện chương trình công tác Đoàn và phong trào thanh thiếu nhi quận Sơn Trà năm 2017,
                         Ban Thường vụ Quận Đoàn triển khai việc học và kiểm tra kiến thức 6 bài học lý luận chính trị
                         dành cho đoàn viên trên mạng Internet năm 2017.
