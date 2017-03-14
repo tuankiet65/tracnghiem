@@ -75,6 +75,14 @@ def in_contest_date(contest):
 
     return (current_date >= begin_date) and (current_date <= end_date)
 
+def close_exam(exam: Exam):
+    exam.score = mark_exam(exam)
+    exam.finished = True
+
+    exam.finish_date = min(get_current_time(), to_local_timezone(exam.finish_date))
+    exam.elapsed_time = (exam.finish_date - to_local_timezone(exam.begin_date)).total_seconds()
+
+    exam.save()
 
 ####################
 # Flask endpoints
@@ -141,6 +149,11 @@ def exam_page(secret_key):
     if exam.finished:
         return redirect(url_for("participate.index"))
 
+    if get_current_time() > to_local_timezone(exam.finish_date):
+        # force close the exam
+        close_exam(exam)
+        return redirect(url_for("participate.index"))
+
     questions = get_exam_question(exam)
 
     return render_template("exam_page.html",
@@ -173,21 +186,47 @@ def save_answers():
         if exam.finished:
             return fjson.jsonify(error = "exam has already finished"), 403
 
+        # here exam.finished is false
+        # (because of the above if)
+
+        # Things get pretty complicated from this point
+        # We allow a one minute grace period in which we will accept ONE final answer from user,
+        # and then we close the exam
+        # This is to compensate for transmission delay
+        # (banana internet connection, cellular network, etc)
+
+        # First we check if the one-minute grace period is over
+        # If yes then we reject the final answer and forcibly close the exam
+        if get_current_time() > (to_local_timezone(exam.finish_date) + datetime.timedelta(minutes = 1)):
+            close_exam(exam)
+            return fjson.jsonify(result = "ok",
+                                 note = "you submitted it so late so we reject your last answer and"
+                                        "mark your exam using your last saved answer",
+                                 score = exam.score)
+
+        # Check if answer is valid first because we may potentially use
+        # it in the next step (or not)
         if not check_valid_answer(exam, form.answer.data):
             return fjson.jsonify(error = "invalid answer"), 400
+
+        # At this point get_current_time() - exam.finished_date <= 1 minute
+        # So check if current time is more than finish_date ot not
+        # If yes then we accept the answer and forcibly close the exam
+        if get_current_time() > to_local_timezone(exam.finish_date):
+            exam.answers = form.answer.data
+            close_exam(exam)
+            return fjson.jsonify(result = "ok",
+                                 note = "you submitted it in the grace period",
+                                 score = exam.score)
+
+        # still in time, do things as normal
 
         exam.answers = form.answer.data
         exam.save()
         if form.close_exam.data:
-            exam.score = mark_exam(exam)
-            exam.finished = True
-
-            exam.finish_date = min(get_current_time(), to_local_timezone(exam.finish_date))
-            exam.elapsed_time = (exam.finish_date - to_local_timezone(exam.begin_date)).total_seconds()
-
-            exam.save()
-
-        return fjson.jsonify(result = "ok", score = exam.score)
+            close_exam(exam)
+            return fjson.jsonify(result = "ok", score = exam.score)
+        else:
+            return fjson.jsonify(result = "ok")
     else:
-        print(form.errors)
         return fjson.jsonify(error = "invalid form"), 400
