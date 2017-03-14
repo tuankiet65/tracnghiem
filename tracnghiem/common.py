@@ -10,7 +10,7 @@ def generate_random_string(length: int = 50) -> string:
     return ''.join(rand.choice(letters) for _ in range(50))
 
 
-def get_current_time() -> datetime.datetime:
+def get_current_local_dt() -> datetime.datetime:
     return datetime.datetime.now(app.config['TIMEZONE'])
 
 
@@ -24,7 +24,17 @@ def generate_random_int() -> int:
     return rand.randint(0, (1 << 31))
 
 
-def to_local_timezone(dt):
-    if type(dt) is datetime.date:
-        dt = datetime.datetime(dt.year, dt.month, dt.day)
+def dt_to_local_dt(dt: datetime.datetime):
     return dt.replace(tzinfo = app.config['TIMEZONE'])
+
+
+def d_to_local_dt(d: datetime.date, min_time: bool = True):
+    if min_time:
+        dt = datetime.datetime.combine(d, datetime.datetime.min.time())
+    else:
+        dt = datetime.datetime.combine(d, datetime.datetime.max.time())
+    return dt_to_local_dt(dt)
+
+
+def get_minutes_delta(minutes = 0):
+    return datetime.timedelta(minutes = minutes)

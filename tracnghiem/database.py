@@ -1,6 +1,6 @@
 from peewee import *
 from playhouse.fields import PasswordField
-from .common import get_current_time, generate_random_string, generate_random_int
+from .common import get_current_local_dt, generate_random_string, generate_random_int
 from . import app
 
 database = MySQLDatabase(host = app.config["DB_HOST"],
@@ -22,7 +22,7 @@ class Announcement(BaseModel):
     # auto id field
     title = CharField()
     content = TextField()
-    time = DateTimeField(default = get_current_time)
+    time = DateTimeField(default = get_current_local_dt)
 
 
 class School(BaseModel):
@@ -73,7 +73,7 @@ class Exam(BaseModel):
     # auto id field
     secret_key = CharField(default = lambda: generate_random_string(50))
     contestant = ForeignKeyField(Account)
-    begin_date = DateTimeField(default = get_current_time)
+    begin_date = DateTimeField(default = get_current_local_dt)
     finish_date = DateTimeField()
     elapsed_time = IntegerField(default = 0)
     finished = BooleanField(default = False)

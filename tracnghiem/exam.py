@@ -3,13 +3,12 @@ import json
 from flask import g, Blueprint, request, render_template, redirect, url_for
 from flask import json as fjson
 from playhouse.shortcuts import model_to_dict
-import datetime
 from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, validators
 
 from .database import Exam, Question, Contest
 from .authentication import need_to_login
-from .common import to_local_timezone, get_current_time
+from .common import dt_to_local_dt, get_current_local_dt, d_to_local_dt, get_minutes_delta
 
 
 def generate_exam_questions(contest: Contest):
@@ -69,9 +68,11 @@ def check_valid_answer(exam: Exam, answers):
 
 
 def in_contest_date(contest):
-    begin_date = contest.begin_date
-    end_date = contest.end_date
-    current_date = datetime.date.today()
+    begin_date = d_to_local_dt(contest.begin_date, min_time = True)
+    end_date = d_to_local_dt(contest.end_date, min_time = False)
+    current_date = get_current_local_dt()
+
+    print(begin_date, end_date)
 
     return (current_date >= begin_date) and (current_date <= end_date)
 
@@ -79,8 +80,8 @@ def close_exam(exam: Exam):
     exam.score = mark_exam(exam)
     exam.finished = True
 
-    exam.finish_date = min(get_current_time(), to_local_timezone(exam.finish_date))
-    exam.elapsed_time = (exam.finish_date - to_local_timezone(exam.begin_date)).total_seconds()
+    exam.finish_date = min(get_current_local_dt(), dt_to_local_dt(exam.finish_date))
+    exam.elapsed_time = (exam.finish_date - dt_to_local_dt(exam.begin_date)).total_seconds()
 
     exam.save()
 
@@ -118,7 +119,7 @@ def create_exam_route():
                        questions = json.dumps(questions))
 
     exam.answers = json.dumps([0 for _ in range(len(questions))])
-    exam.finish_date = exam.begin_date + datetime.timedelta(minutes = contest.duration)
+    exam.finish_date = exam.begin_date + get_minutes_delta(contest.duration)
     exam.save()
     return redirect("/exam/" + exam.secret_key)
 
@@ -127,8 +128,8 @@ def exam_to_dict(exam: Exam):
     # special function because model_to_dict doesn't know how to handle time
     return {
         "secret_key" : exam.secret_key,
-        "begin_date" : to_local_timezone(exam.begin_date).isoformat(),
-        "finish_date": to_local_timezone(exam.finish_date).isoformat(),
+        "begin_date" : dt_to_local_dt(exam.begin_date).isoformat(),
+        "finish_date": dt_to_local_dt(exam.finish_date).isoformat(),
         "finished"   : exam.finished,
         "answers"    : exam.answers
     }
@@ -149,7 +150,7 @@ def exam_page(secret_key):
     if exam.finished:
         return redirect(url_for("participate.index"))
 
-    if get_current_time() > to_local_timezone(exam.finish_date):
+    if get_current_local_dt() > dt_to_local_dt(exam.finish_date):
         # force close the exam
         close_exam(exam)
         return redirect(url_for("participate.index"))
@@ -197,7 +198,7 @@ def save_answers():
 
         # First we check if the one-minute grace period is over
         # If yes then we reject the final answer and forcibly close the exam
-        if get_current_time() > (to_local_timezone(exam.finish_date) + datetime.timedelta(minutes = 1)):
+        if get_current_local_dt() > (dt_to_local_dt(exam.finish_date) + get_minutes_delta(1)):
             close_exam(exam)
             return fjson.jsonify(result = "ok",
                                  note = "you submitted it so late so we reject your last answer and"
@@ -212,7 +213,7 @@ def save_answers():
         # At this point get_current_time() - exam.finished_date <= 1 minute
         # So check if current time is more than finish_date ot not
         # If yes then we accept the answer and forcibly close the exam
-        if get_current_time() > to_local_timezone(exam.finish_date):
+        if get_current_local_dt() > dt_to_local_dt(exam.finish_date):
             exam.answers = form.answer.data
             close_exam(exam)
             return fjson.jsonify(result = "ok",
