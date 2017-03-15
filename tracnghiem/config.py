@@ -2,6 +2,7 @@ from .common import generate_random_string
 import os
 import subprocess
 import dateutil.tz
+import datetime
 
 class Config:
     WTF_CSRF_ENABLED = True
@@ -20,6 +21,8 @@ class Config:
     DB_DATABASE = os.environ.get("MYSQL_DB_DATABASE")
 
     TIMEZONE = dateutil.tz.gettz("Asia/Ho_Chi_Minh")
+
+    FRIENDLY_TIMEZONE = datetime.datetime.now(TIMEZONE).tzname()
 
 class DevelopmentConfig(Config):
     IS_PRODUCTION = False

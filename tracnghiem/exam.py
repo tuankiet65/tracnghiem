@@ -197,7 +197,7 @@ def save_answers():
         if get_current_local_dt() > (dt_to_local_dt(exam.finish_date) + get_minutes_delta(1)):
             close_exam(exam)
             return fjson.jsonify(result = "ok",
-                                 note = "you submitted it so late so we reject your last answer and"
+                                 note = "you submitted it so late so we reject your last answer and "
                                         "mark your exam using your last saved answer",
                                  score = exam.score)
 

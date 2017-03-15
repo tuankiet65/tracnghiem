@@ -136,7 +136,9 @@
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    © 2017 Hồ Tuấn Kiệt. {{ _('Running <strong><a class="grey-text text-lighten-3" href="https://github.com/tuankiet65/tracnghiem">tuankiet65/tracnghiem</a></strong> revision <strong><a class="grey-text text-lighten-3" href="https://github.com/tuankiet65/tracnghiem/tree/%(rev)s">%(rev)s</a></strong>', rev = config["GIT_REVISION"]) }}
+                    © 2017 Hồ Tuấn Kiệt. {{ _('Running <strong><a class="grey-text text-lighten-3" href="https://github.com/tuankiet65/tracnghiem">tuankiet65/tracnghiem</a></strong> '
+                                              'revision <strong><a class="grey-text text-lighten-3" href="https://github.com/tuankiet65/tracnghiem/tree/%(rev)s">%(rev)s</a></strong>. '
+                                              'Current timezone: <strong>%(timezone)s</strong>', rev = config["GIT_REVISION"], timezone = config["FRIENDLY_TIMEZONE"]) }}
                 </div>
             </div>
         </footer>
