@@ -1,7 +1,8 @@
-from .data_list import DataList
-from wtforms import *
-from tracnghiem.database import Contest
 from playhouse.shortcuts import model_to_dict
+from wtforms import *
+
+from tracnghiem.database import Contest
+from .data_list import DataList
 
 ContestList = DataList("contest")
 
@@ -12,7 +13,7 @@ ContestList.set_template("admin_contest.html")
 def get():
     query = Contest.select()
     return [{
-                "id": entry.id,
+                "id"   : entry.id,
                 "value": model_to_dict(entry, exclude = [Contest.id])
             } for entry in query]
 
@@ -34,6 +35,7 @@ class ContestAddForm(Form):
     duration = IntegerField(validators = [validators.DataRequired()])
     question_count = IntegerField(validators = [validators.DataRequired()])
     question_set = StringField(validators = [validators.DataRequired()])
+
 
 @ContestList.add_func
 def add(value):

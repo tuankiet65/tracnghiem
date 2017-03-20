@@ -1,9 +1,9 @@
-from flask import render_template, json
-from .data_list import DataList
-from playhouse.shortcuts import model_to_dict
 import peewee
-from tracnghiem.database import Announcement
+from playhouse.shortcuts import model_to_dict
+
 from tracnghiem.common import local_datetime_from_timestamp
+from tracnghiem.database import Announcement
+from .data_list import DataList
 
 AnnouncementList = DataList("announcement")
 
@@ -14,9 +14,9 @@ AnnouncementList.set_template("admin_announcement.html")
 def announcement_get():
     query = Announcement.select().order_by(-Announcement.time)
     return [{
-        "id": entry.id,
-        "value": model_to_dict(entry, exclude = [Announcement.id])
-    } for entry in query]
+                "id"   : entry.id,
+                "value": model_to_dict(entry, exclude = [Announcement.id])
+            } for entry in query]
 
 
 @AnnouncementList.add_func

@@ -1,7 +1,8 @@
 from peewee import *
 from playhouse.fields import PasswordField
-from .common import get_current_local_dt, generate_random_string, generate_random_int
+
 from . import app
+from .common import get_current_local_dt, generate_random_string
 
 database = MySQLDatabase(host = app.config["DB_HOST"],
                          user = app.config["DB_USERNAME"],
@@ -10,7 +11,8 @@ database = MySQLDatabase(host = app.config["DB_HOST"],
 
 
 def create_all_tables():
-    database.create_tables([Announcement, School, Account, SessionToken, Contest, Question, Exam, QuestionSet], safe = False)
+    database.create_tables([Announcement, School, Account, SessionToken, Contest, Question, Exam, QuestionSet],
+                           safe = False)
 
 
 class BaseModel(Model):
@@ -55,9 +57,11 @@ class Contest(BaseModel):
     minimum_percentage = IntegerField()
     question_set = CharField(default = "[]")
 
+
 class QuestionSet(BaseModel):
     # auto id field
     name = CharField()
+
 
 class Question(BaseModel):
     # auto id field
@@ -68,6 +72,7 @@ class Question(BaseModel):
     answer_b = CharField()
     answer_a = CharField()
     correct_answer = IntegerField()  # 1=A 2=B 3=C 4=D
+
 
 class Exam(BaseModel):
     # auto id field

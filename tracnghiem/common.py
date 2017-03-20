@@ -1,6 +1,7 @@
+import datetime
 import random
 import string
-import datetime
+
 from . import app
 
 

@@ -1,8 +1,8 @@
-from wtforms import *
 from playhouse.shortcuts import model_to_dict
+from wtforms import *
 
-from .data_list import DataList
 from tracnghiem.database import Question, QuestionSet
+from .data_list import DataList
 
 QuestionSetList = DataList("questionset", "questionset")
 QuestionSetList.set_template("admin_question_set.html")

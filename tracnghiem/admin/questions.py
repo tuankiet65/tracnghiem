@@ -1,9 +1,9 @@
 from flask import abort, render_template
-from wtforms import *
 from playhouse.shortcuts import model_to_dict
+from wtforms import *
 
-from .data_list import DataList
 from tracnghiem.database import Question, QuestionSet
+from .data_list import DataList
 
 QuestionList = DataList("question", "questionset/<int:qset_id>")
 QuestionList.set_template("")

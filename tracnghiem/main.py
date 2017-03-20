@@ -1,17 +1,17 @@
 from flask import render_template, request, g
-from raven.contrib.flask import Sentry
-from flask_wtf.csrf import CSRFProtect
 from flask_babel import Babel
+from flask_wtf.csrf import CSRFProtect
+from raven.contrib.flask import Sentry
 
-from .database import Announcement
+from . import app
 from .admin import admin
 from .authentication import load_session_token, authentication, get_schools
-from .participate import participate
+from .database import Announcement
 from .exam import exam
-from .stats import generate_stats
 from .install import install
+from .participate import participate
+from .stats import generate_stats
 from .yourself import yourself
-from . import app
 
 app.register_blueprint(admin)
 app.register_blueprint(authentication)
@@ -33,6 +33,8 @@ def get_locale():
 
 
 app.before_request(load_session_token)
+
+
 @app.before_request
 def determine_workaround():
     g.workaround = {}

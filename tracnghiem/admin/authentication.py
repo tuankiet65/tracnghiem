@@ -1,7 +1,8 @@
 from flask import render_template, redirect, url_for, g, session
 from flask_wtf import FlaskForm
-from .database import AdminUser, AdminSessionToken
 from wtforms import *
+
+from .database import AdminUser, AdminSessionToken
 
 
 def get_user_from_token(token: str):

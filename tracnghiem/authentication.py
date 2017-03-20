@@ -1,8 +1,9 @@
-from flask import render_template, session, g, Blueprint, redirect, url_for, request
-from wtforms import *
-from flask_wtf import FlaskForm, RecaptchaField
 from functools import wraps
+
 import peewee
+from flask import render_template, session, g, Blueprint, redirect, url_for, request
+from flask_wtf import FlaskForm, RecaptchaField
+from wtforms import *
 
 from .database import SessionToken, Account, School
 

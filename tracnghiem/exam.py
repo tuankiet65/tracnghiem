@@ -1,14 +1,15 @@
-import random
 import json
+import random
+
 from flask import g, Blueprint, request, render_template, redirect, url_for
 from flask import json as fjson
-from playhouse.shortcuts import model_to_dict
 from flask_wtf import FlaskForm
+from playhouse.shortcuts import model_to_dict
 from wtforms import StringField, BooleanField, validators
 
-from .database import Exam, Question, Contest
 from .authentication import need_to_login
 from .common import dt_to_local_dt, get_current_local_dt, d_to_local_dt, get_minutes_delta
+from .database import Exam, Question, Contest
 
 
 def generate_exam_questions(contest: Contest):
@@ -72,6 +73,7 @@ def in_contest_date(contest):
 
     return (current_date >= begin_date) and (current_date <= end_date)
 
+
 def close_exam(exam: Exam):
     exam.score = mark_exam(exam)
     exam.finished = True
@@ -80,6 +82,7 @@ def close_exam(exam: Exam):
     exam.elapsed_time = (dt_to_local_dt(exam.finish_date) - dt_to_local_dt(exam.begin_date)).total_seconds()
 
     exam.save()
+
 
 ####################
 # Flask endpoints

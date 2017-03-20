@@ -1,6 +1,8 @@
-from flask import Flask, json, request, render_template
 from json.decoder import JSONDecodeError
+
+from flask import Flask, json, request, render_template
 from werkzeug.datastructures import ImmutableMultiDict
+
 
 class DataList:
     name = None
@@ -23,23 +25,23 @@ class DataList:
         if url is None:
             url = self.name
         self.main = {
-            "url": "/{}".format(url),
-            "name": "{}_main".format(name),
+            "url"     : "/{}".format(url),
+            "name"    : "{}_main".format(name),
             "endpoint": self.main_page
         }
         self.get = {
-            "url": "/ajax/{}/get".format(url),
-            "name": "{}_get".format(name),
+            "url"     : "/ajax/{}/get".format(url),
+            "name"    : "{}_get".format(name),
             "endpoint": None
         }
         self.add = {
-            "url": "/ajax/{}/add".format(url),
-            "name": "{}_add".format(name),
+            "url"     : "/ajax/{}/add".format(url),
+            "name"    : "{}_add".format(name),
             "endpoint": None
         }
         self.remove = {
-            "url": "/ajax/{}/remove".format(url),
-            "name": "{}_remove".format(name),
+            "url"     : "/ajax/{}/remove".format(url),
+            "name"    : "{}_remove".format(name),
             "endpoint": None
         }
 
@@ -68,7 +70,7 @@ class DataList:
             if id is not None:
                 return json.jsonify({
                     "status": "ok",
-                    "id": id
+                    "id"    : id
                 })
             else:
                 return json.jsonify({
@@ -84,7 +86,7 @@ class DataList:
         def tmp(*args, **kwargs):
             entries = func(*args, **kwargs)
             return json.jsonify({
-                "status": "ok",
+                "status" : "ok",
                 "entries": [{"id": d['id'], "value": d['value']} for d in entries]
             })
 

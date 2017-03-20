@@ -1,10 +1,11 @@
-from flask import Blueprint, render_template, url_for, redirect
 import os.path
+
+from flask import Blueprint, render_template, url_for, redirect
 from flask_wtf import FlaskForm
 from wtforms import *
 
-from .database import create_all_tables
 from .admin.database import create_all_tables as admin_create_all_tables, AdminUser
+from .database import create_all_tables
 
 install = Blueprint("install", __name__, url_prefix = "/install")
 

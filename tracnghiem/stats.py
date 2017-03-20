@@ -1,4 +1,5 @@
-from .database import Account, Exam, Contest, School
+from .database import Account, Exam, School
+
 
 def generate_stats():
     result = {}

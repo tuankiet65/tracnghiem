@@ -2,8 +2,8 @@ from flask import Blueprint, g, render_template, json
 from flask_wtf import FlaskForm
 from wtforms import *
 
-from .database import School, Contest, Exam
 from .authentication import need_to_login, logout
+from .database import School, Contest, Exam
 
 yourself = Blueprint("yourself", __name__, url_prefix = "/yourself")
 

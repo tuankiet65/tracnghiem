@@ -1,8 +1,11 @@
-from .common import generate_random_string
+import datetime
 import os
 import subprocess
+
 import dateutil.tz
-import datetime
+
+from .common import generate_random_string
+
 
 class Config:
     WTF_CSRF_ENABLED = True
@@ -23,6 +26,7 @@ class Config:
     TIMEZONE = dateutil.tz.gettz("Asia/Ho_Chi_Minh")
 
     FRIENDLY_TIMEZONE = datetime.datetime.now(TIMEZONE).tzname()
+
 
 class DevelopmentConfig(Config):
     IS_PRODUCTION = False
