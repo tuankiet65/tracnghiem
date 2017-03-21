@@ -189,6 +189,7 @@ function Exam(exam, contest, questions){
                 , 5000);
             } else {
                 if (xhr.status == 403){
+                    clearInterval(this.autosave_id);
                     swal({
                         titleText: i18n.translate("Authentication failure").fetch(),
                         text: i18n.translate("Please login again").fetch(),
@@ -222,6 +223,7 @@ function Exam(exam, contest, questions){
         answers = JSON.stringify(this.get_answers());
         $("#modal-submitting").modal("open");
         clearInterval(this.autosave_id);
+        this.countdown.stop();
         this.ajax_send_answer(answers, true, function(data){
             $("#modal-submitting").modal("close");
             score = data.score;

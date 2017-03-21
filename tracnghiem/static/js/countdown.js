@@ -9,8 +9,12 @@ function Countdown(end_time, tick_callback){
         this.tick_callback(this.remaining);
         this.remaining--;
         if (this.remaining < 0){
-            clearInterval(this.timer_id);
+            this.stop();
         }
+    }.bind(this);
+
+    this.stop = function(){
+        clearInterval(this.timer_id);
     }.bind(this);
 
     if (this.remaining <= 0){
