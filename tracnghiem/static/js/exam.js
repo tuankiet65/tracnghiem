@@ -221,6 +221,7 @@ function Exam(exam, contest, questions){
     this.close_exam = function(){
         answers = JSON.stringify(this.get_answers());
         $("#modal-submitting").modal("open");
+        clearInterval(this.autosave_id);
         this.ajax_send_answer(answers, true, function(data){
             $("#modal-submitting").modal("close");
             score = data.score;
