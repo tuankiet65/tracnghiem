@@ -55,13 +55,17 @@ def determine_workaround():
     else:
         g.workaround['ios_select'] = False
 
+
 @app.before_request
 def clear_redirect_uri():
-    if not (request.blueprint == "authentication"):
+    if (((request.blueprint != "authentication")
+         or (request.endpoint == "authentication.logout"))
+        and (request.endpoint != "static")):
         try:
             del session['redirect_uri']
         except KeyError:
             pass
+
 
 @app.route("/")
 def index():
