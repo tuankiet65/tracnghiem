@@ -7,6 +7,39 @@ var i18n_vi_data = {
             "plural_forms": "nplurals=1; plural=0;",
             "lang": "vi"
          },
+         "Page not found": [
+            "Không tìm thấy trang yêu cầu"
+         ],
+         "The page you're looking for does not exists": [
+            "Chúng tôi không thể tìm thấy trang bạn yêu cầu"
+         ],
+         "Here's a cute Hatsune Miku because we like it. <br />Not really related, but whatever": [
+            "Đây là Hatsune Miku vì chúng tôi thích vậy. <br />Cũng chả liên quan tới cái báo lỗi này đâu, mà thôi kệ."
+         ],
+         "Bad request": [
+            "Yêu cầu không đúng chuẩn"
+         ],
+         "Your request couldn't be understood by the server": [
+            "Máy chủ không thể hiểu yêu cầu của bạn"
+         ],
+         "Patchouli Knowledge is not happy that you might be doing nasty things to the server": [
+            "Patchouli Knowledge có vẻ không vui lắm vì bạn đang làm gì đó"
+         ],
+         "Forbidden": [
+            "Tài nguyên cấm truy cập"
+         ],
+         "You just tried to access something which you don't have the required permission to do so": [
+            "Bạn không có quyền truy cập vào trang mà bạn đã yêu cầu"
+         ],
+         "Internal Server Error": [
+            "Lỗi máy chủ"
+         ],
+         "The server encountered an internal error and was unable to complete your request": [
+            "Máy chủ đã gặp lỗi trong quá trình hoàn thành yêu cầu của bạn"
+         ],
+         "Flandre Scarlet is sad because she couldn't fulfill this request <br />(don't worry though, we have been notified of this issue and will try to fix this issue as soon as possible)": [
+            "Flandre Scarlet đang rất buồn vì cô ấy không thể hoàn thành yêu cầu của bạn. <br />(Đừng lo, chúng tôi đã nhận được thông báo về việc này và sẽ khắc phục trong thời gian ngắn nhất)"
+         ],
          "Announcements": [
             "Thông báo"
          ],
@@ -45,6 +78,18 @@ var i18n_vi_data = {
          ],
          "Question": [
             "Câu hỏi"
+         ],
+         "Unknown AJAX error: %(text_status)s %(error_thrown)s": [
+            "Lỗi AJAX không xác định: %(text_status)s %(error_thrown)s"
+         ],
+         "Authentication failure": [
+            "Lỗi xác thực"
+         ],
+         "Please login again": [
+            "Xin hãy đăng nhập lại"
+         ],
+         "AJAX error: %(error)s": [
+            "Lỗi AJAX: %(error)s"
          ],
          "You have finished your exam with score of %(score)d/%(questions_count)d": [
             "Bạn đã hoàn thành bài thi của mình với số điểm %(score)d/%(questions_count)d"
@@ -88,6 +133,9 @@ var i18n_vi_data = {
          "Profile edited successfully": [
             "Thay đổi thông tin thành công"
          ],
+         "Error %(error_code)d (%(error_name)s)": [
+            "Lỗi %(error_code)d (%(error_name)s)"
+         ],
          "Exam": [
             "Bài thi"
          ],
@@ -112,14 +160,14 @@ var i18n_vi_data = {
          "Announcement published at %(time)s": [
             "Thông báo này được đăng vào %(time)s"
          ],
-         "Account count: %(account_count)s": [
-            "Số lượng tài khoản đã đăng kí: %(account_count)s"
+         "Account count:": [
+            "Số tài khoản đã đăng kí:"
          ],
-         "Exam count: %(exam_count)s": [
-            "Số lượng bài thi đã thực hiện: %(exam_count)s"
+         "Exam count:": [
+            "Số bài thi đã làm:"
          ],
-         "Contest count: %(contest_count)s": [
-            "Số cuộc thi: %(contest_count)s"
+         "Participate": [
+            "Tham gia thi"
          ],
          "Username": [
             "Tên đăng nhập"
@@ -135,9 +183,6 @@ var i18n_vi_data = {
          ],
          "seconds": [
             "giây"
-         ],
-         "Participate": [
-            "Tham gia thi"
          ],
          "Contest: <strong>%(contest_title)s</strong>": [
             "Cuộc thi: <strong>%(contest_title)s</strong>"
@@ -200,16 +245,16 @@ var i18n_vi_data = {
             "Đăng xuất"
          ],
          "Online quiz": [
-            "Thi trực tuyến"
+            "Thi 6 bài học LLCT"
          ],
          "Online quiz Footer": [
-            "Thi tìm hiểu 6 Bài học LLCT dành cho Đoàn viên"
+            "Thi tìm hiểu 6 Bài học lý luận chính trị dành cho Đoàn viên"
          ],
          "Links": [
             "Các đường dẫn"
          ],
-         "Running <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></strong> revision <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></strong>": [
-            "Trang web sử dụng <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></strong>, phiên bản <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></strong>"
+         "Running <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></strong> revision <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></strong>. Current timezone: <strong>%(timezone)s</strong>": [
+            "Đang chạy <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></strong>, phiên bản <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></strong>. Múi giờ hiện tại: <strong>%(timezone)s</strong>"
          ],
          "Yourself": [
             "Bản thân"
@@ -277,6 +322,9 @@ var i18n_vi_data = {
          "Your password": [
             "Mật khẩu"
          ],
+         "Don't have an account? Register": [
+            "Bạn chưa có tài khoản? Đăng kí"
+         ],
          "Incorrect login information, please try again": [
             "Thông tin đăng nhập không chính xác, hãy thử lại"
          ],
@@ -285,6 +333,9 @@ var i18n_vi_data = {
          ],
          "Choose your school": [
             "Hãy chọn trường của bạn"
+         ],
+         "Log in to your existing account": [
+            "Đăng nhập vào tài khoản hiện có"
          ],
          "Please fill in your username": [
             "Xin hãy nhập tên đăng nhập"

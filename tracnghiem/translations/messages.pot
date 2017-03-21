@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-15 07:49+0700\n"
+"POT-Creation-Date: 2017-03-21 23:51+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,61 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
+
+#: __init__.py:31
+msgid "Page not found"
+msgstr ""
+
+#: __init__.py:32
+msgid "The page you're looking for does not exists."
+msgstr ""
+
+#: __init__.py:33
+msgid ""
+"Here's a cute Hatsune Miku because we like it. <br />Not really related, "
+"but whatever."
+msgstr ""
+
+#: __init__.py:41
+msgid "Bad request"
+msgstr ""
+
+#: __init__.py:42
+msgid "Your request couldn't be understood by the server."
+msgstr ""
+
+#: __init__.py:43 __init__.py:55
+msgid ""
+"Patchouli Knowledge is not happy that you might be doing nasty things to "
+"the server."
+msgstr ""
+
+#: __init__.py:52
+msgid "Forbidden"
+msgstr ""
+
+#: __init__.py:53
+msgid ""
+"You just tried to access something which you don't have the required "
+"permission to do so."
+msgstr ""
+
+#: __init__.py:64
+msgid "Internal Server Error"
+msgstr ""
+
+#: __init__.py:65
+msgid ""
+"The server encountered an internal error and was unable to complete your "
+"request."
+msgstr ""
+
+#: __init__.py:66
+msgid ""
+"Flandre Scarlet is sad because she couldn't fulfill this request <br "
+"/>(don't worry though, we have been notified of this issue and will try "
+"to fix this issue as soon as possible)"
+msgstr ""
 
 #: admin/templates/admin_announcement.html:3
 #: admin/templates/admin_template.html:3 templates/index.html:20
@@ -72,27 +127,45 @@ msgstr ""
 msgid "Question"
 msgstr ""
 
+#: static/js/exam.js:185
+#, python-format
+msgid "Unknown AJAX error: %(text_status)s %(error_thrown)s"
+msgstr ""
+
+#: static/js/exam.js:193
+msgid "Authentication failure"
+msgstr ""
+
 #: static/js/exam.js:194
+msgid "Please login again"
+msgstr ""
+
+#: static/js/exam.js:201
+#, python-format
+msgid "AJAX error: %(error)s"
+msgstr ""
+
+#: static/js/exam.js:228
 #, python-format
 msgid "You have finished your exam with score of %(score)d/%(questions_count)d"
 msgstr ""
 
-#: static/js/exam.js:199
+#: static/js/exam.js:233
 msgid "Congratulation"
 msgstr ""
 
-#: static/js/exam.js:233
+#: static/js/exam.js:267
 #, python-format
 msgid ""
 "Do you want to close the exam? You still have time and you have "
 "%(question)d questions unanswered"
 msgstr ""
 
-#: static/js/exam.js:237
+#: static/js/exam.js:271
 msgid "Do you want to close the exam? You still have time"
 msgstr ""
 
-#: static/js/exam.js:240
+#: static/js/exam.js:274
 msgid "Warning"
 msgstr ""
 
@@ -130,6 +203,16 @@ msgstr ""
 
 #: static/js/yourself.js:71
 msgid "Profile edited successfully"
+msgstr ""
+
+#: templates/error_template.html:2
+#, python-format
+msgid "Error %(error_code)d (%(error_name)s)"
+msgstr ""
+
+#: templates/error_template.html:24
+#, python-format
+msgid "Error %(error_code)d"
 msgstr ""
 
 #: templates/exam_page.html:3 templates/exam_page.html:73
