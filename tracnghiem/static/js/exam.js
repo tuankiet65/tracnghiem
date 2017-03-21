@@ -166,29 +166,62 @@ function Exam(exam, contest, questions){
         return answers;
     }.bind(this);
 
+    this.ajax_send_answer = function(answer, close_exam, success_callback){
+        $.ajax("/exam/save_answers", {
+            method: "POST",
+            data: {
+                exam_id: this.exam.secret_key,
+                answer: answer,
+                close_exam: close_exam
+            },
+            dataType: "json",
+            timeout: 4000,
+        }).done(
+            success_callback
+        ).fail(function(xhr, textStatus, errorThrown){
+            error = xhr.responseJSON.error;
+            if (!error){
+                Materialize.toast(
+                    i18n.translate("Unknown AJAX error: %(text_status)s %(error_thrown)s").fetch({
+                        text_status: textStatus,
+                        error_thrown: errorThrown
+                    })
+                , 5000);
+            } else {
+                if (xhr.status == 403){
+                    swal({
+                        titleText: i18n.translate("Authentication failure").fetch(),
+                        text: i18n.translate("Please login again").fetch(),
+                        type: "error",
+                    }).then(function(){
+                        window.location.reload(true);
+                    })
+                } else {
+                    Materialize.toast(
+                        i18n.translate("AJAX error: %(error)s").fetch({
+                            error: error
+                        })
+                    , 5000);
+                }
+            }
+        })
+    }.bind(this);
+
     this.save_answers = function(){
         $("#sync-done").css("display", "none");
         $("#sync-inprogress").css("display", "inline");
         answers = JSON.stringify(this.get_answers());
-        $.post("/exam/save_answers", {
-            exam_id: this.exam.secret_key,
-            answer: answers,
-            close_exam: false
-        }, function(){
+        this.ajax_send_answer(answers, false, function(){
             $("#sync-inprogress").css("display", "none");
             $("#sync-done").css("display", "inline");
             this.answers_modified = false;
-        }.bind(this))
+        }.bind(this));
     }.bind(this);
 
     this.close_exam = function(){
         answers = JSON.stringify(this.get_answers());
         $("#modal-submitting").modal("open");
-        $.post("/exam/save_answers", {
-            exam_id: this.exam.secret_key,
-            answer: answers,
-            close_exam: true
-        }, function(data){
+        this.ajax_send_answer(answers, true, function(data){
             $("#modal-submitting").modal("close");
             score = data.score;
             finish_text = i18n.translate("You have finished your exam with score of %(score)d/%(questions_count)d").fetch({
