@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% block title %}{{ _("Error %(error_code)d (%(error_name)s)", error_code = error_code, error_name = error_name) }}{% endblock %}
+{% block css %}
+    <style>
+        .error-img {
+            max-width: 80%;
+            margin: 0 auto;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .error-message {
+            font-size: 20px;
+        }
+    </style>
+{% endblock %}
+{% block main %}
+<div class="row">
+    <div class="col l6 m6 s12">
+        <img class="error-img" src="{{ url_for('static', filename=image) }}" alt="I'm a fucking weeaboo"/>
+    </div>
+    {% autoescape false %}
+    <div class="col l6 m6 s12">
+        <h1>{{  _("Error %(error_code)d", error_code = error_code) }}</h1>
+        <h2>{{ error_name }}</h2>
+        <p class="error-message">{{ error_message }}</p>
+        <p><i>{{ image_caption }}</i></p>
+    </div>
+    {% endautoescape %}
+</div>
+{% endblock %}

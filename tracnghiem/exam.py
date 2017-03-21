@@ -1,7 +1,7 @@
 import json
 import random
 
-from flask import g, Blueprint, request, render_template, redirect, url_for
+from flask import g, Blueprint, request, render_template, redirect, url_for, abort
 from flask import json as fjson
 from flask_wtf import FlaskForm
 from playhouse.shortcuts import model_to_dict
@@ -98,17 +98,17 @@ def create_exam_route():
     try:
         contest = request.args['contest_id']
     except KeyError:
-        return fjson.jsonify(error = "no contest id specified"), 400
+        return abort(400)
 
     # check if contest exists
     try:
         contest = Contest.get(id = contest)
     except Contest.DoesNotExist:
-        return fjson.jsonify(error = "no contest found"), 404
+        return abort(404)
 
     # check if the contest has started/hasn't ended
     if not in_contest_date(contest):
-        return fjson.jsonify(error = "contest either hasn't started yet or has ended"), 403
+        return abort(403)
 
     questions = generate_exam_questions(contest)
 
@@ -139,11 +139,10 @@ def exam_page(secret_key):
     try:
         exam = Exam.get(secret_key = secret_key)
     except Exam.DoesNotExist:
-        # TODO replace with a proper 404 page
-        return fjson.jsonify(error = "no exam found"), 404
+        return abort(404)
 
     if exam.contestant != g.user:
-        return fjson.jsonify(error = "this is not your exam"), 403
+        return abort(403)
 
     if exam.finished:
         return redirect(url_for("participate.index"))
