@@ -39,7 +39,7 @@ def yourself_view():
 
 
 @yourself.route("/change_password", methods = ["POST"])
-@need_to_login()
+@need_to_login(api_endpoint = True)
 def change_password():
     class ChangePasswordForm(FlaskForm):
         old_password = PasswordField(validators = [validators.DataRequired()])
@@ -61,7 +61,7 @@ def change_password():
 
 
 @yourself.route("/edit_profile", methods = ["POST"])
-@need_to_login()
+@need_to_login(api_endpoint = True)
 def edit_profile():
     class EditProfile(FlaskForm):
         name = StringField("name", validators = [validators.DataRequired()])

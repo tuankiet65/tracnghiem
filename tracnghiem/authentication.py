@@ -1,7 +1,7 @@
 from functools import wraps
 
 import peewee
-from flask import render_template, session, g, Blueprint, redirect, url_for, request
+from flask import render_template, session, g, Blueprint, redirect, url_for, request, json
 from flask_wtf import FlaskForm, RecaptchaField
 from wtforms import *
 
@@ -12,13 +12,16 @@ from .database import SessionToken, Account, School
 # Helper functions #
 ####################
 
-def need_to_login():
+def need_to_login(api_endpoint = False):
     def wrapper(f):
         @wraps(f)
         def wrapped(*args, **kwargs):
             if g.user is None:
                 session['redirect_uri'] = request.full_path
-                return redirect(url_for("authentication.general", login_required = True))
+                if api_endpoint:
+                    return json.jsonify(error = "need to login")
+                else:
+                    return redirect(url_for("authentication.general", login_required = True))
             return f(*args, **kwargs)
 
         return wrapped

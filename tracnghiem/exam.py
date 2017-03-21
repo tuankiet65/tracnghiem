@@ -166,7 +166,7 @@ def exam_page(secret_key):
 
 
 @exam.route("/save_answers", methods = ["POST"])
-@need_to_login()
+@need_to_login(api_endpoint = True)
 def save_answers():
     class ExamSaveAnswersForm(FlaskForm):
         exam_id = StringField(validators = [validators.DataRequired()])
