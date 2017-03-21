@@ -39,7 +39,6 @@ class Account(BaseModel):
     name = CharField()
     school = ForeignKeyField(School)
     klass = CharField()
-    facebook_id = CharField(index = True, max_length = 100)
 
 
 class SessionToken(BaseModel):
@@ -84,6 +83,5 @@ class Exam(BaseModel):
     finished = BooleanField(default = False)
     questions = TextField(default = "")
     answers = TextField(default = "")
-    session_lock = ForeignKeyField(SessionToken)
     contest = ForeignKeyField(Contest)
     score = IntegerField(default = 0)

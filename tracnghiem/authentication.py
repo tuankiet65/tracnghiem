@@ -74,7 +74,6 @@ def register(username, password, school, klass, name, *args, **kwargs):
                                  school = school,
                                  klass = klass,
                                  name = name,
-                                 facebook_id = 0,
                                  **kwargs)
         return account
     except peewee.IntegrityError:

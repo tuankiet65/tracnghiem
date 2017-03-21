@@ -113,7 +113,6 @@ def create_exam_route():
     questions = generate_exam_questions(contest)
 
     exam = Exam.create(contestant = g.user,
-                       session_lock = g.session_token,
                        contest = contest,
                        questions = json.dumps(questions))
 
