@@ -149,10 +149,7 @@ def register_page():
         else:
             return render_template("authentication/register.html", schools = get_schools(), account_exists = True)
     else:
-        if 'recaptcha' in form.errors:
-            return render_template("authentication/register.html", schools = get_schools(), registration_failed = True)
-        else:
-            return render_template("authentication/register.html", schools = get_schools())
+        return render_template("authentication/register.html", schools = get_schools(), registration_failed = True)
 
 
 @authentication.route("/logout", methods = ["GET"])
