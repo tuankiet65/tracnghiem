@@ -158,6 +158,24 @@ function Exam(exam, contest, questions){
 
     }
 
+    this.tick = function(remaining){
+        this.update_time_remaining(remaining);
+        if (remaining <= 0){
+            this.close_exam();
+        }
+    }.bind(this);
+
+    this.countdown = new Countdown(moment.utc(this.exam.finish_date),
+                                   this.tick);
+
+    this.autosave = function(){
+        if (this.answers_modified){
+            this.save_answers();
+        }
+    }.bind(this);
+
+    this.autosave_id = setInterval(this.autosave, 5000);
+
     this.get_answers = function(){
         answers = [];
         for (q = 0; q < this.questions.length; q++){
@@ -205,7 +223,7 @@ function Exam(exam, contest, questions){
                     , 5000);
                 }
             }
-        })
+        }.bind(this))
     }.bind(this);
 
     this.save_answers = function(){
@@ -240,24 +258,6 @@ function Exam(exam, contest, questions){
             })
         }.bind(this))
     }
-
-    this.tick = function(remaining){
-        this.update_time_remaining(remaining);
-        if (remaining <= 0){
-            this.close_exam();
-        }
-    }.bind(this);
-
-    this.countdown = new Countdown(moment.utc(this.exam.finish_date),
-                                   this.tick);
-
-    this.autosave = function(){
-        if (this.answers_modified){
-            this.save_answers();
-        }
-    }.bind(this);
-
-    this.autosave_id = setInterval(this.autosave, 5000);
 
     return this;
 }
