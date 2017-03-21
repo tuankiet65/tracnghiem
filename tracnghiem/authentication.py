@@ -83,7 +83,11 @@ def register(username, password, school, klass, name, *args, **kwargs):
 
 def logout():
     try:
+        if g.session_token is not None:
+            g.session_token.delete_instance()
         del session['token']
+    except SessionToken.DoesNotExist:
+        pass
     except KeyError:
         pass
 
