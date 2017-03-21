@@ -19,7 +19,7 @@ def need_to_login(api_endpoint = False):
             if g.user is None:
                 session['redirect_uri'] = request.full_path
                 if api_endpoint:
-                    return json.jsonify(error = "need to login")
+                    return json.jsonify(error = "need to login"), 403
                 else:
                     return redirect(url_for("authentication.general", login_required = True))
             return f(*args, **kwargs)
