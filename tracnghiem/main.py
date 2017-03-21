@@ -6,7 +6,7 @@ from raven.contrib.flask import Sentry
 from . import app
 from .admin import admin
 from .authentication import load_session_token, authentication, get_schools
-from .database import Announcement
+from .database import Announcement, database
 from .exam import exam
 from .install import install
 from .participate import participate
@@ -30,6 +30,17 @@ if app.config['IS_PRODUCTION']:
 @babel.localeselector
 def get_locale():
     return "vi"
+
+
+@app.before_request
+def _db_connect():
+    database.connect()
+
+
+@app.teardown_request
+def _db_close(exc):
+    if not database.is_closed():
+        database.close()
 
 
 app.before_request(load_session_token)
