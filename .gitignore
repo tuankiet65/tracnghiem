@@ -1,5 +1,22 @@
-/tracnghiem/static/libraries/
-!/tracnghiem/static/libraries/bower.json
-!/tracnghiem/static/libraries/.bowerrc
 /.installed
 /.cloc_exclude
+.idea/codeStyleSettings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/tracnghiem.iml
+.idea/vcs.xml
+.idea/workspace.xml
+"Logo Huy hi\341\273\207u \304\220o\303\240n TNCS HCM 2014.png"
+tracnghiem/__pycache__/
+tracnghiem/admin/__pycache__/
+/tracnghiem/static/libraries/material-design-icons/
+/tracnghiem/static/libraries/es6-promise/
+/tracnghiem/static/libraries/jquery/
+/tracnghiem/static/libraries/zxcvbn/
+/tracnghiem/static/libraries/moment/
+/tracnghiem/static/libraries/handlebars/
+/tracnghiem/static/libraries/raven-js/
+/tracnghiem/static/libraries/Jed/
+/tracnghiem/static/libraries/jed/
+/tracnghiem/static/libraries/sweetalert2/
+/tracnghiem/static/libraries/materialize/
