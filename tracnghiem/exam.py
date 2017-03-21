@@ -139,7 +139,7 @@ def exam_to_dict(exam: Exam):
 def exam_page(secret_key):
     try:
         exam = Exam.get(secret_key = secret_key)
-    except KeyError:
+    except Exam.DoesNotExist:
         # TODO replace with a proper 404 page
         return fjson.jsonify(error = "no exam found"), 404
 
@@ -197,6 +197,8 @@ def save_answers():
 
         # First we check if the one-minute grace period is over
         # If yes then we reject the final answer and forcibly close the exam
+        # Naybe not necessary because the exam should be closed automatically
+        # by the cleanup script, but whatever
         if get_current_local_dt() > (dt_to_local_dt(exam.finish_date) + get_minutes_delta(1)):
             close_exam(exam)
             return fjson.jsonify(result = "ok",
