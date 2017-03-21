@@ -1,4 +1,4 @@
-from flask import render_template, request, g
+from flask import render_template, request, g, session
 from flask_babel import Babel
 from flask_wtf.csrf import CSRFProtect
 from raven.contrib.flask import Sentry
@@ -55,6 +55,13 @@ def determine_workaround():
     else:
         g.workaround['ios_select'] = False
 
+@app.before_request
+def clear_redirect_uri():
+    if not (request.blueprint == "authentication"):
+        try:
+            del session['redirect_uri']
+        except KeyError:
+            pass
 
 @app.route("/")
 def index():

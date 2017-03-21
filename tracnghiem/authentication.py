@@ -17,10 +17,10 @@ def need_to_login(api_endpoint = False):
         @wraps(f)
         def wrapped(*args, **kwargs):
             if g.user is None:
-                session['redirect_uri'] = request.full_path
                 if api_endpoint:
                     return json.jsonify(error = "need to login"), 403
                 else:
+                    session['redirect_uri'] = request.full_path
                     return redirect(url_for("authentication.general", login_required = True))
             return f(*args, **kwargs)
 
