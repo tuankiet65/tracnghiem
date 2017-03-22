@@ -1,3 +1,4 @@
+{# This hack is fucking terrible but I don't really know any way better than this #}
 {% if request.path[:7] == "/admin/" %}
     {% extends "admin_template.html" %}
 {% else %}
@@ -27,7 +28,7 @@
     {% autoescape false %}
     <div class="col l6 m6 s12">
         <h1>{{  _("Error %(error_code)d", error_code = error_code) }}</h1>
-        <h2>{{ error_name }}</h2>
+        <h3>{{ error_name }}</h3>
         <p class="error-message">{{ error_message }}</p>
         <p><i>{{ image_caption }}</i></p>
     </div>
