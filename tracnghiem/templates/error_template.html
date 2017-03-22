@@ -1,4 +1,9 @@
-{% extends "template.html" %}
+{% if request.path[:7] == "/admin/" %}
+    {% extends "admin_template.html" %}
+{% else %}
+    {% extends "template.html" %}
+{% endif %}
+
 {% block title %}{{ _("Error %(error_code)d (%(error_name)s)", error_code = error_code, error_name = error_name) }}{% endblock %}
 {% block css %}
     <style>
