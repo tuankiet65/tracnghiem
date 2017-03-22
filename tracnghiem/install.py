@@ -4,8 +4,8 @@ from flask import Blueprint, render_template, url_for, redirect
 from flask_wtf import FlaskForm
 from wtforms import *
 
-from .admin.database import create_all_tables as admin_create_all_tables, AdminUser
-from .database import create_all_tables
+from .admin.database import AdminUser
+from .utils.database import create_all_tables
 
 install = Blueprint("install", __name__, url_prefix = "/install")
 
@@ -22,7 +22,6 @@ def install_route():
     form = FirstAdminForm()
     if form.validate_on_submit():
         create_all_tables()
-        admin_create_all_tables()
         AdminUser.create(username = form.username.data,
                          password = form.password.data)
         with open(".installed", "w") as f:

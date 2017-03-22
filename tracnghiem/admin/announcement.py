@@ -1,9 +1,9 @@
 import peewee
 from playhouse.shortcuts import model_to_dict
 
-from tracnghiem.common import local_datetime_from_timestamp
-from tracnghiem.database import Announcement
 from .data_list import DataList
+from ..database import Announcement
+from ..utils.datetime import local_dt_from_timestamp
 
 AnnouncementList = DataList("announcement")
 
@@ -24,7 +24,7 @@ def announcement_add(value):
     if 'title' not in value or 'content' not in value or 'time' not in value:
         return None
     try:
-        time = local_datetime_from_timestamp(int(value['time']))
+        time = local_dt_from_timestamp(int(value['time']))
     except ValueError:
         return None
     try:

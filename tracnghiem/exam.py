@@ -8,7 +8,7 @@ from playhouse.shortcuts import model_to_dict
 from wtforms import StringField, BooleanField, validators
 
 from .authentication import need_to_login
-from .common import dt_to_local_dt, get_current_local_dt, d_to_local_dt, get_minutes_delta
+from .utils.datetime import dt_to_local_dt, get_current_local_dt, d_to_local_dt, get_minutes_delta
 from .database import Exam, Question, Contest
 
 

@@ -2,17 +2,13 @@ from peewee import *
 from playhouse.fields import PasswordField
 
 from . import app
-from .common import get_current_local_dt, generate_random_string
+from .utils.datetime import get_current_local_dt
+from .utils.random import generate_random_string
 
 database = MySQLDatabase(host = app.config["DB_HOST"],
                          user = app.config["DB_USERNAME"],
                          password = app.config["DB_PASSWORD"],
                          database = app.config["DB_DATABASE"])
-
-
-def create_all_tables():
-    database.create_tables([Announcement, School, Account, SessionToken, Contest, Question, Exam, QuestionSet],
-                           safe = False)
 
 
 class BaseModel(Model):
@@ -85,3 +81,5 @@ class Exam(BaseModel):
     answers = TextField(default = "")
     contest = ForeignKeyField(Contest)
     score = IntegerField(default = 0)
+
+__all__ = ['database', 'Announcement', 'School', 'Account', 'SessionToken', 'Contest', 'Question', 'Exam', 'QuestionSet']

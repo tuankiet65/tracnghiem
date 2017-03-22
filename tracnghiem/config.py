@@ -4,7 +4,7 @@ import subprocess
 
 import dateutil.tz
 
-from .common import generate_random_string
+from .utils.random import generate_random_string
 
 
 class Config:

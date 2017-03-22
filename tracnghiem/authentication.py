@@ -6,7 +6,7 @@ from flask_wtf import FlaskForm, RecaptchaField
 from wtforms import *
 
 from .database import SessionToken, Account
-from .common import get_schools
+from .utils.schools import get_schools
 
 
 ####################

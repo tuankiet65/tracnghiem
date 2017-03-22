@@ -6,7 +6,7 @@ from raven.contrib.flask import Sentry
 from . import app
 from .admin import admin
 from .authentication import load_session_token, authentication
-from .common import get_schools
+from .utils.schools import get_schools
 from .database import Announcement, database
 from .exam import exam
 from .install import install

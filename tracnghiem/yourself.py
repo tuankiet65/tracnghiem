@@ -4,7 +4,7 @@ from wtforms import *
 
 from .authentication import need_to_login, logout
 from .database import Contest, Exam
-from .common import get_schools
+from .utils.schools import get_schools
 
 yourself = Blueprint("yourself", __name__, url_prefix = "/yourself")
 
