@@ -3,12 +3,13 @@ import random
 import string
 
 from . import app
+from .database import School
 
 
 def generate_random_string(length: int = 50) -> string:
     rand = random.SystemRandom()
     letters = string.ascii_letters + string.digits
-    return ''.join(rand.choice(letters) for _ in range(50))
+    return ''.join(rand.choice(letters) for _ in range(length))
 
 
 def get_current_local_dt() -> datetime.datetime:
@@ -39,3 +40,8 @@ def d_to_local_dt(d: datetime.date, min_time: bool = True):
 
 def get_minutes_delta(minutes = 0):
     return datetime.timedelta(minutes = minutes)
+
+
+def get_schools():
+    query = School.select()
+    return [(entry.id, entry.name) for entry in query]

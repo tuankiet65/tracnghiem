@@ -3,7 +3,8 @@ from flask_wtf import FlaskForm
 from wtforms import *
 
 from .authentication import need_to_login, logout
-from .database import School, Contest, Exam
+from .database import Contest, Exam
+from .common import get_schools
 
 yourself = Blueprint("yourself", __name__, url_prefix = "/yourself")
 
@@ -21,11 +22,6 @@ def get_contest_exam_map(contests):
     for contest in contests:
         contest_exam_map[contest.id] = get_exams(contest)
     return contest_exam_map
-
-
-def get_schools():
-    query = School.select()
-    return [(entry.id, entry.name) for entry in query]
 
 
 @yourself.route("/", methods = ["GET"], endpoint = "index")

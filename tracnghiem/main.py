@@ -5,7 +5,8 @@ from raven.contrib.flask import Sentry
 
 from . import app
 from .admin import admin
-from .authentication import load_session_token, authentication, get_schools
+from .authentication import load_session_token, authentication
+from .common import get_schools
 from .database import Announcement, database
 from .exam import exam
 from .install import install
@@ -58,9 +59,8 @@ def determine_workaround():
 
 @app.before_request
 def clear_redirect_uri():
-    if (((request.blueprint != "authentication")
-         or (request.endpoint == "authentication.logout"))
-        and (request.endpoint != "static")):
+    if ((request.blueprint != "authentication") or (request.endpoint == "authentication.logout")) and (
+                request.endpoint != "static"):
         try:
             del session['redirect_uri']
         except KeyError:

@@ -5,7 +5,8 @@ from flask import render_template, session, g, Blueprint, redirect, url_for, req
 from flask_wtf import FlaskForm, RecaptchaField
 from wtforms import *
 
-from .database import SessionToken, Account, School
+from .database import SessionToken, Account
+from .common import get_schools
 
 
 ####################
@@ -60,11 +61,6 @@ def login(account):
         return True
     else:
         return False
-
-
-def get_schools():
-    query = School.select()
-    return [(entry.id, entry.name) for entry in query]
 
 
 def register(username, password, school, klass, name, *args, **kwargs):

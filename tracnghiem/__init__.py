@@ -31,7 +31,7 @@ def error_404(e):
                            error_name = _("Page not found"),
                            error_message = _("The page you're looking for does not exists."),
                            image_caption = _(
-                               "Here's a cute Hatsune Miku because we like it. <br />Not really related, but whatever."),
+                               "Here's a cute Hatsune Miku because we like it.<br />Not really related, but whatever."),
                            image = "images/miku.jpg")
 
 
