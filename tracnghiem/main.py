@@ -6,12 +6,12 @@ from raven.contrib.flask import Sentry
 from . import app
 from .admin import admin
 from .authentication import load_session_token, authentication
-from .utils.schools import get_schools
 from .database import Announcement, database
 from .exam import exam
 from .install import install
 from .participate import participate
 from .stats import generate_stats
+from .utils.schools import get_schools
 from .yourself import yourself
 
 app.register_blueprint(admin)
@@ -20,6 +20,7 @@ app.register_blueprint(participate)
 app.register_blueprint(exam)
 app.register_blueprint(install)
 app.register_blueprint(yourself)
+
 csrf = CSRFProtect(app)
 babel = Babel(app)
 

@@ -3,7 +3,7 @@ import logging
 
 from tracnghiem.database import database, Exam
 from tracnghiem.exam import close_exam
-from tracnghiem.common import get_current_local_dt, get_minutes_delta
+from tracnghiem.utils.datetime import get_current_local_dt, get_minutes_delta
 
 
 def close_expired_exam():
