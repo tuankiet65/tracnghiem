@@ -1,11 +1,12 @@
 from flask import Blueprint, g, session, redirect, url_for, request, render_template
 
-from .authentication import login_page, get_user_from_token
 from .announcement import AnnouncementList
-from .school import SchoolList
+from .authentication import login_page, get_user_from_token
 from .contest import ContestList
-from .questions import QuestionList
 from .question_set import QuestionSetList
+from .questions import QuestionList
+from .reports import reports
+from .school import SchoolList
 
 admin = Blueprint("admin", __name__,
                   template_folder = "templates",
@@ -43,3 +44,4 @@ def logout():
 
 
 admin.add_url_rule("/login", view_func = login_page, methods = ["GET", "POST"])
+admin.add_url_rule("/reports", endpoint = "reports", view_func = reports, methods = ["GET", "POST"])

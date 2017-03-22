@@ -1,0 +1,79 @@
+{% set page_name = "contest" %}
+{% extends "admin_template.html" %}
+{% block title %} {{ _("Reports") }} {% endblock %}
+{% block css %}
+    <style>
+        #generate-report-form-div {
+            overflow: auto;
+        }
+    </style>
+{% endblock %}1
+{% block main %}
+    <h1>Generate reports</h1>
+    {% if fail %}
+        <h5 class="red-text">Form failure, please check.</h5>
+    {% endif %}
+    <div class="card-panel blue-grey lighten-5"  id="generate-report-form-div">
+        <form onsubmit="return form.validate_form()" action="{{ url_for('admin.reports') }}" method="post">
+            <div class="row">
+                <div class="col l6 m6 s12">
+                    <div class="input-field">
+                        <input type="date" class="datepicker" name="begin_date" id="begin-date">
+                        <label for="begin-date">Begin date</label>
+                    </div>
+                </div>
+                <div class="col l6 m6 s12">
+                    <div class="input-field">
+                        <input type="date" class="datepicker" name="end_date" id="end-date">
+                        <label for="end-date">End date</label>
+                    </div>
+                </div>
+            </div>
+
+            <h5>Include the following contests:</h5>
+            <div class="row">
+                {% for contest in contests %}
+                    <div class="col s6 m6 l6">
+                        <div class="input-field">
+                            <input type="checkbox" class="filled-in" name="contests" id="contests-{{contest[0]}}" checked="checked" value="{{contest[0]}}"/>
+                            <label for="contests-{{contest[0]}}">{{ contest[1] }}</label>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <h5>Include the following schools:</h5>
+            <div class="row">
+                {% for school in schools %}
+                    <div class="col s6 m6 l6">
+                        <div class="input-field">
+                            <input type="checkbox" class="filled-in" name="schools" id="school-{{school[0]}}" checked="checked" value="{{school[0]}}"/>
+                            <label for="school-{{school[0]}}">{{ school[1] }}</label>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="input-field">
+                <input type="checkbox" class="filled-in" name="include_unfinished" id="include_unfinished"/>
+                <label for="include_unfinished">Include unfinished exams</label>
+            </div>
+
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+            <button type="submit" class="right waves-effect waves-light btn">Export reports</button>
+        </form>
+    </div>
+{% endblock %}
+{% block js %}
+    <script src="/static/js/form_validation.js"></script>
+    <script>
+        begin_date = $("#begin-date").pickadate({
+            format: "dd/mm/yyyy"
+        })
+
+        end_date = $("#end-date").pickadate({
+            format: "dd/mm/yyyy"
+        })
+    </script>
+{% endblock %}
