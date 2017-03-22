@@ -22,7 +22,7 @@ app.config.from_object(Config)
 
 ################################
 # Error handling configuration #
-###############################
+################################
 
 @app.errorhandler(NotFound)
 def error_404(e):
@@ -32,7 +32,7 @@ def error_404(e):
                            error_message = _("The page you're looking for does not exists."),
                            image_caption = _(
                                "Here's a cute Hatsune Miku because we like it.<br />Not really related, but whatever."),
-                           image = "images/miku.jpg")
+                           image = "images/miku.jpg"), 404
 
 
 @app.errorhandler(BadRequest)
@@ -43,7 +43,7 @@ def error_400(e):
                            error_message = _("Your request couldn't be understood by the server."),
                            image_caption = _(
                                "Patchouli Knowledge is not happy that you might be doing nasty things to the server."),
-                           image = "images/patchouli.jpg")
+                           image = "images/patchouli.jpg"), 400
 
 
 @app.errorhandler(Forbidden)
@@ -55,7 +55,7 @@ def error_403(e):
                                "You just tried to access something which you don't have the required permission to do so."),
                            image_caption = _(
                                "Patchouli Knowledge is not happy that you might be doing nasty things to the server."),
-                           image = "images/patchouli.jpg")
+                           image = "images/patchouli.jpg"), 403
 
 
 @app.errorhandler(InternalServerError)
@@ -68,4 +68,4 @@ def error_500(e):
                            image_caption = _("Flandre Scarlet is sad because she couldn't fulfill this request <br />"
                                              "(don't worry though, we have been notified of this issue and will "
                                              "try to fix this issue as soon as possible)"),
-                           image = "images/sad_flandre.jpg")
+                           image = "images/sad_flandre.jpg"), 500
