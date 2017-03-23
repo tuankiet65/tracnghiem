@@ -1,5 +1,4 @@
 import time
-import logging
 
 from tracnghiem.database import database, Exam
 from tracnghiem.exam import close_exam
@@ -16,20 +15,28 @@ def close_expired_exam():
     count = 0
     for exam in unfinished_exam:
         close_exam(exam)
-        logging.info("Closing exam {}...".format(exam.secret_key))
+        log.log("Closing exam {}...".format(exam.secret_key))
         count += 1
 
     return count
 
+class Logging:
+    fmt = "{prefix}[{time}] {message}{suffix}"
+    time_format = "%Y-%m-%d %H:%M:%S"
 
-logging.basicConfig(format="[%(asctime)s][%(funcName)s] %(message)s",
-                    datefmt="%Y-%m-%d %H:%M:%S",
-                    level=logging.INFO)
+    def log(self, message, line_feed = False, new_line = True):
+        time = get_current_local_dt().strftime(self.time_format)
+        print(self.fmt.format(prefix = "\r" if line_feed else "",
+                              time = time,
+                              message = message,
+                              suffix = "\n" if new_line else ""), end = "")
 
-logging.info("Opening database")
+log = Logging()
+
+log.log("Opening database")
 database.connect()
 
-logging.info("Closing exam every 10 seconds")
+log.log("Closing exam every 10 seconds")
 
 try:
     while True:
@@ -38,10 +45,12 @@ try:
         # it's best to aggregate all changes into a transaction,
         # to prevent inconsistencies
         with database.atomic():
-            logging.info("Closing exam...")
             count = close_expired_exam()
-            logging.info("Closed {} exam".format(count))
+            if count == 0:
+                log.log("No exam to close".format(count), line_feed = True, new_line = False)
+            else:
+                log.log("Closed {} exam".format(count))
         time.sleep(10)
 except KeyboardInterrupt:
-    logging.info("Exiting...")
+    log.log("Ctrl-C caught, exiting...")
     database.close()
