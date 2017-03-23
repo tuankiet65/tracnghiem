@@ -197,7 +197,11 @@ function Exam(exam, contest, questions){
         }).done(
             success_callback
         ).fail(function(xhr, textStatus, errorThrown){
-            error = xhr.responseJSON.error;
+            if ('error' in xhr.responseJSON){
+                error = xhr.responseJSON.error;
+            } else {
+                error = null;
+            }
             if (!error){
                 Materialize.toast(
                     i18n.translate("Unknown AJAX error: %(text_status)s %(error_thrown)s").fetch({
