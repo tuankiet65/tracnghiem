@@ -27,14 +27,12 @@ function DataList(url, name, container, render_data_func, prepend){
         edit_button = element.find("."+this.name+"-button-edit");
 
         remove_button = element.find("."+this.name+"-button-remove");
-        console.log(remove_button);
         edit_button.click(this.edit);
         remove_button.click(this.remove);
     }
 
     this.load = function(){
         $.getJSON(this.ajax_get, $.proxy(function(data){
-            console.log(data);
             for (i = 0; i < data.entries.length; i++){
                 id = data.entries[i].id;
                 value = data.entries[i].value;
@@ -61,7 +59,6 @@ function DataList(url, name, container, render_data_func, prepend){
     }
 
     this.remove = $.proxy(function(event){
-        console.log("remove button pressed");
         button = $(event.currentTarget);
 
         offending_entry = button.closest("."+this.name+"-entry-wrapper");

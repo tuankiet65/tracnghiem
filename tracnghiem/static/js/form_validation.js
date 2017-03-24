@@ -53,7 +53,6 @@ function Form(){
         }, this));
         if (element.hasClass("datepicker")){
             element.change($.proxy(function(event){
-                console.log("change date called");
                 event.stopPropagation(); // prevent changes from Materialize js
                 this._validate_field(this.fields[field_name], true, false);
             }, this));
@@ -64,12 +63,9 @@ function Form(){
     this._validate_field = function(field, toggle_html_error, focus){
         element = field.element;
         value = element.val();
-        console.log(element);
-        console.log(field.validations.length);
         for (i = 0; i < field.validations.length; i++){
             if (!(field.validations[i](value))){
                 if (toggle_html_error){
-                    console.log("change");
                     element.removeClass("invalid valid").addClass("invalid");
                     if (focus){
                         if (element.hasClass("datepicker")){
@@ -85,7 +81,6 @@ function Form(){
                 return false;
             }
         }
-        console.log("passed");
         if (toggle_html_error){
             element.removeClass("invalid valid").addClass("valid");
         }
@@ -93,17 +88,12 @@ function Form(){
     }
 
     this.validate_form = function(){
-        console.log("called");
-        console.log(this.fields);
         for (field_name in this.fields){
-            console.log(field_name);
             field = this.fields[field_name];
-            console.log(field);
             if (!this._validate_field(field, true, true)){
                 return false;
             }
         }
-        console.log("end");
         return true;
     };
 
