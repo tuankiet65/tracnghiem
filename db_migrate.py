@@ -19,6 +19,17 @@ def migrate_since_8e15421():
     )
     logging.info("Migration done!")
 
+def migrate_since_906aff3():
+    logging.info("DB Migration for commit 906aff3")
+    logging.info("List of actions: ")
+    logging.info("* Add index for column exam.secret_key")
+    logging.info("")
+    logging.info("Migrating db")
+
+    migrate(
+        migrator.add_index("exam", ["secret_key"])
+    )
+    logging.info("Migration done!")
 
 logging.basicConfig(format = "[%(asctime)s][%(funcName)s] %(message)s",
                     datefmt = "%Y-%m-%d %H:%M:%S",
@@ -29,5 +40,5 @@ migrator = MySQLMigrator(database)
 logging.info("Opening database")
 database.connect()
 
-migrate_since_8e15421()
+migrate_since_906aff3()
 database.close()

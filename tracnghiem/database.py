@@ -71,7 +71,7 @@ class Question(BaseModel):
 
 class Exam(BaseModel):
     # auto id field
-    secret_key = CharField(default = lambda: generate_random_string(50))
+    secret_key = CharField(default = lambda: generate_random_string(50), index = True)
     contestant = ForeignKeyField(Account)
     begin_date = DateTimeField(default = get_current_local_dt)
     finish_date = DateTimeField()
