@@ -197,7 +197,9 @@ function Exam(exam, contest, questions){
         }).done(
             success_callback
         ).fail(function(xhr, textStatus, errorThrown){
-            if ('error' in xhr.responseJSON){
+            if (!('responseJson' in xhr)){
+                error = null;
+            } else if ('error' in xhr.responseJSON){
                 error = xhr.responseJSON.error;
             } else {
                 error = null;
