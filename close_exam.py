@@ -49,7 +49,7 @@ try:
             if count == 0:
                 log.log("No exam to close".format(count), line_feed = True, new_line = False)
             else:
-                log.log("Closed {} exam".format(count))
+                log.log("\nClosed {} exam".format(count))
         time.sleep(10)
 except KeyboardInterrupt:
     log.log("Ctrl-C caught, exiting...")
