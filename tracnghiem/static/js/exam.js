@@ -184,7 +184,7 @@ function Exam(exam, contest, questions){
         return answers;
     }.bind(this);
 
-    this.ajax_send_answer = function(answer, close_exam, success_callback){
+    this.ajax_send_answer = function(answer, close_exam, success_callback, failure_callback){
         $.ajax("/exam/save_answers", {
             method: "POST",
             data: {
@@ -197,7 +197,7 @@ function Exam(exam, contest, questions){
         }).done(
             success_callback
         ).fail(function(xhr, textStatus, errorThrown){
-            if (!('responseJson' in xhr)){
+            if (!('responseJSON' in xhr)){
                 error = null;
             } else if ('error' in xhr.responseJSON){
                 error = xhr.responseJSON.error;
@@ -229,17 +229,22 @@ function Exam(exam, contest, questions){
                     , 5000);
                 }
             }
+            failure_callback();
         }.bind(this))
     }.bind(this);
 
     this.save_answers = function(){
         $("#sync-done").css("display", "none");
+        $("#sync-fail").css("display", "none");
         $("#sync-inprogress").css("display", "inline");
         answers = JSON.stringify(this.get_answers());
         this.ajax_send_answer(answers, false, function(){
             $("#sync-inprogress").css("display", "none");
             $("#sync-done").css("display", "inline");
             this.answers_modified = false;
+        }.bind(this), function(){
+            $("#sync-inprogress").css("display", "none");
+            $("#sync-fail").css("display", "inline");
         }.bind(this));
     }.bind(this);
 
@@ -262,7 +267,16 @@ function Exam(exam, contest, questions){
             }).then(function(){
                 window.location.replace("/participate");
             })
-        }.bind(this))
+        }.bind(this), function(){
+            $("#modal-submitting").modal("close");
+            swal({
+                titleText: i18n.translate("Error").fetch(),
+                text: i18n.translate("We can't close your exam at the moment. Please try again in a few seconds.").fetch(),
+                type: "error",
+            }).then(function(){
+                window.location.reload(true);
+            })
+        })
     }
 
     return this;

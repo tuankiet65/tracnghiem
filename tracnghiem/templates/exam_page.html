@@ -35,7 +35,7 @@
             margin-bottom: 64px !important;
         }
 
-        #sync-inprogress, #sync-done {
+        #sync-inprogress, #sync-done, #sync-fail{
             display: none;
         }
 
@@ -95,6 +95,9 @@
                 </i>
                 <i class="material-icons tooltipped" data-delay="50" data-position="top" data-tooltip="{{ _('Your progress was saved') }}" id="sync-done">
                     cloud_done
+                </i>
+                <i class="material-icons tooltipped" data-delay="50" data-html="true" data-position="top" data-tooltip="{{ _("Error while saving your progress<br/>Trying...") }}" id="sync-fail">
+                    error
                 </i>
             </span>
             <button class="waves-effect waves-light btn" id="close-exam-button">{{ _("End exam") }}</button>
