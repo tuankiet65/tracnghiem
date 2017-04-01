@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-21 23:51+0700\n"
+"POT-Creation-Date: 2017-04-02 01:49+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,45 +27,45 @@ msgstr ""
 
 #: __init__.py:33
 msgid ""
-"Here's a cute Hatsune Miku because we like it. <br />Not really related, "
+"Here's a cute Hatsune Miku because we like it.<br />Not really related, "
 "but whatever."
 msgstr ""
 
-#: __init__.py:41
+#: __init__.py:42
 msgid "Bad request"
 msgstr ""
 
-#: __init__.py:42
+#: __init__.py:43
 msgid "Your request couldn't be understood by the server."
 msgstr ""
 
-#: __init__.py:43 __init__.py:55
+#: __init__.py:44 __init__.py:56
 msgid ""
 "Patchouli Knowledge is not happy that you might be doing nasty things to "
 "the server."
 msgstr ""
 
-#: __init__.py:52
+#: __init__.py:53
 msgid "Forbidden"
 msgstr ""
 
-#: __init__.py:53
+#: __init__.py:54
 msgid ""
 "You just tried to access something which you don't have the required "
 "permission to do so."
 msgstr ""
 
-#: __init__.py:64
+#: __init__.py:65
 msgid "Internal Server Error"
 msgstr ""
 
-#: __init__.py:65
+#: __init__.py:66
 msgid ""
 "The server encountered an internal error and was unable to complete your "
 "request."
 msgstr ""
 
-#: __init__.py:66
+#: __init__.py:68
 msgid ""
 "Flandre Scarlet is sad because she couldn't fulfill this request <br "
 "/>(don't worry though, we have been notified of this issue and will try "
@@ -90,6 +90,10 @@ msgstr ""
 msgid "Question Set"
 msgstr ""
 
+#: admin/templates/admin_reports.html:3 admin/templates/admin_template.html:7
+msgid "Reports"
+msgstr ""
+
 #: admin/templates/admin_school.html:3 admin/templates/admin_template.html:4
 msgid "Schools"
 msgstr ""
@@ -107,19 +111,7 @@ msgstr ""
 msgid "Question sets"
 msgstr ""
 
-#: admin/templates/admin_template.html:7
-msgid "Contestants"
-msgstr ""
-
 #: admin/templates/admin_template.html:8
-msgid "Admins"
-msgstr ""
-
-#: admin/templates/admin_template.html:9 templates/index.html:32
-msgid "Statistics"
-msgstr ""
-
-#: admin/templates/admin_template.html:10
 msgid "Logout"
 msgstr ""
 
@@ -127,45 +119,53 @@ msgstr ""
 msgid "Question"
 msgstr ""
 
-#: static/js/exam.js:185
+#: static/js/exam.js:209
 #, python-format
 msgid "Unknown AJAX error: %(text_status)s %(error_thrown)s"
 msgstr ""
 
-#: static/js/exam.js:193
+#: static/js/exam.js:218
 msgid "Authentication failure"
 msgstr ""
 
-#: static/js/exam.js:194
+#: static/js/exam.js:219
 msgid "Please login again"
 msgstr ""
 
-#: static/js/exam.js:201
+#: static/js/exam.js:226
 #, python-format
 msgid "AJAX error: %(error)s"
 msgstr ""
 
-#: static/js/exam.js:228
+#: static/js/exam.js:259
 #, python-format
 msgid "You have finished your exam with score of %(score)d/%(questions_count)d"
 msgstr ""
 
-#: static/js/exam.js:233
+#: static/js/exam.js:264
 msgid "Congratulation"
 msgstr ""
 
-#: static/js/exam.js:267
+#: static/js/exam.js:273
+msgid "Error"
+msgstr ""
+
+#: static/js/exam.js:274
+msgid "We can't close your exam at the moment. Please try again in a few seconds."
+msgstr ""
+
+#: static/js/exam.js:289
 #, python-format
 msgid ""
 "Do you want to close the exam? You still have time and you have "
 "%(question)d questions unanswered"
 msgstr ""
 
-#: static/js/exam.js:271
+#: static/js/exam.js:293
 msgid "Do you want to close the exam? You still have time"
 msgstr ""
 
-#: static/js/exam.js:274
+#: static/js/exam.js:296
 msgid "Warning"
 msgstr ""
 
@@ -205,12 +205,12 @@ msgstr ""
 msgid "Profile edited successfully"
 msgstr ""
 
-#: templates/error_template.html:2
+#: templates/error_template.html:8
 #, python-format
 msgid "Error %(error_code)d (%(error_name)s)"
 msgstr ""
 
-#: templates/error_template.html:24
+#: templates/error_template.html:30
 #, python-format
 msgid "Error %(error_code)d"
 msgstr ""
@@ -235,17 +235,25 @@ msgstr ""
 msgid "Your progress was saved"
 msgstr ""
 
-#: templates/exam_page.html:100
+#: templates/exam_page.html:99
+msgid "Error while saving your progress<br/>Trying..."
+msgstr ""
+
+#: templates/exam_page.html:103
 msgid "End exam"
 msgstr ""
 
-#: templates/exam_page.html:118
+#: templates/exam_page.html:121
 msgid "Closing exam"
 msgstr ""
 
 #: templates/index.html:26
 #, python-format
 msgid "Announcement published at %(time)s"
+msgstr ""
+
+#: templates/index.html:32
+msgid "Statistics"
 msgstr ""
 
 #: templates/index.html:38

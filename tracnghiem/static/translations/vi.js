@@ -10,32 +10,32 @@ var i18n_vi_data = {
          "Page not found": [
             "Không tìm thấy trang yêu cầu"
          ],
-         "The page you're looking for does not exists": [
-            "Chúng tôi không thể tìm thấy trang bạn yêu cầu"
+         "The page you're looking for does not exists.": [
+            "Chúng tôi không thể tìm thấy trang bạn yêu cầu."
          ],
-         "Here's a cute Hatsune Miku because we like it. <br />Not really related, but whatever": [
-            "Đây là Hatsune Miku vì chúng tôi thích vậy. <br />Cũng chả liên quan tới cái báo lỗi này đâu, mà thôi kệ."
+         "Here's a cute Hatsune Miku because we like it.<br />Not really related, but whatever.": [
+            "Đây là Hatsune Miku vì chúng tôi thích vậy. <br />Cũng chẳng liên quan tới cái báo lỗi này đâu, mà thôi kệ."
          ],
          "Bad request": [
             "Yêu cầu không đúng chuẩn"
          ],
-         "Your request couldn't be understood by the server": [
-            "Máy chủ không thể hiểu yêu cầu của bạn"
+         "Your request couldn't be understood by the server.": [
+            "Máy chủ không thể hiểu yêu cầu của bạn."
          ],
-         "Patchouli Knowledge is not happy that you might be doing nasty things to the server": [
-            "Patchouli Knowledge có vẻ không vui lắm vì bạn đang làm gì đó"
+         "Patchouli Knowledge is not happy that you might be doing nasty things to the server.": [
+            "Patchouli Knowledge có vẻ không vui lắm vì bạn đang táy máy gì đó với máy chủ thì phải."
          ],
          "Forbidden": [
             "Tài nguyên cấm truy cập"
          ],
-         "You just tried to access something which you don't have the required permission to do so": [
-            "Bạn không có quyền truy cập vào trang mà bạn đã yêu cầu"
+         "You just tried to access something which you don't have the required permission to do so.": [
+            "Bạn không có quyền truy cập vào trang mà bạn đã yêu cầu."
          ],
          "Internal Server Error": [
             "Lỗi máy chủ"
          ],
-         "The server encountered an internal error and was unable to complete your request": [
-            "Máy chủ đã gặp lỗi trong quá trình hoàn thành yêu cầu của bạn"
+         "The server encountered an internal error and was unable to complete your request.": [
+            "Máy chủ đã gặp lỗi trong quá trình hoàn thành yêu cầu của bạn."
          ],
          "Flandre Scarlet is sad because she couldn't fulfill this request <br />(don't worry though, we have been notified of this issue and will try to fix this issue as soon as possible)": [
             "Flandre Scarlet đang rất buồn vì cô ấy không thể hoàn thành yêu cầu của bạn. <br />(Đừng lo, chúng tôi đã nhận được thông báo về việc này và sẽ khắc phục trong thời gian ngắn nhất)"
@@ -52,6 +52,9 @@ var i18n_vi_data = {
          "Question Set": [
             "Bộ câu hỏi"
          ],
+         "Reports": [
+            "Xuất báo cáo"
+         ],
          "Schools": [
             "Trường"
          ],
@@ -63,15 +66,6 @@ var i18n_vi_data = {
          ],
          "Question sets": [
             "Bộ câu hỏi"
-         ],
-         "Contestants": [
-            "Thí sinh"
-         ],
-         "Admins": [
-            "Admin"
-         ],
-         "Statistics": [
-            "Thống kê"
          ],
          "Logout": [
             "Đăng xuất"
@@ -96,6 +90,12 @@ var i18n_vi_data = {
          ],
          "Congratulation": [
             "Chúc mừng"
+         ],
+         "Error": [
+            "Lỗi"
+         ],
+         "We can't close your exam at the moment. Please try again in a few seconds.": [
+            "Chúng tôi không thể kết thúc bài làm của bạn vào thời điểm hiện tại. Xin hãy thử lại trong giây lát."
          ],
          "Do you want to close the exam? You still have time and you have %(question)d questions unanswered": [
             "Bạn có muốn nộp bài hay không?\nBạn vẫn còn thời gian làm bài và còn %(question)d câu hỏi chưa trả lời."
@@ -136,6 +136,9 @@ var i18n_vi_data = {
          "Error %(error_code)d (%(error_name)s)": [
             "Lỗi %(error_code)d (%(error_name)s)"
          ],
+         "Error %(error_code)d": [
+            "Lỗi %(error_code)d"
+         ],
          "Exam": [
             "Bài thi"
          ],
@@ -151,6 +154,9 @@ var i18n_vi_data = {
          "Your progress was saved": [
             "Bài làm của bạn đã được lưu"
          ],
+         "Error while saving your progress<br/>Trying...": [
+            "Gặp lỗi trong quá trình lưu bài làm<br/>Đang thử lại..."
+         ],
          "End exam": [
             "Nộp bài"
          ],
@@ -159,6 +165,9 @@ var i18n_vi_data = {
          ],
          "Announcement published at %(time)s": [
             "Thông báo này được đăng vào %(time)s"
+         ],
+         "Statistics": [
+            "Thống kê"
          ],
          "Account count:": [
             "Số tài khoản đã đăng kí:"

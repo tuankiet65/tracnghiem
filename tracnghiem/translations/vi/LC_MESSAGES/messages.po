@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-21 23:51+0700\n"
-"PO-Revision-Date: 2017-03-21 23:52+0700\n"
+"POT-Creation-Date: 2017-04-02 01:49+0700\n"
+"PO-Revision-Date: 2017-04-02 01:51+0700\n"
 "Last-Translator: \n"
 "Language: vi\n"
 "Language-Team: vi <LL@li.org>\n"
@@ -28,38 +28,38 @@ msgid "The page you're looking for does not exists."
 msgstr "Chúng tôi không thể tìm thấy trang bạn yêu cầu."
 
 #: __init__.py:33
-msgid "Here's a cute Hatsune Miku because we like it. <br />Not really related, but whatever."
-msgstr "Đây là Hatsune Miku vì chúng tôi thích vậy. <br />Cũng chả liên quan tới cái báo lỗi này đâu, mà thôi kệ."
+msgid "Here's a cute Hatsune Miku because we like it.<br />Not really related, but whatever."
+msgstr "Đây là Hatsune Miku vì chúng tôi thích vậy. <br />Cũng chẳng liên quan tới cái báo lỗi này đâu, mà thôi kệ."
 
-#: __init__.py:41
+#: __init__.py:42
 msgid "Bad request"
 msgstr "Yêu cầu không đúng chuẩn"
 
-#: __init__.py:42
+#: __init__.py:43
 msgid "Your request couldn't be understood by the server."
 msgstr "Máy chủ không thể hiểu yêu cầu của bạn."
 
-#: __init__.py:43 __init__.py:55
+#: __init__.py:44 __init__.py:56
 msgid "Patchouli Knowledge is not happy that you might be doing nasty things to the server."
 msgstr "Patchouli Knowledge có vẻ không vui lắm vì bạn đang táy máy gì đó với máy chủ thì phải."
 
-#: __init__.py:52
+#: __init__.py:53
 msgid "Forbidden"
 msgstr "Tài nguyên cấm truy cập"
 
-#: __init__.py:53
+#: __init__.py:54
 msgid "You just tried to access something which you don't have the required permission to do so."
 msgstr "Bạn không có quyền truy cập vào trang mà bạn đã yêu cầu."
 
-#: __init__.py:64
+#: __init__.py:65
 msgid "Internal Server Error"
 msgstr "Lỗi máy chủ"
 
-#: __init__.py:65
+#: __init__.py:66
 msgid "The server encountered an internal error and was unable to complete your request."
 msgstr "Máy chủ đã gặp lỗi trong quá trình hoàn thành yêu cầu của bạn."
 
-#: __init__.py:66
+#: __init__.py:68
 msgid "Flandre Scarlet is sad because she couldn't fulfill this request <br />(don't worry though, we have been notified of this issue and will try to fix this issue as soon as possible)"
 msgstr "Flandre Scarlet đang rất buồn vì cô ấy không thể hoàn thành yêu cầu của bạn. <br />(Đừng lo, chúng tôi đã nhận được thông báo về việc này và sẽ khắc phục trong thời gian ngắn nhất)"
 
@@ -81,6 +81,10 @@ msgstr "Câu hỏi trong bộ câu hỏi %(qset_name)s"
 msgid "Question Set"
 msgstr "Bộ câu hỏi"
 
+#: admin/templates/admin_reports.html:3 admin/templates/admin_template.html:7
+msgid "Reports"
+msgstr "Xuất báo cáo"
+
 #: admin/templates/admin_school.html:3 admin/templates/admin_template.html:4
 msgid "Schools"
 msgstr "Trường"
@@ -98,19 +102,7 @@ msgstr "Cuộc thi"
 msgid "Question sets"
 msgstr "Bộ câu hỏi"
 
-#: admin/templates/admin_template.html:7
-msgid "Contestants"
-msgstr "Thí sinh"
-
 #: admin/templates/admin_template.html:8
-msgid "Admins"
-msgstr "Admin"
-
-#: admin/templates/admin_template.html:9 templates/index.html:32
-msgid "Statistics"
-msgstr "Thống kê"
-
-#: admin/templates/admin_template.html:10
 msgid "Logout"
 msgstr "Đăng xuất"
 
@@ -118,45 +110,53 @@ msgstr "Đăng xuất"
 msgid "Question"
 msgstr "Câu hỏi"
 
-#: static/js/exam.js:185
+#: static/js/exam.js:209
 #, python-format
 msgid "Unknown AJAX error: %(text_status)s %(error_thrown)s"
 msgstr "Lỗi AJAX không xác định: %(text_status)s %(error_thrown)s"
 
-#: static/js/exam.js:193
+#: static/js/exam.js:218
 msgid "Authentication failure"
 msgstr "Lỗi xác thực"
 
-#: static/js/exam.js:194
+#: static/js/exam.js:219
 msgid "Please login again"
 msgstr "Xin hãy đăng nhập lại"
 
-#: static/js/exam.js:201
+#: static/js/exam.js:226
 #, python-format
 msgid "AJAX error: %(error)s"
 msgstr "Lỗi AJAX: %(error)s"
 
-#: static/js/exam.js:228
+#: static/js/exam.js:259
 #, python-format
 msgid "You have finished your exam with score of %(score)d/%(questions_count)d"
 msgstr "Bạn đã hoàn thành bài thi của mình với số điểm %(score)d/%(questions_count)d"
 
-#: static/js/exam.js:233
+#: static/js/exam.js:264
 msgid "Congratulation"
 msgstr "Chúc mừng"
 
-#: static/js/exam.js:267
+#: static/js/exam.js:273
+msgid "Error"
+msgstr "Lỗi"
+
+#: static/js/exam.js:274
+msgid "We can't close your exam at the moment. Please try again in a few seconds."
+msgstr "Chúng tôi không thể kết thúc bài làm của bạn vào thời điểm hiện tại. Xin hãy thử lại trong giây lát."
+
+#: static/js/exam.js:289
 #, python-format
 msgid "Do you want to close the exam? You still have time and you have %(question)d questions unanswered"
 msgstr "Bạn có muốn nộp bài hay không?\n"
 "Bạn vẫn còn thời gian làm bài và còn %(question)d câu hỏi chưa trả lời."
 
-#: static/js/exam.js:271
+#: static/js/exam.js:293
 msgid "Do you want to close the exam? You still have time"
 msgstr "Bạn có muốn nộp bài hay không?\n"
 "Bạn vẫn còn thời gian làm bài."
 
-#: static/js/exam.js:274
+#: static/js/exam.js:296
 msgid "Warning"
 msgstr "Cảnh báo"
 
@@ -196,12 +196,12 @@ msgstr "Xin hãy điền lớp của bạn"
 msgid "Profile edited successfully"
 msgstr "Thay đổi thông tin thành công"
 
-#: templates/error_template.html:2
+#: templates/error_template.html:8
 #, python-format
 msgid "Error %(error_code)d (%(error_name)s)"
 msgstr "Lỗi %(error_code)d (%(error_name)s)"
 
-#: templates/error_template.html:24
+#: templates/error_template.html:30
 #, python-format
 msgid "Error %(error_code)d"
 msgstr "Lỗi %(error_code)d"
@@ -226,11 +226,15 @@ msgstr "Đang lưu bài làm của bạn"
 msgid "Your progress was saved"
 msgstr "Bài làm của bạn đã được lưu"
 
-#: templates/exam_page.html:100
+#: templates/exam_page.html:99
+msgid "Error while saving your progress<br/>Trying..."
+msgstr "Gặp lỗi trong quá trình lưu bài làm<br/>Đang thử lại..."
+
+#: templates/exam_page.html:103
 msgid "End exam"
 msgstr "Nộp bài"
 
-#: templates/exam_page.html:118
+#: templates/exam_page.html:121
 msgid "Closing exam"
 msgstr "Đang nộp bài"
 
@@ -238,6 +242,10 @@ msgstr "Đang nộp bài"
 #, python-format
 msgid "Announcement published at %(time)s"
 msgstr "Thông báo này được đăng vào %(time)s"
+
+#: templates/index.html:32
+msgid "Statistics"
+msgstr "Thống kê"
 
 #: templates/index.html:38
 msgid "Account count:"
@@ -534,3 +542,19 @@ msgstr "Bạn chưa điền hết tất cả các trường, có lẽ bạn chư
 
 #~ msgid "Your request couldn't be understood by the server"
 #~ msgstr "Máy chủ không thể hiểu yêu cầu của bạn"
+
+#~ msgid ""
+#~ "Here's a cute Hatsune Miku because "
+#~ "we like it. <br />Not really "
+#~ "related, but whatever."
+#~ msgstr ""
+#~ "Đây là Hatsune Miku vì chúng tôi"
+#~ " thích vậy. <br />Cũng chả liên "
+#~ "quan tới cái báo lỗi này đâu, "
+#~ "mà thôi kệ."
+
+#~ msgid "Contestants"
+#~ msgstr "Thí sinh"
+
+#~ msgid "Admins"
+#~ msgstr "Admin"
