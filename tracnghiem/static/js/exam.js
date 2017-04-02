@@ -197,12 +197,12 @@ function Exam(exam, contest, questions){
         }).done(
             success_callback
         ).fail(function(xhr, textStatus, errorThrown){
-            if (!('responseJSON' in xhr)){
+            if (typeof xhr.responseJSON === "undefined"){
                 error = null;
-            } else if ('error' in xhr.responseJSON){
-                error = xhr.responseJSON.error;
+            } else if (typeof xhr.responseJSON.error === "undefined"){
+                error = null;
             } else {
-                error = null;
+                error = xhr.responseJSON.error;
             }
             if (!error){
                 Materialize.toast(
