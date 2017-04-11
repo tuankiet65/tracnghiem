@@ -1,14 +1,23 @@
 var FormValidation = {
     StrongPassword: function(value){
+        if (!value){
+            return false;
+        }
         result = zxcvbn(value);
         return (result.score >= 1)
     },
 
     NotEmpty: function(value){
+        if (!value){
+            return false;
+        }
         return (value.length > 0)
     },
 
     SelectNotDefault: function(value){
+        if (!value){
+            return false;
+        }
         return (value.length != "0")
     },
 
