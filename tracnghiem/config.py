@@ -4,6 +4,7 @@ import subprocess
 
 import dateutil.tz
 
+
 class Config:
     WTF_CSRF_ENABLED = True
 
@@ -25,6 +26,7 @@ class Config:
     FRIENDLY_TIMEZONE = datetime.datetime.now(TIMEZONE).tzname()
 
     SECRET_KEY = os.environ.get("SECRET_KEY")
+
 
 class DevelopmentConfig(Config):
     IS_PRODUCTION = False

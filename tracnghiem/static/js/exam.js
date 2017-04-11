@@ -206,7 +206,7 @@ function Exam(exam, contest, questions){
             }
             if (!error){
                 Materialize.toast(
-                    i18n.translate("Unknown AJAX error: %(text_status)s %(error_thrown)s").fetch({
+                    i18n.translate("Unknown AJAX error: %(text_status)s %(error_thrown)s, please reload.").fetch({
                         text_status: textStatus,
                         error_thrown: errorThrown
                     })
@@ -223,7 +223,7 @@ function Exam(exam, contest, questions){
                     })
                 } else {
                     Materialize.toast(
-                        i18n.translate("AJAX error: %(error)s").fetch({
+                        i18n.translate("AJAX error: %(error)s, please reload.").fetch({
                             error: error
                         })
                     , 5000);

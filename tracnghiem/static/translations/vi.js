@@ -73,8 +73,8 @@ var i18n_vi_data = {
          "Question": [
             "Câu hỏi"
          ],
-         "Unknown AJAX error: %(text_status)s %(error_thrown)s": [
-            "Lỗi AJAX không xác định: %(text_status)s %(error_thrown)s"
+         "Unknown AJAX error: %(text_status)s %(error_thrown)s, please reload.": [
+            "Lỗi AJAX không xác định: %(text_status)s %(error_thrown)s, xin hãy tải lại trang."
          ],
          "Authentication failure": [
             "Lỗi xác thực"
@@ -82,8 +82,8 @@ var i18n_vi_data = {
          "Please login again": [
             "Xin hãy đăng nhập lại"
          ],
-         "AJAX error: %(error)s": [
-            "Lỗi AJAX: %(error)s"
+         "AJAX error: %(error)s, please reload.": [
+            "Lỗi AJAX: %(error)s, xin hãy tải lại trang."
          ],
          "You have finished your exam with score of %(score)d/%(questions_count)d": [
             "Bạn đã hoàn thành bài thi của mình với số điểm %(score)d/%(questions_count)d"

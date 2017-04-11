@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-04-02 01:49+0700\n"
-"PO-Revision-Date: 2017-04-02 01:51+0700\n"
+"POT-Creation-Date: 2017-04-11 17:14+0700\n"
+"PO-Revision-Date: 2017-04-11 17:15+0700\n"
 "Last-Translator: \n"
 "Language: vi\n"
 "Language-Team: vi <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Generated-By: Babel 2.4.0\n"
 "X-Generator: Poedit 1.8.11\n"
 
 #: __init__.py:31
@@ -112,8 +112,8 @@ msgstr "Câu hỏi"
 
 #: static/js/exam.js:209
 #, python-format
-msgid "Unknown AJAX error: %(text_status)s %(error_thrown)s"
-msgstr "Lỗi AJAX không xác định: %(text_status)s %(error_thrown)s"
+msgid "Unknown AJAX error: %(text_status)s %(error_thrown)s, please reload."
+msgstr "Lỗi AJAX không xác định: %(text_status)s %(error_thrown)s, xin hãy tải lại trang."
 
 #: static/js/exam.js:218
 msgid "Authentication failure"
@@ -125,8 +125,8 @@ msgstr "Xin hãy đăng nhập lại"
 
 #: static/js/exam.js:226
 #, python-format
-msgid "AJAX error: %(error)s"
-msgstr "Lỗi AJAX: %(error)s"
+msgid "AJAX error: %(error)s, please reload."
+msgstr "Lỗi AJAX: %(error)s, xin hãy tải lại trang."
 
 #: static/js/exam.js:259
 #, python-format
@@ -558,3 +558,9 @@ msgstr "Bạn chưa điền hết tất cả các trường, có lẽ bạn chư
 
 #~ msgid "Admins"
 #~ msgstr "Admin"
+
+#~ msgid "Unknown AJAX error: %(text_status)s %(error_thrown)s"
+#~ msgstr "Lỗi AJAX không xác định: %(text_status)s %(error_thrown)s"
+
+#~ msgid "AJAX error: %(error)s"
+#~ msgstr "Lỗi AJAX: %(error)s"
