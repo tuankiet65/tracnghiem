@@ -4,9 +4,6 @@ import subprocess
 
 import dateutil.tz
 
-from .utils.random import generate_random_string
-
-
 class Config:
     WTF_CSRF_ENABLED = True
 
@@ -27,10 +24,10 @@ class Config:
 
     FRIENDLY_TIMEZONE = datetime.datetime.now(TIMEZONE).tzname()
 
+    SECRET_KEY = os.environ.get("SECRET_KEY")
 
 class DevelopmentConfig(Config):
     IS_PRODUCTION = False
-    SECRET_KEY = "lol"
 
     DEBUG = True
     SERVER_NAME = "dev.env:5000"
@@ -38,7 +35,6 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     IS_PRODUCTION = True
-    SECRET_KEY = generate_random_string()
 
     DEBUG = False
     SERVER_NAME = "thi.quandoansontra.com"
