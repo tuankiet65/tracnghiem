@@ -17,14 +17,7 @@ function Countdown(end_time, tick_callback){
         clearInterval(this.timer_id);
     }.bind(this);
 
-    if (this.remaining <= 0){
-        tick_callback(0);
-    } else {
-        this.tick_callback(this.remaining);
-        this.remaining--;
-
-        this.timer_id = setInterval(this.timer_callback, 1000);
-    }
+    this.timer_id = setInterval(this.timer_callback, 1000);
 
     return this;
 }
