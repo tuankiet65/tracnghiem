@@ -165,7 +165,7 @@ function Exam(exam, contest, questions){
         }
     }.bind(this);
 
-    this.countdown = new Countdown(moment.utc(this.exam.finish_date),
+    this.countdown = new Countdown(moment.parseZone(this.exam.finish_date),
                                    this.tick);
 
     this.autosave = function(){
