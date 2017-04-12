@@ -1,5 +1,5 @@
 {% macro render_register_form(schools, include_login) %}
-    <form onsubmit="return register_form.validate_form(true);" action="{{ url_for('authentication.register') }}" method="post">
+    <form onsubmit="return register_form.validate_form(true);" action="{{ url_for('authentication.register') }}" method="post" id="register-form">
         <div class="input-field">
             <input type="text" id="reg_username" name="username">
             <label for="reg_username">{{ _("Username") }}</label>
@@ -31,19 +31,26 @@
             <input type="text" id="reg_klass" name="klass">
             <label for="reg_klass">{{ _("Your class") }}</label>
         </div>
-        <div class="g-recaptcha" data-sitekey="{{ config['RECAPTCHA_PUBLIC_KEY'] }}"></div>
+        <div id="g-recaptcha"></div>
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-        <button type="submit" class="waves-effect waves-light btn btn-fullwidth">{{ _("Register") }}</button>
+        <span class="tooltipped-button-overlay tooltipped"
+              data-tooltip="{{ _("Please wait while the form loads") }}"
+              data-position="bottom"
+              data-delay="10">
+            <button type="submit"
+                class="waves-effect waves-light btn btn-fullwidth"
+                disabled
+                id="register-submit-button">{{ _("Register") }}</button>
+        </span>
         {% if include_login %}
-            <a href="{{ url_for('authentication.login') }}" class="red lighten-1 waves-effect waves-light btn btn-fullwidth">{{ _("Log in to your existing account") }}</a>
+            <a href="{{ url_for('authentication.login') }}"
+               class="red lighten-1 waves-effect waves-light btn btn-fullwidth">{{ _("Log in to your existing account") }}</a>
         {% endif %}
     </form>
 {% endmacro %}
 
 {% macro render_register_form_js() %}
-    <script src="/static/libraries/zxcvbn/dist/zxcvbn.js"></script>
     <script src="/static/js/form_validation.js"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script>
         {% if not g.workaround['ios_select'] %}
             $('#reg_school').material_select();
@@ -52,17 +59,27 @@
             pwd = $("#reg_password").val();
             pwd_repeat = $("#reg_password_repeat").val();
 
-            return (pwd == pwd_repeat) && (FormValidation.StrongPassword(pwd));
+            return (pwd === pwd_repeat) && (FormValidation.StrongPassword(pwd));
         }
 
-        register_form = Form();
+        register_form = new Form();
         register_form.add_field("username", $("#reg_username"), [FormValidation.NotEmpty], "{{ _("Please fill in your username") }}");
         register_form.add_field("password", $("#reg_password"), [FormValidation.StrongPassword], "{{ _("Your password is too weak ") }}");
         register_form.add_field("password_repeat", $("#reg_password_repeat"), [SamePassword], "{{ _("Password either is not the same or too weak") }}");
         register_form.add_field("name", $("#reg_name"), [FormValidation.NotEmpty], "{{ _("Please fill in your name") }}");
         register_form.add_field("school", $("#reg_school"), [FormValidation.NotEmpty], "{{ _("Please choose your school") }}");
         register_form.add_field("klass", $("#reg_klass"), [FormValidation.NotEmpty], "{{ _("Please fill in your class") }}");
+
+        // This is run after everything has finished loading to allow form submitting
+        function enable_form(){
+            grecaptcha.render("g-recaptcha", {
+                sitekey: "{{ config['RECAPTCHA_PUBLIC_KEY'] }}"
+            });
+            $("#register-submit-button").attr("disabled", false);
+            $(".tooltipped-button-overlay").tooltip("remove");
+        }
     </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=enable_form&render=explicit" async defer></script>
 {% endmacro %}
 
 {% set page_name = "authentication" %}
