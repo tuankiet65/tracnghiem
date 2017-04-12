@@ -1,10 +1,12 @@
 var ChangePasswordForm = new Form();
+
 function SamePassword(value){
     pwd = $("#new_password").val();
     pwd_repeat = $("#new_password_repeat").val();
 
-    return (pwd == pwd_repeat) && (FormValidation.StrongPassword(pwd));
+    return (pwd === pwd_repeat);
 }
+
 ChangePasswordForm.add_field("old_password",
                              $("#old_password"),
                              [FormValidation.NotEmpty],
@@ -15,9 +17,10 @@ ChangePasswordForm.add_field("new_password",
                              i18n.translate("Your password is too weak ").fetch());
 ChangePasswordForm.add_field("new_password_repeat",
                              $("#new_password_repeat"),
-                             [FormValidation.NotEmpty, FormValidation.StrongPassword],
+                             [FormValidation.NotEmpty, SamePassword, FormValidation.StrongPassword],
                              i18n.translate("Password either is not the same or too weak").fetch());
 ChangePasswordForm.set_button($("#password-change-button"));
+
 function change_password(){
     ChangePasswordForm.disable_button();
 
@@ -29,7 +32,7 @@ function change_password(){
     }
 
     $.post("/yourself/change_password", input_data, function(data){
-        if (data.error == "incorrect old password"){
+        if (data.error === "incorrect old password"){
             Materialize.toast(i18n.translate("Incorrect old password").fetch(), 5000);
         } else {
             Materialize.toast(i18n.translate("Password changed successfully. You'll be logged out...").fetch(), 5000);
@@ -38,7 +41,7 @@ function change_password(){
             }, 2000);
         }
         ChangePasswordForm.enable_button();
-    })
+    });
 
     return false;
 }
@@ -71,7 +74,7 @@ function edit_profile(){
         Materialize.toast(i18n.translate("Profile edited successfully").fetch(), 5000);
         EditProfileForm.enable_button();
         location.reload();
-    })
+    });
 
     return false;
 }

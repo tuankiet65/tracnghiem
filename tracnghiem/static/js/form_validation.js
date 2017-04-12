@@ -34,7 +34,7 @@ var FormValidation = {
             return false;
         }
         result = scorePassword(value)
-        return (result >= 45)
+        return (result >= 40)
     },
 
     NotEmpty: function(value){
