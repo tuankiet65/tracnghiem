@@ -31,7 +31,7 @@ if app.config['IS_PRODUCTION']:
 
 @babel.localeselector
 def get_locale():
-    return "vi"
+    return app.config["LOCALE"]
 
 
 @app.before_request

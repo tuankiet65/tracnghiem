@@ -27,6 +27,8 @@ class Config:
 
     SECRET_KEY = os.environ.get("SECRET_KEY")
 
+    LOCALE = "vi"
+
 
 class DevelopmentConfig(Config):
     IS_PRODUCTION = False
