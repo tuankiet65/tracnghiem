@@ -1,10 +1,40 @@
+// https://stackoverflow.com/questions/948172/password-strength-meter
+function scorePassword(pass) {
+    var score = 0;
+    if (!pass)
+        return score;
+
+    // award every unique letter until 5 repetitions
+    var letters = Object();
+    for (var i=0; i<pass.length; i++) {
+        letters[pass[i]] = (letters[pass[i]] || 0) + 1;
+        score += 5.0 / letters[pass[i]];
+    }
+
+    // bonus points for mixing it up
+    var variations = {
+        digits: /\d/.test(pass),
+        lower: /[a-z]/.test(pass),
+        upper: /[A-Z]/.test(pass),
+        nonWords: /\W/.test(pass)
+    };
+
+    variationCount = 0;
+    for (var check in variations) {
+        variationCount += (variations[check] === true) ? 1 : 0;
+    }
+    score += (variationCount - 1) * 10;
+
+    return parseInt(score);
+}
+
 var FormValidation = {
     StrongPassword: function(value){
         if (!value){
             return false;
         }
-        result = zxcvbn(value);
-        return (result.score >= 1)
+        result = scorePassword(value)
+        return (result >= 45)
     },
 
     NotEmpty: function(value){
