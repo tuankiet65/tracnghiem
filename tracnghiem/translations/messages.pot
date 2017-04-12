@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-04-11 17:14+0700\n"
+"POT-Creation-Date: 2017-04-12 15:09+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -173,11 +173,11 @@ msgstr ""
 msgid "Please enter your old password"
 msgstr ""
 
-#: static/js/yourself.js:15 templates/authentication/register.html:60
+#: static/js/yourself.js:15 templates/authentication/register.html:67
 msgid "Your password is too weak "
 msgstr ""
 
-#: static/js/yourself.js:19 templates/authentication/register.html:61
+#: static/js/yourself.js:19 templates/authentication/register.html:68
 msgid "Password either is not the same or too weak"
 msgstr ""
 
@@ -189,15 +189,15 @@ msgstr ""
 msgid "Password changed successfully. You'll be logged out..."
 msgstr ""
 
-#: static/js/yourself.js:50 templates/authentication/register.html:62
+#: static/js/yourself.js:50 templates/authentication/register.html:69
 msgid "Please fill in your name"
 msgstr ""
 
-#: static/js/yourself.js:54 templates/authentication/register.html:63
+#: static/js/yourself.js:54 templates/authentication/register.html:70
 msgid "Please choose your school"
 msgstr ""
 
-#: static/js/yourself.js:58 templates/authentication/register.html:64
+#: static/js/yourself.js:58 templates/authentication/register.html:71
 msgid "Please fill in your class"
 msgstr ""
 
@@ -480,9 +480,9 @@ msgid "Login"
 msgstr ""
 
 #: templates/authentication/general.html:17
-#: templates/authentication/register.html:36
-#: templates/authentication/register.html:70
-#: templates/authentication/register.html:79
+#: templates/authentication/register.html:43
+#: templates/authentication/register.html:87
+#: templates/authentication/register.html:96
 msgid "Register"
 msgstr ""
 
@@ -510,19 +510,23 @@ msgstr ""
 msgid "Choose your school"
 msgstr ""
 
-#: templates/authentication/register.html:38
+#: templates/authentication/register.html:37
+msgid "Please wait for all resources to be loaded"
+msgstr ""
+
+#: templates/authentication/register.html:47
 msgid "Log in to your existing account"
 msgstr ""
 
-#: templates/authentication/register.html:59
+#: templates/authentication/register.html:66
 msgid "Please fill in your username"
 msgstr ""
 
-#: templates/authentication/register.html:81
+#: templates/authentication/register.html:98
 msgid "An account with the same username exists, please choose another username"
 msgstr ""
 
-#: templates/authentication/register.html:84
+#: templates/authentication/register.html:101
 msgid "You haven't filled in some fields, maybe you haven't checked the captcha?"
 msgstr ""
 

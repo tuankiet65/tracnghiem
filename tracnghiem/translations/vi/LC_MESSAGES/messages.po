@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-04-11 17:14+0700\n"
-"PO-Revision-Date: 2017-04-11 17:15+0700\n"
+"POT-Creation-Date: 2017-04-12 15:09+0700\n"
+"PO-Revision-Date: 2017-04-12 15:09+0700\n"
 "Last-Translator: \n"
 "Language: vi\n"
 "Language-Team: vi <LL@li.org>\n"
@@ -164,11 +164,11 @@ msgstr "Cảnh báo"
 msgid "Please enter your old password"
 msgstr "Xin hãy nhập mật khẩu cũ của bạn"
 
-#: static/js/yourself.js:15 templates/authentication/register.html:60
+#: static/js/yourself.js:15 templates/authentication/register.html:67
 msgid "Your password is too weak "
 msgstr "Mật khẩu của bạn quá yếu"
 
-#: static/js/yourself.js:19 templates/authentication/register.html:61
+#: static/js/yourself.js:19 templates/authentication/register.html:68
 msgid "Password either is not the same or too weak"
 msgstr "Mật khẩu hoặc không khớp với ở trên hoặc quá yếu"
 
@@ -180,15 +180,15 @@ msgstr "Mật khẩu cũ không khớp"
 msgid "Password changed successfully. You'll be logged out..."
 msgstr "Bạn đã đổi mật khẩu thành công. Bạn sẽ tự động đăng xuất trong giây lát."
 
-#: static/js/yourself.js:50 templates/authentication/register.html:62
+#: static/js/yourself.js:50 templates/authentication/register.html:69
 msgid "Please fill in your name"
 msgstr "Xin hãy điền tên của bạn"
 
-#: static/js/yourself.js:54 templates/authentication/register.html:63
+#: static/js/yourself.js:54 templates/authentication/register.html:70
 msgid "Please choose your school"
 msgstr "Xin hãy chọn trường của bạn"
 
-#: static/js/yourself.js:58 templates/authentication/register.html:64
+#: static/js/yourself.js:58 templates/authentication/register.html:71
 msgid "Please fill in your class"
 msgstr "Xin hãy điền lớp của bạn"
 
@@ -464,9 +464,9 @@ msgid "Login"
 msgstr "Đăng nhập"
 
 #: templates/authentication/general.html:17
-#: templates/authentication/register.html:36
-#: templates/authentication/register.html:70
-#: templates/authentication/register.html:79
+#: templates/authentication/register.html:43
+#: templates/authentication/register.html:87
+#: templates/authentication/register.html:96
 msgid "Register"
 msgstr "Đăng kí"
 
@@ -494,19 +494,23 @@ msgstr "Nhập lại mật khẩu mới"
 msgid "Choose your school"
 msgstr "Hãy chọn trường của bạn"
 
-#: templates/authentication/register.html:38
+#: templates/authentication/register.html:37
+msgid "Please wait for all resources to be loaded"
+msgstr "Xin hãy chờ cho các tài nguyên được tải về"
+
+#: templates/authentication/register.html:47
 msgid "Log in to your existing account"
 msgstr "Đăng nhập vào tài khoản hiện có"
 
-#: templates/authentication/register.html:59
+#: templates/authentication/register.html:66
 msgid "Please fill in your username"
 msgstr "Xin hãy nhập tên đăng nhập"
 
-#: templates/authentication/register.html:81
+#: templates/authentication/register.html:98
 msgid "An account with the same username exists, please choose another username"
 msgstr "Có một tài khoản khác cùng tên đăng nhập với bạn, hãy chọn tên đăng nhập khác."
 
-#: templates/authentication/register.html:84
+#: templates/authentication/register.html:101
 msgid "You haven't filled in some fields, maybe you haven't checked the captcha?"
 msgstr "Bạn chưa điền hết tất cả các trường, có lẽ bạn chưa đánh dấu xác nhận ở dưới cùng?"
 
@@ -564,3 +568,6 @@ msgstr "Bạn chưa điền hết tất cả các trường, có lẽ bạn chư
 
 #~ msgid "AJAX error: %(error)s"
 #~ msgstr "Lỗi AJAX: %(error)s"
+
+#~ msgid "Please wait while the form loads"
+#~ msgstr "Xin hãy chờ các tài nguyên được tải về."
