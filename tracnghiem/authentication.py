@@ -145,7 +145,10 @@ def register_page():
         else:
             return render_template("authentication/register.html", schools = get_schools(), account_exists = True)
     else:
-        return render_template("authentication/register.html", schools = get_schools(), registration_failed = True)
+        if request.method == "GET":
+            return render_template("authentication/register.html", schools = get_schools())
+        else:
+            return render_template("authentication/register.html", schools = get_schools(), registration_failed = True)
 
 
 @authentication.route("/logout", methods = ["GET"])
