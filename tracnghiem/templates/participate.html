@@ -9,6 +9,13 @@
         .enable-pointer-events {
             pointer-events: initial !important;
         }
+
+        .caret::before {
+            display: block;
+            font-size: 10px;
+            content: "▼";
+            float: right !important;
+        }
     </style>
 {% endblock %}
 {% block main %}
@@ -17,7 +24,9 @@
     <ul class="collapsible" data-collapsible="expandable">
         {% for contest in contests %}
             <li>
-                <div class="collapsible-header active">{{ _("Contest: <strong>%(contest_title)s</strong>", contest_title = contest.title) }}</div>
+                <div class="collapsible-header active">{{ _("Contest: <strong>%(contest_title)s</strong>", contest_title = contest.title) }}
+                    <span class="caret"></span>
+                </div>
                 <div class="collapsible-body">
                     <p>
                         {{ _("This contest starts from <strong>%(begin_date)s</strong> to <strong>%(end_date)s</strong>"
