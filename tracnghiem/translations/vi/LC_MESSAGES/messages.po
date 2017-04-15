@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-04-12 15:09+0700\n"
-"PO-Revision-Date: 2017-04-12 15:09+0700\n"
+"PO-Revision-Date: 2017-04-13 14:15+0700\n"
 "Last-Translator: \n"
 "Language: vi\n"
 "Language-Team: vi <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.1\n"
 
 #: __init__.py:31
 msgid "Page not found"
@@ -241,7 +241,7 @@ msgstr "Đang nộp bài"
 #: templates/index.html:26
 #, python-format
 msgid "Announcement published at %(time)s"
-msgstr "Thông báo này được đăng vào %(time)s"
+msgstr "Thông báo này được đăng vào lúc %(time)s"
 
 #: templates/index.html:32
 msgid "Statistics"
