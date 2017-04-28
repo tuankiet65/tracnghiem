@@ -32,8 +32,8 @@ def get_exam_question(exam: Exam):
     return result
 
 
-def mark_exam(exam: Exam):
-    if exam.finished:
+def mark_exam(exam: Exam, force_remark: bool = False):
+    if exam.finished and not force_remark:
         return exam.score
 
     questions = json.loads(exam.questions)
