@@ -1,14 +1,9 @@
 /.installed
 /.cloc_exclude
-.idea/codeStyleSettings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/tracnghiem.iml
-.idea/vcs.xml
-.idea/workspace.xml
+/.idea/
 "Logo Huy hi\341\273\207u \304\220o\303\240n TNCS HCM 2014.png"
-tracnghiem/__pycache__/
-tracnghiem/admin/__pycache__/
+/tracnghiem/__pycache__/
+/tracnghiem/admin/__pycache__/
 /tracnghiem/static/libraries/material-design-icons/
 /tracnghiem/static/libraries/es6-promise/
 /tracnghiem/static/libraries/jquery/
