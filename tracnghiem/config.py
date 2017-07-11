@@ -8,7 +8,7 @@ import dateutil.tz
 class Config:
     WTF_CSRF_ENABLED = True
 
-    RECAPTCHA_PUBLIC_KEY = "6LfWFRQUAAAAAEgmWWE8_AcZyt0tlJ4ns1v_GabY"
+    RECAPTCHA_PUBLIC_KEY = "6LfosygUAAAAAOcX1BtG2ibi2ozRqokBpAct2JNQ"
     RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_PRIVATE_KEY")
 
     SENTRY_FRONTEND_DSN = 'https://ef69ff9bf83c4f7a986986a467c5ef77@sentry.io/135701'
