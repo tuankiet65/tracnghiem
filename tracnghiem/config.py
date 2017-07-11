@@ -11,8 +11,8 @@ class Config:
     RECAPTCHA_PUBLIC_KEY = "6LfosygUAAAAAOcX1BtG2ibi2ozRqokBpAct2JNQ"
     RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_PRIVATE_KEY")
 
-    SENTRY_FRONTEND_DSN = 'https://ef69ff9bf83c4f7a986986a467c5ef77@sentry.io/135701'
-    SENTRY_BACKEND_DSN = 'https://55aef6867d17453282d5c8b951003976:457b1673dfd747fdbe94aa33e1e6fe18@sentry.io/135702'
+    SENTRY_FRONTEND_DSN = 'https://bb61196bb09e40beaaedcc6d22487f96@sentry.io/190334'
+    SENTRY_BACKEND_DSN = 'https://c3ebac7dea0440f59c042a47261f6183:86a80b3d4ae744988df78402e2479ea4@sentry.io/190335'
 
     GIT_REVISION = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).decode("utf-8").strip()
 
@@ -41,4 +41,4 @@ class ProductionConfig(Config):
     IS_PRODUCTION = True
 
     DEBUG = False
-    SERVER_NAME = "thi.quandoansontra.com"
+    SERVER_NAME = "dtncatp.tuankiet65.moe"
