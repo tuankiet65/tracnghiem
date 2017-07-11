@@ -34,7 +34,6 @@ class Account(BaseModel):
     password = PasswordField()
     name = CharField()
     school = ForeignKeyField(School)
-    klass = CharField()
 
 
 class SessionToken(BaseModel):

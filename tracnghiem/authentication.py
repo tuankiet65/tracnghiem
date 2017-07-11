@@ -63,12 +63,11 @@ def login(account):
         return False
 
 
-def register(username, password, school, klass, name, *args, **kwargs):
+def register(username, password, school, name, *args, **kwargs):
     try:
         account = Account.create(username = username,
                                  password = password,
                                  school = school,
-                                 klass = klass,
                                  name = name,
                                  **kwargs)
         return account
@@ -130,7 +129,6 @@ def register_page():
         name = StringField("name", validators = [validators.DataRequired()])
         password_repeat = PasswordField("password_repeat", validators = [validators.DataRequired()])
         school = SelectField("school", validators = [validators.DataRequired()], choices = get_schools(), coerce = int)
-        klass = StringField("klass", validators = [validators.DataRequired()])
         recaptcha = RecaptchaField()
 
     form = RegisterForm()
@@ -145,6 +143,7 @@ def register_page():
         else:
             return render_template("authentication/register.html", schools = get_schools(), account_exists = True)
     else:
+        print(form.errors)
         if request.method == "GET":
             return render_template("authentication/register.html", schools = get_schools())
         else:

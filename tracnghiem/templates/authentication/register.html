@@ -27,10 +27,6 @@
                 <label for="reg_school">{{ _("Your school") }}</label>
             {% endif %}
         </div>
-        <div class="input-field">
-            <input type="text" id="reg_klass" name="klass">
-            <label for="reg_klass">{{ _("Your class") }}</label>
-        </div>
         <div id="g-recaptcha"></div>
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
         <span class="tooltipped-button-overlay tooltipped"
@@ -68,7 +64,6 @@
         register_form.add_field("password_repeat", $("#reg_password_repeat"), [SamePassword], "{{ _("Password either is not the same or too weak") }}");
         register_form.add_field("name", $("#reg_name"), [FormValidation.NotEmpty], "{{ _("Please fill in your name") }}");
         register_form.add_field("school", $("#reg_school"), [FormValidation.NotEmpty], "{{ _("Please choose your school") }}");
-        register_form.add_field("klass", $("#reg_klass"), [FormValidation.NotEmpty], "{{ _("Please fill in your class") }}");
 
         // This is run after everything has finished loading to allow form submitting
         function enable_form(){

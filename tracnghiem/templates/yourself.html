@@ -34,10 +34,6 @@
                     <td><strong>{{ _("School") }}</strong></td>
                     <td>{{ g.user.school.name }}</td>
                 </tr>
-                <tr>
-                    <td><strong>{{ _("Class") }}</strong></td>
-                    <td>{{ g.user.klass }}</td>
-                </tr>
             </tbody>
         </table>
         <h4>{{ _("Your past results") }}</h4>
@@ -102,10 +98,6 @@
                 {% if not g.workaround['ios_select'] %}
                     <label for="edit_school">{{ _("Your school") }}</label>
                 {% endif %}
-            </div>
-            <div class="input-field">
-                <input type="text" id="edit_klass" name="klass" value="{{ g.user.klass }}">
-                <label for="edit_klass">{{ _("Your class") }}</label>
             </div>
             <div style="text-align: right">
                 <button type="submit" class="waves-effect waves-light btn" id="edit-profile-button">{{ _("Edit profile") }}</button>

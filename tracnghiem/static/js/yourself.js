@@ -55,10 +55,6 @@ EditProfileForm.add_field("school",
                           $("#edit_school"),
                           [FormValidation.NotEmpty],
                           i18n.translate("Please choose your school").fetch());
-EditProfileForm.add_field("klass",
-                          $("#edit_klass"),
-                          [FormValidation.NotEmpty],
-                          i18n.translate("Please fill in your class").fetch());
 EditProfileForm.set_button($("#edit-profile-button"));
 function edit_profile(){
     EditProfileForm.disable_button();

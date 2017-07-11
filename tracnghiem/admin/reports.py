@@ -15,7 +15,6 @@ def exam_to_object(exam: Exam) -> object:
         'id'               : exam.id,
         'secret_key'       : exam.secret_key,
         'contestant_name'  : exam.contestant.name,
-        'contestant_class' : exam.contestant.klass,
         'contestant_school': exam.contestant.school.name,
         'begin_date'       : dt_to_local_dt(exam.begin_date).isoformat(),
         'end_date'         : dt_to_local_dt(exam.finish_date).isoformat(),
@@ -26,7 +25,7 @@ def exam_to_object(exam: Exam) -> object:
     }
 
 
-CSV_FIELDS = ['id', 'secret_key', 'contestant_name', 'contestant_class', 'contestant_school',
+CSV_FIELDS = ['id', 'secret_key', 'contestant_name', 'contestant_school',
               'contest', 'begin_date', 'end_date', 'duration', 'score', 'finished']
 
 
@@ -56,7 +55,7 @@ def reports():
 
         query = (Exam
                  .select(Exam.id,
-                         Account.name, Account.klass, School.name,
+                         Account.name, School.name,
                          Exam.begin_date, Exam.finish_date, Exam.elapsed_time, Exam.score, Exam.finished, Exam.contest)
                  .join(Contest)
                  .switch(Exam)

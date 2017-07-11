@@ -62,13 +62,11 @@ def edit_profile():
     class EditProfile(FlaskForm):
         name = StringField("name", validators = [validators.DataRequired()])
         school = SelectField("school", validators = [validators.DataRequired()], choices = get_schools(), coerce = int)
-        klass = StringField("klass", validators = [validators.DataRequired()])
 
     form = EditProfile()
     if form.validate_on_submit():
         g.user.name = form.name.data
         g.user.school = form.school.data
-        g.user.klass = form.klass.data
         g.user.save()
         return json.jsonify(result = "ok")
     else:
