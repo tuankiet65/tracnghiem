@@ -31,9 +31,9 @@
                 "username": username
             }, function(data){
                 if (!('result' in data)){
-                    Materilize.toast("An error occurred");
+                    Materialize.toast("An error occurred");
                 } else if (!data.result){
-                    Materilize.toast("Username not found");
+                    Materialize.toast("Username not found");
                 } else {
                     window.location = "{{ url_for("index") }}";
                 }
