@@ -19,15 +19,15 @@ def generate_stats():
         ((SELECT
             account.school_id AS school_id, COUNT(*) AS account_count
         FROM
-            tracnghiem.account
+            account
         GROUP BY account.school_id) AS t1)
             INNER JOIN
         ((SELECT
             school.id AS school_id, COUNT(*) AS exam_count
         FROM
-            ((tracnghiem.exam
-        INNER JOIN tracnghiem.account ON exam.contestant_id = account.id)
-        INNER JOIN tracnghiem.school ON account.school_id = school.id)
+            ((exam
+        INNER JOIN account ON exam.contestant_id = account.id)
+        INNER JOIN school ON account.school_id = school.id)
         GROUP BY school.id) AS t2) ON t1.school_id = t2.school_id
     """).dicts().execute()
 
