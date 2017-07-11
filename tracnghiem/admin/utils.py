@@ -2,8 +2,10 @@ from flask import request, json as fjson
 from tracnghiem.authentication import login
 from tracnghiem.database import Account
 
-# name    : admin.util_login_as
-# endpoint: admin/util/login_as
+# name    : admin.utils_login_as
+# endpoint: admin/utils/login_as
+
+
 def login_as():
     try:
         username = request.form['username']
