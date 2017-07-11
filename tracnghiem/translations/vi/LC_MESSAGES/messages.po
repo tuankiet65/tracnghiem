@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-04-12 15:09+0700\n"
-"PO-Revision-Date: 2017-04-13 14:15+0700\n"
+"PO-Revision-Date: 2017-07-11 18:24+0700\n"
 "Last-Translator: \n"
 "Language: vi\n"
 "Language-Team: vi <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.0.2\n"
 
 #: __init__.py:31
 msgid "Page not found"
@@ -368,11 +368,11 @@ msgstr "Đăng xuất"
 
 #: templates/template.html:33 templates/template.html:98
 msgid "Online quiz"
-msgstr "Thi 6 bài học LLCT"
+msgstr "Thi trực tuyến"
 
 #: templates/template.html:123
 msgid "Online quiz Footer"
-msgstr "Thi tìm hiểu 6 Bài học lý luận chính trị dành cho Đoàn viên"
+msgstr "Cuộc thi trực tuyến với chủ đề \"Uống nước nhớ nguồn\""
 
 #: templates/template.html:129
 msgid "Links"
