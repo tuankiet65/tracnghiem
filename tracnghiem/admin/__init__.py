@@ -7,6 +7,7 @@ from .question_set import QuestionSetList
 from .questions import QuestionList
 from .reports import reports
 from .school import SchoolList
+from .utils import login_as
 
 admin = Blueprint("admin", __name__,
                   template_folder = "templates",
@@ -45,3 +46,4 @@ def logout():
 
 admin.add_url_rule("/login", view_func = login_page, methods = ["GET", "POST"])
 admin.add_url_rule("/reports", endpoint = "reports", view_func = reports, methods = ["GET", "POST"])
+admin.add_url_rule("/utils/login_as", endpoint = "utils_login_as", view_func = login_as, methods = ["POST"])

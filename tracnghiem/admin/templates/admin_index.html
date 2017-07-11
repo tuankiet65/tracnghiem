@@ -1,8 +1,17 @@
 {% set page_name = "index" %}
 {% extends "admin_template.html" %}
 
+{% block css %}
+    <style>
+        #login-as-div {
+            overflow: auto;
+        }
+    </style>
+{% endblock %}
+
 {% block main %}
     <div class="card-panel blue-grey lighten-5" id="login-as-div">
+        <h4>{{ _("Login as") }}</h4>
         <form onsubmit="login_as(); return false;">
             <div class="input-field">
                 <label for="username">{{ _("Username") }}</label>
@@ -18,7 +27,7 @@
         function login_as(){
             $("#login-as-submit-button").prop("disabled", false);
             username = $("#username").val();
-            $.post({{ url_for("admin.utils_login_as") }}, {
+            $.post("{{ url_for("admin.utils_login_as") }}", {
                 "username": username
             }, function(data){
                 if (!('result' in data)){
@@ -26,7 +35,7 @@
                 } else if (!data.result){
                     Materilize.toast("Username not found");
                 } else {
-                    window.location = {{ url_for("index") }};
+                    window.location = "{{ url_for("index") }}";
                 }
                 $("#login-as-submit-button").prop("disabled", false);
             })
