@@ -60,7 +60,7 @@ class QuestionSet(BaseModel):
 class Question(BaseModel):
     # auto id field
     set = ForeignKeyField(QuestionSet)
-    question = CharField()
+    question = TextField()
     answer_c = CharField()
     answer_b = CharField()
     answer_a = CharField()
