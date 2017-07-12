@@ -22,7 +22,6 @@ html_template = Handlebars.compile(
                 '{{boldIfCorrectAnswer answer_a 1 correct_answer}}' +
                 '{{boldIfCorrectAnswer answer_b 2 correct_answer}}' +
                 '{{boldIfCorrectAnswer answer_c 3 correct_answer}}' +
-                '{{boldIfCorrectAnswer answer_d 4 correct_answer}}' +
             '</ul>' +
         '</div>' +
     '</div>');
@@ -59,4 +58,3 @@ form.add_field("question", $("#question"), [FormValidation.NotEmpty], "Xin nhap 
 form.add_field("answer_a", $("#answer_a"), [FormValidation.NotEmpty], "Xin nhap cau tra loi");
 form.add_field("answer_b", $("#answer_b"), [FormValidation.NotEmpty], "Xin nhap cau tra loi");
 form.add_field("answer_c", $("#answer_c"), [FormValidation.NotEmpty], "Xin nhap cau tra loi");
-form.add_field("answer_d", $("#answer_d"), [FormValidation.NotEmpty], "Xin nhap cau tra loi");

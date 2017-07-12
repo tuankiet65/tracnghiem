@@ -61,11 +61,10 @@ class Question(BaseModel):
     # auto id field
     set = ForeignKeyField(QuestionSet)
     question = CharField()
-    answer_d = CharField()
     answer_c = CharField()
     answer_b = CharField()
     answer_a = CharField()
-    correct_answer = IntegerField()  # 1=A 2=B 3=C 4=D
+    correct_answer = IntegerField()  # 1=A 2=B 3=C
 
 
 class Exam(BaseModel):

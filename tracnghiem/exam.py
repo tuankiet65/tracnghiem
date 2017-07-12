@@ -61,7 +61,7 @@ def check_valid_answer(exam: Exam, answers):
     for answer in answers:
         if not isinstance(answer, int):
             return False
-        if (answer < 0) or (answer > 4):
+        if (answer < 0) or (answer > 3):
             return False
     return True
 

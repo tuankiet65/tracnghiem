@@ -1,10 +1,9 @@
-function Question(question_count, question, answer_a, answer_b, answer_c, answer_d, change_callback, id){
+function Question(question_count, question, answer_a, answer_b, answer_c, change_callback, id){
     this.question_i18n = i18n.translate("Question").fetch();
     this.question = question;
     this.answer_a = answer_a;
     this.answer_b = answer_b;
     this.answer_c = answer_c;
-    this.answer_d = answer_d;
     this.question_count = question_count;
     this.element_name = "question_" + this.question_count.toString();
     this.element = null;
@@ -33,12 +32,6 @@ function Question(question_count, question, answer_a, answer_b, answer_c, answer
                         {{answer_c}} \
                     </label> \
                 </p> \
-                <p> \
-                    <input type="radio" name="{{element_name}}" id="{{element_name}}_4" class="with-gap" value="4"> \
-                    <label for="{{element_name}}_4"> \
-                        {{answer_d}} \
-                    </label> \
-                </p> \
             </div> \
         </div> \
     ')
@@ -49,11 +42,10 @@ function Question(question_count, question, answer_a, answer_b, answer_c, answer
             answer_a: this.answer_a,
             answer_b: this.answer_b,
             answer_c: this.answer_c,
-            answer_d: this.answer_d,
             question_count: this.question_count,
             element_name: this.element_name,
             question_i18n: this.question_i18n
-        }
+        };
         render_data = this.template(data);
         $(container).append(render_data);
 
@@ -130,7 +122,6 @@ function Exam(exam, contest, questions){
                                          this.questions[q].answer_a,
                                          this.questions[q].answer_b,
                                          this.questions[q].answer_c,
-                                         this.questions[q].answer_d,
                                          this.question_checked_callback);
         this.questions[q].render_to(this.question_container);
         this.questions[q].load_answer(this._tmp[q]);

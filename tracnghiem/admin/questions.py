@@ -32,8 +32,7 @@ class QuestionAddForm(Form):
     answer_a = StringField(validators = [validators.DataRequired()])
     answer_b = StringField(validators = [validators.DataRequired()])
     answer_c = StringField(validators = [validators.DataRequired()])
-    answer_d = StringField(validators = [validators.DataRequired()])
-    correct_answer = IntegerField(validators = [validators.DataRequired(), validators.NumberRange(min = 1, max = 4)])
+    correct_answer = IntegerField(validators = [validators.DataRequired(), validators.NumberRange(min = 1, max = 3)])
 
 
 @QuestionList.add_func
@@ -48,7 +47,6 @@ def add_func(value, qset_id):
                                 answer_a = form.answer_a.data,
                                 answer_b = form.answer_b.data,
                                 answer_c = form.answer_c.data,
-                                answer_d = form.answer_d.data,
                                 correct_answer = form.correct_answer.data,
                                 set = qset)
         return entry.id
