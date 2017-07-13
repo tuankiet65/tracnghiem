@@ -10,11 +10,11 @@ SchoolList.set_template("admin_school.html")
 def get():
     query = School.select()
     return [{
-                "id"   : entry.id,
-                "value": {
-                    "name": entry.name
-                }
-            } for entry in query]
+        "id"   : entry.id,
+        "value": {
+            "name": entry.name
+        }
+    } for entry in query]
 
 
 @SchoolList.remove_func

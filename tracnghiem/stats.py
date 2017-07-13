@@ -1,4 +1,4 @@
-from .database import School, Account, Exam
+from .database import School
 
 
 def generate_stats():
@@ -36,7 +36,7 @@ def generate_stats():
 
         result[school_id] = {
             'account_count': int(row['account_count']),
-            'exam_count': int(row['exam_count'])
+            'exam_count'   : int(row['exam_count'])
         }
 
     return result

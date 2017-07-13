@@ -12,9 +12,9 @@ QuestionSetList.set_template("admin_question_set.html")
 def get_func():
     query = QuestionSet.select()
     return [{
-                'id'   : entry.id,
-                'value': model_to_dict(entry, recurse = False)
-            } for entry in query]
+        'id'   : entry.id,
+        'value': model_to_dict(entry, recurse = False)
+    } for entry in query]
 
 
 class QuestionSetAddForm(Form):

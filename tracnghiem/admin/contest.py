@@ -14,9 +14,9 @@ ContestList.set_template("admin_contest.html")
 def get():
     query = Contest.select()
     return [{
-                "id"   : entry.id,
-                "value": model_to_dict(entry, exclude = [Contest.id])
-            } for entry in query]
+        "id"   : entry.id,
+        "value": model_to_dict(entry, exclude = [Contest.id])
+    } for entry in query]
 
 
 @ContestList.remove_func
@@ -51,6 +51,7 @@ def get_question_set_count(param):
         question_count += set['count']
 
     return question_count
+
 
 @ContestList.add_func
 def add(value):

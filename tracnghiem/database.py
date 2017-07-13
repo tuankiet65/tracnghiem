@@ -82,4 +82,6 @@ class Exam(BaseModel):
     contest = ForeignKeyField(Contest)
     score = IntegerField(default = 0)
 
-__all__ = ['database', 'Announcement', 'School', 'Account', 'SessionToken', 'Contest', 'Question', 'Exam', 'QuestionSet']
+
+__all__ = ['database', 'Announcement', 'School', 'Account', 'SessionToken', 'Contest', 'Question', 'Exam',
+           'QuestionSet']
