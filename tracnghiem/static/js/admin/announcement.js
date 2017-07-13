@@ -11,15 +11,15 @@ html_template = Handlebars.compile(
         '</div>' +
     '</div>');
 
-container = $("#announcement-container")
-AnnouncementList = DataList("announcement", "announcement", container, html_template, true);
+container = $("#announcement-container");
+AnnouncementList = new DataList("announcement", "announcement", container, html_template, true);
 
 AnnouncementList.load();
 
 function add_announcement(){
     form.disable_button();
 
-    input_data = form.get_form_data();
+    var input_data = form.get_form_data();
 
     if (!input_data){
         form.enable_button();
@@ -35,10 +35,6 @@ function add_announcement(){
 
     // to inhibit default behaviour (submit the form)
     return false;
-}
-
-function remove_announcement(){
-
 }
 
 form = new Form();
