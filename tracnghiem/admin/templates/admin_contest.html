@@ -6,6 +6,22 @@
         #contest-add-div {
             overflow: auto;
         }
+
+        .question-sets-input {
+            margin-bottom: 10px;
+        }
+
+        .question-sets-input .question-sets-input-return-value {
+            display: none;
+        }
+
+        .question-sets-input .question-sets-input-add-set {
+            width: 100%;
+        }
+
+        .question-sets-input .question-sets-input-set-input .row {
+            margin-bottom: 0;
+        }
     </style>
 {% endblock %}
 {% block main %}
@@ -38,23 +54,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col m6">
-                            <div class="input-field">
-                                <input type="number" id="duration" placeholder="(in minutes)">
-                                <label for="duration">Duration</label>
-                            </div>
-                        </div>
-                        <div class="col m6">
-                            <div class="input-field">
-                                <input type="number" id="question-count">
-                                <label for="question-count">Question count</label>
-                            </div>
-                        </div>
-                    </div>
                     <div class="input-field">
-                        <input type="text" id="question-set">
-                        <label for="question-set">Question sets</label>
+                        <input type="number" id="duration" placeholder="(in minutes)">
+                        <label for="duration">Duration</label>
+                    </div>
+                    <div class="question-sets-input" id="question-sets-div">
+                        {# To be added by QuestionSetsInput #}
                     </div>
                     <button type="submit" class="right waves-effect waves-light btn" id="submit-button">Them</button>
                 </form>
@@ -65,8 +70,8 @@
 {% block js %}
     <script src="/static/js/admin/contest.js"></script>
     <script>
-         $(document).ready(function() {
-             $('select').material_select();
-         });
+        $(document).ready(function () {
+            $('select').material_select();
+        });
     </script>
 {% endblock %}

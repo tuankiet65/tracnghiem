@@ -17,7 +17,7 @@ def generate_exam_questions(contest: Contest):
     random.seed()
 
     for question_set in fjson.loads(contest.question_set):
-        candidates = list(Question.select().where(Question.set == question_set['question_set']))
+        candidates = list(Question.select().where(Question.set == question_set['id']))
         result.extend([q.id for q in random.sample(candidates, k = question_set['count'])])
 
     random.shuffle(result)
