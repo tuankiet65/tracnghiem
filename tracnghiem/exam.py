@@ -29,7 +29,6 @@ def get_exam_question(exam: Exam, include_answers: bool):
             (question['answer_a'], (question['correct_answer'] == 1)),
             (question['answer_b'], (question['correct_answer'] == 2)),
             (question['answer_c'], (question['correct_answer'] == 3)),
-            (question['answer_d'], (question['correct_answer'] == 4)),
         ]
 
         # Shuffling the list three times seems to yield better randomness
@@ -41,10 +40,9 @@ def get_exam_question(exam: Exam, include_answers: bool):
         question['answer_a'] = tmp[0][0]
         question['answer_b'] = tmp[1][0]
         question['answer_c'] = tmp[2][0]
-        question['answer_d'] = tmp[3][0]
 
         if include_answers:
-            question['correct_answer'] = (1 if tmp[0][1] else 2 if tmp[1][1] else 3 if tmp[2][1] else 4)
+            question['correct_answer'] = (1 if tmp[0][1] else 2 if tmp[1][1] else 3)
         else:
             del question['correct_answer']
 
