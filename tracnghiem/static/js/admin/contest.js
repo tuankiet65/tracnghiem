@@ -1,8 +1,8 @@
-begin_date = $("#begin-date").pickadate({
+var begin_date = $("#begin-date").pickadate({
     format: "dd/mm/yyyy"
 });
 
-end_date = $("#end-date").pickadate({
+var end_date = $("#end-date").pickadate({
     format: "dd/mm/yyyy"
 });
 
@@ -19,7 +19,7 @@ html_template = Handlebars.compile(
         '</div>' +
     '</div>');
 
-ContestList = DataList("contest", "contest", $("#contest-container"), html_template);
+ContestList = new DataList("contest", "contest", $("#contest-container"), html_template);
 
 ContestList.load();
 
@@ -61,12 +61,12 @@ function QuestionSetsInput(question_sets, div){
     this.sets_count = 0;
 
     this.add_set = function(){
-        html = this.question_set_input_html({
+        var html = this.question_set_input_html({
             id: this.sets_count,
             question_sets: this.question_sets
         });
 
-        element = $(html).appendTo(this.set_input_div);
+        var element = $(html).appendTo(this.set_input_div);
         this.sets.push(element);
         this.sets_count++;
 
@@ -74,8 +74,8 @@ function QuestionSetsInput(question_sets, div){
     }.bind(this);
 
     this.render_textbox = function(){
-        value = [];
-        for (i = 0; i < this.sets_count; i++){
+        var value = [];
+        for (var i = 0; i < this.sets_count; i++){
             value.push({
                 id: parseInt(this.sets[i].find('select.question-sets-input-question-sets-select').val()),
                 count: parseInt(this.sets[i].find('input.question-sets-input-question-sets-count').val())

@@ -22,9 +22,9 @@ def main_func(qset_id):
 def get_func(qset_id):
     query = Question.select().where(Question.set == qset_id)
     return [{
-                'id'   : entry.id,
-                'value': model_to_dict(entry, exclude = [Question.id, Question.set], recurse = False)
-            } for entry in query]
+        'id'   : entry.id,
+        'value': model_to_dict(entry, exclude = [Question.id, Question.set], recurse = False)
+    } for entry in query]
 
 
 class QuestionAddForm(Form):

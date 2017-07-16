@@ -3,7 +3,7 @@ from playhouse.fields import PasswordField
 
 from . import app
 from .utils.datetime import get_current_local_dt
-from .utils.random import generate_random_string
+from .utils.random import generate_random_string, generate_random_int
 
 database = MySQLDatabase(host = app.config["DB_HOST"],
                          user = app.config["DB_USERNAME"],
@@ -75,9 +75,12 @@ class Exam(BaseModel):
     finish_date = DateTimeField()
     elapsed_time = IntegerField(default = 0)
     finished = BooleanField(default = False)
-    questions = TextField(default = "")
+    # questions = TextField(default = "")
+    random_seed = BigIntegerField(default = generate_random_int)
     answers = TextField(default = "")
     contest = ForeignKeyField(Contest)
     score = IntegerField(default = 0)
 
-__all__ = ['database', 'Announcement', 'School', 'Account', 'SessionToken', 'Contest', 'Question', 'Exam', 'QuestionSet']
+
+__all__ = ['database', 'Announcement', 'School', 'Account', 'SessionToken', 'Contest', 'Question', 'Exam',
+           'QuestionSet']

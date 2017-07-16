@@ -84,9 +84,9 @@ def reports():
                 csv_writer.writerow(exam_to_object(exam))
                 yield lineio.read()
 
-            # For whatever reasons custom-made Response doesn't trigger
+                # For whatever reasons custom-made Response doesn't trigger
 
-        response = Response(generate_request(query), mimetype='text/csv', content_type = "text/csv")
+        response = Response(generate_request(query), mimetype = 'text/csv', content_type = "text/csv")
         response.headers['Content-Disposition'] = 'attachment; filename="{}"'.format(filename)
 
         return response

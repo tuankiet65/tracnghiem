@@ -1,8 +1,8 @@
 var ChangePasswordForm = new Form();
 
-function SamePassword(value){
-    pwd = $("#new_password").val();
-    pwd_repeat = $("#new_password_repeat").val();
+function SamePassword(){
+    var pwd = $("#new_password").val();
+    var pwd_repeat = $("#new_password_repeat").val();
 
     return (pwd === pwd_repeat);
 }
@@ -24,7 +24,7 @@ ChangePasswordForm.set_button($("#password-change-button"));
 function change_password(){
     ChangePasswordForm.disable_button();
 
-    input_data = ChangePasswordForm.get_form_data();
+    var input_data = ChangePasswordForm.get_form_data();
 
     if (!input_data){
         ChangePasswordForm.enable_button();
@@ -59,14 +59,14 @@ EditProfileForm.set_button($("#edit-profile-button"));
 function edit_profile(){
     EditProfileForm.disable_button();
 
-    input_data = EditProfileForm.get_form_data();
+    var input_data = EditProfileForm.get_form_data();
 
     if (!input_data){
         EditProfileForm.enable_button();
         return false;
     }
 
-    $.post("/yourself/edit_profile", input_data, function(data){
+    $.post("/yourself/edit_profile", input_data, function(){
         Materialize.toast(i18n.translate("Profile edited successfully").fetch(), 5000);
         EditProfileForm.enable_button();
         location.reload();
