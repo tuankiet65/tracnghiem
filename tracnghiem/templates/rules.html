@@ -1,50 +1,97 @@
 {% set page_name = "rules" %}
 {% extends "template.html" %}
 {% block title %}{{ _("Rules") }}{% endblock %}
-{% block css %}
-    <style>
-
-    </style>
-{% endblock %}
 {% block main %}
-<h3>Thể lệ cuộc thi</h3>
-<p class="large">Thực hiện Chương trình công tác Đoàn trường học năm học 2016-2017,
-    Kế hoạch số 01 KH/ĐTN ngày 16/01/2017 về việc tổ chức thi trực tuyến tìm hiểu
-    <strong><i>“6 bài học lý luận chính trị”</i></strong> năm học 2016-2017,
-    Ban Thường vụ Quận Đoàn Sơn Trà thông báo cho các đơn tham gia cuộc thi một số nội dung cụ thể như sau:</p>
+    <h3>Thể lệ cuộc thi</h3>
+    <p>Thực hiện Chương trình công tác đoàn và phong trào thanh niên CATP năm 2017,
+        đồng thời cụ thể hóa kế hoạch số 09-KH/ĐTN, ngày 15/5/2017 của Đoàn Thanh niên Công an thành phố về việc tổ chức
+        các hoạt động kỷ niệm 70 năm ngày Thương binh - Liệt sĩ (27/7/1947-27/7/2017) (đã được Đảng ủy, Lãnh đạo Công an
+        thành phố đồng ý); Ban Thường vụ Đoàn thanh niên CATP xây dựng kế hoạch tổ chức cuộc thi trực tuyến với chủ đề
+        “Uống nước nhớ nguồn” trong tuổi trẻ CATP như sau:</p>
 
-<h4>1. Đối tượng tham gia</h4>
-    <p>Tất cả đoàn viên, thanh niên thuộc Đoàn các trường THPT và Trung tâm GDTX trực thuộc Quận Đoàn Sơn Trà.</p>
-<h4>2. Thời gian</h4>
-    <p>Cuộc thi sẽ diễn ra bắt đầu từ 00h00 ngày 15/3/2017 đến 23h59 ngày 15/4/2017.</p>
+    <h4>I. Mục đích, yêu cầu:</h4>
+    <ul class="browser-default">
+        <li>Thiết thực chào mừng kỷ niệm 70 năm ngày thương binh liệt sĩ (27/7/1947-27/7/2017)
+            và 72 năm ngày truyền thống lực lượng Công an nhân dân (19/8/1945-19/8/2017).
+        </li>
+        <li>Nâng cao nhận thức cho đoàn viên thanh niên về sự quan tâm của Đảng, Nhà nước, của thế hệ trẻ đối với công
+            tác thương binh - liệt sĩ, qua đó giáo dục truyền thống cách mạng, nâng cao lòng tự hào dân tộc, lòng biết
+            ơn đối với thế hệ đi trước. Từ đó, mỗi đoàn viên thấy được trách nhiệm của mình đối với công tác “Đền ơn đáp
+            nghĩa” cùng toàn xã hội nâng cao hơn nữa đời sống văn hóa và tinh thần cho các gia đình chính sách.
+        </li>
+        <li>Cuộc thi tổ chức phải mang tính thiết thực, ý nghĩa, tránh hình thức, không hiệu quả.</li>
+    </ul>
 
-
-<h4>3. Nội dung và hình thức thi</h4>
-    <h5>3.1. Nội dung thi</h5>
-        <p>Các nội dung thi sẽ được biên tập thành các bộ đề thi trắc nghiệm với các nội dung kiến thức cơ bản
-            trong 6 bài học lý luận chính trị dành cho cán bộ đoàn, đoàn viên
-            (Quận Đoàn đã triển khai theo kế hoạch số 01 KH/ĐTN ngày 16/01/2017),
-            hoặc đoàn viên thanh niên có thể tìm hiểu ở sách “Hỏi - Đáp 6 bài học lý luận chính trị dành cho đoàn viên, thanh niên”
-            do Nhà xuất bản Thanh niên phát hành.</p>
-    <h5>3.2. Hình thức thi</h5>
+    <h4>II. Nội dung</h4>
+        <h5>1. Thành phần</h5>
+            <p>Tất cả các đoàn viên thanh niên CATP, kể cả đoàn viên công tác tại Công an các quận, huyện, phường.</p>
+        <h5>2. Thời gian</h5>
+            <p>Từ 00h00, ngày 20/7/2017 đến 23h59, ngày 27/7/2017.</p>
+        <h5>3. Hình thức</h5>
             <ul class="browser-default">
-                <li>Việc triển khai tham gia cuộc thi sẽ được tiến hành trên trang web <a href="https://thi.quandoansontra.com/">https://thi.quandoansontra.com/</a></li>
-                <li>Thí sinh truy cập vào địa chỉ <a href="https://thi.quandoansontra.com/">https://thi.quandoansontra.com/</a> và tiến hành đăng ký tài khoản để tham gia dự thi.
-                    Sau khi đăng ký, hệ thống sẽ tự động đăng nhập vào hệ thống thi và thí sinh tham gia làm bài.</li>
-                <li>Lưu ý:
-                    <ul class="browser-default">
-                        <li>Khi đăng ký tài khoản, thí sinh cần cung cấp tên thật, trường và lớp đang học
-                            (tài khoản này có giá trị dùng để đăng nhập và tham gia dự thi trên trang web và là cơ sở
-                            ghi nhận sự tham gia của đoàn viên thanh niên các đơn vị).</li>
-                        <li>Hệ thống không giới hạn số lần thi, với tài khoản đã đăng ký, thí sinh có thể đăng nhập thi
-                            nhiều lần để đạt được kết quả cao nhất.</li>
-                    </ul>
-                <li>Mỗi bài thi sẽ bao gồm bộ 30 câu hỏi trắc nghiệm với thời gian làm bài là 40 phút
-                    (bộ đề thi 30 câu hỏi được lựa chọn ngẫu nhiên từ ngân hàng câu hỏi của 6 bài học
-                    Lý luận chính trị và được chia đều cho từng bài).</li>
-                <li>Ban Tổ chức sẽ tổng hợp kết quả dự thi và số lượng dự thi của các đơn vị theo từng tuần
-                    để lấy căn cứ xếp loại thi đua cuối năm dựa trên kết quả tham gia của các đơn vị.</li>
+                <li>Người tham gia dự thi tiến hành đăng nhập các thông tin bắt buộc (họ và tên, năm sinh, đơn vị công tác, địa
+                    chỉ email, số điện thoại) theo yêu cầu của Ban Tổ chức, sau đó tiến hành trả lời 20 câu hỏi trắc nghiệm bằng
+                    cách chọn 01 trong 03 đáp án A, B, C và thời gian trả lời là 10 phút. Sau khi trả lời xong các câu hỏi thì
+                    chọn nút hoàn thành để kết thúc bài dự thi, không nhất thiết chờ hết thời gian theo quy định mới chọn nút
+                    hoàn thành.
+                </li>
+                <li>Mỗi câu trả lời đúng sẽ được 01 điểm, câu trả lời sai được 0 điểm, không chọn đáp án nào được 0 điểm.</li>
+                <li>Mỗi đoàn viên chỉ được tham gia 01 lần.</li>
+                <li>(có quy trình tham gia cuộc thi trực tuyến kèm theo).</li>
             </ul>
-
-<p>Đây là một trong những nội dung quan trọng làm cơ sở đánh giá thi đua trong năm học 2016 - 2017. Ban Thường vụ Quận Đoàn Sơn Trà đề nghị Ban Thường vụ Đoàn các trường THPT, Trung tâm GDTX trực thuộc nghiêm túc triển khai thực hiện đạt kết quả cao.</p>
+        <h5>4. Thành tích</h5>
+            <p>Kết thúc thời gian tổ chức cuộc thi, Ban Tổ chức sẽ chọn 03 bài dự thi xuất sắc nhất để trao giải theo thứ tự ưu
+                tiên như:</p>
+            <ul class="browser-default">
+                <li>Bài dự thi có tổng số điểm cao (lấy từ trên xuống dưới).</li>
+                <li>Trường hợp bài dự thi có tổng điểm bằng nhau thì bài dự thi có thời gian trả lời các câu hỏi nhanh
+                    nhất (thời gian ngắn nhất) sẽ xếp vị thứ cao hơn.
+                </li>
+                <li>Trường hợp thời gian trả lời nhanh nhất bằng nhau thì sẽ tính bài dự thi tham gia cuộc thi trực
+                    tuyến sớm nhất (mốc tính thời gian là 06h00, ngày 20/7/2017).
+                </li>
+            </ul>
+        <h5>5. Khen thưởng</h5>
+            <p>Ban Tổ chức trao giải cá nhân cho 03 bài dự thi có thành tích cao nhất, cụ thể:</p>
+            <ul class="browser-default">
+                <li>01 giải nhất gồm giấy chứng nhận của Ban Tổ chức và tiền thưởng 500.000đ</li>
+                <li>01 giải nhì gồm giấy chứng nhận của Ban Tổ chức và tiền thưởng 300.000đ</li>
+                <li>01 giải ba gồm giấy chứng nhận của Ban Tổ chức và tiền thưởng 200.000đ</li>
+            </ul>
+        <h5>6. Tài liệu tham khảo</h5>
+            <ul class="browser-default">
+                <li>Lịch sử Công an nhân dân thành phố Đà Nẵng giai đoạn từ năm 1945 đến năm 1975.</li>
+                <li>60 năm Công an nhân dân thành phố Đà Nẵng chiến đấu và trưởng thành (1945- 2005).</li>
+                <li>Công an thành phố Đà Nẵng - 15 năm một chặng đượng phát triển (1975- 2012).</li>
+                <li>Đề cương tuyên truyền nhân kỷ niệm ngày Thương binh - Liệt sĩ.</li>
+                <li>Nghị quyết số 31/2013/NĐ-CP, ngày 09/4/2013 của Chính phủ quy định chi tiết, hướng dẫn thi hành một số điều
+                    của Pháp lệnh ưu đãi người có công với cách mạng .
+                </li>
+                <li>Pháp lệnh số 26/2005/PL-UBTVQH11, ngày 29/6/2005 của Ủy ban Thường vụ Quốc hội về ưu đãi người có công với
+                    cách mạng.
+                </li>
+                <li>Tổng hợp kiến thức xã hội.</li>
+            </ul>
+    <h4>III. Tổ chức thực hiện</h4>
+        <h5>1. BCH Đoàn Thanh niên Công an thành phố</h5>
+            <ul class="browser-default">
+                <li>Chịu trách nhiệm xây dựng kế hoạch tổ chức cuộc thi trực tuyến, xây dựng các câu hỏi trắc nghiệm của cuộc
+                    thi.
+                </li>
+                <li>Phối hợp với Đoàn Trường THPT chuyên Lê Quý Đôn, TP Đà Nẵng xây dựng phần mềm để tổ chức cuộc thi trực
+                    tuyến trên mạng internet.
+                </li>
+                <li>Theo dõi việc tham gia cuộc thi của các cơ sở đoàn, tổ chức khen thưởng cho các cá nhân đạt thành tích
+                    xuất sắc trong cuộc thi.
+                </li>
+                <li>Đăng tải cuộc thi trên hai trang thông tin điện tử Công an thành phố và Website của Thành đoàn.</li>
+            </ul>
+        <h5>2. BCH các cơ sở đoàn</h5>
+            <ul class="browser-default">
+                <li>Phổ biến thể lệ, nội dung cuộc thi đến từng đoàn viên thanh niên biết và tham gia hưởng ứng.</li>
+                <li>Tổ chức cho đoàn viên nghiên cứu, tìm hiểu kiến thức liên quan đến công tác thương binh liệt sĩ.</li>
+                <li>Khuyến khích các cơ sở đoàn tổ chức cho đoàn viên tham gia cuộc thi mang tính tập trung.</li>
+            </ul>
+    <p>Trên đây là kế hoạch tổ chức cuộc thi trực tuyến với chủ đề “Uống nước nhớ nguồn” của Đoàn Thanh niên CATP, kính
+        báo cáo Đảng ủy, Lãnh đạo CATP cho ý kiến chỉ đạo để triển khai thực hiện./.</p>
 {% endblock %}
