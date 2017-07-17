@@ -106,10 +106,10 @@ function CustomSet(size){
     }
 }
 
-function Exam(exam, contest, questions){
+function Exam(exam, questions){
     this.exam = exam;
-    this.contest = contest;
     this.questions = questions;
+
     this.question_container = $("#exam_container");
     this.question_answered = new CustomSet(this.questions.length);
     this.answers_modified = false;
@@ -283,7 +283,7 @@ function Exam(exam, contest, questions){
     return this;
 }
 
-exam = new Exam(exam, "{}", questions);
+exam = new Exam(exam, questions);
 
 $("#close-exam-button").click(function (){
     var warning_text = i18n.translate("Do you want to close the exam? You still have time").fetch();
