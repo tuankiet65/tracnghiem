@@ -14,7 +14,6 @@ from .utils.datetime import dt_to_local_dt, get_current_local_dt, d_to_local_dt,
 
 def get_exam_question(exam: Exam, include_answers: bool):
     rng = Random(exam.random_seed)
-    print("random seed: {}".format(exam.random_seed))
     contest = exam.contest
 
     exam_questions = []
@@ -31,10 +30,6 @@ def get_exam_question(exam: Exam, include_answers: bool):
             (question['answer_c'], (question['correct_answer'] == 3)),
         ]
 
-        # Shuffling the list three times seems to yield better randomness
-        # (not scientifically proven)
-        rng.shuffle(tmp)
-        rng.shuffle(tmp)
         rng.shuffle(tmp)
 
         question['answer_a'] = tmp[0][0]
