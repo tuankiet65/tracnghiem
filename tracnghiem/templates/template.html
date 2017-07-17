@@ -157,13 +157,11 @@
             /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
             _paq.push(['trackPageView']);
             _paq.push(['enableLinkTracking']);
-            (function() {
-                var u = "//analytics.tuankiet65.moe/";
+            (function (){
+                var u = "https://analytics.tuankiet65.moe/";
                 _paq.push(['setTrackerUrl', u + 'piwik.php']);
-                _paq.push(['setSiteId', '5']);
-                var d = document,
-                    g = d.createElement('script'),
-                    s = d.getElementsByTagName('script')[0];
+                _paq.push(['setSiteId', '7']);
+                var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
                 g.type = 'text/javascript';
                 g.async = true;
                 g.defer = true;
@@ -171,7 +169,8 @@
                 s.parentNode.insertBefore(g, s);
             })();
         </script>
-        <noscript><p><img src="//analytics.tuankiet65.moe/piwik.php?idsite=5&rec=1" style="border:0;" alt="" /></p></noscript>
+
+        <noscript><p><img src="https://analytics.tuankiet65.moe/piwik.php?idsite=7&rec=1" style="border:0;" alt=""/></p></noscript>
 
         <script src="/static/libraries/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/libraries/materialize/dist/js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
@@ -181,10 +180,10 @@
 
         <script>
             // i18n stuff
-            this.i18n = new Jed(i18n_vi_data);
+            i18n = new Jed(i18n_vi_data);
 
             // CSRF stuff
-            var csrf_token = "{{ csrf_token() }}";
+            csrf_token = "{{ csrf_token() }}";
 
             $.ajaxSetup({
                 beforeSend: function(xhr, settings) {
