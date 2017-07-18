@@ -30,7 +30,9 @@ def get_exam_question(exam: Exam, include_answers: bool):
             (question['answer_c'], (question['correct_answer'] == 3)),
         ]
 
-        rng.shuffle(tmp)
+        # Don't ask me why I decide to shuffle it 10 times
+        for _ in range(10):
+            rng.shuffle(tmp)
 
         question['answer_a'] = tmp[0][0]
         question['answer_b'] = tmp[1][0]
