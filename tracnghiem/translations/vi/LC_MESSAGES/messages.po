@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-07-18 16:52+0700\n"
-"PO-Revision-Date: 2017-07-18 16:55+0700\n"
+"PO-Revision-Date: 2017-07-18 17:14+0700\n"
 "Last-Translator: \n"
 "Language: vi\n"
 "Language-Team: vi <LL@li.org>\n"
@@ -96,7 +96,7 @@ msgstr "Xuất báo cáo"
 
 #: admin/templates/admin_school.html:3 admin/templates/admin_template.html:4
 msgid "Schools"
-msgstr "Trường"
+msgstr "Đơn vị"
 
 #: admin/templates/admin_template.html:2 templates/index.html:3
 #: templates/template.html:2 templates/template.html:9
@@ -372,11 +372,11 @@ msgstr "Đăng xuất"
 
 #: templates/template.html:33 templates/template.html:98
 msgid "Online quiz"
-msgstr "Thi 6 bài học LLCT"
+msgstr "Thi trực tuyến"
 
 #: templates/template.html:123
 msgid "Online quiz Footer"
-msgstr "Thi tìm hiểu 6 Bài học lý luận chính trị dành cho Đoàn viên"
+msgstr "Cuộc thi trực tuyến \"Uống nước nhớ nguồn"
 
 #: templates/template.html:129
 msgid "Links"
@@ -409,7 +409,7 @@ msgstr "Họ và tên"
 
 #: templates/yourself.html:34
 msgid "School"
-msgstr "Trường"
+msgstr "Đơn vị"
 
 #: templates/yourself.html:38
 msgid "Class"
@@ -496,7 +496,7 @@ msgstr "Nhập lại mật khẩu mới"
 
 #: templates/authentication/register.html:21
 msgid "Choose your school"
-msgstr "Hãy chọn trường của bạn"
+msgstr "Hãy chọn đơn vị của bạn"
 
 #: templates/authentication/register.html:37
 msgid "Please wait for all resources to be loaded"

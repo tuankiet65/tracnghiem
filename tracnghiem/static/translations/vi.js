@@ -62,7 +62,7 @@ var i18n_vi_data = {
             "Xuất báo cáo"
          ],
          "Schools": [
-            "Trường"
+            "Đơn vị"
          ],
          "Index": [
             "Trang chủ"
@@ -257,10 +257,10 @@ var i18n_vi_data = {
             "Đăng xuất"
          ],
          "Online quiz": [
-            "Thi 6 bài học LLCT"
+            "Thi trực tuyến"
          ],
          "Online quiz Footer": [
-            "Thi tìm hiểu 6 Bài học lý luận chính trị dành cho Đoàn viên"
+            "Cuộc thi trực tuyến \"Uống nước nhớ nguồn"
          ],
          "Links": [
             "Các đường dẫn"
@@ -284,7 +284,7 @@ var i18n_vi_data = {
             "Họ và tên"
          ],
          "School": [
-            "Trường"
+            "Đơn vị"
          ],
          "Class": [
             "Lớp"
@@ -344,7 +344,7 @@ var i18n_vi_data = {
             "Nhập lại mật khẩu mới"
          ],
          "Choose your school": [
-            "Hãy chọn trường của bạn"
+            "Hãy chọn đơn vị của bạn"
          ],
          "Please wait for all resources to be loaded": [
             "Xin hãy chờ cho các tài nguyên được tải về"
