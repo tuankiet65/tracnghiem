@@ -195,6 +195,14 @@
 
             $(function(){
                 $(".button-collapse").sideNav();
+
+                // Check if user is using Opera Mini in Extreme mode
+                // (means that the content is being rendered on Opera servers)
+                // If yes then we prompt the user to switch off Data Saver
+                // or change Data Saver mode to High
+                if (Object.prototype.toString.call(window.operamini) === "[object OperaMini]"){
+                    $("body").prepend(i18n.translate("You are using Opera Mini in Extreme Data Saver mode. This webapp will not work as intended. Please consider disabling Data Saver or switching to High mode.").fetch())
+                }
             });
         </script>
         {% block js %} {% endblock %}

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-07-12 00:16+0700\n"
-"PO-Revision-Date: 2017-07-12 00:21+0700\n"
+"POT-Creation-Date: 2017-07-18 16:52+0700\n"
+"PO-Revision-Date: 2017-07-18 16:55+0700\n"
 "Last-Translator: \n"
 "Language: vi\n"
 "Language-Team: vi <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr "Cuộc thi"
 
 #: admin/templates/admin_index.html:14 admin/templates/admin_index.html:20
 msgid "Login as"
-msgstr ""
+msgstr "Đăng nhập dưới danh nghĩa"
 
 #: admin/templates/admin_index.html:17 templates/authentication/register.html:5
 #: templates/install.html:30 templates/yourself.html:26
@@ -96,7 +96,7 @@ msgstr "Xuất báo cáo"
 
 #: admin/templates/admin_school.html:3 admin/templates/admin_template.html:4
 msgid "Schools"
-msgstr "Đơn vị"
+msgstr "Trường"
 
 #: admin/templates/admin_template.html:2 templates/index.html:3
 #: templates/template.html:2 templates/template.html:9
@@ -119,51 +119,51 @@ msgstr "Đăng xuất"
 msgid "Question"
 msgstr "Câu hỏi"
 
-#: static/js/exam.js:209
+#: static/js/exam.js:210
 #, python-format
 msgid "Unknown AJAX error: %(text_status)s %(error_thrown)s, please reload."
 msgstr "Lỗi AJAX không xác định: %(text_status)s %(error_thrown)s, xin hãy tải lại trang."
 
-#: static/js/exam.js:218
+#: static/js/exam.js:219
 msgid "Authentication failure"
 msgstr "Lỗi xác thực"
 
-#: static/js/exam.js:219
+#: static/js/exam.js:220
 msgid "Please login again"
 msgstr "Xin hãy đăng nhập lại"
 
-#: static/js/exam.js:226
+#: static/js/exam.js:227
 #, python-format
 msgid "AJAX error: %(error)s, please reload."
 msgstr "Lỗi AJAX: %(error)s, xin hãy tải lại trang."
 
-#: static/js/exam.js:259
+#: static/js/exam.js:260
 #, python-format
 msgid "You have finished your exam with score of %(score)d/%(questions_count)d"
 msgstr "Bạn đã hoàn thành bài thi của mình với số điểm %(score)d/%(questions_count)d"
 
-#: static/js/exam.js:264
+#: static/js/exam.js:265
 msgid "Congratulation"
 msgstr "Chúc mừng"
 
-#: static/js/exam.js:273
+#: static/js/exam.js:274
 msgid "Error"
 msgstr "Lỗi"
 
-#: static/js/exam.js:274
+#: static/js/exam.js:275
 msgid "We can't close your exam at the moment. Please try again in a few seconds."
 msgstr "Chúng tôi không thể kết thúc bài làm của bạn vào thời điểm hiện tại. Xin hãy thử lại trong giây lát."
 
 #: static/js/exam.js:289
+msgid "Do you want to close the exam? You still have time"
+msgstr "Bạn có muốn nộp bài hay không?\n"
+"Bạn vẫn còn thời gian làm bài."
+
+#: static/js/exam.js:291
 #, python-format
 msgid "Do you want to close the exam? You still have time and you have %(question)d questions unanswered"
 msgstr "Bạn có muốn nộp bài hay không?\n"
 "Bạn vẫn còn thời gian làm bài và còn %(question)d câu hỏi chưa trả lời."
-
-#: static/js/exam.js:293
-msgid "Do you want to close the exam? You still have time"
-msgstr "Bạn có muốn nộp bài hay không?\n"
-"Bạn vẫn còn thời gian làm bài."
 
 #: static/js/exam.js:296
 msgid "Warning"
@@ -173,11 +173,11 @@ msgstr "Cảnh báo"
 msgid "Please enter your old password"
 msgstr "Xin hãy nhập mật khẩu cũ của bạn"
 
-#: static/js/yourself.js:17 templates/authentication/register.html:63
+#: static/js/yourself.js:17 templates/authentication/register.html:67
 msgid "Your password is too weak "
 msgstr "Mật khẩu của bạn quá yếu"
 
-#: static/js/yourself.js:21 templates/authentication/register.html:64
+#: static/js/yourself.js:21 templates/authentication/register.html:68
 msgid "Password either is not the same or too weak"
 msgstr "Mật khẩu hoặc không khớp với ở trên hoặc quá yếu"
 
@@ -189,15 +189,19 @@ msgstr "Mật khẩu cũ không khớp"
 msgid "Password changed successfully. You'll be logged out..."
 msgstr "Bạn đã đổi mật khẩu thành công. Bạn sẽ tự động đăng xuất trong giây lát."
 
-#: static/js/yourself.js:53 templates/authentication/register.html:65
+#: static/js/yourself.js:53 templates/authentication/register.html:69
 msgid "Please fill in your name"
 msgstr "Xin hãy điền tên của bạn"
 
-#: static/js/yourself.js:57 templates/authentication/register.html:66
+#: static/js/yourself.js:57 templates/authentication/register.html:70
 msgid "Please choose your school"
-msgstr "Xin hãy nhập tên đơn vị của bạn"
+msgstr "Xin hãy chọn trường của bạn"
 
-#: static/js/yourself.js:70
+#: static/js/yourself.js:61 templates/authentication/register.html:71
+msgid "Please fill in your class"
+msgstr "Xin hãy điền lớp của bạn"
+
+#: static/js/yourself.js:74
 msgid "Profile edited successfully"
 msgstr "Thay đổi thông tin thành công"
 
@@ -252,15 +256,15 @@ msgstr "Thông báo này được đăng vào lúc %(time)s"
 msgid "Statistics"
 msgstr "Thống kê"
 
-#: templates/index.html:38
+#: templates/index.html:39
 msgid "Account count:"
 msgstr "Số tài khoản đã đăng kí:"
 
-#: templates/index.html:39
+#: templates/index.html:40
 msgid "Exam count:"
 msgstr "Số bài thi đã làm:"
 
-#: templates/index.html:40 templates/participate.html:6
+#: templates/index.html:42 templates/participate.html:6
 #: templates/participate.html:22 templates/template.html:4
 #: templates/template.html:11
 msgid "Participate"
@@ -282,7 +286,7 @@ msgstr "phút"
 msgid "seconds"
 msgstr "giây"
 
-#: templates/participate.html:27 templates/yourself.html:41
+#: templates/participate.html:27 templates/yourself.html:45
 #, python-format
 msgid "Contest: <strong>%(contest_title)s</strong>"
 msgstr "Cuộc thi: <strong>%(contest_title)s</strong>"
@@ -306,39 +310,39 @@ msgstr "Số câu hỏi: <strong>%(questions)d câu hỏi</strong>"
 msgid "Your last performance: "
 msgstr "Thành tích của bạn:"
 
-#: templates/participate.html:42 templates/yourself.html:45
+#: templates/participate.html:42 templates/yourself.html:49
 msgid "Attempt"
 msgstr "Lần thi"
 
-#: templates/participate.html:43 templates/yourself.html:46
+#: templates/participate.html:43 templates/yourself.html:50
 msgid "Start time"
 msgstr "Thời gian bắt đầu"
 
-#: templates/participate.html:44 templates/yourself.html:47
+#: templates/participate.html:44 templates/yourself.html:51
 msgid "End time"
 msgstr "Thời gian kết thúc"
 
-#: templates/participate.html:45 templates/yourself.html:48
+#: templates/participate.html:45 templates/yourself.html:52
 msgid "Status"
 msgstr "Trạng thái"
 
-#: templates/participate.html:46 templates/yourself.html:49
+#: templates/participate.html:46 templates/yourself.html:53
 msgid "Elapsed time"
 msgstr "Thời gian làm bài"
 
-#: templates/participate.html:47 templates/yourself.html:50
+#: templates/participate.html:47 templates/yourself.html:54
 msgid "Score"
 msgstr "Điểm"
 
-#: templates/participate.html:67 templates/yourself.html:70
+#: templates/participate.html:67 templates/yourself.html:74
 msgid "Finished"
 msgstr "Đã nộp bài"
 
-#: templates/participate.html:73 templates/yourself.html:76
+#: templates/participate.html:73 templates/yourself.html:80
 msgid "Ongoing"
 msgstr "Chưa nộp bài"
 
-#: templates/participate.html:74 templates/yourself.html:77
+#: templates/participate.html:74 templates/yourself.html:81
 msgid "Continue"
 msgstr "Tiếp tục làm bài"
 
@@ -368,17 +372,17 @@ msgstr "Đăng xuất"
 
 #: templates/template.html:33 templates/template.html:98
 msgid "Online quiz"
-msgstr "Thi trực tuyến"
+msgstr "Thi 6 bài học LLCT"
 
 #: templates/template.html:123
 msgid "Online quiz Footer"
-msgstr "Cuộc thi trực tuyến với chủ đề \"Uống nước nhớ nguồn\""
+msgstr "Thi tìm hiểu 6 Bài học lý luận chính trị dành cho Đoàn viên"
 
 #: templates/template.html:129
 msgid "Links"
 msgstr "Các đường dẫn"
 
-#: templates/template.html:138
+#: templates/template.html:139
 #, python-format
 msgid "Running <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></strong> revision <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></strong>. Current timezone: <strong>%(timezone)s</strong>"
 msgstr "Đang chạy <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></strong>, phiên bản <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></strong>. Múi giờ hiện tại: <strong>%(timezone)s</strong>"
@@ -405,37 +409,45 @@ msgstr "Họ và tên"
 
 #: templates/yourself.html:34
 msgid "School"
-msgstr "Đơn vị"
+msgstr "Trường"
 
-#: templates/yourself.html:39
+#: templates/yourself.html:38
+msgid "Class"
+msgstr "Lớp"
+
+#: templates/yourself.html:43
 msgid "Your past results"
 msgstr "Các kết quả thi của bạn"
 
-#: templates/authentication/register.html:17 templates/yourself.html:90
+#: templates/authentication/register.html:17 templates/yourself.html:94
 msgid "Your name"
 msgstr "Tên thật của bạn"
 
-#: templates/authentication/register.html:27 templates/yourself.html:99
+#: templates/authentication/register.html:27 templates/yourself.html:103
 msgid "Your school"
-msgstr "Đơn vị của bạn"
+msgstr "Trường của bạn"
 
-#: templates/yourself.html:103
+#: templates/authentication/register.html:32 templates/yourself.html:108
+msgid "Your class"
+msgstr "Lớp của bạn"
+
+#: templates/yourself.html:111
 msgid "Edit profile"
 msgstr "Sửa thông tin"
 
-#: templates/yourself.html:111
+#: templates/yourself.html:119
 msgid "Old password"
 msgstr "Mật khẩu cũ"
 
-#: templates/yourself.html:115
+#: templates/yourself.html:123
 msgid "New password"
 msgstr "Mật khẩu mới"
 
-#: templates/yourself.html:119
+#: templates/yourself.html:127
 msgid "New password (repeat)"
 msgstr "Mật khẩu mới (lặp lại)"
 
-#: templates/yourself.html:122
+#: templates/yourself.html:130
 msgid "Change password"
 msgstr "Đổi mật khẩu"
 
@@ -456,9 +468,9 @@ msgid "Login"
 msgstr "Đăng nhập"
 
 #: templates/authentication/general.html:17
-#: templates/authentication/register.html:39
-#: templates/authentication/register.html:82
-#: templates/authentication/register.html:91
+#: templates/authentication/register.html:43
+#: templates/authentication/register.html:87
+#: templates/authentication/register.html:96
 msgid "Register"
 msgstr "Đăng kí"
 
@@ -484,25 +496,25 @@ msgstr "Nhập lại mật khẩu mới"
 
 #: templates/authentication/register.html:21
 msgid "Choose your school"
-msgstr "Hãy nhập tên đơn vị của bạn"
+msgstr "Hãy chọn trường của bạn"
 
-#: templates/authentication/register.html:33
+#: templates/authentication/register.html:37
 msgid "Please wait for all resources to be loaded"
 msgstr "Xin hãy chờ cho các tài nguyên được tải về"
 
-#: templates/authentication/register.html:43
+#: templates/authentication/register.html:47
 msgid "Log in to your existing account"
 msgstr "Đăng nhập vào tài khoản hiện có"
 
-#: templates/authentication/register.html:62
+#: templates/authentication/register.html:66
 msgid "Please fill in your username"
 msgstr "Xin hãy nhập tên đăng nhập"
 
-#: templates/authentication/register.html:93
+#: templates/authentication/register.html:98
 msgid "An account with the same username exists, please choose another username"
 msgstr "Có một tài khoản khác cùng tên đăng nhập với bạn, hãy chọn tên đăng nhập khác."
 
-#: templates/authentication/register.html:96
+#: templates/authentication/register.html:101
 msgid "You haven't filled in some fields, maybe you haven't checked the captcha?"
 msgstr "Bạn chưa điền hết tất cả các trường, có lẽ bạn chưa đánh dấu xác nhận ở dưới cùng?"
 
@@ -563,12 +575,3 @@ msgstr "Bạn chưa điền hết tất cả các trường, có lẽ bạn chư
 
 #~ msgid "Please wait while the form loads"
 #~ msgstr "Xin hãy chờ các tài nguyên được tải về."
-
-#~ msgid "Please fill in your class"
-#~ msgstr "Xin hãy điền lớp của bạn"
-
-#~ msgid "Class"
-#~ msgstr "Lớp"
-
-#~ msgid "Your class"
-#~ msgstr "Lớp của bạn"
