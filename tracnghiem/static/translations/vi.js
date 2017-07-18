@@ -131,7 +131,7 @@ var i18n_vi_data = {
             "Xin hãy điền tên của bạn"
          ],
          "Please choose your school": [
-            "Xin hãy chọn trường của bạn"
+            "Xin hãy chọn đơn vị của bạn"
          ],
          "Please fill in your class": [
             "Xin hãy điền lớp của bạn"
@@ -296,7 +296,7 @@ var i18n_vi_data = {
             "Tên thật của bạn"
          ],
          "Your school": [
-            "Trường của bạn"
+            "Đơn vị của bạn"
          ],
          "Your class": [
             "Lớp của bạn"

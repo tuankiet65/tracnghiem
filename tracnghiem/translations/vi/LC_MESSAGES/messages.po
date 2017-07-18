@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-07-18 16:52+0700\n"
-"PO-Revision-Date: 2017-07-18 17:14+0700\n"
+"PO-Revision-Date: 2017-07-18 17:19+0700\n"
 "Last-Translator: \n"
 "Language: vi\n"
 "Language-Team: vi <LL@li.org>\n"
@@ -195,7 +195,7 @@ msgstr "Xin hãy điền tên của bạn"
 
 #: static/js/yourself.js:57 templates/authentication/register.html:70
 msgid "Please choose your school"
-msgstr "Xin hãy chọn trường của bạn"
+msgstr "Xin hãy chọn đơn vị của bạn"
 
 #: static/js/yourself.js:61 templates/authentication/register.html:71
 msgid "Please fill in your class"
@@ -425,7 +425,7 @@ msgstr "Tên thật của bạn"
 
 #: templates/authentication/register.html:27 templates/yourself.html:103
 msgid "Your school"
-msgstr "Trường của bạn"
+msgstr "Đơn vị của bạn"
 
 #: templates/authentication/register.html:32 templates/yourself.html:108
 msgid "Your class"
