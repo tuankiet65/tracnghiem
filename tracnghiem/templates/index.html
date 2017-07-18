@@ -18,26 +18,28 @@
     <div class="row">
         <div class="col m8 s12">
             <h4>{{ _("Announcements") }}</h4>
-            {%for announcement in announcements%}
+            {% for announcement in announcements %}
                 <div class="card-panel blue-grey lighten-5">
                     <div class="black-text">
-                        <h5>{{announcement.title}}</h5>
-                        <p class="announcement-content">{{announcement.content}}</p>
+                        <h5>{{ announcement.title }}</h5>
+                        <p class="announcement-content">{{ announcement.content }}</p>
                         <span class="announcement-time">{{ _("Announcement published at %(time)s", time = announcement.time) }}</span>
                     </div>
                 </div>
-            {%endfor%}
+            {% endfor %}
         </div>
         <div class="col m4 s12">
             <h4>{{ _("Statistics") }}</h4>
-            <select id="stat-choose-school" name="school" {{ ('class="browser-default"'|safe) if g.workaround['ios_select'] }}>
+            <select id="stat-choose-school"
+                    name="school" {{ ('class="browser-default"'|safe) if g.workaround['ios_select'] }}>
                 {% for school in schools %}
                     <option value="{{ school[0] }}">{{ school[1] }}</option>
                 {% endfor %}
             </select>
             <p>{{ _("Account count:") }} <strong><span id="stats-account-count"></span></strong></p>
             <p>{{ _("Exam count:") }} <strong><span id="stats-exam-count"></span></strong></p>
-            <a href="{{ url_for('participate.index') }}" class="waves-light waves-effect btn-large btn-fullwidth">{{ _("Participate") }}</a>
+            <a href="{{ url_for('participate.index') }}"
+               class="waves-light waves-effect btn-large btn-fullwidth">{{ _("Participate") }}</a>
         </div>
     </div>
 {% endblock %}
@@ -45,7 +47,9 @@
     <script>
         statistics = '{{ stats|tojson|safe }}';
         {% if not g.workaround['ios_select'] %}
-            $('#stat-choose-school').material_select();
+            $(function (){
+                $('#stat-choose-school').material_select();
+            });
         {% endif %}
     </script>
     <script src="/static/js/index.js"></script>
