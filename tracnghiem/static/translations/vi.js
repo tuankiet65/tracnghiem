@@ -46,6 +46,12 @@ var i18n_vi_data = {
          "Contest": [
             "Cuộc thi"
          ],
+         "Login as": [
+            "Đăng nhập dưới danh nghĩa"
+         ],
+         "Username": [
+            "Tên đăng nhập"
+         ],
          "Questions in set %(qset_name)s": [
             "Câu hỏi trong bộ câu hỏi %(qset_name)s"
          ],
@@ -97,11 +103,11 @@ var i18n_vi_data = {
          "We can't close your exam at the moment. Please try again in a few seconds.": [
             "Chúng tôi không thể kết thúc bài làm của bạn vào thời điểm hiện tại. Xin hãy thử lại trong giây lát."
          ],
-         "Do you want to close the exam? You still have time and you have %(question)d questions unanswered": [
-            "Bạn có muốn nộp bài hay không?\nBạn vẫn còn thời gian làm bài và còn %(question)d câu hỏi chưa trả lời."
-         ],
          "Do you want to close the exam? You still have time": [
             "Bạn có muốn nộp bài hay không?\nBạn vẫn còn thời gian làm bài."
+         ],
+         "Do you want to close the exam? You still have time and you have %(question)d questions unanswered": [
+            "Bạn có muốn nộp bài hay không?\nBạn vẫn còn thời gian làm bài và còn %(question)d câu hỏi chưa trả lời."
          ],
          "Warning": [
             "Cảnh báo"
@@ -164,7 +170,7 @@ var i18n_vi_data = {
             "Đang nộp bài"
          ],
          "Announcement published at %(time)s": [
-            "Thông báo này được đăng vào %(time)s"
+            "Thông báo này được đăng vào lúc %(time)s"
          ],
          "Statistics": [
             "Thống kê"
@@ -177,9 +183,6 @@ var i18n_vi_data = {
          ],
          "Participate": [
             "Tham gia thi"
-         ],
-         "Username": [
-            "Tên đăng nhập"
          ],
          "Password": [
             "Mật khẩu"
@@ -342,6 +345,9 @@ var i18n_vi_data = {
          ],
          "Choose your school": [
             "Hãy chọn trường của bạn"
+         ],
+         "Please wait for all resources to be loaded": [
+            "Xin hãy chờ cho các tài nguyên được tải về"
          ],
          "Log in to your existing account": [
             "Đăng nhập vào tài khoản hiện có"

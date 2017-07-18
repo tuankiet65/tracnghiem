@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-04-12 15:09+0700\n"
+"POT-Creation-Date: 2017-07-18 16:52+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,6 +81,15 @@ msgstr ""
 msgid "Contest"
 msgstr ""
 
+#: admin/templates/admin_index.html:14 admin/templates/admin_index.html:20
+msgid "Login as"
+msgstr ""
+
+#: admin/templates/admin_index.html:17 templates/authentication/register.html:5
+#: templates/install.html:30 templates/yourself.html:26
+msgid "Username"
+msgstr ""
+
 #: admin/templates/admin_question.html:3 admin/templates/admin_question.html:30
 #, python-format
 msgid "Questions in set %(qset_name)s"
@@ -119,89 +128,89 @@ msgstr ""
 msgid "Question"
 msgstr ""
 
-#: static/js/exam.js:209
+#: static/js/exam.js:210
 #, python-format
 msgid "Unknown AJAX error: %(text_status)s %(error_thrown)s, please reload."
 msgstr ""
 
-#: static/js/exam.js:218
+#: static/js/exam.js:219
 msgid "Authentication failure"
 msgstr ""
 
-#: static/js/exam.js:219
+#: static/js/exam.js:220
 msgid "Please login again"
 msgstr ""
 
-#: static/js/exam.js:226
+#: static/js/exam.js:227
 #, python-format
 msgid "AJAX error: %(error)s, please reload."
 msgstr ""
 
-#: static/js/exam.js:259
+#: static/js/exam.js:260
 #, python-format
 msgid "You have finished your exam with score of %(score)d/%(questions_count)d"
 msgstr ""
 
-#: static/js/exam.js:264
+#: static/js/exam.js:265
 msgid "Congratulation"
 msgstr ""
 
-#: static/js/exam.js:273
+#: static/js/exam.js:274
 msgid "Error"
 msgstr ""
 
-#: static/js/exam.js:274
+#: static/js/exam.js:275
 msgid "We can't close your exam at the moment. Please try again in a few seconds."
 msgstr ""
 
 #: static/js/exam.js:289
+msgid "Do you want to close the exam? You still have time"
+msgstr ""
+
+#: static/js/exam.js:291
 #, python-format
 msgid ""
 "Do you want to close the exam? You still have time and you have "
 "%(question)d questions unanswered"
 msgstr ""
 
-#: static/js/exam.js:293
-msgid "Do you want to close the exam? You still have time"
-msgstr ""
-
 #: static/js/exam.js:296
 msgid "Warning"
 msgstr ""
 
-#: static/js/yourself.js:11
+#: static/js/yourself.js:13
 msgid "Please enter your old password"
 msgstr ""
 
-#: static/js/yourself.js:15 templates/authentication/register.html:67
+#: static/js/yourself.js:17 templates/authentication/register.html:67
 msgid "Your password is too weak "
 msgstr ""
 
-#: static/js/yourself.js:19 templates/authentication/register.html:68
+#: static/js/yourself.js:21 templates/authentication/register.html:68
 msgid "Password either is not the same or too weak"
 msgstr ""
 
-#: static/js/yourself.js:33
+#: static/js/yourself.js:36
 msgid "Incorrect old password"
 msgstr ""
 
-#: static/js/yourself.js:35
+#: static/js/yourself.js:38
 msgid "Password changed successfully. You'll be logged out..."
 msgstr ""
 
-#: static/js/yourself.js:50 templates/authentication/register.html:69
+#: static/js/yourself.js:53 templates/authentication/register.html:69
 msgid "Please fill in your name"
 msgstr ""
 
-#: static/js/yourself.js:54 templates/authentication/register.html:70
+#: static/js/yourself.js:57 templates/authentication/register.html:70
 msgid "Please choose your school"
 msgstr ""
 
-#: static/js/yourself.js:58 templates/authentication/register.html:71
+#: static/js/yourself.js:61 templates/authentication/register.html:71
 msgid "Please fill in your class"
 msgstr ""
 
-#: static/js/yourself.js:71
+#: static/js/yourself.js:74
 msgid "Profile edited successfully"
 msgstr ""
 
@@ -256,23 +265,18 @@ msgstr ""
 msgid "Statistics"
 msgstr ""
 
-#: templates/index.html:38
+#: templates/index.html:39
 msgid "Account count:"
 msgstr ""
 
-#: templates/index.html:39
+#: templates/index.html:40
 msgid "Exam count:"
 msgstr ""
 
-#: templates/index.html:40 templates/participate.html:6
-#: templates/participate.html:15 templates/template.html:4
+#: templates/index.html:42 templates/participate.html:6
+#: templates/participate.html:22 templates/template.html:4
 #: templates/template.html:11
 msgid "Participate"
-msgstr ""
-
-#: templates/authentication/register.html:5 templates/install.html:30
-#: templates/yourself.html:26
-msgid "Username"
 msgstr ""
 
 #: templates/authentication/register.html:9 templates/install.html:35
@@ -291,73 +295,73 @@ msgstr ""
 msgid "seconds"
 msgstr ""
 
-#: templates/participate.html:20 templates/yourself.html:45
+#: templates/participate.html:27 templates/yourself.html:45
 #, python-format
 msgid "Contest: <strong>%(contest_title)s</strong>"
 msgstr ""
 
-#: templates/participate.html:23
+#: templates/participate.html:32
 #, python-format
 msgid ""
 "This contest starts from <strong>%(begin_date)s</strong> to "
 "<strong>%(end_date)s</strong>"
 msgstr ""
 
-#: templates/participate.html:27
+#: templates/participate.html:36
 #, python-format
 msgid "Duration: <strong>%(duration)d minutes</strong>"
 msgstr ""
 
-#: templates/participate.html:28
+#: templates/participate.html:37
 #, python-format
 msgid "Number of questions: <strong>%(questions)d questions</strong>"
 msgstr ""
 
-#: templates/participate.html:29
+#: templates/participate.html:38
 msgid "Your last performance: "
 msgstr ""
 
-#: templates/participate.html:33 templates/yourself.html:49
+#: templates/participate.html:42 templates/yourself.html:49
 msgid "Attempt"
 msgstr ""
 
-#: templates/participate.html:34 templates/yourself.html:50
+#: templates/participate.html:43 templates/yourself.html:50
 msgid "Start time"
 msgstr ""
 
-#: templates/participate.html:35 templates/yourself.html:51
+#: templates/participate.html:44 templates/yourself.html:51
 msgid "End time"
 msgstr ""
 
-#: templates/participate.html:36 templates/yourself.html:52
+#: templates/participate.html:45 templates/yourself.html:52
 msgid "Status"
 msgstr ""
 
-#: templates/participate.html:37 templates/yourself.html:53
+#: templates/participate.html:46 templates/yourself.html:53
 msgid "Elapsed time"
 msgstr ""
 
-#: templates/participate.html:38 templates/yourself.html:54
+#: templates/participate.html:47 templates/yourself.html:54
 msgid "Score"
 msgstr ""
 
-#: templates/participate.html:58 templates/yourself.html:74
+#: templates/participate.html:67 templates/yourself.html:74
 msgid "Finished"
 msgstr ""
 
-#: templates/participate.html:64 templates/yourself.html:80
+#: templates/participate.html:73 templates/yourself.html:80
 msgid "Ongoing"
 msgstr ""
 
-#: templates/participate.html:65 templates/yourself.html:81
+#: templates/participate.html:74 templates/yourself.html:81
 msgid "Continue"
 msgstr ""
 
-#: templates/participate.html:73 templates/participate.html:78
+#: templates/participate.html:82 templates/participate.html:87
 msgid "Participate in this contest"
 msgstr ""
 
-#: templates/participate.html:77
+#: templates/participate.html:86
 msgid "This contest has either ended or hasn't started"
 msgstr ""
 
