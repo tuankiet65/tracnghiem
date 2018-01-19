@@ -1,5 +1,5 @@
 import json
-import random
+from random import Random
 
 from flask import g, Blueprint, request, render_template, redirect, url_for, abort
 from flask import json as fjson
@@ -12,38 +12,56 @@ from .database import Exam, Question, Contest
 from .utils.datetime import dt_to_local_dt, get_current_local_dt, d_to_local_dt, get_minutes_delta
 
 
-def generate_exam_questions(contest: Contest):
-    result = []
-    random.seed()
+def get_exam_question(exam: Exam, include_answers: bool):
+    rng = Random(exam.random_seed)
+    print("random seed: {}".format(exam.random_seed))
+    contest = exam.contest
+
+    exam_questions = []
 
     for question_set in fjson.loads(contest.question_set):
-        candidates = list(Question.select().where(Question.set == question_set['id']))
-        result.extend([q.id for q in random.sample(candidates, k = question_set['count'])])
+        question_candidates = list(Question.select().where(Question.set == question_set['id']))
+        exam_questions.extend([model_to_dict(q, exclude = [Question.set, Question.id]) for q in
+                               rng.sample(question_candidates, k = question_set['count'])])
 
-    random.shuffle(result)
+    for question in exam_questions:
+        tmp = [
+            (question['answer_a'], (question['correct_answer'] == 1)),
+            (question['answer_b'], (question['correct_answer'] == 2)),
+            (question['answer_c'], (question['correct_answer'] == 3)),
+            (question['answer_d'], (question['correct_answer'] == 4)),
+        ]
 
-    return result
+        # Shuffling the list three times seems to yield better randomness
+        # (not scientifically proven)
+        rng.shuffle(tmp)
+        rng.shuffle(tmp)
+        rng.shuffle(tmp)
 
+        question['answer_a'] = tmp[0][0]
+        question['answer_b'] = tmp[1][0]
+        question['answer_c'] = tmp[2][0]
+        question['answer_d'] = tmp[3][0]
 
-def get_exam_question(exam: Exam):
-    result = []
-    for question_id in fjson.loads(exam.questions):
-        result.append(Question.get(id = question_id))
-    return result
+        if include_answers:
+            question['correct_answer'] = (1 if tmp[0][1] else 2 if tmp[1][1] else 3 if tmp[2][1] else 4)
+        else:
+            del question['correct_answer']
+
+    return exam_questions
 
 
 def mark_exam(exam: Exam, force_remark: bool = False):
     if exam.finished and not force_remark:
         return exam.score
 
-    questions = json.loads(exam.questions)
+    questions = get_exam_question(exam, include_answers = True)
     answers = json.loads(exam.answers)
 
     score = 0
 
     for question, answer in zip(questions, answers):
-        question = Question.get(id = question)
-        if question.correct_answer == answer:
+        if question['correct_answer'] == answer:
             score += 1
 
     return score
@@ -56,7 +74,7 @@ def check_valid_answer(exam: Exam, answers):
         return False
     if not isinstance(answers, list):
         return False
-    if len(answers) != len(json.loads(exam.questions)):
+    if len(answers) != exam.contest.question_count:
         return False
     for answer in answers:
         if not isinstance(answer, int):
@@ -110,15 +128,13 @@ def create_exam_route():
     if not in_contest_date(contest):
         return abort(403)
 
-    questions = generate_exam_questions(contest)
-
     exam = Exam.create(contestant = g.user,
-                       contest = contest,
-                       questions = json.dumps(questions))
+                       contest = contest)
 
-    exam.answers = json.dumps([0 for _ in range(len(questions))])
+    exam.answers = json.dumps([0] * contest.question_count)
     exam.finish_date = dt_to_local_dt(exam.begin_date) + get_minutes_delta(contest.duration)
     exam.save()
+
     return redirect("/exam/" + exam.secret_key)
 
 
@@ -152,14 +168,8 @@ def exam_page(secret_key):
         close_exam(exam)
         return redirect(url_for("participate.index"))
 
-    questions = get_exam_question(exam)
-
     return render_template("exam_page.html",
-                           questions = [model_to_dict(q,
-                                                      recurse = False,
-                                                      exclude = [Question.correct_answer,
-                                                                 Question.set]) for q in questions
-                                        ],
+                           questions = get_exam_question(exam, include_answers = False),
                            exam = exam_to_dict(exam))
 
 
@@ -195,7 +205,7 @@ def save_answers():
 
         # First we check if the one-minute grace period is over
         # If yes then we reject the final answer and forcibly close the exam
-        # Naybe not necessary because the exam should be closed automatically
+        # Maybe not necessary because the exam should be closed automatically
         # by the cleanup script, but whatever
         if get_current_local_dt() > (dt_to_local_dt(exam.finish_date) + get_minutes_delta(1)):
             close_exam(exam)
