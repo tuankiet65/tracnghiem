@@ -1,4 +1,4 @@
-{% set page_name = "contest" %}
+{% set page_name = "reports" %}
 {% extends "admin_template.html" %}
 {% block title %} {{ _("Reports") }} {% endblock %}
 {% block css %}
@@ -14,7 +14,7 @@
         <h5 class="red-text">Form failure, please check.</h5>
     {% endif %}
     <div class="card-panel blue-grey lighten-5"  id="generate-report-form-div">
-        <form onsubmit="return form.validate_form()" action="{{ url_for('admin.reports') }}" method="post">
+        <form action="{{ url_for('admin.reports') }}" method="post">
             <div class="row">
                 <div class="col l6 m6 s12">
                     <div class="input-field">

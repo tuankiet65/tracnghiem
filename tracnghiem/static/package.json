@@ -1,0 +1,30 @@
+{
+  "name": "tracnghiem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuankiet65/tracnghiem.git"
+  },
+  "author": "Ho Tuan Kiet <tuankiet65@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/tuankiet65/tracnghiem/issues"
+  },
+  "homepage": "https://github.com/tuankiet65/tracnghiem#readme",
+  "dependencies": {
+    "es6-promise": "^4.2.6",
+    "handlebars": "^4.1.2",
+    "jed": "^1.1.1",
+    "jquery": "^3.4.0",
+    "material-design-icons": "^3.0.1",
+    "materialize-css": "^0.99.0",
+    "moment": "^2.24.0",
+    "raven-js": "^3.27.0",
+    "sweetalert2": "^6.6.6"
+  }
+}
