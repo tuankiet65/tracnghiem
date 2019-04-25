@@ -128,11 +128,14 @@ def create_exam_route():
     if not in_contest_date(contest):
         return abort(403)
 
-    exam = Exam.create(contestant = g.user,
-                       contest = contest)
+    current_date = get_current_local_dt()
 
-    exam.answers = json.dumps([0] * contest.question_count)
-    exam.finish_date = dt_to_local_dt(exam.begin_date) + get_minutes_delta(contest.duration)
+    exam = Exam.create(contestant = g.user,
+                       contest = contest,
+                       begin_date = current_date,
+                       finish_date = current_date + get_minutes_delta(contest.duration),
+                       answers = json.dumps([0] * contest.question_count))
+
     exam.save()
 
     return redirect("/exam/" + exam.secret_key)
