@@ -34,11 +34,11 @@ class DevelopmentConfig(Config):
     IS_PRODUCTION = False
 
     DEBUG = True
-    SERVER_NAME = "dev.env:5000"
+    SERVER_NAME = "localhost:5000"
 
 
 class ProductionConfig(Config):
     IS_PRODUCTION = True
 
     DEBUG = False
-    SERVER_NAME = "thi.quandoansontra.com"
+    SERVER_NAME = "thi.quandoansontra.org.vn"
