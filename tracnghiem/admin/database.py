@@ -1,7 +1,6 @@
 from peewee import *
-from playhouse.fields import PasswordField
 
-from ..database import BaseModel
+from ..database import BaseModel, PasswordField
 from ..utils.random import generate_random_string
 
 
@@ -12,7 +11,7 @@ class AdminUser(BaseModel):
 
 class AdminSessionToken(BaseModel):
     token = CharField(default = lambda: generate_random_string())
-    user = ForeignKeyField(rel_model = AdminUser)
+    user = ForeignKeyField(AdminUser)
 
 
 __all__ = ['AdminUser', 'AdminSessionToken']

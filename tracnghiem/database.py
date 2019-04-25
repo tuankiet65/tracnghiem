@@ -1,5 +1,7 @@
+import bcrypt
+import secrets
+
 from peewee import *
-from playhouse.fields import PasswordField
 
 from . import app
 from .utils.datetime import get_current_local_dt
@@ -9,6 +11,35 @@ database = MySQLDatabase(host = app.config["DB_HOST"],
                          user = app.config["DB_USERNAME"],
                          password = app.config["DB_PASSWORD"],
                          database = app.config["DB_DATABASE"])
+
+
+# Original Peewee 2.x PasswordField
+# Credit to juancarlospaco
+# https://github.com/juancarlospaco/peewee-extra-fields
+class PasswordHash(bytes):
+    def check_password(self, password):
+        password = password.encode('utf-8')
+        return secrets.compare_digest(bcrypt.hashpw(password, self), self)
+
+
+class PasswordField(BlobField):
+    def __init__(self, *args, **kwargs):
+        self.raw_password = None
+        super(PasswordField, self).__init__(*args, **kwargs)
+
+    def db_value(self, value):
+        """Convert the python value for storage in the database."""
+        if isinstance(value, PasswordHash):
+            return bytes(value)
+        if isinstance(value, str):
+            value = value.encode('utf-8')
+        return value if value is None else bcrypt.hashpw(value, bcrypt.gensalt())
+
+    def python_value(self, value):
+        """Convert the database value to a pythonic value."""
+        if isinstance(value, str):
+            value = value.encode('utf-8')
+        return PasswordHash(value)
 
 
 class BaseModel(Model):
@@ -84,5 +115,17 @@ class Exam(BaseModel):
     score = IntegerField(default = 0)
 
 
-__all__ = ['database', 'Announcement', 'School', 'Account', 'SessionToken', 'Contest', 'Question', 'Exam',
-           'QuestionSet']
+__all__ = [
+    'database',
+    'PasswordHash',
+    'PasswordField',
+    'BaseModel',
+    'Announcement',
+    'School',
+    'Account',
+    'SessionToken',
+    'Contest',
+    'Question',
+    'Exam',
+    'QuestionSet'
+]
