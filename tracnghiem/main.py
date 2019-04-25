@@ -1,7 +1,9 @@
 from flask import render_template, request, g, session
 from flask_babel import Babel
 from flask_wtf.csrf import CSRFProtect
-from raven.contrib.flask import Sentry
+
+import sentry_sdk
+from sentry_sdk.integrations.flask import FlaskIntegration
 
 from . import app
 from .admin import admin
@@ -26,7 +28,10 @@ babel = Babel(app)
 
 if app.config['IS_PRODUCTION']:
     print("In production, enabling Sentry")
-    sentry = Sentry(app, dsn = app.config['SENTRY_BACKEND_DSN'])
+    sentry_sdk.init(
+        dsn = app.config['SENTRY_BACKEND_DSN'],
+        integrations = [FlaskIntegration()]
+    )
 
 
 @babel.localeselector

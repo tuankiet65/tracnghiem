@@ -12,7 +12,7 @@ class Config:
     RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_PRIVATE_KEY")
 
     SENTRY_FRONTEND_DSN = 'https://ef69ff9bf83c4f7a986986a467c5ef77@sentry.io/135701'
-    SENTRY_BACKEND_DSN = 'https://55aef6867d17453282d5c8b951003976:457b1673dfd747fdbe94aa33e1e6fe18@sentry.io/135702'
+    SENTRY_BACKEND_DSN = 'https://6a249ba9277548ba9be632ea6fdb6359@sentry.io/135702'
 
     GIT_REVISION = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).decode("utf-8").strip()
 
