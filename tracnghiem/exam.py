@@ -14,7 +14,6 @@ from .utils.datetime import dt_to_local_dt, get_current_local_dt, d_to_local_dt,
 
 def get_exam_question(exam: Exam, include_answers: bool):
     rng = Random(exam.random_seed)
-    print("random seed: {}".format(exam.random_seed))
     contest = exam.contest
 
     exam_questions = []
