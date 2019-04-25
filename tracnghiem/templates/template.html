@@ -143,10 +143,12 @@
             </div>
         </footer>
 
-        <script src="/static/node_modules/raven-js/dist/raven.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/node_modules/@sentry/browser/build/bundle.min.js" type="text/javascript" charset="utf-8"></script>
         <script>
             // initialize Sentry, try to initialize it really early
-            Raven.config('{{ config["SENTRY_FRONTEND_DSN"] }}').install();
+            Sentry.init({
+                "dsn": '{{ config["SENTRY_FRONTEND_DSN"] }}'
+            });
         </script>
 
         <!-- Piwik -->

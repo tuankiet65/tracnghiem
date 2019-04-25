@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tuankiet65/tracnghiem#readme",
   "dependencies": {
+    "@sentry/browser": "^5.1.1",
     "es6-promise": "^4.2.6",
     "handlebars": "^4.1.2",
     "jed": "^1.1.1",
@@ -24,7 +25,6 @@
     "material-design-icons": "^3.0.1",
     "materialize-css": "^0.99.0",
     "moment": "^2.24.0",
-    "raven-js": "^3.27.0",
     "sweetalert2": "^6.6.6"
   }
 }
