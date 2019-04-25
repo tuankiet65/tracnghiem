@@ -32,6 +32,17 @@ def migrate_since_906aff3():
     )
     logging.info("Migration done!")
 
+def migrate_since_478cb713():
+    logging.info("DB Migration for commit 478cb713")
+    logging.info("List of actions: ")
+    logging.info("* Remove column Contest.minimum_percentage")
+    logging.info("")
+    logging.info("Migrating db")
+
+    migrate(
+        migrator.drop_column("contest", "minimum_percentage")
+    )
+    logging.info("Migration done!")
 
 logging.basicConfig(format = "[%(asctime)s][%(funcName)s] %(message)s",
                     datefmt = "%Y-%m-%d %H:%M:%S",
@@ -42,5 +53,5 @@ migrator = MySQLMigrator(database)
 logging.info("Opening database")
 database.connect()
 
-migrate_since_906aff3()
+migrate_since_478cb713()
 database.close()
