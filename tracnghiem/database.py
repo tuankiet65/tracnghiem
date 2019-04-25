@@ -80,7 +80,6 @@ class Contest(BaseModel):
     end_date = DateField(formats = "%d/%m/%Y")
     duration = IntegerField()
     question_count = IntegerField()
-    minimum_percentage = IntegerField()
     question_set = CharField(default = "[]")
 
 
