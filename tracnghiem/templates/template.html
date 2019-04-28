@@ -177,11 +177,14 @@
         <script src="/static/node_modules/materialize-css/dist/js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
 
         <script src="/static/node_modules/jed/jed.js" type="text/javascript" charset="utf-8"></script>
-        <script src="/static/translations/vi.js" type="text/javascript" charset="utf-8"></script>
 
         <script>
             // i18n stuff
-            i18n = new Jed(i18n_vi_data);
+            // dummy Jed instance
+            i18n = new Jed({});
+            $.getJSON("/static/translations/vi.json", function(translation_data) {
+                i18n = new Jed(translation_data);
+            });
 
             // CSRF stuff
             var csrf_token = "{{ csrf_token() }}";
