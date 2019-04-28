@@ -70,7 +70,7 @@ function QuestionSetsInput(question_sets, div){
         this.sets.push(element);
         this.sets_count++;
 
-        $('select').material_select();
+        M.FormSelect.init($('select'));
     }.bind(this);
 
     this.render_textbox = function(){

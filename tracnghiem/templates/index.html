@@ -48,7 +48,7 @@
         statistics = '{{ stats|tojson|safe }}';
         {% if not g.workaround['ios_select'] %}
             $(function (){
-                $('#stat-choose-school').material_select();
+                M.FormSelect.init($('#stat-choose-school'));
             });
         {% endif %}
     </script>

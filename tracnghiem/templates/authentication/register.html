@@ -53,7 +53,7 @@
     <script src="/static/js/form_validation.js"></script>
     <script>
         {% if not g.workaround['ios_select'] %}
-            $('#reg_school').material_select();
+            M.FormSelect.init($('#reg_school'));
         {% endif %}
         function SamePassword(value){
             pwd = $("#reg_password").val();

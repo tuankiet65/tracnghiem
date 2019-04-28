@@ -136,7 +136,7 @@
 {% block js %}
     {% if not g.workaround['ios_select'] %}
         <script>
-            $("#edit_school").material_select();
+            M.FormSelect.init($('#edit_school'));
         </script>
     {% endif %}
     <script src="/static/js/form_validation.js"></script>
