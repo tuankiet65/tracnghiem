@@ -35,8 +35,7 @@
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
         <span class="tooltipped-button-overlay tooltipped"
               data-tooltip="{{ _("Please wait for all resources to be loaded") }}"
-              data-position="bottom"
-              data-delay="10">
+              data-position="bottom" >
             <button type="submit"
                 class="waves-effect waves-light btn btn-fullwidth"
                 disabled
@@ -55,6 +54,8 @@
         {% if not g.workaround['ios_select'] %}
             M.FormSelect.init($('#reg_school'));
         {% endif %}
+        register_button_tooltip = M.Tooltip.init($('#register-submit-button'), {});
+
         function SamePassword(value){
             pwd = $("#reg_password").val();
             pwd_repeat = $("#reg_password_repeat").val();
@@ -76,7 +77,7 @@
                 sitekey: "{{ config['RECAPTCHA_PUBLIC_KEY'] }}"
             });
             $("#register-submit-button").attr("disabled", false);
-            $(".tooltipped-button-overlay").tooltip("remove");
+            register_button_tooltip[0].destroy();
         }
     </script>
     <script src="https://www.google.com/recaptcha/api.js?onload=enable_form&render=explicit&hl={{ config["LOCALE"] }}" async defer></script>

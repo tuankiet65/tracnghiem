@@ -78,25 +78,25 @@
     <div class="sticky-footer red lighten-1">
         <div class="container" id="footer-container">
             <span class="footer-text">
-                <i class="material-icons tooltipped" data-delay="50" data-position="top" data-tooltip="{{ _('Remaining time') }}">
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _('Remaining time') }}">
                     timer
                 </i>
                 <span id="countdown-minute"></span>:<span id="countdown-second"></span>
 
-                <i class="material-icons tooltipped" data-delay="50" data-position="top" data-tooltip="{{ _('Answered questions') }}">
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _('Answered questions') }}">
                     check
                 </i>
                 <span id="questions-answered"></span>
                 /
                 <span id="total-questions"></span>
 
-                <i class="material-icons tooltipped" data-delay="50" data-position="top" data-tooltip="{{ _('Saving your progress') }}" id="sync-inprogress">
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _('Saving your progress') }}" id="sync-inprogress">
                     sync
                 </i>
-                <i class="material-icons tooltipped" data-delay="50" data-position="top" data-tooltip="{{ _('Your progress was saved') }}" id="sync-done">
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _('Your progress was saved') }}" id="sync-done">
                     cloud_done
                 </i>
-                <i class="material-icons tooltipped" data-delay="50" data-html="true" data-position="top" data-tooltip="{{ _("Error while saving your progress<br/>Trying...") }}" id="sync-fail">
+                <i class="material-icons tooltipped" data-position="top" data-tooltip="{{ _("Error while saving your progress<br/>Trying...") }}" id="sync-fail">
                     error
                 </i>
             </span>
@@ -127,6 +127,8 @@
         $('.modal').modal();
         questions = {{questions|tojson|safe}};
         exam = {{exam|tojson|safe}};
+
+        M.Tooltip.init($('.tooltipped'), {});
     </script>
 
     <script src="/static/node_modules/handlebars/dist/handlebars.min.js"></script>
