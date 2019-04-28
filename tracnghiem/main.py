@@ -1,4 +1,4 @@
-from flask import render_template, request, g, session
+from flask import render_template, request, session
 from flask_babel import Babel
 from flask_wtf.csrf import CSRFProtect
 
@@ -50,19 +50,6 @@ def _db_close(exc):
         database.close()
 
 
-app.before_request(load_session_token)
-
-
-@app.before_request
-def determine_workaround():
-    g.workaround = {}
-    user_agent = request.user_agent
-    if user_agent.platform in ("ipad", "iphone"):
-        g.workaround['ios_select'] = True
-    else:
-        g.workaround['ios_select'] = False
-
-
 @app.before_request
 def clear_redirect_uri():
     if ((request.blueprint != "authentication") or (request.endpoint == "authentication.logout")) and (
@@ -71,6 +58,9 @@ def clear_redirect_uri():
             del session['redirect_uri']
         except KeyError:
             pass
+
+
+app.before_request(load_session_token)
 
 
 @app.route("/")

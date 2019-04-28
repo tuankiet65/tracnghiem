@@ -17,15 +17,13 @@
             <label for="reg_name">{{ _("Your name") }}</label>
         </div>
         <div class="input-field">
-            <select id="reg_school" name="school" {{ ('class="browser-default"'|safe) if g.workaround['ios_select'] }}>
+            <select id="reg_school" name="school">
                 <option value="0" disabled selected>{{ _("Choose your school") }}</option>
                 {% for school in schools %}
                     <option value="{{ school[0] }}">{{ school[1] }}</option>
                 {% endfor %}
             </select>
-            {% if not g.workaround['ios_select'] %}
-                <label for="reg_school">{{ _("Your school") }}</label>
-            {% endif %}
+            <label for="reg_school">{{ _("Your school") }}</label>
         </div>
         <div class="input-field">
             <input type="text" id="reg_klass" name="klass">
@@ -51,9 +49,7 @@
 {% macro render_register_form_js() %}
     <script src="/static/js/form_validation.js"></script>
     <script>
-        {% if not g.workaround['ios_select'] %}
-            M.FormSelect.init($('#reg_school'));
-        {% endif %}
+        M.FormSelect.init($('#reg_school'));
         register_button_tooltip = M.Tooltip.init($('#register-submit-button'), {});
 
         function SamePassword(value){

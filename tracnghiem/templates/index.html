@@ -30,8 +30,7 @@
         </div>
         <div class="col m4 s12">
             <h4>{{ _("Statistics") }}</h4>
-            <select id="stat-choose-school"
-                    name="school" {{ ('class="browser-default"'|safe) if g.workaround['ios_select'] }}>
+            <select id="stat-choose-school" name="school">
                 {% for school in schools %}
                     <option value="{{ school[0] }}">{{ school[1] }}</option>
                 {% endfor %}
@@ -46,11 +45,9 @@
 {% block js %}
     <script>
         statistics = '{{ stats|tojson|safe }}';
-        {% if not g.workaround['ios_select'] %}
-            $(function (){
-                M.FormSelect.init($('#stat-choose-school'));
-            });
-        {% endif %}
+        $(function (){
+            M.FormSelect.init($('#stat-choose-school'));
+        });
     </script>
     <script src="/static/js/index.js"></script>
 {% endblock %}

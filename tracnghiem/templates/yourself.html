@@ -94,14 +94,12 @@
                 <label for="edit_name">{{ _("Your name") }}</label>
             </div>
             <div class="input-field">
-                <select id="edit_school" name="school" {{ ('class="browser-default"'|safe) if g.workaround['ios_select'] }}>
+                <select id="edit_school" name="school">
                     {% for school in schools %}
                         <option value="{{ school[0] }}" {% if school[0] == g.user.school.id %} selected {% endif %}>{{ school[1] }}</option>
                     {% endfor %}
                 </select>
-                {% if not g.workaround['ios_select'] %}
-                    <label for="edit_school">{{ _("Your school") }}</label>
-                {% endif %}
+                <label for="edit_school">{{ _("Your school") }}</label>
             </div>
             <div class="input-field">
                 <input type="text" id="edit_klass" name="klass" value="{{ g.user.klass }}">
@@ -135,9 +133,7 @@
 {% endblock %}
 {% block js %}
     <script>
-        {% if not g.workaround['ios_select'] %}
-            M.FormSelect.init($('#edit_school'));
-        {% endif %}
+        M.FormSelect.init($('#edit_school'));
         M.Tabs.init($('.tabs'), {});
     </script>
 
