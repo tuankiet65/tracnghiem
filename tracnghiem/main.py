@@ -26,8 +26,8 @@ app.register_blueprint(yourself)
 csrf = CSRFProtect(app)
 babel = Babel(app)
 
-if app.config['IS_PRODUCTION']:
-    print("In production, enabling Sentry")
+if app.config['ENV'] == "production":
+    print("Production environment, enabling Sentry")
     sentry_sdk.init(
         dsn = app.config['SENTRY_BACKEND_DSN'],
         integrations = [FlaskIntegration()]

@@ -31,13 +31,9 @@ class Config:
 
 
 class DevelopmentConfig(Config):
-    IS_PRODUCTION = False
-
-    DEBUG = True
+    ENV = "development"
 
 
 class ProductionConfig(Config):
-    IS_PRODUCTION = True
-
-    DEBUG = False
+    ENV = "production"
     SERVER_NAME = "thi.quandoansontra.org.vn"
