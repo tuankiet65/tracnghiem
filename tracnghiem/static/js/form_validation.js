@@ -90,12 +90,6 @@ function Form(){
             event.stopPropagation(); // prevent changes from Materialize js
             this._validate_field(this.fields[field_name], true, false);
         }, this));
-        if (element.hasClass("datepicker")){
-            element.change($.proxy(function(event){
-                event.stopPropagation(); // prevent changes from Materialize js
-                this._validate_field(this.fields[field_name], true, false);
-            }, this));
-        }
     };
 
     // Because validate_field conflicts with a function in Materialize.css
@@ -107,11 +101,7 @@ function Form(){
                 if (toggle_html_error){
                     element.removeClass("invalid valid").addClass("invalid");
                     if (focus){
-                        if (element.hasClass("datepicker")){
-                            element.click();
-                        } else {
-                            element.focus();
-                        }
+                        element.focus();
                         $('html, body').animate({
                             scrollTop: element.offset().top-100
                         }, 100);

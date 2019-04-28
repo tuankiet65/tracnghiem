@@ -1,11 +1,3 @@
-var begin_date = $("#begin-date").pickadate({
-    format: "dd/mm/yyyy"
-});
-
-var end_date = $("#end-date").pickadate({
-    format: "dd/mm/yyyy"
-});
-
 html_template = Handlebars.compile(
     '<div class="card-panel blue-grey lighten-5">'+
         '<div class="action-buttons right">' +

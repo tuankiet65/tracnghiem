@@ -18,14 +18,14 @@
             <div class="row">
                 <div class="col l6 m6 s12">
                     <div class="input-field">
-                        <input type="date" class="datepicker" name="begin_date" id="begin-date">
-                        <label for="begin-date">Begin date</label>
+                        <input type="text" class="datepicker" name="begin_date" id="begin-date">
+                        <label for="begin-date">Begin date (DD/MM/YYYY)</label>
                     </div>
                 </div>
                 <div class="col l6 m6 s12">
                     <div class="input-field">
-                        <input type="date" class="datepicker" name="end_date" id="end-date">
-                        <label for="end-date">End date</label>
+                        <input type="text" class="datepicker" name="end_date" id="end-date">
+                        <label for="end-date">End date (DD/MM/YYYY)</label>
                     </div>
                 </div>
             </div>
@@ -68,12 +68,10 @@
 {% block js %}
     <script src="/static/js/form_validation.js"></script>
     <script>
-        begin_date = $("#begin-date").pickadate({
-            format: "dd/mm/yyyy"
-        })
-
-        end_date = $("#end-date").pickadate({
-            format: "dd/mm/yyyy"
-        })
+        M.Datepicker.init($('.datepicker'), {
+            format: "dd/mm/yyyy",
+            firstDay: 1,
+            showDaysInNextAndPreviousMonths: true
+        });
     </script>
 {% endblock %}

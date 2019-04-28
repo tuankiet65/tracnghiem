@@ -43,14 +43,14 @@
                     <div class="row">
                         <div class="col m6">
                             <div class="input-field">
-                                <input type="date" class="datepicker" id="begin-date">
-                                <label for="begin-date">Begin date</label>
+                                <input type="text" class="datepicker" id="begin-date">
+                                <label for="begin-date">Begin date (DD/MM/YYYY)</label>
                             </div>
                         </div>
                         <div class="col m6">
                             <div class="input-field">
-                                <input type="date" class="datepicker" id="end-date">
-                                <label for="end-date">End date</label>
+                                <input type="text" class="datepicker" id="end-date">
+                                <label for="end-date">End date (DD/MM/YYYY)</label>
                             </div>
                         </div>
                     </div>
@@ -72,6 +72,11 @@
     <script>
         $(document).ready(function () {
             M.FormSelect.init($('select'));
+            M.Datepicker.init($('.datepicker'), {
+                format: "dd/mm/yyyy",
+                firstDay: 1,
+                showDaysInNextAndPreviousMonths: true
+            });
         });
     </script>
 {% endblock %}
