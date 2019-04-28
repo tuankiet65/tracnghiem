@@ -43,15 +43,15 @@
         <h4>{{ _("Your past results") }}</h4>
         {% for contest in contests %}
             <h5>{{ _("Contest: <strong>%(contest_title)s</strong>", contest_title = contest.title) }}</h5>
-            <table class="bordered striped responsive-table">
+            <table class="highlight responsive-table">
                 <thead>
                     <tr>
-                        <td><strong>{{ _("Attempt") }}</strong></td>
-                        <td><strong>{{ _("Start time") }}</strong></td>
-                        <td><strong>{{ _("End time") }}</strong></td>
-                        <td><strong>{{ _("Status") }}</strong></td>
-                        <td><strong>{{ _("Elapsed time") }}</strong></td>
-                        <td><strong>{{ _("Score") }}</strong></td>
+                        <th>{{ _("Attempt") }}</th>
+                        <th>{{ _("Start time") }}</th>
+                        <th>{{ _("End time") }}</th>
+                        <th>{{ _("Status") }}</th>
+                        <th>{{ _("Elapsed time") }}</th>
+                        <th>{{ _("Score") }}</th>
                     </tr>
                 </thead>
                 <tbody>

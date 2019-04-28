@@ -29,15 +29,15 @@
                     <p>{{ _("Duration: <strong>%(duration)d minutes</strong>", duration = contest.duration) }}</p>
                     <p>{{ _("Number of questions: <strong>%(questions)d questions</strong>", questions = contest.question_count) }}</p>
                     <p>{{ _("Your last performance: ") }}</p>
-                    <table class="bordered striped responsive-table">
+                    <table class="highlight responsive-table">
                         <thead>
                             <tr>
-                                <td data-field="id"><strong>{{ _("Attempt") }}</strong></td>
-                                <td data-field="begin-time"><strong>{{ _("Start time") }}</strong></td>
-                                <td data-field="elapsed-time"><strong>{{ _("End time") }}</strong></td>
-                                <td data-field="elapsed-time"><strong>{{ _("Status") }}</strong></td>
-                                <td data-field="elapsed-time"><strong>{{ _("Elapsed time") }}</strong></td>
-                                <td data-field="score"><strong>{{ _("Score") }}</strong></td>
+                                <th>{{ _("Attempt") }}</th>
+                                <th>{{ _("Start time") }}</th>
+                                <th>{{ _("End time") }}</th>
+                                <th>{{ _("Status") }}</th>
+                                <th>{{ _("Elapsed time") }}</th>
+                                <th>{{ _("Score") }}</th>
                             </tr>
                         </thead>
                         <tbody>
