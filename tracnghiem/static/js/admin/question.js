@@ -4,7 +4,7 @@ Handlebars.registerHelper('boldIfCorrectAnswer', function (answer, answer_count,
     var escaped_answer = Handlebars.escapeExpression(answer);
     var result = '<li class="collection-item">' + escaped_answer + '</li>';
     if (answer_count === correct_answer) {
-        result = '<li class="collection-item teal lighten-3"><strong>' + escaped_answer + '</strong></li>';
+        result = '<li class="collection-item teal lighten-3"><b>' + escaped_answer + '</b></li>';
     }
     return new Handlebars.SafeString(result);
 });

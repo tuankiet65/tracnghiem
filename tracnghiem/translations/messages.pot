@@ -1,21 +1,21 @@
 # Translations template for PROJECT.
-# Copyright (C) 2017 ORGANIZATION
+# Copyright (C) 2019 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-07-18 16:52+0700\n"
+"POT-Creation-Date: 2019-04-28 22:08+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.4.0\n"
+"Generated-By: Babel 2.6.0\n"
 
 #: __init__.py:31
 msgid "Page not found"
@@ -182,35 +182,35 @@ msgstr ""
 msgid "Please enter your old password"
 msgstr ""
 
-#: static/js/yourself.js:17 templates/authentication/register.html:67
+#: static/js/yourself.js:17 templates/authentication/register.html:64
 msgid "Your password is too weak "
 msgstr ""
 
-#: static/js/yourself.js:21 templates/authentication/register.html:68
+#: static/js/yourself.js:21 templates/authentication/register.html:65
 msgid "Password either is not the same or too weak"
 msgstr ""
 
-#: static/js/yourself.js:36
+#: static/js/yourself.js:37
 msgid "Incorrect old password"
 msgstr ""
 
-#: static/js/yourself.js:38
+#: static/js/yourself.js:41
 msgid "Password changed successfully. You'll be logged out..."
 msgstr ""
 
-#: static/js/yourself.js:53 templates/authentication/register.html:69
+#: static/js/yourself.js:57 templates/authentication/register.html:66
 msgid "Please fill in your name"
 msgstr ""
 
-#: static/js/yourself.js:57 templates/authentication/register.html:70
+#: static/js/yourself.js:61 templates/authentication/register.html:67
 msgid "Please choose your school"
 msgstr ""
 
-#: static/js/yourself.js:61 templates/authentication/register.html:71
+#: static/js/yourself.js:65 templates/authentication/register.html:68
 msgid "Please fill in your class"
 msgstr ""
 
-#: static/js/yourself.js:74
+#: static/js/yourself.js:79
 msgid "Profile edited successfully"
 msgstr ""
 
@@ -265,16 +265,16 @@ msgstr ""
 msgid "Statistics"
 msgstr ""
 
-#: templates/index.html:39
+#: templates/index.html:38
 msgid "Account count:"
 msgstr ""
 
-#: templates/index.html:40
+#: templates/index.html:39
 msgid "Exam count:"
 msgstr ""
 
-#: templates/index.html:42 templates/participate.html:6
-#: templates/participate.html:22 templates/template.html:4
+#: templates/index.html:41 templates/participate.html:6
+#: templates/participate.html:15 templates/template.html:4
 #: templates/template.html:11
 msgid "Participate"
 msgstr ""
@@ -295,73 +295,71 @@ msgstr ""
 msgid "seconds"
 msgstr ""
 
-#: templates/participate.html:27 templates/yourself.html:45
+#: templates/participate.html:21 templates/yourself.html:45
 #, python-format
-msgid "Contest: <strong>%(contest_title)s</strong>"
+msgid "Contest: <b>%(contest_title)s</b>"
 msgstr ""
 
-#: templates/participate.html:32
+#: templates/participate.html:25
 #, python-format
-msgid ""
-"This contest starts from <strong>%(begin_date)s</strong> to "
-"<strong>%(end_date)s</strong>"
+msgid "This contest starts from <b>%(begin_date)s</b> to <b>%(end_date)s</b>"
 msgstr ""
 
-#: templates/participate.html:36
+#: templates/participate.html:29
 #, python-format
-msgid "Duration: <strong>%(duration)d minutes</strong>"
+msgid "Duration: <b>%(duration)d minutes</b>"
 msgstr ""
 
-#: templates/participate.html:37
+#: templates/participate.html:30
 #, python-format
-msgid "Number of questions: <strong>%(questions)d questions</strong>"
+msgid "Number of questions: <b>%(questions)d questions</b>"
 msgstr ""
 
-#: templates/participate.html:38
+#: templates/participate.html:31
 msgid "Your last performance: "
 msgstr ""
 
-#: templates/participate.html:42 templates/yourself.html:49
+#: templates/participate.html:35 templates/yourself.html:49
 msgid "Attempt"
 msgstr ""
 
-#: templates/participate.html:43 templates/yourself.html:50
+#: templates/participate.html:36 templates/yourself.html:50
 msgid "Start time"
 msgstr ""
 
-#: templates/participate.html:44 templates/yourself.html:51
+#: templates/participate.html:37 templates/yourself.html:51
 msgid "End time"
 msgstr ""
 
-#: templates/participate.html:45 templates/yourself.html:52
+#: templates/participate.html:38 templates/yourself.html:52
 msgid "Status"
 msgstr ""
 
-#: templates/participate.html:46 templates/yourself.html:53
+#: templates/participate.html:39 templates/yourself.html:53
 msgid "Elapsed time"
 msgstr ""
 
-#: templates/participate.html:47 templates/yourself.html:54
+#: templates/participate.html:40 templates/yourself.html:54
 msgid "Score"
 msgstr ""
 
-#: templates/participate.html:67 templates/yourself.html:74
+#: templates/participate.html:60 templates/yourself.html:74
 msgid "Finished"
 msgstr ""
 
-#: templates/participate.html:73 templates/yourself.html:80
+#: templates/participate.html:66 templates/yourself.html:80
 msgid "Ongoing"
 msgstr ""
 
-#: templates/participate.html:74 templates/yourself.html:81
+#: templates/participate.html:67 templates/yourself.html:81
 msgid "Continue"
 msgstr ""
 
-#: templates/participate.html:82 templates/participate.html:87
+#: templates/participate.html:75 templates/participate.html:80
 msgid "Participate in this contest"
 msgstr ""
 
-#: templates/participate.html:86
+#: templates/participate.html:79
 msgid "This contest has either ended or hasn't started"
 msgstr ""
 
@@ -396,11 +394,11 @@ msgstr ""
 #: templates/template.html:139
 #, python-format
 msgid ""
-"Running <strong><a class=\"grey-text text-lighten-3\" "
-"href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></strong>"
-" revision <strong><a class=\"grey-text text-lighten-3\" "
-"href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></strong>."
-" Current timezone: <strong>%(timezone)s</strong>"
+"Running <b><a class=\"grey-text text-lighten-3\" "
+"href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></b>"
+" revision <b><a class=\"grey-text text-lighten-3\" "
+"href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></b>."
+" Current timezone: <b>%(timezone)s</b>"
 msgstr ""
 
 #: templates/yourself.html:6
@@ -439,31 +437,31 @@ msgstr ""
 msgid "Your name"
 msgstr ""
 
-#: templates/authentication/register.html:27 templates/yourself.html:103
+#: templates/authentication/register.html:26 templates/yourself.html:102
 msgid "Your school"
 msgstr ""
 
-#: templates/authentication/register.html:32 templates/yourself.html:108
+#: templates/authentication/register.html:30 templates/yourself.html:106
 msgid "Your class"
 msgstr ""
 
-#: templates/yourself.html:111
+#: templates/yourself.html:109
 msgid "Edit profile"
 msgstr ""
 
-#: templates/yourself.html:119
+#: templates/yourself.html:117
 msgid "Old password"
 msgstr ""
 
-#: templates/yourself.html:123
+#: templates/yourself.html:121
 msgid "New password"
 msgstr ""
 
-#: templates/yourself.html:127
+#: templates/yourself.html:125
 msgid "New password (repeat)"
 msgstr ""
 
-#: templates/yourself.html:130
+#: templates/yourself.html:128
 msgid "Change password"
 msgstr ""
 
@@ -484,9 +482,9 @@ msgid "Login"
 msgstr ""
 
 #: templates/authentication/general.html:17
-#: templates/authentication/register.html:43
-#: templates/authentication/register.html:87
-#: templates/authentication/register.html:96
+#: templates/authentication/register.html:40
+#: templates/authentication/register.html:84
+#: templates/authentication/register.html:93
 msgid "Register"
 msgstr ""
 
@@ -514,23 +512,23 @@ msgstr ""
 msgid "Choose your school"
 msgstr ""
 
-#: templates/authentication/register.html:37
+#: templates/authentication/register.html:35
 msgid "Please wait for all resources to be loaded"
 msgstr ""
 
-#: templates/authentication/register.html:47
+#: templates/authentication/register.html:44
 msgid "Log in to your existing account"
 msgstr ""
 
-#: templates/authentication/register.html:66
+#: templates/authentication/register.html:63
 msgid "Please fill in your username"
 msgstr ""
 
-#: templates/authentication/register.html:98
+#: templates/authentication/register.html:95
 msgid "An account with the same username exists, please choose another username"
 msgstr ""
 
-#: templates/authentication/register.html:101
+#: templates/authentication/register.html:98
 msgid "You haven't filled in some fields, maybe you haven't checked the captcha?"
 msgstr ""
 

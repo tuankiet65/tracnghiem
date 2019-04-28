@@ -4,7 +4,7 @@ var i18n_vi_data = {
       "messages": {
          "": {
             "domain": "messages",
-            "plural_forms": "nplurals=1; plural=0;",
+            "plural_forms": "nplurals=1; plural=0",
             "lang": "vi"
          },
          "Page not found": [
@@ -196,17 +196,17 @@ var i18n_vi_data = {
          "seconds": [
             "giây"
          ],
-         "Contest: <strong>%(contest_title)s</strong>": [
-            "Cuộc thi: <strong>%(contest_title)s</strong>"
+         "Contest: <b>%(contest_title)s</b>": [
+            "Cuộc thi: <b>%(contest_title)s</b>"
          ],
-         "This contest starts from <strong>%(begin_date)s</strong> to <strong>%(end_date)s</strong>": [
-            "Cuộc thi này bắt đầu từ ngày <strong>%(begin_date)s</strong> tới hết ngày <strong>%(end_date)s</strong>"
+         "This contest starts from <b>%(begin_date)s</b> to <b>%(end_date)s</b>": [
+            "Cuộc thi này diễn ra từ ngày <b>%(begin_date)s</b> đến ngày <b>%(end_date)s</b>"
          ],
-         "Duration: <strong>%(duration)d minutes</strong>": [
-            "Thời gian thi: <strong>%(duration)d phút</strong>"
+         "Duration: <b>%(duration)d minutes</b>": [
+            "Thời gian làm bài: <b>%(duration)d phút</b>"
          ],
-         "Number of questions: <strong>%(questions)d questions</strong>": [
-            "Số câu hỏi: <strong>%(questions)d câu hỏi</strong>"
+         "Number of questions: <b>%(questions)d questions</b>": [
+            "Số câu hỏi: <b>%(questions)d câu hỏi</b>"
          ],
          "Your last performance: ": [
             "Thành tích của bạn:"
@@ -265,8 +265,8 @@ var i18n_vi_data = {
          "Links": [
             "Các đường dẫn"
          ],
-         "Running <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></strong> revision <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></strong>. Current timezone: <strong>%(timezone)s</strong>": [
-            "Đang chạy <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></strong>, phiên bản <strong><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></strong>. Múi giờ hiện tại: <strong>%(timezone)s</strong>"
+         "Running <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></b> revision <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></b>. Current timezone: <b>%(timezone)s</b>": [
+            "Đang chạy <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></b> phiên bản <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></b>. Múi giờ hiện tại: <b>%(timezone)s</b>"
          ],
          "Yourself": [
             "Bản thân"
@@ -363,4 +363,4 @@ var i18n_vi_data = {
          ]
       }
    }
-}
+};

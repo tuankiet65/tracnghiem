@@ -18,16 +18,16 @@
         {% for contest in contests %}
             <li class="active">
                 <div class="collapsible-header">
-                    {{ _("Contest: <strong>%(contest_title)s</strong>", contest_title = contest.title) }}
+                    {{ _("Contest: <b>%(contest_title)s</b>", contest_title = contest.title) }}
                 </div>
                 <div class="collapsible-body">
                     <p>
-                        {{ _("This contest starts from <strong>%(begin_date)s</strong> to <strong>%(end_date)s</strong>"
+                        {{ _("This contest starts from <b>%(begin_date)s</b> to <b>%(end_date)s</b>"
                           , begin_date = contest.begin_date.strftime("%d/%m/%Y")
                           , end_date = contest.end_date.strftime("%d/%m/%Y")) }}
                     </p>
-                    <p>{{ _("Duration: <strong>%(duration)d minutes</strong>", duration = contest.duration) }}</p>
-                    <p>{{ _("Number of questions: <strong>%(questions)d questions</strong>", questions = contest.question_count) }}</p>
+                    <p>{{ _("Duration: <b>%(duration)d minutes</b>", duration = contest.duration) }}</p>
+                    <p>{{ _("Number of questions: <b>%(questions)d questions</b>", questions = contest.question_count) }}</p>
                     <p>{{ _("Your last performance: ") }}</p>
                     <table class="highlight responsive-table">
                         <thead>

@@ -23,26 +23,26 @@
         <table>
             <tbody>
                 <tr>
-                    <td><strong>{{ _("Username") }}</strong></td>
+                    <td><b>{{ _("Username") }}</b></td>
                     <td>{{ g.user.username }}</td>
                 </tr>
                 <tr>
-                    <td><strong>{{ _("Name") }}</strong></td>
+                    <td><b>{{ _("Name") }}</b></td>
                     <td>{{ g.user.name }}</td>
                 </tr>
                 <tr>
-                    <td><strong>{{ _("School") }}</strong></td>
+                    <td><b>{{ _("School") }}</b></td>
                     <td>{{ g.user.school.name }}</td>
                 </tr>
                 <tr>
-                    <td><strong>{{ _("Class") }}</strong></td>
+                    <td><b>{{ _("Class") }}</b></td>
                     <td>{{ g.user.klass }}</td>
                 </tr>
             </tbody>
         </table>
         <h4>{{ _("Your past results") }}</h4>
         {% for contest in contests %}
-            <h5>{{ _("Contest: <strong>%(contest_title)s</strong>", contest_title = contest.title) }}</h5>
+            <h5>{{ _("Contest: <b>%(contest_title)s</b>", contest_title = contest.title) }}</h5>
             <table class="highlight responsive-table">
                 <thead>
                     <tr>
