@@ -12,7 +12,7 @@
 <h3>{{ _("My profile") }}</h3>
 <div class="row">
     <div class="col s12">
-        <ul class="tabs">
+        <ul class="tabs tabs-fixed-width">
             <li class="tab col s4"><a href="#info-tab">{{ _("Your profile") }}</a></li>
             <li class="tab col s4"><a href="#edit-tab">{{ _("Edit your profile") }}</a></li>
             <li class="tab col s4"><a href="#password-change-tab">{{ _("Change your password") }}</a></li>
@@ -134,11 +134,13 @@
 </div>
 {% endblock %}
 {% block js %}
-    {% if not g.workaround['ios_select'] %}
-        <script>
+    <script>
+        {% if not g.workaround['ios_select'] %}
             M.FormSelect.init($('#edit_school'));
-        </script>
-    {% endif %}
+        {% endif %}
+        M.Tabs.init($('.tabs'), {});
+    </script>
+
     <script src="/static/js/form_validation.js"></script>
     <script src="/static/js/yourself.js"></script>
 {% endblock %}
