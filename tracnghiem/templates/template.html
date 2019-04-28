@@ -99,7 +99,7 @@
                                 </a>
                             </span>
                         </div>
-                        <a href="#" data-activates="mobile-nav" class="button-collapse">
+                        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
                             <i class="material-icons">menu</i>
                         </a>
                         <ul class="right hide-on-med-and-down">
@@ -108,7 +108,7 @@
                     </div>
                 </nav>
             </div>
-            <ul class="side-nav" id="mobile-nav">
+            <ul class="sidenav" id="mobile-nav">
                 {{ render_navbar_content() }}
             </ul>
         </header>
@@ -195,7 +195,7 @@
             });
 
             $(function(){
-                $(".button-collapse").sideNav();
+                M.Sidenav.init($('.sidenav'), {});
 
                 // Check if user is using Opera Mini in Extreme mode
                 // (means that the content is being rendered on Opera servers)

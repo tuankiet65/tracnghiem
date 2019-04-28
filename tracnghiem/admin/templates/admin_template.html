@@ -39,21 +39,23 @@
         {% block css %} {% endblock %}
     </head>
     <body>
-        <header class="navbar-fixed">
-            <nav class="light-blue lighten-1" role="navigation">
-                <div class="navbar-wrapper container">
-                    <a href="/admin/" class="brand-logo">Admin interface</a>
-                    <a href="#" data-activates="mobile-nav" class="button-collapse">
-                        <i class="fa fa-bars">menu</i>
-                    </a>
-                    <ul class="right hide-on-med-and-down">
-                        {{ render_navbar_content() }}
-                    </ul>
-                    <ul class="side-nav" id="mobile-nav">
-                        {{ render_navbar_content() }}
-                    </ul>
-                </div>
-            </nav>
+        <header>
+            <div class="navbar-fixed">
+                <nav class="light-blue lighten-1" role="navigation">
+                    <div class="navbar-wrapper container">
+                        <a href="/admin/" class="brand-logo">Admin interface</a>
+                        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        <ul class="right hide-on-med-and-down">
+                            {{ render_navbar_content() }}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <ul class="sidenav" id="mobile-nav">
+                {{ render_navbar_content() }}
+            </ul>
         </header>
         <main class="container">
             {% block main %} {% endblock %}
@@ -90,6 +92,8 @@
             Sentry.init({
                 "dsn": '{{ config["SENTRY_FRONTEND_DSN"] }}'
             });
+
+            M.Sidenav.init($('.sidenav'), {});
         </script>
 
         <script src="/static/js/data_list.js" type="text/javascript" charset="utf-8"></script>
