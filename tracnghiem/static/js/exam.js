@@ -206,12 +206,12 @@ function Exam(exam, questions){
                 error = xhr.responseJSON.error;
             }
             if (!error) {
-                Materialize.toast(
-                    i18n.translate("Unknown AJAX error: %(text_status)s %(error_thrown)s, please reload.").fetch({
+                M.toast({
+                    html: i18n.translate("Unknown AJAX error: %(text_status)s %(error_thrown)s, please reload.").fetch({
                         text_status: textStatus,
                         error_thrown: errorThrown
                     })
-                    , 5000);
+                });
             } else {
                 if (xhr.status === 403) {
                     clearInterval(this.autosave_id);
@@ -223,11 +223,11 @@ function Exam(exam, questions){
                         window.location.reload(true);
                     })
                 } else {
-                    Materialize.toast(
-                        i18n.translate("AJAX error: %(error)s, please reload.").fetch({
+                    M.toast({
+                        html: i18n.translate("AJAX error: %(error)s, please reload.").fetch({
                             error: error
                         })
-                        , 5000);
+                    });
                 }
             }
             failure_callback();

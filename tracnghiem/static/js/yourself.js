@@ -33,9 +33,13 @@ function change_password(){
 
     $.post("/yourself/change_password", input_data, function(data){
         if (data.error === "incorrect old password"){
-            Materialize.toast(i18n.translate("Incorrect old password").fetch(), 5000);
+            M.toast({
+                html: i18n.translate("Incorrect old password").fetch()
+            });
         } else {
-            Materialize.toast(i18n.translate("Password changed successfully. You'll be logged out...").fetch(), 5000);
+            M.toast({
+                html: i18n.translate("Password changed successfully. You'll be logged out...").fetch()
+            });
             setTimeout(function(){
                 location.reload();
             }, 2000);
@@ -71,7 +75,9 @@ function edit_profile(){
     }
 
     $.post("/yourself/edit_profile", input_data, function(){
-        Materialize.toast(i18n.translate("Profile edited successfully").fetch(), 5000);
+        M.toast({
+            html: i18n.translate("Profile edited successfully").fetch()
+        });
         EditProfileForm.enable_button();
         location.reload();
     });

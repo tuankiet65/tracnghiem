@@ -27,15 +27,19 @@
         function login_as(){
             $("#login-as-submit-button").prop("disabled", false);
             username = $("#username").val();
-            $.post("{{ url_for("admin.utils_login_as") }}", {
+            $.post("{{ url_for('admin.utils_login_as') }}", {
                 "username": username
             }, function(data){
                 if (!('result' in data)){
-                    Materialize.toast("An error occurred");
+                    M.toast({
+                        html: "An error occurred"
+                    });
                 } else if (!data.result){
-                    Materialize.toast("Username not found");
+                    M.toast({
+                        html: "Username not found"
+                    });
                 } else {
-                    window.location = "{{ url_for("index") }}";
+                    window.location = "{{ url_for('index') }}";
                 }
                 $("#login-as-submit-button").prop("disabled", false);
             })
