@@ -137,6 +137,6 @@
         M.Tabs.init($('.tabs'), {});
     </script>
 
-    <script src="/static/js/form_validation.js"></script>
-    <script src="/static/js/yourself.js"></script>
+    <script src="{{ url_for('static', filename = 'js/form_validation.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/yourself.js') }}"></script>
 {% endblock %}

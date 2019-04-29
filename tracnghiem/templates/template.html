@@ -32,11 +32,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
         <title>{%if not config['IS_PRODUCTION']%}[DEVENV]{%endif%}{{ _("Online quiz") }} | {% block title %}{% endblock %}</title>
 
-        <link rel="icon" type="image/png" href="/static/images/logo/logo_16.png" sizes="16x16" />
-        <link rel="icon" type="image/png" href="/static/images/logo/logo_32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'images/logo/logo_16.png') }}" sizes="16x16" />
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'images/logo/logo_32.png') }}" sizes="32x32" />
 
-        <link rel="stylesheet" href="/static/node_modules/materialize-css/dist/css/materialize.min.css">
-        <link rel="stylesheet" href="/static/node_modules/material-design-icons/iconfont/material-icons.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'node_modules/materialize-css/dist/css/materialize.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'node_modules/material-design-icons/iconfont/material-icons.css') }}">
         <style>
             .container {
                 width: 87%;
@@ -91,7 +91,7 @@
                 <nav class="light-blue lighten-1" role="navigation">
                     <div class="nav-wrapper container">
                         <div class="brand-logo">
-                            <img src="/static/images/logo/logo_60.png" />
+                            <img src="{{ url_for('static', filename = 'images/logo/logo_60.png') }}" />
                             <span class="brand-title">
                                 <small class="subtitle">ĐOÀN TNCS HỒ CHÍ MINH QUẬN SƠN TRÀ</small>
                                 <a href="/" class="title">
@@ -143,7 +143,7 @@
             </div>
         </footer>
 
-        <script src="/static/node_modules/@sentry/browser/build/bundle.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ url_for('static', filename = 'node_modules/@sentry/browser/build/bundle.min.js') }}"></script>
         <script>
             // initialize Sentry, try to initialize it really early
             Sentry.init({
@@ -173,16 +173,16 @@
         </script>
         <noscript><p><img src="//analytics.tuankiet65.moe/piwik.php?idsite=5&rec=1" style="border:0;" alt="" /></p></noscript>
 
-        <script src="/static/node_modules/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="/static/node_modules/materialize-css/dist/js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ url_for('static', filename = 'node_modules/jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'node_modules/materialize-css/dist/js/materialize.min.js') }}"></script>
 
-        <script src="/static/node_modules/jed/jed.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ url_for('static', filename = 'node_modules/jed/jed.js') }}"></script>
 
         <script>
             // i18n stuff
             // dummy Jed instance
             i18n = new Jed({});
-            $.getJSON("/static/translations/vi.json", function(translation_data) {
+            $.getJSON("{{ url_for('static', filename = 'translations/vi.json') }}", function(translation_data) {
                 i18n = new Jed(translation_data);
             });
 

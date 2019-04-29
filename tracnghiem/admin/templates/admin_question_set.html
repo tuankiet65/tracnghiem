@@ -31,5 +31,5 @@
     </div>
 {% endblock %}
 {% block js %}
-    <script src="/static/js/admin/questionset.js"></script>
+    <script src="{{ url_for('static', filename = 'js/admin/questionset.js') }}"></script>
 {% endblock %}

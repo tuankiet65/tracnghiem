@@ -35,5 +35,5 @@
     </div>
 {% endblock %}
 {% block js %}
-    <script src="/static/js/admin/announcement.js"></script>
+    <script src="{{ url_for('static', filename = 'js/admin/announcement.js') }}"></script>
 {% endblock %}

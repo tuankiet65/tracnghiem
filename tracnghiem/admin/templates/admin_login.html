@@ -4,8 +4,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
         <title>6 bai hoc li luan chinh tri???? login</title>
-        <link href="/static/node_modules/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/static/node_modules/materialize-css/dist/css/materialize.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'node_modules/materialize-css/dist/css/materialize.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'node_modules/material-design-icons/iconfont/material-icons.css') }}">
         <style>
             #login-panel {
                 max-width: 600px;
@@ -42,7 +42,7 @@
                 </form>
             </div>
         </main>
-        <script src="/static/node_modules/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="/static/node_modules/materialize-css/dist/js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ url_for('static', filename = 'node_modules/jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'node_modules/materialize-css/dist/js/materialize.min.js') }}"></script>
     </body>
 </html>

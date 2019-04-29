@@ -47,7 +47,7 @@
 {% endmacro %}
 
 {% macro render_register_form_js() %}
-    <script src="/static/js/form_validation.js"></script>
+    <script src="{{ url_for('static', filename = 'js/form_validation.js') }}"></script>
     <script>
         M.FormSelect.init($('#reg_school'));
         register_button_tooltip = M.Tooltip.init($('#register-submit-button'), {});

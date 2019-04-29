@@ -25,6 +25,5 @@
     </div>
 {% endblock %}
 {% block js %}
-    <script src="/static/js/form_validation.js"></script>
-    <script src="/static/js/admin/school.js"></script>
+    <script src="{{ url_for('static', filename = 'js/admin/school.js') }}"></script>
 {% endblock %}

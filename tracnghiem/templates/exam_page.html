@@ -2,7 +2,7 @@
 {% extends "template.html" %}
 {% block title %} {{ _("Exam") }} {% endblock %}
 {% block css %}
-    <link rel="stylesheet" href="/static/node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'node_modules/sweetalert2/dist/sweetalert2.min.css') }}">
     <style>
         .announcement-time {
             text-align: right;
@@ -131,11 +131,11 @@
         M.Tooltip.init($('.tooltipped'), {});
     </script>
 
-    <script src="/static/node_modules/handlebars/dist/handlebars.min.js"></script>
-    <script src="/static/node_modules/moment/min/moment.min.js"></script>
+    <script src="{{ url_for('static', filename = 'node_modules/handlebars/dist/handlebars.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'node_modules/moment/min/moment.min.js') }}"></script>
     <!-- Why Internet Explorer even exists? -->
-    <script src="/static/node_modules/es6-promise/dist/es6-promise.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/static/node_modules/sweetalert2/dist/sweetalert2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ url_for('static', filename = 'node_modules/es6-promise/dist/es6-promise.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'node_modules/sweetalert2/dist/sweetalert2.min.js') }}"></script>
 
-    <script src="/static/js/exam.js"></script>
+    <script src="{{ url_for('static', filename = 'js/exam.js') }}"></script>
 {% endblock %}
