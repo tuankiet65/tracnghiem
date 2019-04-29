@@ -7,18 +7,6 @@
             overflow: auto;
         }
 
-        .input-field {
-            margin-top: 0;
-        }
-
-        .label-input-text {
-            display: inline !important;
-        }
-
-        .label-input-text input {
-            width: 90%;
-        }
-
         .question-statement {
             font-size: 20px;
         }
@@ -39,30 +27,38 @@
                     <label for="question" >question</label>
                     <textarea id="question" class="materialize-textarea"></textarea>
                 </div>
-                <div class="input-field">
-                    <input type="radio" name="correct_answer" value="1" id="answer_a_radio" class="with-gap">
-                    <label for="answer_a_radio" class="label-input-text">
-                        <input type="text" name="answer_a" id="answer_a" placeholder="Cau tra loi thu nhat">
+                <p>
+                    <label>
+                        <input type="radio" name="correct_answer" value="1" id="answer_a_radio" class="with-gap">
+                        <span>
+                            <input type="text" name="answer_a" id="answer_a" placeholder="Cau tra loi thu nhat">
+                        </span>
                     </label>
-                </div>
-                <div class="input-field">
-                    <input type="radio" name="correct_answer" value="2" id="answer_b_radio" class="with-gap">
-                    <label for="answer_b_radio" class="label-input-text">
-                        <input type="text" name="answer_b" id="answer_b" placeholder="Cau tra loi thu hai">
+                </p>
+                <p>
+                    <label>
+                        <input type="radio" name="correct_answer" value="2" id="answer_b_radio" class="with-gap">
+                        <span>
+                            <input type="text" name="answer_b" id="answer_b" placeholder="Cau tra loi thu hai">
+                        </span>
                     </label>
-                </div>
-                <div class="input-field">
-                    <input type="radio" name="correct_answer" value="3" id="answer_c_radio" class="with-gap">
-                    <label for="answer_c_radio" class="label-input-text">
-                        <input type="text" name="answer_c" id="answer_c" placeholder="Cau tra loi thu ba">
+                </p>
+                <p>
+                    <label>
+                        <input type="radio" name="correct_answer" value="3" id="answer_c_radio" class="with-gap">
+                        <span>
+                            <input type="text" name="answer_c" id="answer_c" placeholder="Cau tra loi thu ba">
+                        </span>
                     </label>
-                </div>
-                <div class="input-field">
-                    <input type="radio" name="correct_answer" value="4" id="answer_d_radio" class="with-gap">
-                    <label for="answer_d_radio" class="label-input-text">
-                        <input type="text" name="answer_d" id="answer_d" placeholder="Cau tra loi thu bon">
+                </p>
+                <p>
+                    <label>
+                        <input type="radio" name="correct_answer" value="4" id="answer_d_radio" class="with-gap">
+                        <span>
+                            <input type="text" name="answer_d" id="answer_d" placeholder="Cau tra loi thu tu">
+                        </span>
                     </label>
-                </div>
+                </p>
                 <button type="submit" class="right waves-effect waves-light btn" id="submit-button">Them</button>
             </form>
         </div>

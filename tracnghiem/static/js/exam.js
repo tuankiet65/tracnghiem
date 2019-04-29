@@ -16,27 +16,27 @@ function Question(question_count, question, answer_a, answer_b, answer_c, answer
             <span class="question-statement">{{question_i18n}} {{question_count}}: {{question}}</span> \
             <div class="question-choices"> \
                 <p> \
-                    <input type="radio" name="{{element_name}}" id="{{element_name}}_1" class="with-gap" value="1"> \
-                    <label for="{{element_name}}_1"> \
-                        {{answer_a}} \
+                    <label> \
+                        <input type="radio" name="{{element_name}}" id="{{element_name}}_1" class="with-gap" value="1"> \
+                        <span>{{answer_a}}</span> \
                     </label> \
                 </p> \
                 <p> \
-                    <input type="radio" name="{{element_name}}" id="{{element_name}}_2" class="with-gap" value="2"> \
-                    <label for="{{element_name}}_2"> \
-                        {{answer_b}} \
+                    <label> \
+                        <input type="radio" name="{{element_name}}" id="{{element_name}}_2" class="with-gap" value="2"> \
+                        <span>{{answer_b}}</span> \
                     </label> \
                 </p> \
                 <p> \
-                    <input type="radio" name="{{element_name}}" id="{{element_name}}_3" class="with-gap" value="3"> \
-                    <label for="{{element_name}}_3"> \
-                        {{answer_c}} \
+                    <label> \
+                        <input type="radio" name="{{element_name}}" id="{{element_name}}_3" class="with-gap" value="3"> \
+                        <span>{{answer_c}}</span> \
                     </label> \
                 </p> \
                 <p> \
-                    <input type="radio" name="{{element_name}}" id="{{element_name}}_4" class="with-gap" value="4"> \
-                    <label for="{{element_name}}_4"> \
-                        {{answer_d}} \
+                    <label> \
+                        <input type="radio" name="{{element_name}}" id="{{element_name}}_4" class="with-gap" value="4"> \
+                        <span>{{answer_d}}</span> \
                     </label> \
                 </p> \
             </div> \
@@ -65,7 +65,6 @@ function Question(question_count, question, answer_a, answer_b, answer_c, answer
     this.load_answer = function (answer){
         $("input[type=radio][name=" + this.element_name + "]").prop("checked", false);
         if (answer !== 0) {
-            console.log("input[type=radio][id=" + this.element_name + "_" + answer.toString() + "]");
             $("input[type=radio][id=" + this.element_name + "_" + answer.toString() + "]").prop("checked", true);
             this.change_callback(this.question_count);
         }
