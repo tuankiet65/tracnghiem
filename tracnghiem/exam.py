@@ -110,7 +110,7 @@ exam = Blueprint("exam", __name__, url_prefix = "/exam")
 
 @exam.route("/create", methods = ["GET"], endpoint = "create")
 @need_to_login()
-def create_exam_route():
+def create_exam():
     # check if contest_id is specified
     try:
         contest = request.args['contest_id']
@@ -151,7 +151,7 @@ def exam_to_dict(exam: Exam):
     }
 
 
-@exam.route("/<secret_key>", methods = ["GET"])
+@exam.route("/<secret_key>", methods = ["GET"], endpoint = "page")
 @need_to_login()
 def exam_page(secret_key):
     try:

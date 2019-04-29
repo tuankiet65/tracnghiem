@@ -1,26 +1,26 @@
 {% set headers_not_logged_in = [
-    ("index", _("Index"), "/"),
-    ("rules", _("Rules"), "/rules"),
-    ("participate", _("Participate"), "/participate"),
-    ("authentication", _("Sign in or register"), "/auth")
+    ("index", _("Index"), "index"),
+    ("rules", _("Rules"), "rules"),
+    ("participate", _("Participate"), "participate.index"),
+    ("authentication", _("Sign in or register"), "authentication.general")
 ] %}
 
 {% set headers_logged_in = [
-    ("index", _("Index"), "/"),
-    ("rules", _("Rules"), "/rules"),
-    ("participate", _("Participate"), "/participate"),
-    ("yourself", _("My profile"), "/yourself"),
-    ("logout", _("Sign out"), "/auth/logout")
+    ("index", _("Index"), "index"),
+    ("rules", _("Rules"), "rules"),
+    ("participate", _("Participate"), "participate.index"),
+    ("yourself", _("My profile"), "yourself.index"),
+    ("logout", _("Sign out"), "authentication.logout")
 ] %}
 
 {% macro render_navbar_content() %}
     {% if g.user is none %}
         {% for header in headers_not_logged_in %}
-            <li class="{% if page_name == header[0] %} active {% endif %}"><a href="{{ header[2] }}">{{ header[1] }}</a></li>
+            <li class="{% if page_name == header[0] %} active {% endif %}"><a href="{{ url_for(header[2]) }}">{{ header[1] }}</a></li>
         {% endfor %}
     {% else %}
         {% for header in headers_logged_in %}
-            <li class="{% if page_name == header[0] %} active {% endif %}"><a href="{{ header[2] }}">{{ header[1] }}</a></li>
+            <li class="{% if page_name == header[0] %} active {% endif %}"><a href="{{ url_for(header[2]) }}">{{ header[1] }}</a></li>
         {% endfor %}
     {% endif %}
 {% endmacro %}
@@ -94,7 +94,7 @@
                             <img src="{{ url_for('static', filename = 'images/logo/logo_60.png') }}" />
                             <span class="brand-title">
                                 <small class="subtitle">ĐOÀN TNCS HỒ CHÍ MINH QUẬN SƠN TRÀ</small>
-                                <a href="/" class="title">
+                                <a href="{{ url_for("index") }}" class="title">
                                     {{ _("Online quiz") }}
                                 </a>
                             </span>

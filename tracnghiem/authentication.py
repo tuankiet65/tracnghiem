@@ -151,7 +151,7 @@ def register_page():
             return render_template("authentication/register.html", schools = get_schools(), registration_failed = True)
 
 
-@authentication.route("/logout", methods = ["GET"])
+@authentication.route("/logout", methods = ["GET"], endpoint = "logout")
 def logout_page():
     logout()
     return redirect(url_for("index"))

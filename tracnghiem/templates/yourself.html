@@ -78,7 +78,7 @@
                             <td></td>
                             <td colspan="3">
                                 {{ _("Ongoing") }}
-                                <a class="waves-effect waves-light btn" href="/exam/{{exam.secret_key}}">{{ _("Continue") }}</a>
+                                <a class="waves-effect waves-light btn" href="{{ url_for('exam.page', secret_key = exam.secret_key) }}">{{ _("Continue") }}</a>
                             </td>
                         {% endif %}
                     </tr>

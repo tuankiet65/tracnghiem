@@ -1,16 +1,16 @@
 {% set headers = [
-    ("index", _("Index"), "/admin/"),
-    ("announcement", _("Announcements"), "/admin/announcement"),
-    ("school", _("Schools"), "/admin/school"),
-    ("contest", _("Contests"), "/admin/contest"),
-    ("questionset", _("Question sets"), "/admin/questionset"),
-    ("reports", _("Reports"), "/admin/reports"),
-    ("logout", _("Logout"), "/admin/logout"),
+    ("index", _("Index"), "admin.index"),
+    ("announcement", _("Announcements"), "admin.announcement_main"),
+    ("school", _("Schools"), "admin.school_main"),
+    ("contest", _("Contests"), "admin.contest_main"),
+    ("questionset", _("Question sets"), "admin.questionset_main"),
+    ("reports", _("Reports"), "admin.reports"),
+    ("logout", _("Logout"), "admin.logout"),
 ] %}
 
 {% macro render_navbar_content() %}
     {% for header in headers %}
-        <li class="{% if page_name == header[0] %} active {% endif %}"><a href="{{ header[2] }}">{{ header[1] }}</a></li>
+        <li class="{% if page_name == header[0] %} active {% endif %}"><a href="{{ url_for(header[2]) }}">{{ header[1] }}</a></li>
     {% endfor %}
 {% endmacro %}
 
@@ -43,7 +43,7 @@
             <div class="navbar-fixed">
                 <nav class="light-blue lighten-1" role="navigation">
                     <div class="navbar-wrapper container">
-                        <a href="/admin/" class="brand-logo">Admin interface</a>
+                        <a href="{{ url_for('admin.index') }}" class="brand-logo">Admin interface</a>
                         <a href="#" data-target="mobile-nav" class="sidenav-trigger">
                             <i class="material-icons">menu</i>
                         </a>
