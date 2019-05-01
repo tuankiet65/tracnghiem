@@ -92,10 +92,18 @@
 {% block main %}
 <h1>{{ _("Register") }}</h1>
 {% if account_exists is defined %}
-    <h5 class="red-text">{{ _("An account with the same username exists, please choose another username") }}</h5>
+    {# Credits: https://github.com/Dogfalo/materialize/issues/2340#issuecomment-304709551 #}
+    <div class="card-panel red lighten-4 red-text text-darken-4">
+        <b>{{ _("Error:") }}</b>
+        {{ _("An account with the same username exists, please choose another username") }}
+    </div>
 {% endif %}
 {% if registration_failed is defined %}
-    <h5 class="red-text">{{ _("You haven't filled in some fields, maybe you haven't checked the captcha?") }}</h5>
+    {# Credits: https://github.com/Dogfalo/materialize/issues/2340#issuecomment-304709551 #}
+    <div class="card-panel red lighten-4 red-text text-darken-4">
+        <b>{{ _("Error:") }}</b>
+        {{ _("You haven't filled in some fields, maybe you haven't checked the captcha?") }}
+    </div>
 {% endif %}
 <div class="register-form">
     {{ render_register_form(schools, true) }}

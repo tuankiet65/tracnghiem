@@ -319,6 +319,9 @@
          "Authentication": [
             "Xác thực"
          ],
+         "Error:": [
+            "Lỗi:"
+         ],
          "You need to login to proceed": [
             "Bạn cần phải đăng nhập để tiếp tục"
          ],

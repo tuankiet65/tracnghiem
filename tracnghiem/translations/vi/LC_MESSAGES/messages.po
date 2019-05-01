@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-04-28 22:08+0700\n"
-"PO-Revision-Date: 2019-04-29 02:14+0700\n"
+"POT-Creation-Date: 2019-05-01 19:02+0700\n"
+"PO-Revision-Date: 2019-05-01 19:03+0700\n"
 "Last-Translator: Ho Tuan Kiet <tuankiet65@gmail.com>\n"
 "Language: vi\n"
 "Language-Team: Vietnamese <tuankiet65@gmail.com>\n"
@@ -100,7 +100,7 @@ msgstr "Đăng nhập dưới danh nghĩa"
 msgid "Username"
 msgstr "Tên đăng nhập"
 
-#: admin/templates/admin_question.html:3 admin/templates/admin_question.html:30
+#: admin/templates/admin_question.html:3 admin/templates/admin_question.html:18
 #, python-format
 msgid "Questions in set %(qset_name)s"
 msgstr "Câu hỏi trong bộ câu hỏi %(qset_name)s"
@@ -138,54 +138,54 @@ msgstr "Đăng xuất"
 msgid "Question"
 msgstr "Câu hỏi"
 
-#: static/js/exam.js:210
+#: static/js/exam.js:233
 #, python-format
 msgid "Unknown AJAX error: %(text_status)s %(error_thrown)s, please reload."
 msgstr ""
 "Lỗi AJAX không xác định: %(text_status)s %(error_thrown)s, xin hãy tải lại "
 "trang."
 
-#: static/js/exam.js:219
+#: static/js/exam.js:242
 msgid "Authentication failure"
 msgstr "Lỗi xác thực"
 
-#: static/js/exam.js:220
+#: static/js/exam.js:243
 msgid "Please login again"
 msgstr "Xin hãy đăng nhập lại"
 
-#: static/js/exam.js:227
+#: static/js/exam.js:250
 #, python-format
 msgid "AJAX error: %(error)s, please reload."
 msgstr "Lỗi AJAX: %(error)s, xin hãy tải lại trang."
 
-#: static/js/exam.js:260
+#: static/js/exam.js:283
 #, python-format
 msgid "You have finished your exam with score of %(score)d/%(questions_count)d"
 msgstr ""
 "Bạn đã hoàn thành bài thi của mình với số điểm %(score)d/%(questions_count)d"
 
-#: static/js/exam.js:265
+#: static/js/exam.js:288
 msgid "Congratulation"
 msgstr "Chúc mừng"
 
-#: static/js/exam.js:274
+#: static/js/exam.js:297
 msgid "Error"
 msgstr "Lỗi"
 
-#: static/js/exam.js:275
+#: static/js/exam.js:298
 msgid ""
 "We can't close your exam at the moment. Please try again in a few seconds."
 msgstr ""
 "Chúng tôi không thể kết thúc bài làm của bạn vào thời điểm hiện tại. Xin hãy "
 "thử lại trong giây lát."
 
-#: static/js/exam.js:289
+#: static/js/exam.js:312
 msgid "Do you want to close the exam? You still have time"
 msgstr ""
 "Bạn có muốn nộp bài hay không?\n"
 "Bạn vẫn còn thời gian làm bài."
 
-#: static/js/exam.js:291
+#: static/js/exam.js:314
 #, python-format
 msgid ""
 "Do you want to close the exam? You still have time and you have %(question)d "
@@ -194,7 +194,7 @@ msgstr ""
 "Bạn có muốn nộp bài hay không?\n"
 "Bạn vẫn còn thời gian làm bài và còn %(question)d câu hỏi chưa trả lời."
 
-#: static/js/exam.js:296
+#: static/js/exam.js:319
 msgid "Warning"
 msgstr "Cảnh báo"
 
@@ -496,18 +496,25 @@ msgstr "Đổi mật khẩu"
 msgid "Authentication"
 msgstr "Xác thực"
 
-#: templates/authentication/general.html:9
+#: templates/authentication/general.html:10
+#: templates/authentication/login.html:35
+#: templates/authentication/register.html:96
+#: templates/authentication/register.html:102
+msgid "Error:"
+msgstr "Lỗi:"
+
+#: templates/authentication/general.html:11
 msgid "You need to login to proceed"
 msgstr "Bạn cần phải đăng nhập để tiếp tục"
 
-#: templates/authentication/general.html:13
+#: templates/authentication/general.html:16
 #: templates/authentication/login.html:14
 #: templates/authentication/login.html:23
 #: templates/authentication/login.html:32
 msgid "Login"
 msgstr "Đăng nhập"
 
-#: templates/authentication/general.html:17
+#: templates/authentication/general.html:20
 #: templates/authentication/register.html:40
 #: templates/authentication/register.html:84
 #: templates/authentication/register.html:93
@@ -526,7 +533,7 @@ msgstr "Mật khẩu"
 msgid "Don't have an account? Register"
 msgstr "Bạn chưa có tài khoản? Đăng kí"
 
-#: templates/authentication/login.html:34
+#: templates/authentication/login.html:36
 msgid "Incorrect login information, please try again"
 msgstr "Thông tin đăng nhập không chính xác, hãy thử lại"
 
@@ -550,14 +557,14 @@ msgstr "Đăng nhập vào tài khoản hiện có"
 msgid "Please fill in your username"
 msgstr "Xin hãy nhập tên đăng nhập"
 
-#: templates/authentication/register.html:95
+#: templates/authentication/register.html:97
 msgid ""
 "An account with the same username exists, please choose another username"
 msgstr ""
 "Có một tài khoản khác cùng tên đăng nhập với bạn, hãy chọn tên đăng nhập "
 "khác."
 
-#: templates/authentication/register.html:98
+#: templates/authentication/register.html:103
 msgid ""
 "You haven't filled in some fields, maybe you haven't checked the captcha?"
 msgstr ""

@@ -6,7 +6,11 @@
 {% block main %}
 <h1>{{ _("Authentication") }}</h1>
 {% if login_required %}
-    <h5 class="red-text">{{ _("You need to login to proceed") }}</h5>
+    {# Credits: https://github.com/Dogfalo/materialize/issues/2340#issuecomment-304709551 #}
+    <div class="card-panel red lighten-4 red-text text-darken-4">
+        <b>{{ _("Error:") }}</b>
+        {{ _("You need to login to proceed") }}
+    </div>
 {% endif %}
 <div class="row">
     <div class="col l6 m12 s12">

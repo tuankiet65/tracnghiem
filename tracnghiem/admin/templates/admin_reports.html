@@ -11,7 +11,11 @@
 {% block main %}
     <h1>Generate reports</h1>
     {% if fail %}
-        <h5 class="red-text">Form failure, please check.</h5>
+        {# Credits: https://github.com/Dogfalo/materialize/issues/2340#issuecomment-304709551 #}
+        <div class="card-panel red lighten-4 red-text text-darken-4">
+            <b>{{ "Error:" }}</b>
+            Form failure, please check.
+        </div>
     {% endif %}
     <div class="card-panel blue-grey lighten-5"  id="generate-report-form-div">
         <form action="{{ url_for('admin.reports') }}" method="post">

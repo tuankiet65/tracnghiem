@@ -31,7 +31,11 @@
 {% block main %}
 <h1>{{ _("Login") }}</h1>
 {% if login_failed is defined %}
-    <h5 class="red-text">{{ _("Incorrect login information, please try again") }}</h5>
+    {# Credits: https://github.com/Dogfalo/materialize/issues/2340#issuecomment-304709551 #}
+    <div class="card-panel red lighten-4 red-text text-darken-4">
+        <b>{{ _("Error:") }}</b>
+        {{ _("Incorrect login information, please try again") }}
+    </div>
 {% endif %}
 <div class="login-form">
     {{ render_login_form(True) }}

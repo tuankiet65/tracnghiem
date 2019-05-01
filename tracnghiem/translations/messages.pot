@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-04-28 22:08+0700\n"
+"POT-Creation-Date: 2019-05-01 19:02+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: admin/templates/admin_question.html:3 admin/templates/admin_question.html:30
+#: admin/templates/admin_question.html:3 admin/templates/admin_question.html:18
 #, python-format
 msgid "Questions in set %(qset_name)s"
 msgstr ""
@@ -128,53 +128,53 @@ msgstr ""
 msgid "Question"
 msgstr ""
 
-#: static/js/exam.js:210
+#: static/js/exam.js:233
 #, python-format
 msgid "Unknown AJAX error: %(text_status)s %(error_thrown)s, please reload."
 msgstr ""
 
-#: static/js/exam.js:219
+#: static/js/exam.js:242
 msgid "Authentication failure"
 msgstr ""
 
-#: static/js/exam.js:220
+#: static/js/exam.js:243
 msgid "Please login again"
 msgstr ""
 
-#: static/js/exam.js:227
+#: static/js/exam.js:250
 #, python-format
 msgid "AJAX error: %(error)s, please reload."
 msgstr ""
 
-#: static/js/exam.js:260
+#: static/js/exam.js:283
 #, python-format
 msgid "You have finished your exam with score of %(score)d/%(questions_count)d"
 msgstr ""
 
-#: static/js/exam.js:265
+#: static/js/exam.js:288
 msgid "Congratulation"
 msgstr ""
 
-#: static/js/exam.js:274
+#: static/js/exam.js:297
 msgid "Error"
 msgstr ""
 
-#: static/js/exam.js:275
+#: static/js/exam.js:298
 msgid "We can't close your exam at the moment. Please try again in a few seconds."
 msgstr ""
 
-#: static/js/exam.js:289
+#: static/js/exam.js:312
 msgid "Do you want to close the exam? You still have time"
 msgstr ""
 
-#: static/js/exam.js:291
+#: static/js/exam.js:314
 #, python-format
 msgid ""
 "Do you want to close the exam? You still have time and you have "
 "%(question)d questions unanswered"
 msgstr ""
 
-#: static/js/exam.js:296
+#: static/js/exam.js:319
 msgid "Warning"
 msgstr ""
 
@@ -470,18 +470,25 @@ msgstr ""
 msgid "Authentication"
 msgstr ""
 
-#: templates/authentication/general.html:9
+#: templates/authentication/general.html:10
+#: templates/authentication/login.html:35
+#: templates/authentication/register.html:96
+#: templates/authentication/register.html:102
+msgid "Error:"
+msgstr ""
+
+#: templates/authentication/general.html:11
 msgid "You need to login to proceed"
 msgstr ""
 
-#: templates/authentication/general.html:13
+#: templates/authentication/general.html:16
 #: templates/authentication/login.html:14
 #: templates/authentication/login.html:23
 #: templates/authentication/login.html:32
 msgid "Login"
 msgstr ""
 
-#: templates/authentication/general.html:17
+#: templates/authentication/general.html:20
 #: templates/authentication/register.html:40
 #: templates/authentication/register.html:84
 #: templates/authentication/register.html:93
@@ -500,7 +507,7 @@ msgstr ""
 msgid "Don't have an account? Register"
 msgstr ""
 
-#: templates/authentication/login.html:34
+#: templates/authentication/login.html:36
 msgid "Incorrect login information, please try again"
 msgstr ""
 
@@ -524,11 +531,11 @@ msgstr ""
 msgid "Please fill in your username"
 msgstr ""
 
-#: templates/authentication/register.html:95
+#: templates/authentication/register.html:97
 msgid "An account with the same username exists, please choose another username"
 msgstr ""
 
-#: templates/authentication/register.html:98
+#: templates/authentication/register.html:103
 msgid "You haven't filled in some fields, maybe you haven't checked the captcha?"
 msgstr ""
 
