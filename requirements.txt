@@ -14,14 +14,15 @@ itsdangerous==1.1.0
 Jinja2==2.10.1
 MarkupSafe==1.1.1
 packaging==19.0
-peewee==2.10.1
+peewee==3.9.4
 pycparser==2.19
 PyMySQL==0.9.3
 pyparsing==2.4.0
 python-dateutil==2.8.0
 pytz==2019.1
-raven==6.1.0
+sentry-sdk==0.7.11
 six==1.12.0
+urllib3==1.25.1
 uWSGI==2.0.18
 Werkzeug==0.15.2
 WTForms==2.2.1
