@@ -10,12 +10,12 @@ app = Flask(__name__)
 # Configuration #
 #################
 
-if os.environ.get("IS_PRODUCTION") is not None:
-    print("Running in production, activating production configurations")
-    from tracnghiem.config import ProductionConfig as Config
-else:
+if os.environ.get("FLASK_ENV") == "development":
     print("Running in development, activating development configurations")
     from tracnghiem.config import DevelopmentConfig as Config
+else:
+    print("Running in production, activating production configurations")
+    from tracnghiem.config import ProductionConfig as Config
 
 app.config.from_object(Config)
 

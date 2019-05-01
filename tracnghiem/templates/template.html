@@ -30,7 +30,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
-        <title>{%if not config['IS_PRODUCTION']%}[DEVENV]{%endif%}{{ _("Online quiz") }} | {% block title %}{% endblock %}</title>
+        <title>{% if config['ENV'] == "development" %}[DEVENV] {% endif %}{{ _("Online quiz") }} | {% block title %}{% endblock %}</title>
 
         <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'images/logo/logo_16.png') }}" sizes="16x16" />
         <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'images/logo/logo_32.png') }}" sizes="32x32" />
