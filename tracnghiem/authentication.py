@@ -5,8 +5,8 @@ from flask import render_template, session, g, Blueprint, redirect, url_for, req
 from flask_wtf import FlaskForm, RecaptchaField
 from wtforms import *
 
-from .database import SessionToken, Account
-from .utils.schools import get_schools
+from tracnghiem.database import SessionToken, Account
+from tracnghiem.utils.schools import get_schools
 
 
 ####################

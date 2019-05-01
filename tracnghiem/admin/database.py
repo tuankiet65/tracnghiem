@@ -1,7 +1,7 @@
 from peewee import *
 
-from ..database import BaseModel, PasswordField
-from ..utils.random import generate_random_string
+from tracnghiem.database import BaseModel, PasswordField
+from tracnghiem.utils.random import generate_random_string
 
 
 class AdminUser(BaseModel):

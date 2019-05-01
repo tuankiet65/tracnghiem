@@ -1,9 +1,9 @@
 import peewee
 from playhouse.shortcuts import model_to_dict
 
-from .data_list import DataList
-from ..database import Announcement
-from ..utils.datetime import local_dt_from_timestamp
+from tracnghiem.admin.data_list import DataList
+from tracnghiem.database import Announcement
+from tracnghiem.utils.datetime import local_dt_from_timestamp
 
 AnnouncementList = DataList("announcement")
 

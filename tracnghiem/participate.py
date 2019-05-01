@@ -1,8 +1,8 @@
 from flask import Blueprint, g, render_template
 
-from .authentication import need_to_login
-from .database import Contest, Exam
-from .exam import in_contest_date
+from tracnghiem.authentication import need_to_login
+from tracnghiem.database import Contest, Exam
+from tracnghiem.exam import in_contest_date
 
 participate = Blueprint("participate", __name__, url_prefix = "/participate")
 

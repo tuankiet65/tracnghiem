@@ -7,9 +7,9 @@ from flask_wtf import FlaskForm
 from playhouse.shortcuts import model_to_dict
 from wtforms import StringField, BooleanField, validators
 
-from .authentication import need_to_login
-from .database import Exam, Question, Contest
-from .utils.datetime import dt_to_local_dt, get_current_local_dt, d_to_local_dt, get_minutes_delta
+from tracnghiem.authentication import need_to_login
+from tracnghiem.database import Exam, Question, Contest
+from tracnghiem.utils.datetime import dt_to_local_dt, get_current_local_dt, d_to_local_dt, get_minutes_delta
 
 
 def get_exam_question(exam: Exam, include_answers: bool):

@@ -1,13 +1,13 @@
 from flask import Blueprint, g, session, redirect, url_for, request, render_template
 
-from .announcement import AnnouncementList
-from .authentication import login_page, get_user_from_token
-from .contest import ContestList
-from .question_set import QuestionSetList
-from .questions import QuestionList
-from .reports import reports
-from .school import SchoolList
-from .utils import login_as
+from tracnghiem.admin.announcement import AnnouncementList
+from tracnghiem.admin.authentication import login_page, get_user_from_token
+from tracnghiem.admin.contest import ContestList
+from tracnghiem.admin.question_set import QuestionSetList
+from tracnghiem.admin.questions import QuestionList
+from tracnghiem.admin.reports import reports
+from tracnghiem.admin.school import SchoolList
+from tracnghiem.admin.utils import login_as
 
 admin = Blueprint("admin", __name__,
                   template_folder = "templates",

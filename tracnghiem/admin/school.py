@@ -1,5 +1,5 @@
 from tracnghiem.database import School
-from .data_list import DataList
+from tracnghiem.admin.data_list import DataList
 
 SchoolList = DataList("school")
 

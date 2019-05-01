@@ -5,16 +5,16 @@ from flask_wtf.csrf import CSRFProtect
 import sentry_sdk
 from sentry_sdk.integrations.flask import FlaskIntegration
 
-from . import app
-from .admin import admin
-from .authentication import load_session_token, authentication
-from .database import Announcement, database
-from .exam import exam
-from .install import install
-from .participate import participate
-from .stats import generate_stats
-from .utils.schools import get_schools
-from .yourself import yourself
+from tracnghiem import app
+from tracnghiem.admin import admin
+from tracnghiem.authentication import load_session_token, authentication
+from tracnghiem.database import Announcement, database
+from tracnghiem.exam import exam
+from tracnghiem.install import install
+from tracnghiem.participate import participate
+from tracnghiem.stats import generate_stats
+from tracnghiem.utils.schools import get_schools
+from tracnghiem.yourself import yourself
 
 app.register_blueprint(admin)
 app.register_blueprint(authentication)

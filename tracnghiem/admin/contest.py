@@ -3,7 +3,7 @@ from playhouse.shortcuts import model_to_dict
 from wtforms import *
 
 from tracnghiem.database import Contest, QuestionSet, Question
-from .data_list import DataList
+from tracnghiem.admin.data_list import DataList
 
 ContestList = DataList("contest")
 

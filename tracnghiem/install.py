@@ -4,8 +4,8 @@ from flask import Blueprint, render_template, url_for, redirect
 from flask_wtf import FlaskForm
 from wtforms import *
 
-from .admin.database import AdminUser
-from .utils.database import create_all_tables
+from tracnghiem.admin.database import AdminUser
+from tracnghiem.utils.database import create_all_tables
 
 install = Blueprint("install", __name__, url_prefix = "/install")
 

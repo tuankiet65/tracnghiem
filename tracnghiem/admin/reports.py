@@ -4,10 +4,10 @@ from flask import render_template, Response, stream_with_context
 from flask_wtf import FlaskForm
 from wtforms import *
 
-from ..database import Exam, Account, School, Contest
-from ..utils.contests import get_contests
-from ..utils.datetime import d_to_local_dt, dt_to_local_dt, get_current_local_dt
-from ..utils.schools import get_schools
+from tracnghiem.database import Exam, Account, School, Contest
+from tracnghiem.utils.contests import get_contests
+from tracnghiem.utils.datetime import d_to_local_dt, dt_to_local_dt, get_current_local_dt
+from tracnghiem.utils.schools import get_schools
 
 
 def exam_to_object(exam: Exam) -> object:

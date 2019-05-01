@@ -3,9 +3,9 @@ import secrets
 
 from peewee import *
 
-from . import app
-from .utils.datetime import get_current_local_dt
-from .utils.random import generate_random_string, generate_random_int
+from tracnghiem import app
+from tracnghiem.utils.datetime import get_current_local_dt
+from tracnghiem.utils.random import generate_random_string, generate_random_int
 
 database = MySQLDatabase(host = app.config["DB_HOST"],
                          user = app.config["DB_USERNAME"],

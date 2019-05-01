@@ -2,9 +2,9 @@ from flask import Blueprint, g, render_template, json
 from flask_wtf import FlaskForm
 from wtforms import *
 
-from .authentication import need_to_login, logout
-from .database import Contest, Exam
-from .utils.schools import get_schools
+from tracnghiem.authentication import need_to_login, logout
+from tracnghiem.database import Contest, Exam
+from tracnghiem.utils.schools import get_schools
 
 yourself = Blueprint("yourself", __name__, url_prefix = "/yourself")
 

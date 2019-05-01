@@ -1,4 +1,4 @@
-from .database import School
+from tracnghiem.database import School
 
 
 def generate_stats():
