@@ -34,10 +34,12 @@
             <div class="row">
                 {% for contest in contests %}
                     <div class="col s6 m6 l6">
-                        <div class="input-field">
-                            <input type="checkbox" class="filled-in" name="contests" id="contests-{{contest[0]}}" checked="checked" value="{{contest[0]}}"/>
-                            <label for="contests-{{contest[0]}}">{{ contest[1] }}</label>
-                        </div>
+                        <p>
+                            <label>
+                                <input type="checkbox" class="filled-in" name="contests" checked="checked" value="{{contest[0]}}"/>
+                                <span>{{ contest[1] }}</span>
+                            </label>
+                        </p>
                     </div>
                 {% endfor %}
             </div>
@@ -46,18 +48,22 @@
             <div class="row">
                 {% for school in schools %}
                     <div class="col s6 m6 l6">
-                        <div class="input-field">
-                            <input type="checkbox" class="filled-in" name="schools" id="school-{{school[0]}}" checked="checked" value="{{school[0]}}"/>
-                            <label for="school-{{school[0]}}">{{ school[1] }}</label>
-                        </div>
+                        <p>
+                            <label>
+                                <input type="checkbox" class="filled-in" name="schools" checked="checked" value="{{school[0]}}"/>
+                                <span>{{ school[1] }}</span>
+                            </label>
+                        </p>
                     </div>
                 {% endfor %}
             </div>
 
-            <div class="input-field">
-                <input type="checkbox" class="filled-in" name="include_unfinished" id="include_unfinished"/>
-                <label for="include_unfinished">Include unfinished exams</label>
-            </div>
+            <p>
+                <label>
+                    <input type="checkbox" class="filled-in" name="include_unfinished" />
+                    <span>Include unfinished exams</span>
+                </label>
+            </p>
 
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
 
