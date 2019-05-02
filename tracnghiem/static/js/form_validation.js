@@ -65,6 +65,9 @@ var FormValidation = {
     }
 };
 
+var helper_text_template = Handlebars.compile(
+    "<span class='helper-text' data-error='{{ error }}'></span>");
+
 function Form(){
     this.fields = {};
     this.submit_button = null;
@@ -85,34 +88,44 @@ function Form(){
         };
 
         element.addClass("validate");
-        element.siblings("label").attr("data-error", warning);
-        element.focusout($.proxy(function(event){
-            event.stopPropagation(); // prevent changes from Materialize js
+        element.parent().append(helper_text_template({
+            error: warning
+        }));
+
+        element.change($.proxy(function(event){
             this._validate_field(this.fields[field_name], true, false);
+            event.stopPropagation(); // prevent changes from Materialize
+        }, this));
+
+        element.blur($.proxy(function(event){
+            this._validate_field(this.fields[field_name], true, false);
+            event.stopPropagation(); // prevent changes from Materialize
         }, this));
     };
 
-    // Because validate_field conflicts with a function in Materialize.css
+    // Because validate_field conflicts with a function in Materialize
     this._validate_field = function(field, toggle_html_error, focus){
         var element = field.element;
         var value = element.val();
         for (var i = 0; i < field.validations.length; i++){
-            if (!(field.validations[i](value))){
-                if (toggle_html_error){
-                    element.removeClass("invalid valid").addClass("invalid");
-                    if (focus){
-                        element.focus();
-                        $('html, body').animate({
-                            scrollTop: element.offset().top-100
-                        }, 100);
-                    }
+            if (field.validations[i](value))
+                continue;
+            if (toggle_html_error){
+                element.removeClass("invalid valid").addClass("invalid");
+                if (focus){
+                    element.focus();
+                    $('html, body').animate({
+                        scrollTop: element.offset().top-100
+                    }, 100);
                 }
-                return false;
             }
+            return false;
         }
+
         if (toggle_html_error){
             element.removeClass("invalid valid").addClass("valid");
         }
+
         return true;
     };
 

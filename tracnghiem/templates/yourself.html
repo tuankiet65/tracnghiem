@@ -132,6 +132,8 @@
 </div>
 {% endblock %}
 {% block js %}
+    <script src="{{ url_for('static', filename = 'node_modules/handlebars/dist/handlebars.min.js') }}"></script>
+
     <script>
         M.FormSelect.init($('#edit_school'));
         M.Tabs.init($('.tabs'), {});

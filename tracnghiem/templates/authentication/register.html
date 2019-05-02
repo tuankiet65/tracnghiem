@@ -47,6 +47,7 @@
 {% endmacro %}
 
 {% macro render_register_form_js() %}
+    <script src="{{ url_for('static', filename = 'node_modules/handlebars/dist/handlebars.min.js') }}"></script>
     <script src="{{ url_for('static', filename = 'js/form_validation.js') }}"></script>
     <script>
         M.FormSelect.init($('#reg_school'));
@@ -61,10 +62,10 @@
 
         register_form = new Form();
         register_form.add_field("username", $("#reg_username"), [FormValidation.NotEmpty], "{{ _("Please fill in your username") }}");
-        register_form.add_field("password", $("#reg_password"), [FormValidation.StrongPassword], "{{ _("Your password is too weak ") }}");
-        register_form.add_field("password_repeat", $("#reg_password_repeat"), [SamePassword], "{{ _("Password either is not the same or too weak") }}");
+        register_form.add_field("password", $("#reg_password"), [FormValidation.NotEmpty, FormValidation.StrongPassword], "{{ _("Your password is too weak ") }}");
+        register_form.add_field("password_repeat", $("#reg_password_repeat"), [FormValidation.NotEmpty, SamePassword], "{{ _("Password either is not the same or too weak") }}");
         register_form.add_field("name", $("#reg_name"), [FormValidation.NotEmpty], "{{ _("Please fill in your name") }}");
-        register_form.add_field("school", $("#reg_school"), [FormValidation.NotEmpty], "{{ _("Please choose your school") }}");
+        register_form.add_field("school", $("#reg_school"), [FormValidation.NotEmpty, FormValidation.SelectNotDefault], "{{ _("Please choose your school") }}");
         register_form.add_field("klass", $("#reg_klass"), [FormValidation.NotEmpty], "{{ _("Please fill in your class") }}");
 
         // This is run after everything has finished loading to allow form submitting
