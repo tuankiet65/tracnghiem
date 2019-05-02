@@ -1,4 +1,4 @@
-{
+var i18n_vi_data = {
    "domain": "messages",
    "locale_data": {
       "messages": {
@@ -366,4 +366,4 @@
          ]
       }
    }
-}
+};

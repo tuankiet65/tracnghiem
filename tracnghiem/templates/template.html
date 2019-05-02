@@ -177,14 +177,11 @@
         <script src="{{ url_for('static', filename = 'node_modules/materialize-css/dist/js/materialize.min.js') }}"></script>
 
         <script src="{{ url_for('static', filename = 'node_modules/jed/jed.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'translations/vi.js') }}"></script>
 
         <script>
             // i18n stuff
-            // dummy Jed instance
-            i18n = new Jed({});
-            $.getJSON("{{ url_for('static', filename = 'translations/vi.json') }}", function(translation_data) {
-                i18n = new Jed(translation_data);
-            });
+            i18n = new Jed(i18n_vi_data);
 
             // CSRF stuff
             var csrf_token = "{{ csrf_token() }}";
