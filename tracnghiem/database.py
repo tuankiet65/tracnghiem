@@ -92,10 +92,10 @@ class Question(BaseModel):
     # auto id field
     set = ForeignKeyField(QuestionSet)
     question = TextField()
-    answer_d = CharField()
-    answer_c = CharField()
-    answer_b = CharField()
-    answer_a = CharField()
+    answer_d = TextField()
+    answer_c = TextField()
+    answer_b = TextField()
+    answer_a = TextField()
     correct_answer = IntegerField()  # 1=A 2=B 3=C 4=D
 
 
