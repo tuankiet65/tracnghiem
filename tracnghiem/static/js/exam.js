@@ -113,8 +113,8 @@ function Countdown(end_time, tick_callback){
     this.tick_callback = tick_callback;
 
     this.timer_callback = function(){
-        this.tick_callback(this.remaining);
         this.remaining--;
+        this.tick_callback(this.remaining);
         if (this.remaining < 0){
             this.stop();
         }
@@ -125,6 +125,7 @@ function Countdown(end_time, tick_callback){
     }.bind(this);
 
     this.timer_id = setInterval(this.timer_callback, 1000);
+    this.tick_callback(this.remaining);
 
     return this;
 }
