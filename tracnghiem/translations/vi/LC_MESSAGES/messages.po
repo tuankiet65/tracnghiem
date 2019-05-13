@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-05-01 19:02+0700\n"
-"PO-Revision-Date: 2019-05-01 19:03+0700\n"
+"PO-Revision-Date: 2019-05-14 00:08+0700\n"
 "Last-Translator: Ho Tuan Kiet <tuankiet65@gmail.com>\n"
 "Language: vi\n"
 "Language-Team: Vietnamese <tuankiet65@gmail.com>\n"
@@ -115,7 +115,7 @@ msgstr "Xuất báo cáo"
 
 #: admin/templates/admin_school.html:3 admin/templates/admin_template.html:4
 msgid "Schools"
-msgstr "Trường"
+msgstr "Cơ sở Đoàn"
 
 #: admin/templates/admin_template.html:2 templates/index.html:3
 #: templates/template.html:2 templates/template.html:9
@@ -225,11 +225,11 @@ msgstr "Xin hãy điền tên của bạn"
 
 #: static/js/yourself.js:61 templates/authentication/register.html:67
 msgid "Please choose your school"
-msgstr "Xin hãy chọn trường của bạn"
+msgstr "Xin hãy chọn cơ sở Đoàn của bạn"
 
 #: static/js/yourself.js:65 templates/authentication/register.html:68
 msgid "Please fill in your class"
-msgstr "Xin hãy điền lớp của bạn"
+msgstr "Xin hãy điền tên đơn vị của bạn"
 
 #: static/js/yourself.js:79
 msgid "Profile edited successfully"
@@ -449,11 +449,11 @@ msgstr "Họ và tên"
 
 #: templates/yourself.html:34
 msgid "School"
-msgstr "Trường"
+msgstr "Cơ sở Đoàn"
 
 #: templates/yourself.html:38
 msgid "Class"
-msgstr "Lớp"
+msgstr "Đơn vị"
 
 #: templates/yourself.html:43
 msgid "Your past results"
@@ -465,11 +465,11 @@ msgstr "Tên thật của bạn"
 
 #: templates/authentication/register.html:26 templates/yourself.html:102
 msgid "Your school"
-msgstr "Trường của bạn"
+msgstr "Cơ sở Đoàn của bạn"
 
 #: templates/authentication/register.html:30 templates/yourself.html:106
 msgid "Your class"
-msgstr "Lớp của bạn"
+msgstr "Đơn vị của bạn"
 
 #: templates/yourself.html:109
 msgid "Edit profile"
@@ -543,7 +543,7 @@ msgstr "Nhập lại mật khẩu mới"
 
 #: templates/authentication/register.html:21
 msgid "Choose your school"
-msgstr "Hãy chọn trường của bạn"
+msgstr "Hãy chọn cơ sở Đoàn của bạn"
 
 #: templates/authentication/register.html:35
 msgid "Please wait for all resources to be loaded"

@@ -1,4 +1,4 @@
-var i18n_vi_data = {
+var i18n_vi_data =  {
    "domain": "messages",
    "locale_data": {
       "messages": {
@@ -62,7 +62,7 @@ var i18n_vi_data = {
             "Xuất báo cáo"
          ],
          "Schools": [
-            "Trường"
+            "Cơ sở Đoàn"
          ],
          "Index": [
             "Trang chủ"
@@ -131,10 +131,10 @@ var i18n_vi_data = {
             "Xin hãy điền tên của bạn"
          ],
          "Please choose your school": [
-            "Xin hãy chọn trường của bạn"
+            "Xin hãy chọn cơ sở Đoàn của bạn"
          ],
          "Please fill in your class": [
-            "Xin hãy điền lớp của bạn"
+            "Xin hãy điền tên đơn vị của bạn"
          ],
          "Profile edited successfully": [
             "Thay đổi thông tin thành công"
@@ -284,10 +284,10 @@ var i18n_vi_data = {
             "Họ và tên"
          ],
          "School": [
-            "Trường"
+            "Cơ sở Đoàn"
          ],
          "Class": [
-            "Lớp"
+            "Đơn vị"
          ],
          "Your past results": [
             "Các kết quả thi của bạn"
@@ -296,10 +296,10 @@ var i18n_vi_data = {
             "Tên thật của bạn"
          ],
          "Your school": [
-            "Trường của bạn"
+            "Cơ sở Đoàn của bạn"
          ],
          "Your class": [
-            "Lớp của bạn"
+            "Đơn vị của bạn"
          ],
          "Edit profile": [
             "Sửa thông tin"
@@ -347,7 +347,7 @@ var i18n_vi_data = {
             "Nhập lại mật khẩu mới"
          ],
          "Choose your school": [
-            "Hãy chọn trường của bạn"
+            "Hãy chọn cơ sở Đoàn của bạn"
          ],
          "Please wait for all resources to be loaded": [
             "Xin hãy chờ cho các tài nguyên được tải về"
@@ -366,4 +366,4 @@ var i18n_vi_data = {
          ]
       }
    }
-};
+}
