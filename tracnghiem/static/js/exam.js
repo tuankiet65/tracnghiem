@@ -239,7 +239,7 @@ function Exam(exam, questions){
             } else {
                 if (xhr.status === 403) {
                     clearInterval(this.autosave_id);
-                    swal({
+                    Swal.fire({
                         titleText: i18n.translate("Authentication failure").fetch(),
                         text: i18n.translate("Please login again").fetch(),
                         type: "error"
@@ -285,7 +285,7 @@ function Exam(exam, questions){
                 score: score,
                 questions_count: this.questions.length
             });
-            swal({
+            Swal.fire({
                 titleText: i18n.translate("Congratulation").fetch(),
                 text: finish_text,
                 type: "success"
@@ -294,7 +294,7 @@ function Exam(exam, questions){
             })
         }.bind(this), function (){
             $("#modal-submitting").modal("close");
-            swal({
+            Swal.fire({
                 titleText: i18n.translate("Error").fetch(),
                 text: i18n.translate("We can't close your exam at the moment. Please try again in a few seconds.").fetch(),
                 type: "error"
@@ -316,14 +316,16 @@ $("#close-exam-button").click(function (){
             question: exam.questions.length - exam.question_answered.count()
         })
     }
-    swal({
+    Swal.fire({
         titleText: i18n.translate("Warning").fetch(),
         text: warning_text,
         type: "warning",
         showCloseButton: true,
         showCancelButton: true,
         focusCancel: true
-    }).then(function (){
-        exam.close_exam();
+    }).then(function (result){
+        if (result.value) {
+            exam.close_exam();
+        }
     })
 });

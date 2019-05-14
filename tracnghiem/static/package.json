@@ -26,6 +26,6 @@
     "materialize-css": "^1.0.0",
     "moment": "^2.24.0",
     "po2json": "^1.0.0-alpha",
-    "sweetalert2": "^6.11.5"
+    "sweetalert2": "^8.10.7"
   }
 }

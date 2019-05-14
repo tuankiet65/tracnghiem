@@ -65,21 +65,19 @@ function DataList(url, name, container, render_data_func, prepend){
         var id = offending_entry.data("id");
 
         // TODO: i18n
-        swal({
+        Swal.fire({
             title: "Delete this?",
             text: "Are you sure want to delete this?",
             type: "warning",
             showCancelButton: true,
             confirmButtonText: 'Yes'
-        }).then(
-            $.proxy(function (){
+        }).then(function (result) {
+            if (result.value) {
                 $.post(this.ajax_remove, {id: id}, function (){
                     offending_entry.remove();
-                })
-            }, this),
-            function (){
+                });
             }
-        );
+        }.bind(this));
     }, this);
 
     return this;
