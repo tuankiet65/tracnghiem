@@ -31,10 +31,6 @@ def get_exam_question(exam: Exam, include_answers: bool):
             (question['answer_d'], (question['correct_answer'] == 4)),
         ]
 
-        # Shuffling the list three times seems to yield better randomness
-        # (not scientifically proven)
-        rng.shuffle(tmp)
-        rng.shuffle(tmp)
         rng.shuffle(tmp)
 
         question['answer_a'] = tmp[0][0]
