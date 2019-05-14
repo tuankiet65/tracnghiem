@@ -43,6 +43,8 @@ def get_exam_question(exam: Exam, include_answers: bool):
         else:
             del question['correct_answer']
 
+    rng.shuffle(exam_questions)
+
     return exam_questions
 
 
