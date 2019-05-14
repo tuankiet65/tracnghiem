@@ -118,9 +118,15 @@
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    © 2017 - 2019 Hồ Tuấn Kiệt. {{ _('Running <b><a class="grey-text text-lighten-3" href="https://github.com/tuankiet65/tracnghiem">tuankiet65/tracnghiem</a></b> '
-                                                     'revision <b><a class="grey-text text-lighten-3" href="https://github.com/tuankiet65/tracnghiem/tree/%(rev)s">%(rev)s</a></b>. '
-                                                     'Current timezone: <b>%(timezone)s</b>', rev = config["GIT_REVISION"], timezone = config["FRIENDLY_TIMEZONE"]) }}
+                    © 2017 - 2019 Hồ Tuấn Kiệt.
+                    {% if config["GIT_REVISION"] %}
+                        {{ _('Running <b><a class="grey-text text-lighten-3" href="https://github.com/tuankiet65/tracnghiem">tuankiet65/tracnghiem</a></b> '
+                             'revision <b><a class="grey-text text-lighten-3" href="https://github.com/tuankiet65/tracnghiem/tree/%(rev)s">%(rev)s</a></b>. '
+                             'Current timezone: <b>%(timezone)s</b>', rev = config["GIT_REVISION"], timezone = config["FRIENDLY_TIMEZONE"]) }}
+                    {% else %}
+                        {{ _('Running <b><a class="grey-text text-lighten-3" href="https://github.com/tuankiet65/tracnghiem">tuankiet65/tracnghiem</a></b> '
+                             'revision <b>unknown</b>. Current timezone: <b>%(timezone)s</b>', timezone = config["FRIENDLY_TIMEZONE"]) }}
+                    {% endif %}
                 </div>
             </div>
         </footer>

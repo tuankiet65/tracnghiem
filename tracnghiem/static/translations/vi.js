@@ -268,6 +268,9 @@ var i18n_vi_data =  {
          "Running <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></b> revision <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></b>. Current timezone: <b>%(timezone)s</b>": [
             "Đang chạy <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></b> phiên bản <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></b>. Múi giờ hiện tại: <b>%(timezone)s</b>"
          ],
+         "Running <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></b> revision <b>unknown</b>. Current timezone: <b>%(timezone)s</b>": [
+            "Đang chạy <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></b> phiên bản <b>không rõ</b>. Múi giờ hiện tại: <b>%(timezone)s</b>"
+         ],
          "Yourself": [
             "Bản thân"
          ],

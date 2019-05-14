@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-05-01 19:02+0700\n"
+"POT-Creation-Date: 2019-05-14 11:45+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,53 +128,53 @@ msgstr ""
 msgid "Question"
 msgstr ""
 
-#: static/js/exam.js:233
+#: static/js/exam.js:234
 #, python-format
 msgid "Unknown AJAX error: %(text_status)s %(error_thrown)s, please reload."
 msgstr ""
 
-#: static/js/exam.js:242
+#: static/js/exam.js:243
 msgid "Authentication failure"
 msgstr ""
 
-#: static/js/exam.js:243
+#: static/js/exam.js:244
 msgid "Please login again"
 msgstr ""
 
-#: static/js/exam.js:250
+#: static/js/exam.js:251
 #, python-format
 msgid "AJAX error: %(error)s, please reload."
 msgstr ""
 
-#: static/js/exam.js:283
+#: static/js/exam.js:284
 #, python-format
 msgid "You have finished your exam with score of %(score)d/%(questions_count)d"
 msgstr ""
 
-#: static/js/exam.js:288
+#: static/js/exam.js:289
 msgid "Congratulation"
 msgstr ""
 
-#: static/js/exam.js:297
+#: static/js/exam.js:298
 msgid "Error"
 msgstr ""
 
-#: static/js/exam.js:298
+#: static/js/exam.js:299
 msgid "We can't close your exam at the moment. Please try again in a few seconds."
 msgstr ""
 
-#: static/js/exam.js:312
+#: static/js/exam.js:313
 msgid "Do you want to close the exam? You still have time"
 msgstr ""
 
-#: static/js/exam.js:314
+#: static/js/exam.js:315
 #, python-format
 msgid ""
 "Do you want to close the exam? You still have time and you have "
 "%(question)d questions unanswered"
 msgstr ""
 
-#: static/js/exam.js:319
+#: static/js/exam.js:320
 msgid "Warning"
 msgstr ""
 
@@ -182,11 +182,11 @@ msgstr ""
 msgid "Please enter your old password"
 msgstr ""
 
-#: static/js/yourself.js:17 templates/authentication/register.html:64
+#: static/js/yourself.js:17 templates/authentication/register.html:65
 msgid "Your password is too weak "
 msgstr ""
 
-#: static/js/yourself.js:21 templates/authentication/register.html:65
+#: static/js/yourself.js:21 templates/authentication/register.html:66
 msgid "Password either is not the same or too weak"
 msgstr ""
 
@@ -198,15 +198,15 @@ msgstr ""
 msgid "Password changed successfully. You'll be logged out..."
 msgstr ""
 
-#: static/js/yourself.js:57 templates/authentication/register.html:66
+#: static/js/yourself.js:57 templates/authentication/register.html:67
 msgid "Please fill in your name"
 msgstr ""
 
-#: static/js/yourself.js:61 templates/authentication/register.html:67
+#: static/js/yourself.js:61 templates/authentication/register.html:68
 msgid "Please choose your school"
 msgstr ""
 
-#: static/js/yourself.js:65 templates/authentication/register.html:68
+#: static/js/yourself.js:65 templates/authentication/register.html:69
 msgid "Please fill in your class"
 msgstr ""
 
@@ -379,19 +379,19 @@ msgstr ""
 msgid "Sign out"
 msgstr ""
 
-#: templates/template.html:33 templates/template.html:98
+#: templates/template.html:33 templates/template.html:80
 msgid "Online quiz"
 msgstr ""
 
-#: templates/template.html:123
+#: templates/template.html:103
 msgid "Online quiz Footer"
 msgstr ""
 
-#: templates/template.html:129
+#: templates/template.html:110
 msgid "Links"
 msgstr ""
 
-#: templates/template.html:139
+#: templates/template.html:123
 #, python-format
 msgid ""
 "Running <b><a class=\"grey-text text-lighten-3\" "
@@ -399,6 +399,14 @@ msgid ""
 " revision <b><a class=\"grey-text text-lighten-3\" "
 "href=\"https://github.com/tuankiet65/tracnghiem/tree/%(rev)s\">%(rev)s</a></b>."
 " Current timezone: <b>%(timezone)s</b>"
+msgstr ""
+
+#: templates/template.html:127
+#, python-format
+msgid ""
+"Running <b><a class=\"grey-text text-lighten-3\" "
+"href=\"https://github.com/tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></b>"
+" revision <b>unknown</b>. Current timezone: <b>%(timezone)s</b>"
 msgstr ""
 
 #: templates/yourself.html:6
@@ -470,28 +478,28 @@ msgstr ""
 msgid "Authentication"
 msgstr ""
 
-#: templates/authentication/general.html:10
-#: templates/authentication/login.html:35
-#: templates/authentication/register.html:96
-#: templates/authentication/register.html:102
+#: templates/authentication/general.html:11
+#: templates/authentication/login.html:36
+#: templates/authentication/register.html:98
+#: templates/authentication/register.html:105
 msgid "Error:"
 msgstr ""
 
-#: templates/authentication/general.html:11
+#: templates/authentication/general.html:12
 msgid "You need to login to proceed"
 msgstr ""
 
-#: templates/authentication/general.html:16
+#: templates/authentication/general.html:17
 #: templates/authentication/login.html:14
 #: templates/authentication/login.html:23
 #: templates/authentication/login.html:32
 msgid "Login"
 msgstr ""
 
-#: templates/authentication/general.html:20
+#: templates/authentication/general.html:21
 #: templates/authentication/register.html:40
-#: templates/authentication/register.html:84
-#: templates/authentication/register.html:93
+#: templates/authentication/register.html:85
+#: templates/authentication/register.html:94
 msgid "Register"
 msgstr ""
 
@@ -507,7 +515,7 @@ msgstr ""
 msgid "Don't have an account? Register"
 msgstr ""
 
-#: templates/authentication/login.html:36
+#: templates/authentication/login.html:37
 msgid "Incorrect login information, please try again"
 msgstr ""
 
@@ -527,15 +535,15 @@ msgstr ""
 msgid "Log in to your existing account"
 msgstr ""
 
-#: templates/authentication/register.html:63
+#: templates/authentication/register.html:64
 msgid "Please fill in your username"
 msgstr ""
 
-#: templates/authentication/register.html:97
+#: templates/authentication/register.html:99
 msgid "An account with the same username exists, please choose another username"
 msgstr ""
 
-#: templates/authentication/register.html:103
+#: templates/authentication/register.html:106
 msgid "You haven't filled in some fields, maybe you haven't checked the captcha?"
 msgstr ""
 

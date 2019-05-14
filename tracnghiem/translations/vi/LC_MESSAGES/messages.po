@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-05-01 19:02+0700\n"
-"PO-Revision-Date: 2019-05-14 00:08+0700\n"
+"POT-Creation-Date: 2019-05-14 11:45+0700\n"
+"PO-Revision-Date: 2019-05-14 11:47+0700\n"
 "Last-Translator: Ho Tuan Kiet <tuankiet65@gmail.com>\n"
 "Language: vi\n"
 "Language-Team: Vietnamese <tuankiet65@gmail.com>\n"
@@ -138,54 +138,54 @@ msgstr "Đăng xuất"
 msgid "Question"
 msgstr "Câu hỏi"
 
-#: static/js/exam.js:233
+#: static/js/exam.js:234
 #, python-format
 msgid "Unknown AJAX error: %(text_status)s %(error_thrown)s, please reload."
 msgstr ""
 "Lỗi AJAX không xác định: %(text_status)s %(error_thrown)s, xin hãy tải lại "
 "trang."
 
-#: static/js/exam.js:242
+#: static/js/exam.js:243
 msgid "Authentication failure"
 msgstr "Lỗi xác thực"
 
-#: static/js/exam.js:243
+#: static/js/exam.js:244
 msgid "Please login again"
 msgstr "Xin hãy đăng nhập lại"
 
-#: static/js/exam.js:250
+#: static/js/exam.js:251
 #, python-format
 msgid "AJAX error: %(error)s, please reload."
 msgstr "Lỗi AJAX: %(error)s, xin hãy tải lại trang."
 
-#: static/js/exam.js:283
+#: static/js/exam.js:284
 #, python-format
 msgid "You have finished your exam with score of %(score)d/%(questions_count)d"
 msgstr ""
 "Bạn đã hoàn thành bài thi của mình với số điểm %(score)d/%(questions_count)d"
 
-#: static/js/exam.js:288
+#: static/js/exam.js:289
 msgid "Congratulation"
 msgstr "Chúc mừng"
 
-#: static/js/exam.js:297
+#: static/js/exam.js:298
 msgid "Error"
 msgstr "Lỗi"
 
-#: static/js/exam.js:298
+#: static/js/exam.js:299
 msgid ""
 "We can't close your exam at the moment. Please try again in a few seconds."
 msgstr ""
 "Chúng tôi không thể kết thúc bài làm của bạn vào thời điểm hiện tại. Xin hãy "
 "thử lại trong giây lát."
 
-#: static/js/exam.js:312
+#: static/js/exam.js:313
 msgid "Do you want to close the exam? You still have time"
 msgstr ""
 "Bạn có muốn nộp bài hay không?\n"
 "Bạn vẫn còn thời gian làm bài."
 
-#: static/js/exam.js:314
+#: static/js/exam.js:315
 #, python-format
 msgid ""
 "Do you want to close the exam? You still have time and you have %(question)d "
@@ -194,7 +194,7 @@ msgstr ""
 "Bạn có muốn nộp bài hay không?\n"
 "Bạn vẫn còn thời gian làm bài và còn %(question)d câu hỏi chưa trả lời."
 
-#: static/js/exam.js:319
+#: static/js/exam.js:320
 msgid "Warning"
 msgstr "Cảnh báo"
 
@@ -202,11 +202,11 @@ msgstr "Cảnh báo"
 msgid "Please enter your old password"
 msgstr "Xin hãy nhập mật khẩu cũ của bạn"
 
-#: static/js/yourself.js:17 templates/authentication/register.html:64
+#: static/js/yourself.js:17 templates/authentication/register.html:65
 msgid "Your password is too weak "
 msgstr "Mật khẩu của bạn quá yếu"
 
-#: static/js/yourself.js:21 templates/authentication/register.html:65
+#: static/js/yourself.js:21 templates/authentication/register.html:66
 msgid "Password either is not the same or too weak"
 msgstr "Mật khẩu hoặc không khớp với ở trên hoặc quá yếu"
 
@@ -219,15 +219,15 @@ msgid "Password changed successfully. You'll be logged out..."
 msgstr ""
 "Bạn đã đổi mật khẩu thành công. Bạn sẽ tự động đăng xuất trong giây lát."
 
-#: static/js/yourself.js:57 templates/authentication/register.html:66
+#: static/js/yourself.js:57 templates/authentication/register.html:67
 msgid "Please fill in your name"
 msgstr "Xin hãy điền tên của bạn"
 
-#: static/js/yourself.js:61 templates/authentication/register.html:67
+#: static/js/yourself.js:61 templates/authentication/register.html:68
 msgid "Please choose your school"
 msgstr "Xin hãy chọn cơ sở Đoàn của bạn"
 
-#: static/js/yourself.js:65 templates/authentication/register.html:68
+#: static/js/yourself.js:65 templates/authentication/register.html:69
 msgid "Please fill in your class"
 msgstr "Xin hãy điền tên đơn vị của bạn"
 
@@ -402,19 +402,19 @@ msgstr "Thông tin bản thân"
 msgid "Sign out"
 msgstr "Đăng xuất"
 
-#: templates/template.html:33 templates/template.html:98
+#: templates/template.html:33 templates/template.html:80
 msgid "Online quiz"
 msgstr "Thi 6 bài học LLCT"
 
-#: templates/template.html:123
+#: templates/template.html:103
 msgid "Online quiz Footer"
 msgstr "Thi tìm hiểu 6 Bài học lý luận chính trị dành cho Đoàn viên"
 
-#: templates/template.html:129
+#: templates/template.html:110
 msgid "Links"
 msgstr "Các đường dẫn"
 
-#: templates/template.html:139
+#: templates/template.html:123
 #, python-format
 msgid ""
 "Running <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/"
@@ -426,6 +426,17 @@ msgstr ""
 "tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></b> phiên bản <b><a class="
 "\"grey-text text-lighten-3\" href=\"https://github.com/tuankiet65/tracnghiem/"
 "tree/%(rev)s\">%(rev)s</a></b>. Múi giờ hiện tại: <b>%(timezone)s</b>"
+
+#: templates/template.html:127
+#, python-format
+msgid ""
+"Running <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/"
+"tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></b> revision <b>unknown</"
+"b>. Current timezone: <b>%(timezone)s</b>"
+msgstr ""
+"Đang chạy <b><a class=\"grey-text text-lighten-3\" href=\"https://github.com/"
+"tuankiet65/tracnghiem\">tuankiet65/tracnghiem</a></b> phiên bản <b>không rõ</"
+"b>. Múi giờ hiện tại: <b>%(timezone)s</b>"
 
 #: templates/yourself.html:6
 msgid "Yourself"
@@ -496,28 +507,28 @@ msgstr "Đổi mật khẩu"
 msgid "Authentication"
 msgstr "Xác thực"
 
-#: templates/authentication/general.html:10
-#: templates/authentication/login.html:35
-#: templates/authentication/register.html:96
-#: templates/authentication/register.html:102
+#: templates/authentication/general.html:11
+#: templates/authentication/login.html:36
+#: templates/authentication/register.html:98
+#: templates/authentication/register.html:105
 msgid "Error:"
 msgstr "Lỗi:"
 
-#: templates/authentication/general.html:11
+#: templates/authentication/general.html:12
 msgid "You need to login to proceed"
 msgstr "Bạn cần phải đăng nhập để tiếp tục"
 
-#: templates/authentication/general.html:16
+#: templates/authentication/general.html:17
 #: templates/authentication/login.html:14
 #: templates/authentication/login.html:23
 #: templates/authentication/login.html:32
 msgid "Login"
 msgstr "Đăng nhập"
 
-#: templates/authentication/general.html:20
+#: templates/authentication/general.html:21
 #: templates/authentication/register.html:40
-#: templates/authentication/register.html:84
-#: templates/authentication/register.html:93
+#: templates/authentication/register.html:85
+#: templates/authentication/register.html:94
 msgid "Register"
 msgstr "Đăng kí"
 
@@ -533,7 +544,7 @@ msgstr "Mật khẩu"
 msgid "Don't have an account? Register"
 msgstr "Bạn chưa có tài khoản? Đăng kí"
 
-#: templates/authentication/login.html:36
+#: templates/authentication/login.html:37
 msgid "Incorrect login information, please try again"
 msgstr "Thông tin đăng nhập không chính xác, hãy thử lại"
 
@@ -553,18 +564,18 @@ msgstr "Xin hãy chờ cho các tài nguyên được tải về"
 msgid "Log in to your existing account"
 msgstr "Đăng nhập vào tài khoản hiện có"
 
-#: templates/authentication/register.html:63
+#: templates/authentication/register.html:64
 msgid "Please fill in your username"
 msgstr "Xin hãy nhập tên đăng nhập"
 
-#: templates/authentication/register.html:97
+#: templates/authentication/register.html:99
 msgid ""
 "An account with the same username exists, please choose another username"
 msgstr ""
 "Có một tài khoản khác cùng tên đăng nhập với bạn, hãy chọn tên đăng nhập "
 "khác."
 
-#: templates/authentication/register.html:103
+#: templates/authentication/register.html:106
 msgid ""
 "You haven't filled in some fields, maybe you haven't checked the captcha?"
 msgstr ""
