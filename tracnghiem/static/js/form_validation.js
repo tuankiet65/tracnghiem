@@ -92,15 +92,15 @@ function Form(){
             error: warning
         }));
 
-        element.change($.proxy(function(event){
+        element.change(function(event){
             this._validate_field(this.fields[field_name], true, false);
             event.stopPropagation(); // prevent changes from Materialize
-        }, this));
+        }.bind(this));
 
-        element.blur($.proxy(function(event){
+        element.blur(function(event){
             this._validate_field(this.fields[field_name], true, false);
             event.stopPropagation(); // prevent changes from Materialize
-        }, this));
+        }.bind(this));
     };
 
     // Because validate_field conflicts with a function in Materialize

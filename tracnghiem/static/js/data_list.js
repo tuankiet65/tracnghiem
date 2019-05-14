@@ -32,22 +32,22 @@ function DataList(url, name, container, render_data_func, prepend){
     };
 
     this.load = function (){
-        $.getJSON(this.ajax_get, $.proxy(function (data){
+        $.getJSON(this.ajax_get, function (data){
             for (var i = 0; i < data.entries.length; i++) {
                 var id = data.entries[i].id;
                 var value = data.entries[i].value;
 
                 this.render(id, value);
             }
-        }, this))
+        }.bind(this))
     };
 
-    this.add = $.proxy(function (value, callback){
-        $.post(this.ajax_add, {data: JSON.stringify(value)}, $.proxy(function (response){
+    this.add = function (value, callback){
+        $.post(this.ajax_add, {data: JSON.stringify(value)}, function (response){
             this.render(response.id, value);
             callback();
-        }, this))
-    }, this);
+        }.bind(this))
+    }.bind(this);
 
     this.remove = function (id){
         var element = $(".entry-wrapper[data-id=\"" + id + "\"]");
@@ -58,7 +58,7 @@ function DataList(url, name, container, render_data_func, prepend){
         return true;
     };
 
-    this.remove = $.proxy(function (event){
+    this.remove = function (event){
         var button = $(event.currentTarget);
 
         var offending_entry = button.closest("." + this.name + "-entry-wrapper");
@@ -78,7 +78,7 @@ function DataList(url, name, container, render_data_func, prepend){
                 });
             }
         }.bind(this));
-    }, this);
+    }.bind(this);
 
     return this;
 }
