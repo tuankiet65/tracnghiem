@@ -1,7 +1,7 @@
 {% macro render_register_form(schools, include_login) %}
     <form onsubmit="return register_form.validate_form(true);" action="{{ url_for('authentication.register') }}" method="post" id="register-form">
         <div class="input-field">
-            <input type="text" id="reg_username" name="username">
+            <input type="text" id="reg_username" name="username" autocapitalize="off">
             <label for="reg_username">{{ _("Username") }}</label>
         </div>
         <div class="input-field">
