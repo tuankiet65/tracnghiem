@@ -36,4 +36,4 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     ENV = "production"
-    SERVER_NAME = "thi.quandoansontra.org.vn"
+    SERVER_NAME = "thi.tuankiet65.moe"
