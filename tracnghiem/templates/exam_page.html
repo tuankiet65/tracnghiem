@@ -126,6 +126,7 @@
         $('.modal').modal();
         questions = {{questions|tojson|safe}};
         exam = {{exam|tojson|safe}};
+        current_server_time = {{ current_time | tojson | safe }};
 
         M.Tooltip.init($('.tooltipped'), {});
     </script>

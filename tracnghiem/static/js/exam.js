@@ -105,9 +105,9 @@ function CustomSet(size){
     }
 }
 
-function Countdown(end_time, tick_callback){
+function Countdown(start_time, end_time, tick_callback){
+    this.start_time = start_time;
     this.end_time = end_time;
-    this.start_time = moment();
 
     this.remaining = parseInt((this.end_time - this.start_time) / 1000);
     this.tick_callback = tick_callback;
@@ -189,8 +189,11 @@ function Exam(exam, questions){
         }
     }.bind(this);
 
-    this.countdown = new Countdown(moment.parseZone(this.exam.finish_date),
-        this.tick);
+    this.countdown = new Countdown(
+        moment.parseZone(current_server_time),
+        moment.parseZone(this.exam.finish_date),
+        this.tick
+    );
 
     this.autosave = function (){
         if (this.answers_modified) {

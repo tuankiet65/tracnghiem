@@ -170,7 +170,8 @@ def exam_page(secret_key):
 
     return render_template("exam_page.html",
                            questions = get_exam_question(exam, include_answers = False),
-                           exam = exam_to_dict(exam))
+                           exam = exam_to_dict(exam),
+                           current_time = get_current_local_dt().isoformat())
 
 
 @exam.route("/save_answers", methods = ["POST"])
