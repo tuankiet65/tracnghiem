@@ -26,8 +26,18 @@ def exam_to_object(exam: Exam) -> object:
     }
 
 
-CSV_FIELDS = ['id', 'secret_key', 'contestant_name', 'contestant_class', 'contestant_school',
-              'contest', 'begin_date', 'end_date', 'duration', 'score', 'finished']
+CSV_FIELDS = [
+    'id',
+    'contestant_name',
+    'contestant_class',
+    'contestant_school',
+    'contest',
+    'begin_date',
+    'end_date',
+    'duration',
+    'score',
+    'finished'
+]
 
 
 class LineIO:
@@ -76,7 +86,7 @@ def reports():
         @stream_with_context
         def generate_request(query):
             lineio = LineIO()
-            csv_writer = csv.DictWriter(f = lineio, fieldnames = CSV_FIELDS, extrasaction = "raise")
+            csv_writer = csv.DictWriter(f = lineio, fieldnames = CSV_FIELDS, extrasaction = "ignore")
 
             csv_writer.writeheader()
             yield lineio.read()
