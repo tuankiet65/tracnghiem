@@ -24,7 +24,7 @@
     "jquery": "^3.4.1",
     "material-design-icons": "^3.0.1",
     "materialize-css": "^1.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "po2json": "^1.0.0-alpha",
     "sweetalert2": "^8.10.7"
   }
